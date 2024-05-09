@@ -47,6 +47,7 @@ public class WebContentActivity extends BaseWebActivity<ActivityWebContentBindin
             UICompat.setText(mViewBinding.pvTitle.getCenterView(), mWebTitle);
             mWebUrl = intent.getStringExtra(ARouterConfig.Key.WEB_URL);
         }
+
         loadUrl(mWebUrl);
 
     }
