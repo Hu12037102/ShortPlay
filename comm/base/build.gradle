@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: "$rootDir/config.gradle"
+android {
+    namespace config.namespace_base
+    compileSdk config.compileSdk
+    defaultConfig {
+        minSdk config.minSdk
+        targetSdk config.targetSdk
+        testInstrumentationRunner config.testInstrumentationRunner
+        consumerProguardFiles config.consumerProguardFiles
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        buildFeatures {
+            buildConfig true
+            viewBinding true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", '"https://app.funbl.com/"')
+        }
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", '"https://test-alb.funbl.com"')
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+}
+
+dependencies {
+
+    api project(path: ':comm:library')
+    testImplementation "junit:junit:${config.junit_version}"
+    androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"
+    annotationProcessor "com.alibaba:arouter-compiler:${config.arouter_compiler_version}"
+    annotationProcessor  "com.github.bumptech.glide:compiler:$config.glide_version"
+}

@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: "$rootDir/config.gradle"
+android {
+    namespace config.namespace
+    compileSdk config.compileSdk
+
+    defaultConfig {
+        applicationId config.applicationId
+        minSdk config.minSdk
+        targetSdk config.targetSdk
+        versionCode config.versionCode
+        versionName config.versionName
+
+        testInstrumentationRunner config.testInstrumentationRunner
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        buildFeatures {
+            buildConfig true
+            viewBinding true
+        }
+    }
+
+    signingConfigs{
+        release{
+            storeFile file('../keystore.jks')
+            keyAlias 'shortplay'
+            storePassword 'qfcm123456'
+            keyPassword 'qfcm123456'
+        }
+        debug{
+            storeFile file('../keystore.jks')
+            keyAlias 'shortplay'
+            storePassword 'qfcm123456'
+            keyPassword 'qfcm123456'
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources true
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            pseudoLocalesEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+}
+
+dependencies {
+
+    implementation project(path: ':splash')
+    testImplementation "junit:junit:${config.junit_version}"
+    androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"
+    annotationProcessor "com.alibaba:arouter-compiler:${config.arouter_compiler_version}"
+}
