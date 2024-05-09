@@ -14,7 +14,6 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
-import com.inshort.base.R;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
@@ -22,7 +21,7 @@ import com.inshort.base.databinding.BaseRootFrameViewBinding;
 import com.inshort.base.databinding.BaseRootLoadingViewBinding;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.tools.ViewTools;
-import com.inshort.base.weight.EmptyLayout;
+import com.inshort.base.weight.view.EmptyLayout;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
@@ -92,14 +91,13 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
         }
         mLoadingViewBinding = BaseRootLoadingViewBinding.inflate(getLayoutInflater());
         AppCompatImageView aivLoading = mLoadingViewBinding.aivLoading;
-        if (aivLoading != null) {
-            Drawable drawable = aivLoading.getDrawable();
-            if (drawable instanceof AnimationDrawable) {
-                mLoadingAnimationDrawable = (AnimationDrawable) drawable;
-                mLoadingAnimationDrawable.start();
-            }
+        Drawable drawable = aivLoading.getDrawable();
+        if (drawable instanceof AnimationDrawable) {
+            mLoadingAnimationDrawable = (AnimationDrawable) drawable;
+            mLoadingAnimationDrawable.start();
         }
         frameLayout.addView(mLoadingViewBinding.getRoot(), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+        dismissLoadingView();
     }
 
     private void initRefreshLayout(@Nullable SmartRefreshLayout refreshLayout) {

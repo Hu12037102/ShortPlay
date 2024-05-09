@@ -12,4 +12,7 @@ public interface IApiService {
 
     }
 
+    interface Url{
+    String FAQ="https://www.funbl.com/feedback/fun.html";
+    }
 }

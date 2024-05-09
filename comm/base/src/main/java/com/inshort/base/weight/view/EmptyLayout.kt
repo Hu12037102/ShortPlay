@@ -1,4 +1,4 @@
-package com.inshort.base.weight
+package com.inshort.base.weight.view
 
 import android.content.Context
 import android.content.res.TypedArray
@@ -26,7 +26,7 @@ class EmptyLayout  : ConstraintLayout {
 
     @ColorInt
     private var mTextColor: Int = ContextCompat.getColor(context, android.R.color.black)
-    private var mText: String? = DataCompat.getResString(context,R.string.not_data)
+    private var mText: String? = DataCompat.getResString(context,R.string.not_data_content)
 
     constructor (
         context: Context

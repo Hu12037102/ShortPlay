@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="not_data">No Data.</string>
+    <string name="not_data_content">No Data.</string>
+    <string name="feedback_content">Feedback</string>
+    <string name="home_content">Home</string>
+    <string name="search_content">Search</string>
+    <string name="mylist_content">My List</string>
+    <string name="me_content">Me</string>
 </resources>

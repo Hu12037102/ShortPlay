@@ -1,6 +1,7 @@
 package com.inshort.base.core.activity.web;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
@@ -11,9 +12,12 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.UICompat;
+import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.ActivityWebContentBinding;
 import com.inshort.base.other.arouter.ARouterConfig;
@@ -50,6 +54,12 @@ public class WebContentActivity extends BaseWebActivity<ActivityWebContentBindin
 
         loadUrl(mWebUrl);
 
+    }
+
+    @Override
+    protected void onWindowFirstFocusChanged() {
+        super.onWindowFirstFocusChanged();
+        mViewBinding.webView.setBackgroundColor(Color.WHITE);
     }
 
     @Override

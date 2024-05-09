@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.huxiaobai.adapter.BaseRecyclerAdapter
-import com.inshort.base.weight.EmptyLayout
+import com.inshort.base.weight.view.EmptyLayout
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 
 class ViewTools {

@@ -23,7 +23,7 @@
         android:layout_marginTop="@dimen/size_10dp"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text="@string/not_data"
+        android:text="@string/not_data_content"
         android:textColor="@android:color/black"
         android:textSize="@dimen/size_14sp"
         app:layout_constraintBottom_toBottomOf="parent"

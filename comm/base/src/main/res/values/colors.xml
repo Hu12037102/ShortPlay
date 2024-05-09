@@ -4,4 +4,5 @@
     <color name="color_White" tools:ignore="MissingDefaultResource">#FFFFFFFF</color>
     <color name="color_FFFE2442" tools:ignore="MissingDefaultResource">#FFFE2442</color>
     <color name="color_FFD8D8D8" tools:ignore="MissingDefaultResource">#FFD8D8D8</color>
+    <color name="color_FF999999" tools:ignore="MissingDefaultResource">#FF999999</color>
 </resources>
