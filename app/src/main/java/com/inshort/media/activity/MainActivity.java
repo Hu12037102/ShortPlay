@@ -1,30 +1,23 @@
 package com.inshort.media.activity;
-
-
-import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.viewbinding.ViewBinding;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.CollectionCompat;
+import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.NetworkCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.core.fragment.BaseCompatFragment;
-import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.entity.main.MainBottomTabEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.utils.LogUtils;
-import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.home.activity.HomeFragment;
 import com.inshort.me.fragment.MeFragment;
+import com.inshort.media.BuildConfig;
 import com.inshort.media.adapter.MainBottomTabAdapter;
 import com.inshort.media.databinding.ActivityMainBinding;
 import com.inshort.media.viewmodel.MainViewModel;
@@ -50,6 +43,8 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
     protected void initData() {
         initBottomTabAdapter();
         initPageAdapter();
+        LogUtils.w("initData--", NetworkCompat.getMobileNetType(DataCompat.applicationContext()));
+
     }
 
     private void initPageAdapter() {

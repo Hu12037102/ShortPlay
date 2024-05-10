@@ -12,10 +12,14 @@ import androidx.multidex.MultiDexApplication;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.inshort.base.config.AppConfig;
+import com.inshort.base.factory.FileFactory;
 import com.inshort.base.manger.ActivityStateManger;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.MaterialHeader;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.tencent.mmkv.MMKV;
+
+import java.io.File;
 
 public class BaseApplication extends MultiDexApplication {
 
@@ -25,10 +29,23 @@ public class BaseApplication extends MultiDexApplication {
     public static Context getContext() {
         return mContext;
     }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        BaseApplication.mContext = this;
+        File file = FileFactory.createRootDir(FileFactory.TYPE_APP);
+        if (file == null) {
+            MMKV.initialize(this);
+        } else {
+            MMKV.initialize(this, file.getAbsolutePath());
+        }
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
-        BaseApplication.mContext = this;
+
         init();
 
     }

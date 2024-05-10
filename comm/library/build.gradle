@@ -72,4 +72,6 @@ dependencies {
     api "com.github.bumptech.glide:glide:$config.glide_version"
 
     api "com.github.bumptech.glide:okhttp3-integration:$config.glide_okhttp_version"
+
+    api "com.tencent:mmkv:$config.mmkv_version"
 }

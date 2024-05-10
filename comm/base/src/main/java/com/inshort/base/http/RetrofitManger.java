@@ -1,5 +1,7 @@
 package com.inshort.base.http;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.inshort.base.config.AppConfig;
@@ -24,7 +26,7 @@ public final class RetrofitManger {
     private static final long DEFAULT_TIME_OUT_MILLISECONDS = 15 * 1000L;
 
     private RetrofitManger() {
-        init();
+       init();
     }
 
     private static final RetrofitManger mInstance = new RetrofitManger();
@@ -38,42 +40,44 @@ public final class RetrofitManger {
         initRetrofit();
     }
 
-    private final HttpLoggingInterceptor mHttpLoggingInterceptor = new HttpLoggingInterceptor(msg -> LogUtils.w("HttpLoggingInterceptor--", msg));
+    private final HttpLoggingInterceptor mHttpLoggingInterceptor = new HttpLoggingInterceptor(msg -> LogUtils.d("HttpLoggingInterceptor--", msg));
 
-    private final Interceptor mHeadInterceptor = new Interceptor() {
-        @NonNull
-        @Override
-        public Response intercept(@NonNull Chain chain) throws IOException {
-            Request request = chain.request();
-
-            return chain.proceed(request);
-        }
+    private final Interceptor mHeadInterceptor = chain -> {
+        Request request = chain.request();
+        LogUtils.d("HeadInterceptor", "请求头拦截器");
+        return chain.proceed(request);
     };
 
     private void initOkHttpClient() {
-        OkHttpClient.Builder builder = new OkHttpClient.Builder()
-                .retryOnConnectionFailure(true)
-                .callTimeout(DEFAULT_TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS)
-                .writeTimeout(DEFAULT_TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS)
-                .connectTimeout(DEFAULT_TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS)
-                .readTimeout(DEFAULT_TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS)
-                .proxy(Proxy.NO_PROXY);
-        if (AppConfig.isDebug()) {
-            builder.addInterceptor(mHttpLoggingInterceptor);
+        if (mOkHttpClient ==null){
+            OkHttpClient.Builder builder = new OkHttpClient.Builder()
+                    .retryOnConnectionFailure(true)
+                    .callTimeout(DEFAULT_TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS)
+                    .writeTimeout(DEFAULT_TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS)
+                    .connectTimeout(DEFAULT_TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS)
+                    .readTimeout(DEFAULT_TIME_OUT_MILLISECONDS, TimeUnit.MILLISECONDS)
+                    .addInterceptor(mHeadInterceptor)
+                    .addInterceptor(mHttpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY))
+                    .proxy(Proxy.NO_PROXY);
+            mOkHttpClient = builder.build();
         }
-        mOkHttpClient = builder.build();
+
     }
 
     private void initRetrofit() {
-        mRetrofit = new Retrofit.Builder()
-                .client(mOkHttpClient)
-                .baseUrl(AppConfig.baseUrl())
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
+        if (mRetrofit==null){
+            mRetrofit = new Retrofit.Builder()
+                    .client(mOkHttpClient)
+                    .baseUrl(AppConfig.baseUrl())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .build();
+        }
+
     }
 
     public <T> T create(Class<T> clazz) {
+
         return mRetrofit.create(clazz);
     }
 

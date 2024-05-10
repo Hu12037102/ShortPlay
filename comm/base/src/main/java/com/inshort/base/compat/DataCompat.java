@@ -10,6 +10,8 @@ import androidx.annotation.StringRes;
 
 import com.inshort.base.core.application.BaseApplication;
 
+import java.util.UUID;
+
 public final class DataCompat {
 
 
@@ -67,5 +69,32 @@ public final class DataCompat {
             e.printStackTrace();
             return "";
         }
+    }
+
+    @NonNull
+    public static String checkString(@Nullable String content) {
+        if (TextUtils.isEmpty(content)) {
+            return "";
+        } else {
+            return content;
+        }
+    }
+
+    @NonNull
+    public static String getOnlyId() {
+        String id = "";
+        String uuid = "" + UUID.randomUUID().toString();
+        uuid = uuid.replace("-", "");
+        if (uuid.length() > 8) {
+            uuid = uuid.substring(uuid.length() - 8);
+        }
+        id += uuid;
+        var timestamp = System.currentTimeMillis() + "";
+        if (timestamp.length() > 8) {
+            timestamp = timestamp.substring(timestamp.length() - 8);
+        }
+        id += timestamp;
+        id += (Math.random() * 10000);
+        return id;
     }
 }

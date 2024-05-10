@@ -21,6 +21,7 @@ import com.inshort.base.other.glide.GlideCompat;
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.splash.databinding.ActivitySplashBinding;
 import com.inshort.splash.viewmodel.SplashViewModel;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
 
 @Route(path = ARouterConfig.Path.Splash.ACTIVITY_SPLASH)
 public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, SplashViewModel> {
@@ -42,6 +43,13 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
 
     @Override
     protected void initData() {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mViewModel.initialize();
     }
 
     @Override
@@ -57,8 +65,8 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
         getWindow().getDecorView().postDelayed(new Runnable() {
             @Override
             public void run() {
-                 ARouters.startActivity(ARouterConfig.Path.Main.ACTIVITY_MAIN);
-                 finish();
+                // ARouters.startActivity(ARouterConfig.Path.Main.ACTIVITY_MAIN);
+                // finish();
             }
         }, 2000);
     }
