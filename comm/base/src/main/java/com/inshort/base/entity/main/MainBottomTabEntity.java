@@ -2,6 +2,7 @@ package com.inshort.base.entity.main;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class MainBottomTabEntity {
@@ -18,4 +19,7 @@ public class MainBottomTabEntity {
     @IntRange(from = 1, to = 4)
     public int type;
     public boolean isSelector;
+    @NonNull
+    public String fragmentPath="";
+
 }

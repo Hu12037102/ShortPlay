@@ -12,15 +12,17 @@ public interface ARouterConfig {
         }
 
         interface Home {
+            String FRAGMENT_HOME="/home/fragment/home";
 
         }
 
         interface Search {
+            String FRAGMENT_SEARCH="/search/fragment/search";
 
         }
 
         interface MyList {
-
+            String FRAGMENT_MYLIST="/mylist/fragment/mylist";
         }
 
         interface Login {
@@ -28,6 +30,7 @@ public interface ARouterConfig {
         }
 
         interface Me {
+            String FRAGMENT_ME="/me/fragment/me";
 
         }
         interface Main{

@@ -65,6 +65,10 @@ android {
 dependencies {
 
     implementation project(path: ':splash')
+    implementation project(path: ':home')
+    implementation project(path: ':search')
+    implementation project(path: ':mylist')
+    implementation project(path: ':me')
     testImplementation "junit:junit:${config.junit_version}"
     androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"

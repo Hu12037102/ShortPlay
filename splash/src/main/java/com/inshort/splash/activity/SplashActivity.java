@@ -58,6 +58,7 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
             @Override
             public void run() {
                  ARouters.startActivity(ARouterConfig.Path.Main.ACTIVITY_MAIN);
+                 finish();
             }
         }, 2000);
     }

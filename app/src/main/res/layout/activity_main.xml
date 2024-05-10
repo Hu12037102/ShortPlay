@@ -6,12 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/rv_bottom"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_68dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/rv_bottom"
-        />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
