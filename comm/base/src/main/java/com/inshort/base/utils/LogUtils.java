@@ -19,12 +19,10 @@ public final class LogUtils {
             if (!AppConfig.isShowLog()) {
                 return;
             }
-            if (TextUtils.isEmpty(tag)) {
-                tag = Contracts.TAG;
+            if (TextUtils.isEmpty(tag)||TextUtils.isEmpty(msg)) {
+              return;
             }
-            if (TextUtils.isEmpty(msg)) {
-                msg = Contracts.VALUES;
-            }
+
             if (msg.length() > MAX_LOG_LENGTH) {
                 int i = 0;
                 while (i < msg.length()) {
@@ -55,11 +53,8 @@ public final class LogUtils {
             if (!AppConfig.isShowLog()) {
                 return;
             }
-            if (TextUtils.isEmpty(tag)) {
-                tag = Contracts.TAG;
-            }
-            if (TextUtils.isEmpty(msg)) {
-                msg = Contracts.VALUES;
+            if (TextUtils.isEmpty(tag)||TextUtils.isEmpty(msg)) {
+                return;
             }
             if (msg.length() > MAX_LOG_LENGTH) {
                 int i = 0;
