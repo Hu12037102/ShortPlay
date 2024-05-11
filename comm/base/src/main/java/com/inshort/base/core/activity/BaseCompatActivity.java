@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
@@ -19,8 +20,10 @@ import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.BaseRootFrameViewBinding;
 import com.inshort.base.databinding.BaseRootLoadingViewBinding;
+import com.inshort.base.entity.base.UserEntity;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.tools.ViewTools;
+import com.inshort.base.utils.LogUtils;
 import com.inshort.base.weight.view.EmptyLayout;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -72,10 +75,22 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
 
     protected void initObserve() {
         mViewModel.getLoadingLiveData().observe(this, isLoading -> {
-
+            if (isLoading) {
+                showLoadingView();
+            } else {
+                dismissLoadingView();
+            }
 
         });
-
+        mViewModel.getUserLiveData().observe(this, new Observer<UserEntity>() {
+            @Override
+            public void onChanged(UserEntity userEntity) {
+                if (!DataCompat.isNull(userEntity)){
+                    onUserUpdate(userEntity);
+                    LogUtils.w("getUserLiveData",userEntity.toString());
+                }
+            }
+        });
 
     }
 

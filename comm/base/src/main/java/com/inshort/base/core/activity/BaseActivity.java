@@ -15,6 +15,8 @@ import com.inshort.base.R;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.databinding.BaseRootFrameViewBinding;
+import com.inshort.base.entity.base.UserEntity;
+import com.inshort.base.other.mmkv.UserInfoStore;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -80,5 +82,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected boolean isDarkStatusTextColor() {
         return true;
+    }
+
+    protected void onUserUpdate(@NonNull UserEntity userEntity) {
+        UserInfoStore.get().putData(userEntity);
     }
 }
