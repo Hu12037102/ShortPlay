@@ -45,7 +45,7 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
         initBottomTabAdapter();
         initPageAdapter();
         LogUtils.w("initData--", NetworkCompat.getMobileNetType(DataCompat.applicationContext()));
-
+        LogUtils.w("initData--", NetworkCompat.getMobileNetType(DataCompat.applicationContext()));
     }
 
     private void initPageAdapter() {
