@@ -70,6 +70,7 @@ open class BaseViewModel : ViewModel() {
 
                     }
 
+
                     else -> {
                         if (isShowEmptyView) {
                             emptyViewLiveData.value = true
