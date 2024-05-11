@@ -39,6 +39,7 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
         mViewBinding.rvBottom.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 
+
     @Override
     protected void initData() {
         initBottomTabAdapter();
