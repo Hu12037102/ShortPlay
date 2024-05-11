@@ -1,1 +1,0 @@
-int layout fragment_my_list 0x0

@@ -1,2 +1,0 @@
-com.inshort.mylist
-layout fragment_my_list
