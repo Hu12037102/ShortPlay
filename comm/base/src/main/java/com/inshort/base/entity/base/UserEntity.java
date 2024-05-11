@@ -386,4 +386,23 @@ public class UserEntity implements Parcelable {
             dest.writeByte((byte) (hasClaimable ? 1 : 0));
         }
     }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "accessToken='" + accessToken + '\'' +
+                ", language='" + language + '\'' +
+                ", isDataReport=" + isDataReport +
+                ", tradOrders=" + tradOrders +
+                ", info=" + info +
+                ", checkInInfo=" + checkInInfo +
+                ", playAdsInfo=" + playAdsInfo +
+                ", continueWatchingInfo=" + continueWatchingInfo +
+                ", initInfo=" + initInfo +
+                ", fbLoginParamsInfo=" + fbLoginParamsInfo +
+                ", coinsSubscriptionInfo=" + coinsSubscriptionInfo +
+                ", paymentFailurePopupNum=" + paymentFailurePopupNum +
+                ", hasUpdatedForMyList=" + hasUpdatedForMyList +
+                '}';
+    }
 }

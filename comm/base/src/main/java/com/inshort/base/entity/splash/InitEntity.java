@@ -111,4 +111,16 @@ public class InitEntity implements Parcelable{
             dest.writeInt(version);
         }
     }
+
+    @Override
+    public String toString() {
+        return "InitEntity{" +
+                "updateInfo=" + updateInfo +
+                ", feedbackUrl='" + feedbackUrl + '\'' +
+                ", apiHostName='" + apiHostName + '\'' +
+                ", fqaUrl='" + fqaUrl + '\'' +
+                ", isReviewVersion=" + isReviewVersion +
+                ", domainNameList=" + domainNameList +
+                '}';
+    }
 }

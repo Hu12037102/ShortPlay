@@ -3,21 +3,26 @@ package com.inshort.splash.activity;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
+import androidx.lifecycle.Observer;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
+import com.inshort.base.entity.base.UserEntity;
+import com.inshort.base.entity.splash.InitEntity;
 import com.inshort.base.http.IApiService;
 import com.inshort.base.other.arouter.ARouterActivity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.glide.GlideCompat;
+import com.inshort.base.utils.LogUtils;
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.splash.databinding.ActivitySplashBinding;
 import com.inshort.splash.viewmodel.SplashViewModel;
@@ -43,14 +48,17 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
 
     @Override
     protected void initData() {
-
+        mViewModel.initialize();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mViewModel.initialize();
+
+
     }
+
+
 
     @Override
     protected void initEvent() {
@@ -62,13 +70,25 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
             }
         });
 
-        getWindow().getDecorView().postDelayed(new Runnable() {
+    }
+
+    @Override
+    protected void onUserUpdate(@NonNull UserEntity userEntity) {
+        super.onUserUpdate(userEntity);
+        ARouters.startActivity(ARouterConfig.Path.Main.ACTIVITY_MAIN);
+    }
+
+    @Override
+    protected void initObserve() {
+        super.initObserve();
+        mViewModel.getInitializeLiveData().observe(this, new Observer<InitEntity>() {
             @Override
-            public void run() {
-                // ARouters.startActivity(ARouterConfig.Path.Main.ACTIVITY_MAIN);
-                // finish();
+            public void onChanged(InitEntity initEntity) {
+
+                mViewModel.initUserLogin();
             }
-        }, 2000);
+        });
+
     }
 
     @Override

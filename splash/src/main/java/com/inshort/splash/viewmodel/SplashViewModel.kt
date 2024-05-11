@@ -8,9 +8,16 @@ import com.inshort.splash.SplashService
 
 class SplashViewModel : BaseCompatViewModel() {
     val initializeLiveData = MutableLiveData<InitEntity>()
+
     fun initialize() {
         httpRequest(initializeLiveData, true) {
             RetrofitManger.getInstance().create(SplashService::class.java).splashInit()
+        }
+    }
+
+    fun initUserLogin() {
+        httpRequest(userLiveData, true) {
+            RetrofitManger.getInstance().create(SplashService::class.java).splashUserLogin()
         }
     }
 }
