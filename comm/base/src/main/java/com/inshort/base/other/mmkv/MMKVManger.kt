@@ -17,9 +17,12 @@ class MMKVManger private constructor() {
     }
 
     private fun createDefault(): MMKVPreferences = MMKVPreferences(MMKV.defaultMMKV())
+    fun createUserInfo():MMKVPreferences = MMKVPreferences(MMKV.mmkvWithID("user_info"))
 
     object Key {
         const val MAC_ID: String = "mmkv_mac_id"
         const val UUID: String = "mmkv_uuid"
     }
+
+
 }

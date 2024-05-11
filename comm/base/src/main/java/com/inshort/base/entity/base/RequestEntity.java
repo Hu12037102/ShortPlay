@@ -1,27 +1,39 @@
 package com.inshort.base.entity.base;
+
 import android.os.Build;
+
 import com.google.gson.annotations.SerializedName;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.NetworkCompat;
 import com.inshort.base.compat.PackageInfoCompat;
 import com.inshort.base.config.AppConfig;
 import com.inshort.base.other.mmkv.MMKVCompat;
+
 import java.util.TimeZone;
 
 public class RequestEntity {
-    public static class PostDataEntity<T extends BaseRequestBody> {
-        public PostDataEntity(T t, String accessToken, String sig) {
+    public RequestEntity(PostDataEntity postData) {
+        this.postData = postData;
+    }
+
+    @SerializedName("postdata")
+    public PostDataEntity postData;
+
+    public static class PostDataEntity {
+        public PostDataEntity(Object t, PublicEntity publicEntity, ExtendEntity extendEntity, String accessToken, String sig) {
             this.requestEntity = t;
+            this.publicEntity = publicEntity;
+            this.extendEntity = extendEntity;
             this.accessToken = DataCompat.checkString(accessToken);
             this.sig = DataCompat.checkString(sig);
         }
 
         @SerializedName("public")
-        public PublicEntity publicEntity = new PublicEntity();
+        public PublicEntity publicEntity;
         @SerializedName("extend")
-        public ExtendEntity extendEntity = new ExtendEntity();
+        public ExtendEntity extendEntity;
         @SerializedName("request")
-        public T requestEntity;
+        public Object requestEntity;
         @SerializedName("accesstoken")
         public String accessToken;
         @SerializedName("sig")
@@ -62,10 +74,8 @@ public class RequestEntity {
         @SerializedName("tz_name")
         public String tzName = TimeZone.getDefault().getID();
         @SerializedName("tz_delta")
-        public String tzDelta = TimeZone.getDefault().getDisplayName();
+        public String tzDelta = TimeZone.getDefault().getDisplayName(false,TimeZone.SHORT);
     }
-    public static class BaseRequestBody{
 
-    }
 
 }

@@ -73,8 +73,16 @@ public final class DataCompat {
 
     @NonNull
     public static String checkString(@Nullable String content) {
+      return checkString(content,null);
+    }
+
+    @NonNull
+    public static String checkString(@Nullable String content, @Nullable String defaultContent) {
+        if (DataCompat.isNull(defaultContent)) {
+            defaultContent = "";
+        }
         if (TextUtils.isEmpty(content)) {
-            return "";
+            return defaultContent;
         } else {
             return content;
         }
