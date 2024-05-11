@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="apr_content">4月</string>
+    <string name="aug_content">8月</string>
+    <string name="dec_content">12月</string>
+    <string name="feb_content">2月</string>
+    <string name="jan_content">1月</string>
+    <string name="jul_content">7月</string>
+    <string name="jun_content">6月</string>
+    <string name="mar_content">3月</string>
+    <string name="may_content">5月</string>
+    <string name="nov_content">11月</string>
+    <string name="oct_content">10月</string>
+    <string name="sep_content">9月</string>
+</resources>

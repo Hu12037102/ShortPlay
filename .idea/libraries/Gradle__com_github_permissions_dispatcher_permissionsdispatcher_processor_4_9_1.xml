@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.permissions-dispatcher:permissionsdispatcher-processor:4.9.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.github.permissions-dispatcher" artifactId="permissionsdispatcher-processor" version="4.9.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.permissions-dispatcher/permissionsdispatcher-processor/4.9.1/7378601df5631c59052476aa5d8bbd47ffb954b/permissionsdispatcher-processor-4.9.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.permissions-dispatcher/permissionsdispatcher-processor/4.9.1/398d894ff04141d9db0df566bdf67d122802e469/permissionsdispatcher-processor-4.9.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.permissions-dispatcher/permissionsdispatcher-processor/4.9.1/8bdfeaa53fe1ee4d708e59a2d968541391a030ca/permissionsdispatcher-processor-4.9.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

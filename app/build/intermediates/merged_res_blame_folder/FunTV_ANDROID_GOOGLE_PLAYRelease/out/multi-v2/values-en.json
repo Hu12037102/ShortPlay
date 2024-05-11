@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\alce\\Client-Android\\app\\build\\intermediates\\incremental\\mergeFunTV_ANDROID_GOOGLE_PLAYReleaseResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\1f240f9aff33070e65f7131aa9a85588\\transformed\\jetified-applovin-sdk-12.3.0\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,170,224,291,449,581,653,736",
+                        "endColumns": "114,53,66,157,131,71,82,67",
+                        "endOffsets": "165,219,286,444,576,648,731,799"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\0e601969ad27156484c64f47d6adc78f\\transformed\\jetified-BaseRecyclerViewAdapterHelper-3.0.7\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,122,178,241",
+                        "endColumns": "66,55,62,52",
+                        "endOffsets": "117,173,236,289"
+                    },
+                    "to": {
+                        "startLines": "10,11,12,13",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "804,871,927,990",
+                        "endColumns": "66,55,62,52",
+                        "endOffsets": "866,922,985,1038"
+                    }
+                }
+            ]
+        }
+    ]
+}

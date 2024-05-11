@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d 則新通知</item>
+    <item quantity="other">%d 則新通知</item>
+  </plurals>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"瀏覽首頁"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"向上瀏覽"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"更多選項"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"完成"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"查看全部"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"選擇應用程式"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"關閉"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"開啟"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt +"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl +"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"Delete 鍵"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"Enter 鍵"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Fn +"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta +"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift +"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"空格鍵"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym +"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu +"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"搜尋…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"清除查詢"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"搜尋查詢"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"搜尋"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"提交查詢"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"語音搜尋"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"分享對象"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"與「<ns1:g id="APPLICATION_NAME">%s</ns1:g>」分享"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"收合"</string>
+    <string name="add_count">+%s</string>
+    <string name="added_finer_reminders">已設提醒</string>
+    <string name="all_tasks_for_today_are_done">今日的活動任務已經完成啦~</string>
+    <string name="all_tasks_in_this_section_are_done">您已完成該欄目的所有活動任務啦~</string>
+    <string name="and_content">和</string>
+    <string name="app_name" ns2:ignore="ResourceName">FunTV</string>
+    <string name="applovin_agree_message">如果您選擇開始使用我們的應用，請點擊\"繼續\"</string>
+    <string name="applovin_alt_privacy_policy_text"/>
+    <string name="applovin_continue_button_text">繼續</string>
+    <string name="applovin_pp_and_tos_title">使用%s之前, 您必須同意我们的服務條款，並確認您已經閱讀並知悉我們的隱私政策。</string>
+    <string name="applovin_pp_title">使用%s之前, 您必須確認您已經閱讀並知悉我們的隱私政策.</string>
+    <string name="applovin_privacy_policy_text">隱私政策</string>
+    <string name="applovin_terms_of_service_text">服務條款</string>
+    <string name="applovin_terms_of_use_text">使用條款</string>
+    <string name="apr_content">4月</string>
+    <string name="aug_content">8月</string>
+    <string name="bonus_expired">獎勵幣將在</string>
+    <string name="bonus_expired_days">天後過期</string>
+    <string name="bonuses_content">獎勵幣</string>
+    <string name="bottomsheet_action_expand_halfway">展開一半</string>
+    <string name="cancel_text">取消</string>
+    <string name="character_counter_content_description">已輸入 %1$d 個字元 (上限為 %2$d 個字元)</string>
+    <string name="character_counter_overflowed_content_description">超過字元限制 (共 %1$d 字元，上限 %2$d 字元)</string>
+    <string name="claim">領取</string>
+    <string name="claim_complete">領取</string>
+    <string name="claimed_bonus">%s獎勵幣已自動為您領取</string>
+    <string name="claimed_sign">已領取：\t</string>
+    <string name="clear_text_end_icon_content_description">清除文字</string>
+    <string name="coins_has">您的金幣已經到賬</string>
+    <string name="coins_instanly_content">金幣</string>
+    <string name="coins_instantly">立即獲得金幣</string>
+    <string name="coins_sub">金幣訂閱</string>
+    <string name="coins_subscription_rule_1">1.每次購買FunTV每週/每月訂閱套餐都會立即獲得一定數量的獎勵。
+\n2.對於每週訂閱，每天在7天內登錄以領取每日獎勵。（錯過一天的登錄意味著錯過當天的獎勵）
+\n3.對於每月訂閱，每天在30天內登錄以領取每日獎勵。（錯過一天的登錄意味著錯過當天的獎勵）
+\n4.在訂閱期內，您可以按照當地時區每天從00:00開始領取每日獎勵。
+\n5.您的Play Store賬戶將在當前訂閱期結束前24小時自動扣費續訂費用。
+\n6.要避免收費，請在當前期結束前至少提前24小時 - </string>
+    <string name="coins_subscription_rule_2">在Play Store設置中禁用自動續訂。\n7. 如果您有任何問題，請通過您的個人資料頁面上的反饋部分與我們聯繫。</string>
+    <string gender="unknown" name="com_facebook_device_auth_instructions">前往&lt;b> facebook.com/device &lt;/b>並輸入上方顯示的代碼。</string>
+    <string gender="unknown" name="com_facebook_image_download_unknown_error">下載圖像時無預警發生錯誤。</string>
+    <string gender="unknown" name="com_facebook_internet_permission_error_message">WebView 登入需要網路使用權限</string>
+    <string gender="unknown" name="com_facebook_internet_permission_error_title">AndroidManifest 錯誤</string>
+    <string gender="unknown" name="com_facebook_like_button_liked">已說讚</string>
+    <string gender="unknown" name="com_facebook_like_button_not_liked">讚</string>
+    <string gender="unknown" name="com_facebook_loading">載入中......</string>
+    <string gender="unknown" name="com_facebook_loginview_cancel_action">取消</string>
+    <string gender="unknown" name="com_facebook_loginview_log_in_button">登入</string>
+    <string gender="unknown" name="com_facebook_loginview_log_in_button_continue">以 Facebook 帳號繼續</string>
+    <string gender="unknown" name="com_facebook_loginview_log_in_button_long">使用 Facebook 帳號登入</string>
+    <string gender="unknown" name="com_facebook_loginview_log_out_action">登出</string>
+    <string gender="unknown" name="com_facebook_loginview_log_out_button">登出</string>
+    <string gender="unknown" name="com_facebook_loginview_logged_in_as">已使用%1$s的身分登入</string>
+    <string gender="unknown" name="com_facebook_loginview_logged_in_using_facebook">已使用 Facebook 登入</string>
+    <string gender="unknown" name="com_facebook_send_button_text">送出</string>
+    <string gender="unknown" name="com_facebook_share_button_text">分享</string>
+    <string gender="unknown" name="com_facebook_smart_device_instructions">若要連結帳號，請在行動裝置上開啟 Facebook 應用程式，然後查看通知。</string>
+    <string gender="unknown" name="com_facebook_smart_device_instructions_or">- 或 -</string>
+    <string gender="unknown" name="com_facebook_smart_login_confirmation_cancel">不是你？</string>
+    <string gender="unknown" name="com_facebook_smart_login_confirmation_continue_as">以%1$s的身分繼續</string>
+    <string gender="unknown" name="com_facebook_smart_login_confirmation_title">確認登入</string>
+    <string gender="unknown" name="com_facebook_tooltip_default">一切操之在你：自行選擇要分享給應用程式的資訊種類。</string>
+    <string name="coming_shortly">敬請期待</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">啟用</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text">您必須啟用 Google Play 服務，才能執行「%1$s」。</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">啟用 Google Play 服務</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">安裝</string>
+    <string name="common_google_play_services_install_text">您的裝置並未安裝 Google Play 服務，因此無法執行「%1$s」。</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">取得 Google Play 服務</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play 服務可用性</string>
+    <string name="common_google_play_services_notification_ticker">Google Play 服務發生錯誤</string>
+    <string name="common_google_play_services_unknown_issue">「%1$s」無法存取 Google Play 服務，請再試一次。</string>
+    <string name="common_google_play_services_unsupported_text">您的裝置不支援 Google Play 服務，因此無法執行「%1$s」。</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">更新</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text">您必須更新 Google Play 服務，才能執行「%1$s」。</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">更新 Google Play 服務</string>
+    <string name="common_google_play_services_updating_text">執行「%1$s」所需的 Google Play 服務正在更新。</string>
+    <string name="common_google_play_services_wear_update_text">必須使用新版 Google Play 服務。該服務稍後就會自動更新。</string>
+    <string name="common_open_on_phone">在手機上開啟</string>
+    <string name="common_signin_button_text">登入</string>
+    <string name="common_signin_button_text_long">使用 Google 帳戶登入</string>
+    <string name="completed">(已完結)</string>
+    <string name="confirm">確認</string>
+    <string name="congrats">恭喜</string>
+    <string name="copy_succeed">複制成功</string>
+    <string msgid="3260749812566568062" name="copy_toast_msg">"已將連結複製到剪貼簿"</string>
+    <string name="daily_login">每日登錄</string>
+    <string name="daily_login_in_a">在...中每日登錄</string>
+    <string name="daily_task">每日任務</string>
+    <string name="day_content">天</string>
+    <string name="day_content_s">天</string>
+    <string name="days_content_s">%s天</string>
+    <string name="dec_content">12月</string>
+    <string name="default_web_client_id" ns2:ignore="ExtraTranslation,ResourceName">945917818314-sb8libt95er2gibqja1vvs457738f982.apps.googleusercontent.com</string>
+    <string name="delete_account_succeed">刪除成功</string>
+    <string name="delete_text">刪除</string>
+    <string name="diagonal_sign">/</string>
+    <string name="ends_in">結束於</string>
+    <string name="episode_push">劇集推送</string>
+    <string name="episodes_unlocked_episode">劇集%s</string>
+    <string name="error_icon_content_description">錯誤</string>
+    <string name="exit_google_login_content_1">保持登入狀態：</string>
+    <string name="exit_google_login_content_2">您的播放記錄、儲值記錄不會遺失；</string>
+    <string name="exit_google_login_content_3">保持您的個性化設置；</string>
+    <string name="exit_google_login_content_4">更換設備後，可以同步資料。</string>
+    <string name="expire_day">截止日期：%s年%s月%s日</string>
+    <string name="expire_on">截止日期：2024年5月1日</string>
+    <string name="expired_content">已過期</string>
+    <string name="expired_on_content">過期於%s</string>
+    <string name="exposed_dropdown_menu_content_description">顯示下拉式選單</string>
+    <string name="f_a_q">常見問題</string>
+    <string name="facebook_app_id">250686481114246</string>
+    <string name="facebook_client_token">b3fafac2e85e8e1cddeffeabf1086c1c</string>
+    <string name="facebook_user_login">每個設備僅在首次使用Facebook登錄時才能獲得獎勵</string>
+    <string name="facebook_user_login_content_1">每個設備僅在首次使用Facebook登錄時才能獲得獎勵。</string>
+    <string name="facebook_user_login_content_2">打開APP通知開關可獲得獎勵。（每個賬號僅限1次）</string>
+    <string name="facebook_user_login_title_1">Facebook登錄任務：</string>
+    <string name="facebook_user_login_title_2">打開通知任務開關：</string>
+    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"複製連結"</string>
+    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"在瀏覽器中開啟"</string>
+    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"分享連結"</string>
+    <string name="fb_login_protocol_scheme">fb126855997097424</string>
+    <string name="feb_content">2月</string>
+    <string name="five_content">五</string>
+    <string name="flash_by_count_day_end">次</string>
+    <string name="flash_by_count_day_start">每日限定購買</string>
+    <string name="flash_by_count_user_end">次</string>
+    <string name="flash_by_count_user_start">每人限定購買</string>
+    <string name="flash_limit">每位賬號限製</string>
+    <string name="flash_limited">1.每天限時購買，先到先得\n2.每個使用者每次只能購買%s次</string>
+    <string name="flash_now">立即领取</string>
+    <string name="flash_off">%s%折扣</string>
+    <string name="flash_purchase_day">購買/日期</string>
+    <string name="flash_purchase_user">次</string>
+    <string name="for_you" ns2:ignore="ResourceName">推薦</string>
+    <string name="four_content">四</string>
+    <string name="from_redemption_rewards">，快去看劇吧！</string>
+    <string name="get_bonus_day">天%s</string>
+    <string name="get_content">購買</string>
+    <string name="get_immediatel">立即獲得：</string>
+    <string name="get_instantly"> 立即獲得%s金幣\n 獲得每周 %s獎勵（每日登錄）</string>
+    <string name="get_subscription_content">立即獲得</string>
+    <string name="get_subscription_in_month">簽到獲得</string>
+    <string name="get_subscription_in_month_end">獎勵幣（每日登錄）</string>
+    <string name="get_subscription_in_week">簽到獲得</string>
+    <string name="get_subscription_in_week_end">獎勵幣（每日登錄）</string>
+    <string name="get_total_bonus">每週登錄天數：%s獎勵幣</string>
+    <string name="get_total_coins">立即獲得%s金幣</string>
+    <string name="go_open">去開啟</string>
+    <string name="google_ca_app_pub">ca-app-pub-9327028573639311~9492459289</string>
+    <string name="home" ns2:ignore="ResourceName">首頁</string>
+    <string name="home_search_history">搜索記錄</string>
+    <string name="how_many_discount_s">%s折</string>
+    <string name="how_match_off_s">%s折優惠</string>
+    <string name="i_will_assist_you">我將協助您</string>
+    <string name="icon_content_description">對話方塊圖示</string>
+    <string name="insufficient_title">金幣不足</string>
+    <string name="insufficient_wact_now">觀看廣告</string>
+    <string name="insufficient_watch_coins">觀看廣告獲取金幣</string>
+    <string name="invite_data">邀請數據</string>
+    <string name="invite_friend_btn_text">立即邀請</string>
+    <string name="invite_rule_dialog_content">1.每天登錄即可領取獎勵幣\n2.持續簽到將獲得更多獎勵幣\n3.獎勵幣可用於解鎖劇集</string>
+    <string name="invite_rule_dialog_title">規則</string>
+    <string name="item_view_role_description">分頁標籤</string>
+    <string name="jan_content">1月</string>
+    <string name="ji_content">集</string>
+    <string name="jul_content">7月</string>
+    <string name="jun_content">6月</string>
+    <string name="language_content">語言</string>
+    <string name="link_play_s">播放（%ss）</string>
+    <string name="loading_being" ns2:ignore="ResourceName">廣告獎勵正在處理中</string>
+    <string name="loading_text" ns2:ignore="ResourceName">廣告正在準備中</string>
+    <string name="log_account">❤️ 等等，您確認要退出賬號嗎？</string>
+    <string name="login_agreemen_content_1">繼續下一步，意味著您同意</string>
+    <string name="login_agreemen_content_2">服務條款</string>
+    <string name="login_bonuses">首次登入可領%s獎勵幣</string>
+    <string name="login_reward">登錄獎勵</string>
+    <string name="login_to_get">登錄以獲取</string>
+    <string name="logo_agreement" ns2:ignore="ExtraTranslation,ResourceName">如果繼續，即表示您同意服務條款和</string>
+    <string name="logo_agreement_privacy" ns2:ignore="ExtraTranslation,ResourceName">隱私政策</string>
+    <string name="logo_welcome" ns2:ignore="ExtraTranslation,ResourceName">歡迎來到FunTV！</string>
+    <string name="logo_welcome_facebook" ns2:ignore="ExtraTranslation,ResourceName">使用Facebook賬號登錄</string>
+    <string name="logo_welcome_google" ns2:ignore="ExtraTranslation,ResourceName">使用Google賬號登錄</string>
+    <string name="main_app_update" ns2:ignore="ExtraTranslation,ResourceName">你需要更新你的 FunTv 應用程式版本 </string>
+    <string name="main_app_watching" ns2:ignore="ExtraTranslation,ResourceName">繼續觀看</string>
+    <string name="main_delete" ns2:ignore="ExtraTranslation,ResourceName">刪除(%s)</string>
+    <string name="main_delete_history" ns2:ignore="ExtraTranslation,ResourceName">您確定要從播放記錄中刪除這些劇集嗎？</string>
+    <string name="main_delete_libray" ns2:ignore="ExtraTranslation,ResourceName">您確定要從您的庫中刪除此劇集嗎？</string>
+    <string name="main_delete_remove" ns2:ignore="ExtraTranslation,ResourceName">移除</string>
+    <string name="main_delete_zero" ns2:ignore="ExtraTranslation,ResourceName">刪除(0)</string>
+    <string name="main_downloading" ns2:ignore="ResourceName">正在下載應用資源(%s)</string>
+    <string name="main_history" ns2:ignore="ExtraTranslation,ResourceName">播放記錄</string>
+    <string name="main_moon" ns2:ignore="ResourceName">%s上線</string>
+    <string name="main_quit_app" ns2:ignore="ExtraTranslation,ResourceName">點擊再次退出 FunTV</string>
+    <string name="main_select_all" ns2:ignore="ExtraTranslation,ResourceName">全選</string>
+    <string name="main_update" ns2:ignore="ResourceName">更新</string>
+    <string name="main_updated">已更新</string>
+    <string name="main_user_bonus" ns2:ignore="ExtraTranslation,ResourceName">獎勵中心</string>
+    <string name="main_user_dialog_agree" ns2:ignore="ResourceName">同意</string>
+    <string name="main_user_dialog_content" ns2:ignore="ResourceName">要使用我們的產品和服務，您必須同意我們的服務條款 </string>
+    <string name="main_user_dialog_content_one" ns2:ignore="ResourceName">點擊"同意”，您確認並同意我們的服務條款和隱私政策中列明的所有條款和條件。</string>
+    <string name="main_user_dialog_content_start" ns2:ignore="ResourceName">歡迎來到%s！</string>
+    <string name="main_user_dialog_content_two" ns2:ignore="ResourceName">這些文件詳細說明了您必須遵守的規則和準則。此外，我們的隱私政策詳細說明了我們收集的資訊類型以及如何使用它們為您提供服務。我們認真對待您資訊的安全，並始終遵守這些協議中規定的條款</string>
+    <string name="main_user_dialog_disagree" ns2:ignore="ResourceName">不同意</string>
+    <string name="main_user_dialog_read_it_later" ns2:ignore="ResourceName">稍後閱讀</string>
+    <string name="main_user_dialog_title" ns2:ignore="ResourceName">服務條款和隱私政策</string>
+    <string name="main_user_faq" ns2:ignore="ExtraTranslation,ResourceName">幫助中心</string>
+    <string name="main_user_faq_help" ns2:ignore="ExtraTranslation,ResourceName">(我們能為您做些什麼呢？)</string>
+    <string name="main_user_feedback" ns2:ignore="ExtraTranslation,ResourceName">反饋意見</string>
+    <string name="main_user_my_wallet" ns2:ignore="ExtraTranslation,ResourceName">錢包</string>
+    <string name="main_user_playback_history" ns2:ignore="ExtraTranslation,ResourceName">播放記錄</string>
+    <string name="main_user_setting" ns2:ignore="ExtraTranslation,ResourceName">設定</string>
+    <string name="main_user_transaction_history" ns2:ignore="ExtraTranslation,ResourceName">儲值記錄</string>
+    <string name="main_user_wallet" ns2:ignore="ExtraTranslation,ResourceName">商店</string>
+    <string name="main_usera_greemen" ns2:ignore="ResourceName">您必須點擊“同意”才能進入應用，否則我們將無法為您提供服務</string>
+    <string name="manage_subscriptions_content">管理通知</string>
+    <string name="mar_content">3月</string>
+    <string name="material_clock_toggle_content_description">選取上午或下午</string>
+    <string name="material_hour_selection">請選取時段</string>
+    <string name="material_hour_suffix">%1$s 點</string>
+    <string name="material_minute_selection">選取分鐘數</string>
+    <string name="material_minute_suffix">%1$s 分</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">切換至時鐘模式來輸入時間。</string>
+    <string name="material_timepicker_hour">小時</string>
+    <string name="material_timepicker_minute">分鐘</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">選取時間</string>
+    <string name="material_timepicker_text_input_mode_description">切換至文字輸入模式來輸入時間。</string>
+    <string name="may_content">5月</string>
+    <string name="me" ns2:ignore="ResourceName">我的</string>
+    <string name="me_balance" ns2:ignore="ExtraTranslation,ResourceName">餘額</string>
+    <string name="me_bonus" ns2:ignore="ExtraTranslation,ResourceName">獎勵幣</string>
+    <string name="me_bonus_center_1_day" ns2:ignore="ExtraTranslation,ResourceName">一天</string>
+    <string name="me_bonus_center_2_day" ns2:ignore="ExtraTranslation,ResourceName">兩天</string>
+    <string name="me_bonus_center_3_day" ns2:ignore="ExtraTranslation,ResourceName">三天</string>
+    <string name="me_bonus_center_4_day" ns2:ignore="ExtraTranslation,ResourceName">四天</string>
+    <string name="me_bonus_center_5_day" ns2:ignore="ExtraTranslation,ResourceName">五天</string>
+    <string name="me_bonus_center_6_day" ns2:ignore="ExtraTranslation,ResourceName">六天</string>
+    <string name="me_bonus_center_7_day" ns2:ignore="ExtraTranslation,ResourceName">七天</string>
+    <string name="me_bonus_center_Watched" ns2:ignore="ExtraTranslation,ResourceName">今日觀看 : </string>
+    <string name="me_bonus_center_ads_log" ns2:ignore="ExtraTranslation,ResourceName">
+        1）賬號當日最多可以觀看%s次廣告。\n2）賬號總計觀看的廣告上限爲%s次。</string>
+    <string name="me_bonus_center_available" ns2:ignore="ExtraTranslation,ResourceName">今日觀看 : %s/%s</string>
+    <string name="me_bonus_center_bubble" ns2:ignore="ExtraTranslation,ResourceName">1.每天登錄領取獎勵金幣。連續簽到可獲得更多金幣
+
+2.金幣可以用來解鎖劇集</string>
+    <string name="me_bonus_center_check_friend" ns2:ignore="ExtraTranslation,ResourceName">邀請好友</string>
+    <string name="me_bonus_center_check_in" ns2:ignore="ExtraTranslation,ResourceName">每日簽到</string>
+    <string name="me_bonus_center_check_in_button" ns2:ignore="ExtraTranslation,ResourceName">簽到</string>
+    <string name="me_bonus_center_checked" ns2:ignore="ExtraTranslation,ResourceName">您已簽到</string>
+    <string name="me_bonus_center_coins" ns2:ignore="ExtraTranslation,ResourceName">金幣</string>
+    <string name="me_bonus_center_earned" ns2:ignore="ExtraTranslation,ResourceName">獲得獎勵幣總數:</string>
+    <string name="me_bonus_center_finished_log" ns2:ignore="ExtraTranslation,ResourceName">
+       您已經觀看完今天的廣告了，請明天再來</string>
+    <string name="me_bonus_center_friend_log" ns2:ignore="ExtraTranslation,ResourceName">
+        1.每人最多可以邀請%s人，邀請超過%s人將不會獲得獎勵。\n2.受邀人必須是新賬號，假設受邀人曾使用過FunTV，妳將不會獲得獎勵。\n3.假設系統檢測到您違反了邀請規則，妳將無法參與邀請活動，邀請獎勵也將被取消。</string>
+    <string name="me_bonus_center_get" ns2:ignore="ExtraTranslation,ResourceName">邀請1位朋友以獲得</string>
+    <string name="me_bonus_center_get_small_write" ns2:ignore="ExtraTranslation,ResourceName">邀請1位朋友即得</string>
+    <string name="me_bonus_center_grand_gift" ns2:ignore="ExtraTranslation,ResourceName">大禮包</string>
+    <string name="me_bonus_center_invite" ns2:ignore="ExtraTranslation,ResourceName">立即邀請</string>
+    <string name="me_bonus_center_invited" ns2:ignore="ExtraTranslation,ResourceName">邀請好友總數:</string>
+    <string name="me_bonus_center_log" ns2:ignore="ExtraTranslation,ResourceName">
+        1.每天登錄領取獎勵幣\n2.連續簽到會獲得更多獎勵幣\n3.獎勵幣可用于解鎖劇集</string>
+    <string name="me_bonus_center_records" ns2:ignore="ExtraTranslation,ResourceName">記錄</string>
+    <string name="me_bonus_center_return" ns2:ignore="ExtraTranslation,ResourceName">明日再來</string>
+    <string name="me_bonus_center_show_records" ns2:ignore="ExtraTranslation,ResourceName">只顯示最近的50條記錄</string>
+    <string name="me_bonus_center_straight" ns2:ignore="ExtraTranslation,ResourceName">直接！</string>
+    <string name="me_bonus_center_text" ns2:ignore="ExtraTranslation,ResourceName">%s/%s </string>
+    <string name="me_bonus_center_time" ns2:ignore="ExtraTranslation,ResourceName">時間</string>
+    <string name="me_bonus_center_today" ns2:ignore="ExtraTranslation,ResourceName">今天</string>
+    <string name="me_bonus_center_user" ns2:ignore="ExtraTranslation,ResourceName">賬號ID</string>
+    <string name="me_bonus_center_watch_ad" ns2:ignore="ExtraTranslation,ResourceName">去完成</string>
+    <string name="me_bonus_center_watch_ads" ns2:ignore="ExtraTranslation,ResourceName">觀看廣告</string>
+    <string name="me_bonus_his" ns2:ignore="ExtraTranslation,ResourceName">金幣記錄</string>
+    <string name="me_bonus_his_all" ns2:ignore="ExtraTranslation,ResourceName">全部</string>
+    <string name="me_bonus_his_buy" ns2:ignore="ExtraTranslation,ResourceName">購買金幣</string>
+    <string name="me_bonus_only" ns2:ignore="ExtraTranslation,ResourceName">只有觀看廣告後才會有金幣獎勵！</string>
+    <string name="me_bonus_order_balance" ns2:ignore="ExtraTranslation,ResourceName">
+    廣告訂單處理超時，請重新登錄App查看賬號餘額</string>
+    <string name="me_bonus_recpt_history" ns2:ignore="ExtraTranslation,ResourceName">獎勵幣獲取與過期記錄</string>
+    <string name="me_check_in" ns2:ignore="ExtraTranslation,ResourceName">每日簽到獎勵</string>
+    <string name="me_invite_ads_bonus" ns2:ignore="ExtraTranslation,ResourceName">觀看廣告獎勵</string>
+    <string name="me_invite_friend" ns2:ignore="ExtraTranslation,ResourceName">邀請好友獎勵</string>
+    <string name="me_invite_system_" ns2:ignore="ExtraTranslation,ResourceName">系統维護</string>
+    <string name="me_recharge" ns2:ignore="ExtraTranslation,ResourceName">储值</string>
+    <string name="me_setting_agree_delete_account_agreement">我已閱讀並同意所有條款</string>
+    <string name="me_setting_auto" ns2:ignore="ExtraTranslation,ResourceName">自動解鎖劇集</string>
+    <string name="me_setting_cache" ns2:ignore="ExtraTranslation,ResourceName">清除緩存</string>
+    <string name="me_setting_clear" ns2:ignore="ExtraTranslation,ResourceName">清除</string>
+    <string name="me_setting_clear_cache" ns2:ignore="ExtraTranslation,ResourceName">確定要清理緩存嗎？</string>
+    <string name="me_setting_delete_account" ns2:ignore="ExtraTranslation,ResourceName">註銷賬號</string>
+    <string name="me_setting_delete_account_desc_1" ns2:ignore="ExtraTranslation,ResourceName">• 永久注銷，無法再使用該賬號登錄APP。</string>
+    <string name="me_setting_delete_account_desc_2" ns2:ignore="ExtraTranslation,ResourceName">• 您的所有個人數據，如身份信息、昵稱、浏覽曆史、與第三方賬號的關聯信息、購買記錄將被永久刪除。</string>
+    <string name="me_setting_delete_account_desc_3" ns2:ignore="ExtraTranslation,ResourceName">•您的所有個人資料，如身份證明、暱稱、瀏覽歷史、與第三方賬號的關聯以及任何應用程式購買記錄，將永久刪除</string>
+    <string name="me_setting_delete_must_agree_agreement">在注銷賬號之前，您必須檢查協議</string>
+    <string name="me_setting_privacy" ns2:ignore="ExtraTranslation,ResourceName">隱私政策</string>
+    <string name="me_setting_sign" ns2:ignore="ExtraTranslation,ResourceName">登出</string>
+    <string name="me_setting_sign_out" ns2:ignore="ExtraTranslation,ResourceName">您確定要登出嗎？</string>
+    <string name="me_setting_terms" ns2:ignore="ExtraTranslation,ResourceName">服務條款</string>
+    <string name="me_setting_version" ns2:ignore="ExtraTranslation,ResourceName">版本</string>
+    <string name="me_setting_version_v" ns2:ignore="ExtraTranslation,ResourceName">V %s</string>
+    <string name="me_sign_in" ns2:ignore="ExtraTranslation,ResourceName">登入</string>
+    <string name="me_unlocked" ns2:ignore="ExtraTranslation,ResourceName">已解鎖劇集</string>
+    <string name="me_user_id" ns2:ignore="ExtraTranslation,ResourceName">賬號ID\t%s</string>
+    <string name="me_wallet_tips" ns2:ignore="ExtraTranslation,ResourceName">提醒:</string>
+    <string name="me_wallet_tips_1" ns2:ignore="ExtraTranslation,ResourceName">1.這個應用有免費和付費的內容供所有賬號選擇。您可以決定解鎖哪些內容。
+    \n2.金幣將用於解鎖付費內容。
+    \n3.储值不支持退款。
+    \n4.如果您有其他問題，請聯繫我們。</string>
+    <string name="me_wallet_tips_2" ns2:ignore="ExtraTranslation,ResourceName">2.金幣將用於解鎖付費內容</string>
+    <string name="me_wallet_tips_3" ns2:ignore="ExtraTranslation,ResourceName">3.储值不支持退款</string>
+    <string name="me_wallet_tips_3_s" ns2:ignore="ExtraTranslation,ResourceName">3.從儲值或獎勵中心獲得的獎勵幣將在%s天後過期</string>
+    <string name="me_wallet_tips_4" ns2:ignore="ExtraTranslation,ResourceName">4.如果您有其他問題，請聯繫我們</string>
+    <string name="month_content">月</string>
+    <string name="month_day_s">%s月%s日</string>
+    <string name="month_login_day">累計登入領取：</string>
+    <string name="monthly_sub">每月訂閱</string>
+    <string name="mtrl_badge_numberless_content_description">新通知</string>
+    <string name="mtrl_chip_close_icon_content_description">移除 %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">超過 %1$d 則新通知</string>
+    <string name="mtrl_picker_a11y_next_month">變更至下個月</string>
+    <string name="mtrl_picker_a11y_prev_month">變更至上個月</string>
+    <string name="mtrl_picker_announce_current_selection">目前選取：%1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">選取日期</string>
+    <string name="mtrl_picker_date_header_unselected">所選日期</string>
+    <string name="mtrl_picker_day_of_week_column_header">星期幾資料欄：%1$s</string>
+    <string name="mtrl_picker_invalid_format">格式無效。</string>
+    <string name="mtrl_picker_invalid_format_example">範例：%1$s</string>
+    <string name="mtrl_picker_invalid_format_use">使用：%1$s</string>
+    <string name="mtrl_picker_invalid_range">日期範圍無效。</string>
+    <string name="mtrl_picker_navigate_to_year_description">前往 %1$s 年</string>
+    <string name="mtrl_picker_out_of_range">超出日期範圍：%1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">開始日期 – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – 結束日期</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">選取範圍</string>
+    <string name="mtrl_picker_range_header_unselected">開始日期 - 結束日期</string>
+    <string name="mtrl_picker_save">儲存</string>
+    <string name="mtrl_picker_text_input_date_hint">日期</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">結束日期</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">開始日期</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">y</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">切換至日曆輸入模式</string>
+    <string name="mtrl_picker_toggle_to_day_selection">輕觸即可切換為選取星期幾</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">切換至文字輸入模式</string>
+    <string name="mtrl_picker_toggle_to_year_selection">輕觸即可切換為選取年份</string>
+    <string name="my_detail" ns2:ignore="ExtraTranslation">詳情</string>
+    <string name="my_list" ns2:ignore="ResourceName">追劇</string>
+    <string name="my_top_up" ns2:ignore="ExtraTranslation">儲值</string>
+    <string name="my_wallet">錢包</string>
+    <string name="mylist_Update">持續更新</string>
+    <string name="mylist_complete">已完結</string>
+    <string name="mylist_follow">正在關注</string>
+    <string name="mylist_played" ns2:ignore="ExtraTranslation,ResourceName">上次觀看至第%s集</string>
+    <string name="mylist_time_days" ns2:ignore="ExtraTranslation,ResourceName">%s天前</string>
+    <string name="mylist_time_hours" ns2:ignore="ExtraTranslation,ResourceName">%s小時前</string>
+    <string name="mylist_time_just_now" ns2:ignore="ExtraTranslation,ResourceName">剛剛</string>
+    <string name="mylist_time_minutes" ns2:ignore="ExtraTranslation,ResourceName">%s分鐘前</string>
+    <string name="native_body">內文</string>
+    <string name="native_headline">標題</string>
+    <string name="native_media_view">媒體檢視</string>
+    <string name="new_me_bonus_center_checked" ns2:ignore="ExtraTranslation,ResourceName">連續簽到 </string>
+    <string name="new_user_go">去完成</string>
+    <string name="new_user_task">新用戶任務</string>
+    <string name="no_coins_history">你還沒有任何金幣記錄</string>
+    <string name="no_episodes">你還沒有解鎖任何劇集</string>
+    <string name="no_hitory">暫無播放紀錄</string>
+    <string name="no_list">你還没有添加過劇集</string>
+    <string name="no_more">發現更多</string>
+    <string name="no_network">網路連接不可用，請稍後重試</string>
+    <string name="no_transactions">你還沒有儲值記錄</string>
+    <string name="not_data">暫無數據</string>
+    <string name="notifications_permission_confirm">允許</string>
+    <string name="notifications_permission_decline">不允許</string>
+    <string name="notifications_permission_title">允許應用程式傳送通知給你嗎？</string>
+    <string name="nov_content">11月</string>
+    <string name="number_of_urges_count">已催促上映人數：%s人</string>
+    <string name="oct_content">10月</string>
+    <string name="offline_dialog_image_description">圖示</string>
+    <string name="offline_dialog_text">感謝你的支持。\n我們會在你重新連上網路後提供更多資訊。</string>
+    <string name="offline_notification_title">你已重新連上網路！讓我們從上次中斷的地方繼續</string>
+    <string name="offline_notification_title_with_advertiser">你已重新連上網路！請繼續瞭解「%s」的相關資訊</string>
+    <string name="offline_opt_in_confirm">確定</string>
+    <string name="offline_opt_in_decline">不用了，謝謝</string>
+    <string name="offline_opt_in_message">我們會傳送含有廣告主網站連結的通知給你。</string>
+    <string name="offline_opt_in_title">系統會在重新連上網路後開啟廣告。</string>
+    <string name="one_content">一</string>
+    <string name="password_toggle_content_description">顯示密碼</string>
+    <string name="pay_fail_feedback_desc">告訴我，您對此應用哪一個方面不滿意？</string>
+    <string name="play_1080p" ns2:ignore="ExtraTranslation,ResourceName">1080P</string>
+    <string name="play_360p" ns2:ignore="ExtraTranslation,ResourceName">360P</string>
+    <string name="play_720p" ns2:ignore="ExtraTranslation,ResourceName">720P</string>
+    <string name="play_ad_to_unclock" ns2:ignore="ExtraTranslation,ResourceName">觀看廣告免費解鎖下一集</string>
+    <string name="play_ad_unclock" ns2:ignore="ExtraTranslation,ResourceName">觀看廣告免費解鎖</string>
+    <string name="play_added_to_my_list" ns2:ignore="ExtraTranslation,ResourceName">已加入追劇</string>
+    <string name="play_auto_unlock" ns2:ignore="ExtraTranslation,ResourceName">自動解鎖下一集</string>
+    <string name="play_balance" ns2:ignore="ExtraTranslation,ResourceName">餘額:</string>
+    <string name="play_bonus_title" ns2:ignore="ExtraTranslation,ResourceName">獎勵幣:</string>
+    <string name="play_cancel" ns2:ignore="ResourceName">取消</string>
+    <string name="play_coins" ns2:ignore="ExtraTranslation,ResourceName">金幣</string>
+    <string name="play_coins_title" ns2:ignore="ExtraTranslation,ResourceName">金幣:</string>
+    <string name="play_collapse" ns2:ignore="ExtraTranslation,ResourceName">折疊</string>
+    <string name="play_congrats" ns2:ignore="ExtraTranslation,ResourceName">恭喜您，劇集已解鎖%s</string>
+    <string name="play_content">播放</string>
+    <string name="play_continue" ns2:ignore="ResourceName">繼續(%s)</string>
+    <string name="play_costs" ns2:ignore="ExtraTranslation,ResourceName">價格:</string>
+    <string name="play_episode" ns2:ignore="ExtraTranslation,ResourceName">解鎖此集</string>
+    <string name="play_episode_" ns2:ignore="ExtraTranslation,ResourceName">劇集</string>
+    <string name="play_episode_list">播放清單</string>
+    <string name="play_episode_updated">(更新至%s集) </string>
+    <string name="play_eps" ns2:ignore="ExtraTranslation,ResourceName">總計%s集</string>
+    <string name="play_exhauste" ns2:ignore="ExtraTranslation,ResourceName">今天的廣告觀看次數已經用完，請明天再來</string>
+    <string name="play_first_play" ns2:ignore="ExtraTranslation,ResourceName">首次支付%s!</string>
+    <string name="play_hide" ns2:ignore="ExtraTranslation,ResourceName">隱藏</string>
+    <string name="play_insuffcient" ns2:ignore="ExtraTranslation,ResourceName">餘額不足</string>
+    <string name="play_introduce" ns2:ignore="ExtraTranslation,ResourceName">重新开始开始</string>
+    <string name="play_introduce_content" ns2:ignore="ExtraTranslation,ResourceName">假關係 假關係 假關係 假關係 假 假關係 假 假關係 假關係 假關係 關係…</string>
+    <string name="play_list" ns2:ignore="ExtraTranslation,ResourceName">清單</string>
+    <string name="play_more" ns2:ignore="ExtraTranslation,ResourceName">更多</string>
+    <string name="play_more_options" ns2:ignore="ExtraTranslation,ResourceName">更多置頂選項></string>
+    <string name="play_no_network">無網路連線</string>
+    <string name="play_no_subtitles" ns2:ignore="ExtraTranslation,ResourceName">這一集沒有字幕</string>
+    <string name="play_no_subtitles_cc" ns2:ignore="ExtraTranslation,ResourceName">此影片沒有字幕</string>
+    <string name="play_now_to_unclock" ns2:ignore="ExtraTranslation,ResourceName">觀看廣告解鎖</string>
+    <string name="play_now_unclock" ns2:ignore="ExtraTranslation,ResourceName">立即解鎖</string>
+    <string name="play_off" ns2:ignore="ExtraTranslation,ResourceName">%s\%折扣</string>
+    <string name="play_ok" ns2:ignore="ExtraTranslation,ResourceName">OK</string>
+    <string name="play_processed" ns2:ignore="ExtraTranslation,ResourceName">您的訂單正在處理</string>
+    <string name="play_purchases" ns2:ignore="ExtraTranslation,ResourceName">前面的劇集也很有趣，別錯過了！</string>
+    <string name="play_quality" ns2:ignore="ExtraTranslation,ResourceName">解析度</string>
+    <string name="play_recharge_instantly" ns2:ignore="ExtraTranslation,ResourceName"> 立即！</string>
+    <string name="play_recharge_off" ns2:ignore="ExtraTranslation,ResourceName">100%折扣</string>
+    <string name="play_recharge_only" ns2:ignore="ExtraTranslation,ResourceName">僅集數</string>
+    <string name="play_recharge_pay_now" ns2:ignore="ExtraTranslation,ResourceName">立即付款</string>
+    <string name="play_recharge_save" ns2:ignore="ExtraTranslation,ResourceName">儲存</string>
+    <string name="play_recharge_unlock" ns2:ignore="ExtraTranslation,ResourceName">解鎖劇集</string>
+    <string name="play_s_coins" ns2:ignore="ExtraTranslation,ResourceName">%s 金幣</string>
+    <string name="play_select_episode" ns2:ignore="ExtraTranslation,ResourceName">選擇集数%s</string>
+    <string name="play_series" ns2:ignore="ExtraTranslation,ResourceName">這是最後一集，請前往主頁觀看更多剧集</string>
+    <string name="play_share" ns2:ignore="ExtraTranslation,ResourceName">分享</string>
+    <string name="play_spend" ns2:ignore="ExtraTranslation,ResourceName">花費</string>
+    <string name="play_subtitle_closed" ns2:ignore="ExtraTranslation,ResourceName">字幕已關閉</string>
+    <string name="play_subtitle_off" ns2:ignore="ExtraTranslation,ResourceName">優惠</string>
+    <string name="play_subtitle_switched" ns2:ignore="ExtraTranslation,ResourceName">已切換%s字幕</string>
+    <string name="play_subtitles_cc" ns2:ignore="ExtraTranslation,ResourceName">字幕</string>
+    <string name="play_this_series_you_will_get">播放這部劇，您將獲得</string>
+    <string name="play_traffic_playback" ns2:ignore="ResourceName">當前播放已用流量</string>
+    <string name="play_unlock" ns2:ignore="ExtraTranslation,ResourceName">解鎖</string>
+    <string name="play_unlock_episode" ns2:ignore="ExtraTranslation,ResourceName">解鎖劇集</string>
+    <string name="play_video_switched" ns2:ignore="ExtraTranslation,ResourceName">已切換%s影片解析度</string>
+    <string name="play_watched" ns2:ignore="ExtraTranslation,ResourceName">抱歉，您已經觀看了所有的免費廣告</string>
+    <string name="play_wifi_switch" ns2:ignore="ResourceName">您的網絡已切換到行動數據。您要繼續播放嗎？ </string>
+    <string name="please_select_at_least_one_option">請至少選擇一個選項</string>
+    <string name="reconsider">我再考慮一下</string>
+    <string name="refresh">再試一次</string>
+    <string name="release_reminder_desc_text">請開啓上映提醒。催促成功後，我們會在劇集上映時立即通知您。</string>
+    <string name="release_reminder_text">上映提醒</string>
+    <string name="remind_me">提醒我</string>
+    <string name="reminder_updated">此劇更新時提醒</string>
+    <string name="request_notification_permission_cancel_message">請打開通知開關</string>
+    <string name="request_open_notification_permission_content">開啟通知，我們將在劇集發布時提醒您。</string>
+    <string name="reserved">已設提醒</string>
+    <string name="restore">恢複購買</string>
+    <string name="rules">訂閱:</string>
+    <string name="rules_text">1.每次購買FunTV的周/月訂閱套餐立即獲得一定數量的獎勵。
+\n2.對于周訂閱，您需要在7天內每天登錄以領取每日獎勵。（錯過一天的登錄意味著錯過了當天的獎勵）
+\n3.對于月訂閱，您需要在30天內每天登錄以領取每日獎勵。（錯過一天的登錄意味著錯過了當天的獎勵）
+\n4.在訂閱期內，您可以在當地時間每天00:00開始領取每日獎勵。
+\n5.在當前訂閱期結束前24小時，您的Play Store賬號將自動扣款續費。
+\n6.為了避免扣費，請在當前訂閱期結束前，至少提前24小時，前往App Store - Apple ID - 查看Apple ID - 關閉自動續訂。
+\n7.如果您有任何問題，請通過您個人資料頁面上的”反饋“聯系我們。
+</string>
+    <string name="s1">儲存圖片</string>
+    <string name="s2">要允許廣告將圖片儲存在相片庫中嗎？</string>
+    <string name="s3">接受</string>
+    <string name="s4">拒絕</string>
+    <string name="s5">建立日曆活動</string>
+    <string name="s6">要允許廣告建立日曆活動嗎？</string>
+    <string name="s7">測試廣告</string>
+    <string name="search_delete_history">您確定要刪除嗎？</string>
+    <string name="search_hot_search">熱門搜尋</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"搜尋"</string>
+    <string name="search_no_results_found">無結果</string>
+    <string name="search_other_channel_content">此劇正在制作中.......\n點擊催促上映，可提高上映速度</string>
+    <string name="search_please_enter_at_least_letters">請輸入至少3個字母</string>
+    <string name="search_results">結果</string>
+    <string name="search_special_bonus">獎勵幣！</string>
+    <string name="sep_content">9月</string>
+    <string name="setting_continue">在首頁上顯示繼續觀看</string>
+    <string name="setting_successful">設置成功</string>
+    <string name="setting_version">您已經是最新版本</string>
+    <string name="seven_content">七</string>
+    <string name="six_content">六</string>
+    <string name="srl_footer_failed">加載失敗</string>
+    <string name="srl_footer_finish">加載完成</string>
+    <string name="srl_footer_loading">正在加載…</string>
+    <string name="srl_footer_nothing">沒有更多數據了</string>
+    <string name="srl_footer_pulling">上拉加載更多</string>
+    <string name="srl_footer_refreshing">等待頭部刷新完成…</string>
+    <string name="srl_footer_release">釋放立即加載</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="submit">提交</string>
+    <string name="submit_succeed">提交成功</string>
+    <string name="subscription_des_text">金幣訂閱</string>
+    <string name="subscription_month_day_s">%s/%s</string>
+    <string name="subscription_receive_award_day">第%s天</string>
+    <string name="successful_login_with_facebook">使用Facebook登入成功</string>
+    <string name="successful_login_with_google">使用Google登入成功</string>
+    <string name="switch_to_language_content_s">切換到%s？</string>
+    <string name="this_page_can_help_you_solve_the_problem">此頁面可以幫助您解決問題</string>
+    <string name="three_content">三</string>
+    <string name="tips">提示:</string>
+    <string name="to_my_list">新增到追劇</string>
+    <string name="tomorrow_day">今天最多可以購買%s次。明天再來</string>
+    <string name="top_up">儲值</string>
+    <string name="total_month">總計可得%s/月</string>
+    <string name="total_week">總計可得%s/週</string>
+    <string name="trending_text">熱播榜</string>
+    <string name="turn_on_notifications">打開通知開關</string>
+    <string name="turn_on_text">去開啓</string>
+    <string name="two_content">兩</string>
+    <string name="update_reminder">更新提醒</string>
+    <string name="update_to">上次觀看至第</string>
+    <string name="updated_to">更新至%s集</string>
+    <string name="urge_for_release">催促上映</string>
+    <string name="urge_for_updates">催促上映</string>
+    <string name="urge_sent">已催促</string>
+    <string name="urge_successful">催促上映成功</string>
+    <string name="user_agreement_dialog_content_1">爲了使用我們的産品和服務，您必須同意我們的\t</string>
+    <string name="user_agreement_dialog_content_2">\t其中概述了您必須遵循的規則和指南。\n此外，我們的\t</string>
+    <string name="user_agreement_dialog_content_3">\t詳細說明了我們收集的信息類型以及如何使用這些信息為您提供服務。\n我們認真對待您信息的安全，並始終遵守這些協議中規定的條款。</string>
+    <string name="user_canceled">已取消</string>
+    <string name="view_more">查看更多</string>
+    <string name="vip_subscribe">VIP 訂閱%s</string>
+    <string name="wait_day">現在還不能領取，你需要等待%s天</string>
+    <string name="watch_ad_is_waiting">廣告正在準備中，請稍候。</string>
+    <string name="watching_episode">上次觀看至第%s集</string>
+    <string name="watermark_label_prefix">AdMob - </string>
+    <string name="week_content">周</string>
+    <string name="weekly_login_day">累計登入領取：</string>
+    <string name="weekly_sub">每週訂閱</string>
+    <string name="which_episode">第 %s 集</string>
+    <string name="which_episode_nowrap">第%s集</string>
+    <string name="year_month_day_s">%s年%s月%s日</string>
+    <string name="you_get">您已收獲</string>
+    <string name="you_have_scrolled_to_the_bottom">您已抵達底部</string>
+    <string name="your_new_account_is_logged_in_successfully">您的新賬號已成功登錄</string>
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    android:minHeight="134dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_king"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/home_trending_king_1" />
+
+    <com.ruffian.library.widget.RImageView
+        android:id="@+id/riv_content"
+        android:layout_width="96dp"
+        android:layout_height="128dp"
+        app:corner_radius="6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aiv_king"
+        android:scaleType="centerCrop"/>
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/updated_to_tv"
+        android:layout_width="84dp"
+        android:layout_height="18dp"
+        app:corner_radius_top_left="6dp"
+        app:corner_radius_bottom_right="6dp"
+        app:background_normal="@color/color_80000000"
+        app:layout_constraintRight_toRightOf="@+id/riv_content"
+        app:layout_constraintBottom_toBottomOf="@+id/riv_content"
+        android:text="@string/updated_to"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:fontFamily="@font/sofiapro_medium"
+        android:textColor="@color/white"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_ranking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:minWidth="22dp"
+        android:minHeight="22dp"
+        android:padding="2dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:fontFamily="@font/sofiapro_medium"
+        app:layout_constraintLeft_toLeftOf="@id/riv_content"
+        app:layout_constraintTop_toTopOf="@id/riv_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="7dp"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:lineSpacingExtra="2dp"
+        app:layout_constraintLeft_toRightOf="@id/riv_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/riv_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_hot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/home_trending_heat"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:fontFamily="@font/sofiapro_medium"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="@id/atv_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/atv_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:minWidth="56dp"
+        android:minHeight="16dp"
+        android:paddingStart="6dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="4dp"
+        android:singleLine="true"
+        android:fontFamily="@font/sofiapro_medium"
+        android:textColor="@color/white_ff_70"
+        android:textSize="11sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/riv_content"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="@id/atv_title"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="SmallSp"
+        tools:text="1111" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

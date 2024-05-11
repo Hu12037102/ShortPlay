@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+
+    <com.ruffian.library.widget.RImageView
+        android:id="@+id/horizontal_iv"
+        android:layout_width="132dp"
+        android:layout_height="176dp"
+        app:corner_radius="6dp"
+        android:scaleType="centerCrop"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_subscribe_parent"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/horizontal_iv"
+        tools:background="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aiv_subscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/home_episode_subscribe"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/atv_subscribe"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_marginEnd="4dp"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/atv_subscribe"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/aiv_subscribe"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Remind"
+            android:layout_marginStart="4dp"
+            app:fontFamily="@font/sofiapro_medium"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/updated_to_tv"
+        android:layout_width="84dp"
+        android:layout_height="18dp"
+        app:corner_radius_top_left="6dp"
+        app:corner_radius_bottom_right="6dp"
+        app:background_normal="@color/color_80000000"
+        android:layout_alignEnd="@+id/horizontal_iv"
+        android:layout_alignBottom="@+id/horizontal_iv"
+        android:text="@string/updated_to"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:fontFamily="@font/sofiapro_medium"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        />
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/horizontal_ranking"
+        android:layout_width="40dp"
+        android:layout_height="18dp"
+        app:corner_radius_top_left="6dp"
+        app:corner_radius_bottom_right="6dp"
+        app:background_normal="@color/red_056"
+        android:textSize="11sp"
+        android:gravity="center_horizontal"
+        android:fontFamily="@font/sofiapro_medium"
+        android:visibility="gone"
+        android:paddingTop="1dp"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints" />
+
+    <include
+        android:id="@+id/horizontal_include"
+        layout="@layout/main_include_announce"
+        android:visibility="gone"/>
+
+
+
+    <TextView
+        android:id="@+id/horizontal_name"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cl_subscribe_parent"
+        android:layout_marginTop="7dp"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:ellipsize="end"
+        android:lineSpacingExtra="3dp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:lines="2"/>
+
+
+
+</RelativeLayout>

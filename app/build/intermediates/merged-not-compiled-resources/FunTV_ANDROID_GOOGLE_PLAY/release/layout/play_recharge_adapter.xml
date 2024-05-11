@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="15dp"
+    tools:ignore="MissingDefaultResource">
+    
+    
+    <com.ruffian.library.widget.RRelativeLayout
+        android:id="@+id/recharge_rr"
+        android:layout_width="163dp"
+        android:layout_height="108dp"
+        app:corner_radius="6dp"
+        app:border_width_normal="1.33dp"
+        android:layout_marginTop="15dp"
+        app:border_color_normal="@color/orange_25">
+
+
+
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/recharge_discount_flag"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/recharge_view"
+            app:gradient_orientation="LEFT_RIGHT"
+            app:gradient_type="linear"
+            app:corner_radius_bottom_left="6dp"
+            app:corner_radius_top_right="6dp"
+            android:layout_alignParentEnd="true"
+            app:background_normal="@color/orange_f3"
+            android:textSize="13sp"
+            android:fontFamily="@font/sofiapro_medium"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:ignore="SmallSp" />
+
+
+        <RelativeLayout
+            android:id="@+id/give_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:layout_centerHorizontal="true"
+            >
+            <TextView
+                android:id="@+id/species_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:fontFamily="@font/sofiapro_bold"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/black_22"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/species_number"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="4dp"
+                android:textSize="15sp"
+                android:text="@string/play_coins"
+                android:fontFamily="@font/sofiapro_medium"
+                android:textColor="@color/color_999999"
+                tools:ignore="SmallSp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/give_no_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/species_no_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:fontFamily="@font/sofiapro_bold"
+                android:textColor="@color/black_22"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/species_no_number"
+                android:layout_marginTop="31dp"
+                android:layout_marginStart="4dp"
+                android:textSize="15sp"
+                android:text="@string/play_coins"
+                android:fontFamily="@font/sofiapro_medium"
+                android:textColor="@color/color_999999"
+                tools:ignore="SmallSp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/original_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/orange_f3"
+            android:textSize="15sp"
+            android:fontFamily="@font/sofiapro_medium"
+            />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/discounted_price"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            app:background_normal="@color/orange_a6"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/black_12"
+            app:corner_radius_bottom_left="6dp"
+            app:corner_radius_bottom_right="6dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:fontFamily="@font/sofiapro_medium"
+            />
+
+
+
+    </com.ruffian.library.widget.RRelativeLayout>
+
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/first_pay_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:corner_radius_bottom_left="6dp"
+        app:corner_radius_top_right="6dp"
+        app:corner_radius_top_left="6dp"
+        app:background_normal="@color/red_056"
+        android:textColor="@color/white"
+        android:layout_alignEnd="@+id/recharge_rr"
+        android:fontFamily="@font/sofiapro_medium"
+        android:gravity="center"
+        android:textSize="13sp"
+        android:layout_marginTop="5dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="1dp"
+        android:visibility="gone"
+
+        />
+
+
+</RelativeLayout>

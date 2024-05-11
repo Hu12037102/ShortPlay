@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.smedia.funreels",
+  "variantName": "FunTV_ANDROID_GOOGLE_PLAYDebug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 300,
+      "versionName": "1.6.2",
+      "outputFile": "Fun_Tv_5.10_300_debug.apk"
+    }
+  ],
+  "elementType": "File"
+}

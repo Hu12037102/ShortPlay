@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    
+
+           
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/play_fragment_for_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/play_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <ViewStub
+            android:id="@+id/no_network_view_stub"
+            android:layout_width="match_parent"
+            android:layout_height="196dp"
+            android:layout_marginTop="13dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout="@layout/play_no_network"
+            />
+
+        <ImageView
+            android:id="@+id/main_loading_iv"
+            android:layout_width="@dimen/loading_width"
+            android:layout_height="@dimen/loading_height"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:background="@drawable/loading" />
+
+    </RelativeLayout>
+         

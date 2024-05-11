@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\alce\\Client-Android\\app\\build\\intermediates\\incremental\\mergeFunTV_ANDROID_GOOGLE_PLAYDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\afb10e7c7e2978e4589a67d4d29166c3\\transformed\\jetified-blockcanary-android-1.5.0\\res\\values-v14\\values-v14.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "12",
+                        "endOffsets": "140"
+                    }
+                }
+            ]
+        }
+    ]
+}

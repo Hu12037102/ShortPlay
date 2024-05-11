@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                              
+                                          
+
+    
+
+           
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/main_play_history_0" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android" tools:ignore="MissingDefaultResource">
+
+        <include
+            android:id="@+id/top_include"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            layout="@layout/main_include_title"/>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/playback_srl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_include"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="18dp"
+            tools:ignore="MissingClass">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/playback_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <ImageView
+            android:id="@+id/main_loading_iv"
+            android:layout_width="@dimen/loading_width"
+            android:layout_height="@dimen/loading_height"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:background="@drawable/loading" />
+
+
+        <ViewStub
+            android:id="@+id/history_view_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_include"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout="@layout/main_history_empty"
+            />
+
+
+        <ViewStub
+            android:id="@+id/try_again_view"
+            android:layout_width="match_parent"
+            android:layout_height="196dp"
+            android:layout_marginTop="13dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout="@layout/no_network"
+            />
+
+
+        <ViewStub
+            android:id="@+id/my_list_view_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_include"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout="@layout/main_my_list_empty"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/delete_rl"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/black_22"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_height="wrap_content"
+               android:gravity="center_vertical"
+               android:layout_centerVertical="true">
+
+               <ImageView
+                   android:id="@+id/delete_iv"
+                   android:layout_width="28dp"
+                   android:layout_height="28dp"
+                   android:src="@drawable/main_delete_logo"
+                   />
+
+               <TextView
+                   android:id="@+id/delete_tv"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/main_delete_zero"
+                   android:textColor="@color/white"
+                   android:textSize="16sp"
+                   android:fontFamily="@font/sofiapro_medium"
+                   />
+
+           </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+         

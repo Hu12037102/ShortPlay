@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="12dp"
+    tools:ignore="MissingDefaultResource">
+
+
+    <com.ruffian.library.widget.RImageView
+        android:id="@+id/vertical_iv"
+        android:layout_width="103dp"
+        android:layout_height="138dp"
+        app:corner_radius="6dp"
+        android:scaleType="centerCrop"
+        />
+
+
+    <com.ruffian.library.widget.RRelativeLayout
+        android:id="@+id/rr_has_updated"
+        android:layout_width="20dp"
+        android:layout_height="18dp"
+        app:corner_radius_top_right="6dp"
+        app:corner_radius_bottom_left="6dp"
+        app:background_normal="@array/array_list"
+        android:layout_alignEnd="@+id/vertical_iv"
+        android:visibility="gone"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/common_small_bell_bg"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+
+
+    </com.ruffian.library.widget.RRelativeLayout>
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/updated_to_tv"
+        android:layout_width="84dp"
+        android:layout_height="18dp"
+        app:corner_radius_top_left="6dp"
+        app:corner_radius_bottom_right="6dp"
+        app:background_normal="@color/color_80000000"
+        android:layout_alignEnd="@+id/vertical_iv"
+        android:layout_alignBottom="@+id/vertical_iv"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:fontFamily="@font/sofiapro_medium"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        />
+
+
+    <ImageView
+        android:id="@+id/history_select_iv"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="17.6dp"
+
+        />
+
+    <TextView
+        android:id="@+id/vertical_tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/vertical_iv"
+        android:layout_toStartOf="@+id/history_select_iv"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="17dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:textColor="@color/white"
+        android:ellipsize="end"
+        android:maxLines="2"
+        />
+
+    <TextView
+        android:id="@+id/vertical_tv_flag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/vertical_iv"
+        android:layout_toStartOf="@+id/history_select_iv"
+        android:layout_below="@id/vertical_tv_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="17dp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:textSize="12sp"
+        android:textColor="@color/white_80"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@string/mylist_played"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/vertical_tv_introduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/vertical_iv"
+        android:layout_below="@id/vertical_tv_flag"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="17dp"
+        android:textSize="12sp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:textColor="@color/white_80"
+        android:ellipsize="end"
+        android:lineSpacingExtra="5dp"
+        android:lines="1"
+        tools:ignore="SmallSp"
+        app:drawableStartCompat="@drawable/time_logo" />
+
+
+
+
+</RelativeLayout>

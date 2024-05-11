@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="apr_content">Apr</string>
+    <string name="aug_content">Aug</string>
+    <string name="dec_content">Dec</string>
+    <string name="feb_content">Feb</string>
+    <string name="jan_content">Jan</string>
+    <string name="jul_content">Jul</string>
+    <string name="jun_content">Jun</string>
+    <string name="mar_content">Mar</string>
+    <string name="may_content">May</string>
+    <string name="nov_content">Nov</string>
+    <string name="oct_content">Oct</string>
+    <string name="sep_content">Sep</string>
+</resources>

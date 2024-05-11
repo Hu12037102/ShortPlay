@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+    <RelativeLayout
+        android:layout_width="310dp"
+        android:layout_height="364dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/login_get_bg">
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="93dp"
+        android:layout_height="109dp"
+        android:src="@drawable/login_get_bonus_gift"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+
+        />
+
+
+    <TextView
+        android:id="@+id/login_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_to_get"
+        android:fontFamily="@font/sofiapro_bold"
+        android:textColor="@color/black_22"
+        android:textSize="22sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="144dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="185dp">
+
+        <TextView
+            android:id="@+id/num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sofiapro_bold"
+            android:textColor="@color/red_056"
+            android:textSize="44sp"
+            />
+        <TextView
+            android:id="@+id/bonus_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/me_bonus"
+            android:fontFamily="@font/sofiapro_bold"
+            android:textColor="@color/color_8b2c00"
+            android:layout_toEndOf="@+id/num_tv"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:textSize="26sp"
+            />
+
+    </RelativeLayout>
+
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/claim_now"
+        android:layout_width="230dp"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="14dp"
+        app:background_normal="@color/red_ff"
+        app:corner_radius="23dp"
+        android:textSize="16sp"
+        android:text="@string/play_ok"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sofiapro_bold"
+        android:gravity="center"
+        android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="440dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/login_get_bonus_close"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

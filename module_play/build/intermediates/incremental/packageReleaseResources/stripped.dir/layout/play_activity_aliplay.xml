@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    
+
+           
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/play_activity_aliplay_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <com.example.module_play.aliplayer.auivideostandradlist.AUIVideoStandardListView
+            android:id="@+id/aui_video_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <RelativeLayout
+            android:id="@+id/play_top_return_rl"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/play_top_return"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/return_logo"
+                android:layout_marginStart="18dp"/>
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/main_loading_iv"
+            android:layout_width="@dimen/loading_width"
+            android:layout_height="@dimen/loading_height"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:background="@drawable/loading" />
+
+    </FrameLayout>
+         

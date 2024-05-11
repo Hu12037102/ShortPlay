@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_coins_history">你还没有任何金币记录</string>
+    <string name="no_episodes">你还没有解锁任何剧集</string>
+    <string name="no_hitory">暂无播放记录</string>
+    <string name="no_list">你还没有添加过剧集</string>
+    <string name="no_more">发现更多</string>
+    <string name="no_network">网络连接不可用，请稍后重试</string>
+    <string name="no_transactions">你还没有充值记录</string>
+    <string name="play_no_network">没有网络连接</string>
+    <string name="refresh">再试一次</string>
+    <string name="srl_footer_failed">加载失败</string>
+    <string name="srl_footer_finish">加载完成</string>
+    <string name="srl_footer_loading">正在加载…</string>
+    <string name="srl_footer_nothing">没有更多数据了</string>
+    <string name="srl_footer_pulling">上拉加载更多</string>
+    <string name="srl_footer_refreshing">等待头部刷新完成…</string>
+    <string name="srl_footer_release">释放立即加载</string>
+</resources>

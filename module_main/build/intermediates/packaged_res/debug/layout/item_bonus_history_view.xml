@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="70dp"
+    tools:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:fontFamily="@font/sofiapro_medium"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/atv_create_time"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/atv_bonus_count"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="sahdhasjksahdhasjksahdhasjksahdhasjksahdhasj" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_create_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white_ff_99"
+        android:textSize="11sp"
+        app:fontFamily="@font/sofiapro_medium"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/atv_title"
+        app:layout_constraintTop_toBottomOf="@id/atv_title"
+        tools:text="sdasda" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_bonus_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:drawablePadding="7dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:drawableEndCompat="@drawable/app_bonus_logo"
+        app:fontFamily="@font/sofiapro_bold"
+        app:layout_constraintBottom_toTopOf="@id/atv_out_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="+2000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_out_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white_ff_99"
+        android:textSize="11sp"
+        app:fontFamily="@font/sofiapro_medium"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintLeft_toRightOf="@id/atv_create_time"
+        app:layout_constraintRight_toRightOf="@id/atv_bonus_count"
+        app:layout_constraintTop_toBottomOf="@id/atv_bonus_count"
+        tools:text="jskdjak" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

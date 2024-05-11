@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_coins_history">你還沒有任何金幣記錄</string>
+    <string name="no_episodes">你還沒有解鎖任何劇集</string>
+    <string name="no_hitory">暫無播放紀錄</string>
+    <string name="no_list">你還没有添加過劇集</string>
+    <string name="no_more">發現更多</string>
+    <string name="no_network">網路連接不可用，請稍後重試</string>
+    <string name="no_transactions">你還沒有儲值記錄</string>
+    <string name="play_no_network">無網路連線</string>
+    <string name="refresh">再試一次</string>
+    <string name="srl_footer_failed">加載失敗</string>
+    <string name="srl_footer_finish">加載完成</string>
+    <string name="srl_footer_loading">正在加載…</string>
+    <string name="srl_footer_nothing">沒有更多數據了</string>
+    <string name="srl_footer_pulling">上拉加載更多</string>
+    <string name="srl_footer_refreshing">等待頭部刷新完成…</string>
+    <string name="srl_footer_release">釋放立即加載</string>
+</resources>

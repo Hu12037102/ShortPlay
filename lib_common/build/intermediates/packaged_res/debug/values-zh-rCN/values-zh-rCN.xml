@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string name="add_count">+%s</string>
+    <string name="added_finer_reminders">已设提醒</string>
+    <string name="all_tasks_for_today_are_done">今日的活动任务已经完成啦~</string>
+    <string name="all_tasks_in_this_section_are_done">您已完成该栏目的所有活动任务啦~</string>
+    <string name="and_content">和</string>
+    <string name="app_name" ns1:ignore="ResourceName">模块</string>
+    <string name="bonus_expired">奖励币将在</string>
+    <string name="bonus_expired_days">天后过期</string>
+    <string name="bonuses_content">奖励币</string>
+    <string name="cancel_text">取消</string>
+    <string name="claim">领取</string>
+    <string name="claim_complete">领取</string>
+    <string name="claimed_bonus">%s奖励币已自动为您领取</string>
+    <string name="claimed_sign">已领取:\t</string>
+    <string name="coins_has">您的金币已经到账 </string>
+    <string name="coins_instanly_content">金币</string>
+    <string name="coins_instantly">立即获得金币</string>
+    <string name="coins_sub">金币订阅</string>
+    <string name="coins_subscription_rule_1">1.  每次购买FunTV每周/每月订阅套餐都会立即获得一定数量的奖励。
+\n2.对于每周订阅，每天在7天内登录以领取每日奖励。（错过一天的登录意味着错过当天的奖励）
+\n3.对于每月订阅，每天在30天内登录以领取每日奖励。（错过一天的登录意味着错过当天的奖励）
+\n4.在订阅期内，您可以按照当地时区每天从00:00开始领取每日奖励。
+\n5.您的Play Store帐户将在当前订阅期结束前24小时自动扣费续订费用。
+\n6.要避免收费，请在当前期结束前至少提前24小时-</string>
+    <string name="coins_subscription_rule_2">在Play Store设置中禁用自动续订。\n7.如果您有任何问题，请通过您的个人资料页面上的反馈部分与我们联系。</string>
+    <string name="coming_shortly">敬请期待</string>
+    <string name="completed">（已完结）</string>
+    <string name="confirm">确定</string>
+    <string name="congrats">恭喜</string>
+    <string name="copy_succeed">复制成功</string>
+    <string name="daily_login">每日登录</string>
+    <string name="daily_login_in_a">在...中的每日登录</string>
+    <string name="daily_task">每日任务</string>
+    <string name="day_content">天</string>
+    <string name="day_content_s">天</string>
+    <string name="days_content_s">%s天</string>
+    <string name="default_web_client_id" ns1:ignore="ExtraTranslation,ResourceName">945917818314-sb8libt95er2gibqja1vvs457738f982.apps.googleusercontent.com</string>
+    <string name="delete_account_succeed">删除成功</string>
+    <string name="delete_text">删除</string>
+    <string name="diagonal_sign">/</string>
+    <string name="ends_in">剩余时间</string>
+    <string name="episode_push">剧集推送</string>
+    <string name="episodes_unlocked_episode">剧集%s</string>
+    <string name="exit_google_login_content_1">保持登录状态：</string>
+    <string name="exit_google_login_content_2">您的播放记录、充值记录不会丢失；</string>
+    <string name="exit_google_login_content_3">保持您的个性化设置；</string>
+    <string name="exit_google_login_content_4">更换设备后，可以同步数据。</string>
+    <string name="expire_day">截止日期：%s年%s月%s日</string>
+    <string name="expire_on">到期日：2024年5月1日</string>
+    <string name="expired_content">已过期</string>
+    <string name="expired_on_content">到期日%s</string>
+    <string name="f_a_q">常见问题</string>
+    <string name="facebook_app_id">250686481114246</string>
+    <string name="facebook_client_token">b3fafac2e85e8e1cddeffeabf1086c1c</string>
+    <string name="facebook_user_login">每个设备仅在首次使用Facebook登录时才能获得奖励</string>
+    <string name="facebook_user_login_content_1">每个设备仅在首次使用Facebook登录时才能获得奖励。</string>
+    <string name="facebook_user_login_content_2">打开APP通知开关可获得奖励。（每个用户仅限1次）</string>
+    <string name="facebook_user_login_title_1">Facebook登录任务：</string>
+    <string name="facebook_user_login_title_2">打开通知任务开关：</string>
+    <string name="fb_login_protocol_scheme">fb126855997097424</string>
+    <string name="five_content">五</string>
+    <string name="flash_by_count_day_end">次</string>
+    <string name="flash_by_count_day_start">每日限定购买</string>
+    <string name="flash_by_count_user_end">次</string>
+    <string name="flash_by_count_user_start">每人限定购买</string>
+    <string name="flash_limit">每位用户限制</string>
+    <string name="flash_limited">1.每天限时购买，先到先得\n2.每个用户每次只能购买%s次</string>
+    <string name="flash_now">立即领取</string>
+    <string name="flash_off">%s%折扣</string>
+    <string name="flash_purchase_day">购买日期</string>
+    <string name="flash_purchase_user">次</string>
+    <string name="for_you" ns1:ignore="ResourceName">推荐</string>
+    <string name="four_content">四</string>
+    <string name="from_redemption_rewards">，快去看剧吧！</string>
+    <string name="get_bonus_day">天%s</string>
+    <string name="get_content">购买</string>
+    <string name="get_immediatel">立即获得：</string>
+    <string name="get_instantly">立即获取%s金币，每周领取奖励（每日登录）</string>
+    <string name="get_subscription_content">立即获得</string>
+    <string name="get_subscription_in_month">签到获得</string>
+    <string name="get_subscription_in_month_end">奖励币（每日登录）</string>
+    <string name="get_subscription_in_week">签到获得</string>
+    <string name="get_subscription_in_week_end">奖励币（每日登录）</string>
+    <string name="get_total_bonus">每周登录天数：%s奖励币</string>
+    <string name="get_total_coins">立即获得：%s金币</string>
+    <string name="go_open">去开启</string>
+    <string name="google_ca_app_pub">ca-app-pub-9327028573639311~9492459289</string>
+    <string name="home" ns1:ignore="ResourceName">首页</string>
+    <string name="home_search_history">搜索记录</string>
+    <string name="how_many_discount_s">%s折</string>
+    <string name="how_match_off_s">%s折优惠</string>
+    <string name="i_will_assist_you">我将帮助您</string>
+    <string name="insufficient_title">金币不足</string>
+    <string name="insufficient_wact_now">观看广告</string>
+    <string name="insufficient_watch_coins">观看广告获取金币</string>
+    <string name="invite_data">邀请数据</string>
+    <string name="invite_friend_btn_text">立即邀请</string>
+    <string name="invite_rule_dialog_content">1.每天登录领取奖励币.\n2.连续签到将获得更多奖励币\n3.奖励币可用于解锁剧集</string>
+    <string name="invite_rule_dialog_title">规则</string>
+    <string name="ji_content">集</string>
+    <string name="language_content">语言</string>
+    <string name="link_play_s">播放（%ss）</string>
+    <string name="loading_being" ns1:ignore="ResourceName">广告奖励正在处理中...</string>
+    <string name="loading_text" ns1:ignore="ResourceName">广告正在准备中</string>
+    <string name="log_account">❤️ 等等，您确定要退出账号吗？</string>
+    <string name="login_agreemen_content_1">如果继续，即表示您同意</string>
+    <string name="login_agreemen_content_2">服务条款</string>
+    <string name="login_bonuses">首次登录可领%s奖励币</string>
+    <string name="login_reward">登录奖励</string>
+    <string name="login_to_get">登录以获取</string>
+    <string name="logo_agreement" ns1:ignore="ExtraTranslation,ResourceName">如果继续，即表示您同意服务条款和</string>
+    <string name="logo_agreement_privacy" ns1:ignore="ExtraTranslation,ResourceName">隐私政策</string>
+    <string name="logo_welcome" ns1:ignore="ExtraTranslation,ResourceName">欢迎来到FunTV!</string>
+    <string name="logo_welcome_facebook" ns1:ignore="ExtraTranslation,ResourceName">使用Facebook账号登录</string>
+    <string name="logo_welcome_google" ns1:ignore="ExtraTranslation,ResourceName">使用Google账号登录</string>
+    <string name="main_app_update" ns1:ignore="ExtraTranslation,ResourceName">你需要更新你的 FunTv 应用程序版本</string>
+    <string name="main_app_watching" ns1:ignore="ExtraTranslation,ResourceName">继续观看</string>
+    <string name="main_delete" ns1:ignore="ExtraTranslation,ResourceName">删除（%s）</string>
+    <string name="main_delete_history" ns1:ignore="ExtraTranslation,ResourceName">您确定要从播放记录中删除这些剧集吗？</string>
+    <string name="main_delete_libray" ns1:ignore="ExtraTranslation,ResourceName">您确定要从您的库中删除此剧集吗？</string>
+    <string name="main_delete_remove" ns1:ignore="ExtraTranslation,ResourceName">移除</string>
+    <string name="main_delete_zero" ns1:ignore="ExtraTranslation,ResourceName">删除（0）</string>
+    <string name="main_downloading" ns1:ignore="ResourceName">正在下载应用资源（%s）</string>
+    <string name="main_history" ns1:ignore="ExtraTranslation,ResourceName">播放记录</string>
+    <string name="main_moon" ns1:ignore="ResourceName">%s上线</string>
+    <string name="main_quit_app" ns1:ignore="ExtraTranslation,ResourceName">点击再次退出 FunTV</string>
+    <string name="main_select_all" ns1:ignore="ExtraTranslation,ResourceName">全选</string>
+    <string name="main_update" ns1:ignore="ResourceName">更新</string>
+    <string name="main_updated">已更新</string>
+    <string name="main_user_bonus" ns1:ignore="ExtraTranslation,ResourceName">奖励中心</string>
+    <string name="main_user_dialog_agree" ns1:ignore="ResourceName">同意</string>
+    <string name="main_user_dialog_content" ns1:ignore="ResourceName">要使用我们的产品和服务，您必须同意我们的服务条款，</string>
+    <string name="main_user_dialog_content_one" ns1:ignore="ResourceName">点击“同意”，您确认并同意我们的服务条款和隐私政策中列明的所有条款和条件。</string>
+    <string name="main_user_dialog_content_start" ns1:ignore="ResourceName">欢迎来到%s！</string>
+    <string name="main_user_dialog_content_two" ns1:ignore="ResourceName">这些文件详细说明了您必须遵守的规则和准则。此外，我们的隐私政策详细说明了我们收集的信息类型以及如何使用它们为您提供服务。我们认真对待您信息的安全，并始终遵守这些协议中规定的条款。</string>
+    <string name="main_user_dialog_disagree" ns1:ignore="ResourceName">不同意</string>
+    <string name="main_user_dialog_read_it_later" ns1:ignore="ResourceName">稍后阅读</string>
+    <string name="main_user_dialog_title" ns1:ignore="ResourceName">服务条款和隐私政策</string>
+    <string name="main_user_faq" ns1:ignore="ExtraTranslation,ResourceName">帮助中心</string>
+    <string name="main_user_faq_help" ns1:ignore="ExtraTranslation,ResourceName">（我们能为您做些什么呢？）</string>
+    <string name="main_user_feedback" ns1:ignore="ExtraTranslation,ResourceName">反馈意见</string>
+    <string name="main_user_my_wallet" ns1:ignore="ExtraTranslation,ResourceName">钱包</string>
+    <string name="main_user_playback_history" ns1:ignore="ExtraTranslation,ResourceName">播放记录</string>
+    <string name="main_user_setting" ns1:ignore="ExtraTranslation,ResourceName">设置</string>
+    <string name="main_user_transaction_history" ns1:ignore="ExtraTranslation,ResourceName">充值记录</string>
+    <string name="main_user_wallet" ns1:ignore="ExtraTranslation,ResourceName">商店</string>
+    <string name="main_usera_greemen" ns1:ignore="ResourceName">您必须点击“同意”才能进入应用，否则我们将无法为您提供服务</string>
+    <string name="manage_subscriptions_content">管理通知</string>
+    <string name="me" ns1:ignore="ResourceName">我的</string>
+    <string name="me_balance" ns1:ignore="ExtraTranslation,ResourceName">余额</string>
+    <string name="me_bonus" ns1:ignore="ExtraTranslation,ResourceName">奖励币</string>
+    <string name="me_bonus_center_1_day" ns1:ignore="ExtraTranslation,ResourceName">一天</string>
+    <string name="me_bonus_center_2_day" ns1:ignore="ExtraTranslation,ResourceName">两天</string>
+    <string name="me_bonus_center_3_day" ns1:ignore="ExtraTranslation,ResourceName">三天</string>
+    <string name="me_bonus_center_4_day" ns1:ignore="ExtraTranslation,ResourceName">四天</string>
+    <string name="me_bonus_center_5_day" ns1:ignore="ExtraTranslation,ResourceName">五天</string>
+    <string name="me_bonus_center_6_day" ns1:ignore="ExtraTranslation,ResourceName">六天</string>
+    <string name="me_bonus_center_7_day" ns1:ignore="ExtraTranslation,ResourceName">七天</string>
+    <string name="me_bonus_center_Watched" ns1:ignore="ExtraTranslation,ResourceName">今日观看: </string>
+    <string name="me_bonus_center_ads_log" ns1:ignore="ExtraTranslation,ResourceName">
+        1）每天最多可以观看%s次广告。\n2）每个用户观看的广告上限为%s次。</string>
+    <string name="me_bonus_center_available" ns1:ignore="ExtraTranslation,ResourceName">今日观看%s/%s</string>
+    <string name="me_bonus_center_bubble" ns1:ignore="ExtraTranslation,ResourceName">1.每天登录领取奖励金币，连续签到可获得更多金币 \n2.金币可以用来解锁剧集</string>
+    <string name="me_bonus_center_check_friend" ns1:ignore="ExtraTranslation,ResourceName">邀请好友</string>
+    <string name="me_bonus_center_check_in" ns1:ignore="ExtraTranslation,ResourceName">每日签到</string>
+    <string name="me_bonus_center_check_in_button" ns1:ignore="ExtraTranslation,ResourceName">签到</string>
+    <string name="me_bonus_center_checked" ns1:ignore="ExtraTranslation,ResourceName">您已签到</string>
+    <string name="me_bonus_center_coins" ns1:ignore="ExtraTranslation,ResourceName">金币</string>
+    <string name="me_bonus_center_earned" ns1:ignore="ExtraTranslation,ResourceName">获得奖励币总数:</string>
+    <string name="me_bonus_center_finished_log" ns1:ignore="ExtraTranslation,ResourceName">
+        您已经观看完今天的广告了，请明天再来</string>
+    <string name="me_bonus_center_friend_log" ns1:ignore="ExtraTranslation,ResourceName">
+        1.每人最多可以邀请%s人，邀请超过%s人将不会获得奖励。\n2.受邀人必须是新用户，如果受邀人曾使用过FunTV，你将不会获得奖励。\n3.如果系统检测到您违反了邀请规则，你将无法参与邀请活动，邀请奖励也将被取消。</string>
+    <string name="me_bonus_center_get" ns1:ignore="ExtraTranslation,ResourceName">邀请1位朋友以获得</string>
+    <string name="me_bonus_center_get_small_write" ns1:ignore="ExtraTranslation,ResourceName">邀请1位朋友即得</string>
+    <string name="me_bonus_center_grand_gift" ns1:ignore="ExtraTranslation,ResourceName">大礼包</string>
+    <string name="me_bonus_center_invite" ns1:ignore="ExtraTranslation,ResourceName">立即邀请</string>
+    <string name="me_bonus_center_invited" ns1:ignore="ExtraTranslation,ResourceName">邀请好友总数:</string>
+    <string name="me_bonus_center_log" ns1:ignore="ExtraTranslation,ResourceName">
+        1.每天登录领取奖励币\n2.连续签到会获得更多奖励币\n3.奖励币可用于解锁剧集</string>
+    <string name="me_bonus_center_records" ns1:ignore="ExtraTranslation,ResourceName">记录</string>
+    <string name="me_bonus_center_return" ns1:ignore="ExtraTranslation,ResourceName">明日再来</string>
+    <string name="me_bonus_center_show_records" ns1:ignore="ExtraTranslation,ResourceName">只显示最近的50条记录</string>
+    <string name="me_bonus_center_straight" ns1:ignore="ExtraTranslation,ResourceName">直接！</string>
+    <string name="me_bonus_center_text" ns1:ignore="ExtraTranslation,ResourceName">%s/%s </string>
+    <string name="me_bonus_center_time" ns1:ignore="ExtraTranslation,ResourceName">时间</string>
+    <string name="me_bonus_center_today" ns1:ignore="ExtraTranslation,ResourceName">今天</string>
+    <string name="me_bonus_center_user" ns1:ignore="ExtraTranslation,ResourceName">账号ID</string>
+    <string name="me_bonus_center_watch_ad" ns1:ignore="ExtraTranslation,ResourceName">去完成</string>
+    <string name="me_bonus_center_watch_ads" ns1:ignore="ExtraTranslation,ResourceName">观看广告</string>
+    <string name="me_bonus_his" ns1:ignore="ExtraTranslation,ResourceName">金币记录</string>
+    <string name="me_bonus_his_all" ns1:ignore="ExtraTranslation,ResourceName">全部</string>
+    <string name="me_bonus_his_buy" ns1:ignore="ExtraTranslation,ResourceName">购买金币</string>
+    <string name="me_bonus_only" ns1:ignore="ExtraTranslation,ResourceName">只有观看广告后才会有金币奖励！</string>
+    <string name="me_bonus_order_balance" ns1:ignore="ExtraTranslation,ResourceName">
+      广告订单处理超时，请重新登录App查看账户余额</string>
+    <string name="me_bonus_recpt_history" ns1:ignore="ExtraTranslation,ResourceName">奖励币获取与过期记录</string>
+    <string name="me_check_in" ns1:ignore="ExtraTranslation,ResourceName">每日签到奖励</string>
+    <string name="me_invite_ads_bonus" ns1:ignore="ExtraTranslation,ResourceName">观看广告奖励</string>
+    <string name="me_invite_friend" ns1:ignore="ExtraTranslation,ResourceName">邀请好友奖励</string>
+    <string name="me_invite_system_" ns1:ignore="ExtraTranslation,ResourceName">系统维护</string>
+    <string name="me_recharge" ns1:ignore="ExtraTranslation,ResourceName">充值</string>
+    <string name="me_setting_agree_delete_account_agreement">我已阅读并同意所有条款</string>
+    <string name="me_setting_auto" ns1:ignore="ExtraTranslation,ResourceName">自动解锁剧集</string>
+    <string name="me_setting_cache" ns1:ignore="ExtraTranslation,ResourceName">清除缓存</string>
+    <string name="me_setting_clear" ns1:ignore="ExtraTranslation,ResourceName">清除</string>
+    <string name="me_setting_clear_cache" ns1:ignore="ExtraTranslation,ResourceName">确定要清理缓存吗？</string>
+    <string name="me_setting_delete_account" ns1:ignore="ExtraTranslation,ResourceName">注销账户</string>
+    <string name="me_setting_delete_account_desc_1" ns1:ignore="ExtraTranslation,ResourceName">• 永久注销，无法再使用该账户登录APP。</string>
+    <string name="me_setting_delete_account_desc_2" ns1:ignore="ExtraTranslation,ResourceName">• 您的所有个人数据，如身份信息、昵称、浏览历史、与第三方账户的关联信息、购买记录将被永久删除。</string>
+    <string name="me_setting_delete_account_desc_3" ns1:ignore="ExtraTranslation,ResourceName">• 您的所有个人数据，如身份信息、昵称、浏览历史、与第三方账户的关联以及任何应用购买记录，将被永久删除</string>
+    <string name="me_setting_delete_must_agree_agreement">在注销账户之前，您必须检查协议</string>
+    <string name="me_setting_privacy" ns1:ignore="ExtraTranslation,ResourceName">隐私政策</string>
+    <string name="me_setting_sign" ns1:ignore="ExtraTranslation,ResourceName">退出登录</string>
+    <string name="me_setting_sign_out" ns1:ignore="ExtraTranslation,ResourceName">您确定要退出吗？</string>
+    <string name="me_setting_terms" ns1:ignore="ExtraTranslation,ResourceName">服务条款</string>
+    <string name="me_setting_version" ns1:ignore="ExtraTranslation,ResourceName">版本</string>
+    <string name="me_setting_version_v" ns1:ignore="ExtraTranslation,ResourceName">V%s</string>
+    <string name="me_sign_in" ns1:ignore="ExtraTranslation,ResourceName">登录</string>
+    <string name="me_unlocked" ns1:ignore="ExtraTranslation,ResourceName">已解锁剧集</string>
+    <string name="me_user_id" ns1:ignore="ExtraTranslation,ResourceName">账号ID\t%s</string>
+    <string name="me_wallet_tips" ns1:ignore="ExtraTranslation,ResourceName">提醒:</string>
+    <string name="me_wallet_tips_1" ns1:ignore="ExtraTranslation,ResourceName">1.这个应用有免费和付费内容供所有用户选择。您可以决定解锁哪些内容。
+    \n2.金币将用于解锁付费内容。
+    \n3.充值不支持退款。
+    \n4.如果您有其他问题，请联系我们。</string>
+    <string name="me_wallet_tips_2" ns1:ignore="ExtraTranslation,ResourceName">2.金币将用于解锁付费内容</string>
+    <string name="me_wallet_tips_3" ns1:ignore="ExtraTranslation,ResourceName">3.充值不支持退款</string>
+    <string name="me_wallet_tips_3_s" ns1:ignore="ExtraTranslation,ResourceName">3.从充值或奖励中心领取的奖励币将在%s天后过期</string>
+    <string name="me_wallet_tips_4" ns1:ignore="ExtraTranslation,ResourceName">4.如果您有其他问题，请联系我们</string>
+    <string name="month_content">月</string>
+    <string name="month_day_s">%s月%s日</string>
+    <string name="month_login_day">累计登录领取：</string>
+    <string name="monthly_sub">每月订阅</string>
+    <string name="my_detail" ns1:ignore="ExtraTranslation">详情</string>
+    <string name="my_list" ns1:ignore="ResourceName">追剧</string>
+    <string name="my_top_up" ns1:ignore="ExtraTranslation">充值</string>
+    <string name="my_wallet">钱包</string>
+    <string name="mylist_Update">持续更新</string>
+    <string name="mylist_complete">已完结</string>
+    <string name="mylist_follow">正在关注</string>
+    <string name="mylist_played" ns1:ignore="ExtraTranslation,ResourceName">上次观看至第%s集</string>
+    <string name="mylist_time_days" ns1:ignore="ExtraTranslation,ResourceName">%s天前</string>
+    <string name="mylist_time_hours" ns1:ignore="ExtraTranslation,ResourceName">%s小时前</string>
+    <string name="mylist_time_just_now" ns1:ignore="ExtraTranslation,ResourceName">刚刚</string>
+    <string name="mylist_time_minutes" ns1:ignore="ExtraTranslation,ResourceName">%s分钟前</string>
+    <string name="new_me_bonus_center_checked" ns1:ignore="ExtraTranslation,ResourceName">连续签到: </string>
+    <string name="new_user_go">去完成</string>
+    <string name="new_user_task">新用户任务</string>
+    <string name="not_data">暂无数据.</string>
+    <string name="number_of_urges_count">已催促上映人数：%s人</string>
+    <string name="one_content">一</string>
+    <string name="pay_fail_feedback_desc">告诉我，您对此应用哪个方面不满意</string>
+    <string name="play_1080p" ns1:ignore="ExtraTranslation,ResourceName">1080P</string>
+    <string name="play_360p" ns1:ignore="ExtraTranslation,ResourceName">360P</string>
+    <string name="play_720p" ns1:ignore="ExtraTranslation,ResourceName">720P</string>
+    <string name="play_ad_to_unclock" ns1:ignore="ExtraTranslation,ResourceName">观看广告免费解锁下一集</string>
+    <string name="play_ad_unclock" ns1:ignore="ExtraTranslation,ResourceName">观看广告免费解锁</string>
+    <string name="play_added_to_my_list" ns1:ignore="ExtraTranslation,ResourceName">已添加到追剧</string>
+    <string name="play_auto_unlock" ns1:ignore="ExtraTranslation,ResourceName">自动解锁下一集</string>
+    <string name="play_balance" ns1:ignore="ExtraTranslation,ResourceName">余额:</string>
+    <string name="play_bonus_title" ns1:ignore="ExtraTranslation,ResourceName">奖励币:</string>
+    <string name="play_cancel" ns1:ignore="ResourceName">取消</string>
+    <string name="play_coins" ns1:ignore="ExtraTranslation,ResourceName">金币</string>
+    <string name="play_coins_title" ns1:ignore="ExtraTranslation,ResourceName">金币:</string>
+    <string name="play_collapse" ns1:ignore="ExtraTranslation,ResourceName">折叠</string>
+    <string name="play_congrats" ns1:ignore="ExtraTranslation,ResourceName">恭喜您，剧集已解锁%s</string>
+    <string name="play_content">播放</string>
+    <string name="play_continue" ns1:ignore="ResourceName">继续（%s）</string>
+    <string name="play_costs" ns1:ignore="ExtraTranslation,ResourceName">价格:</string>
+    <string name="play_episode" ns1:ignore="ExtraTranslation,ResourceName">解锁此集？</string>
+    <string name="play_episode_" ns1:ignore="ExtraTranslation,ResourceName">剧集</string>
+    <string name="play_episode_list">播放清单</string>
+    <string name="play_episode_updated">（更新至%s集） </string>
+    <string name="play_eps" ns1:ignore="ExtraTranslation,ResourceName">总计%s集</string>
+    <string name="play_exhauste" ns1:ignore="ExtraTranslation,ResourceName">今天的广告观看次数已经用完，请明天再来</string>
+    <string name="play_first_play" ns1:ignore="ExtraTranslation,ResourceName">首次支付%s！</string>
+    <string name="play_hide" ns1:ignore="ExtraTranslation,ResourceName">隐藏</string>
+    <string name="play_insuffcient" ns1:ignore="ExtraTranslation,ResourceName">余额不足</string>
+    <string name="play_introduce" ns1:ignore="ExtraTranslation,ResourceName">重新开始开始</string>
+    <string name="play_introduce_content" ns1:ignore="ExtraTranslation,ResourceName">假关系 假关系 假关系 假关系 假假关系 假假关系 假关系 假关系关系…</string>
+    <string name="play_list" ns1:ignore="ExtraTranslation,ResourceName">列表</string>
+    <string name="play_more" ns1:ignore="ExtraTranslation,ResourceName">更多</string>
+    <string name="play_more_options" ns1:ignore="ExtraTranslation,ResourceName">更多置顶选项></string>
+    <string name="play_no_subtitles" ns1:ignore="ExtraTranslation,ResourceName">这一集没有字幕</string>
+    <string name="play_no_subtitles_cc" ns1:ignore="ExtraTranslation,ResourceName">该视频没有字幕</string>
+    <string name="play_now_to_unclock" ns1:ignore="ExtraTranslation,ResourceName">观看广告解锁</string>
+    <string name="play_now_unclock" ns1:ignore="ExtraTranslation,ResourceName">立即解锁</string>
+    <string name="play_off" ns1:ignore="ExtraTranslation,ResourceName">%s\%折扣</string>
+    <string name="play_ok" ns1:ignore="ExtraTranslation,ResourceName">OK</string>
+    <string name="play_processed" ns1:ignore="ExtraTranslation,ResourceName">您的订单正在处理</string>
+    <string name="play_purchases" ns1:ignore="ExtraTranslation,ResourceName">前面的剧集也很有趣，别错过了！</string>
+    <string name="play_quality" ns1:ignore="ExtraTranslation,ResourceName">分辨率</string>
+    <string name="play_recharge_instantly" ns1:ignore="ExtraTranslation,ResourceName">即时！</string>
+    <string name="play_recharge_off" ns1:ignore="ExtraTranslation,ResourceName">100%折扣</string>
+    <string name="play_recharge_only" ns1:ignore="ExtraTranslation,ResourceName">仅集数</string>
+    <string name="play_recharge_pay_now" ns1:ignore="ExtraTranslation,ResourceName">立即支付</string>
+    <string name="play_recharge_save" ns1:ignore="ExtraTranslation,ResourceName">保存</string>
+    <string name="play_recharge_unlock" ns1:ignore="ExtraTranslation,ResourceName">解锁剧集</string>
+    <string name="play_s_coins" ns1:ignore="ExtraTranslation,ResourceName">%s金币</string>
+    <string name="play_select_episode" ns1:ignore="ExtraTranslation,ResourceName">选择集数 - %s</string>
+    <string name="play_series" ns1:ignore="ExtraTranslation,ResourceName">这是最后一集，请转到主页观看更多剧集.</string>
+    <string name="play_share" ns1:ignore="ExtraTranslation,ResourceName">分享</string>
+    <string name="play_spend" ns1:ignore="ExtraTranslation,ResourceName">花费</string>
+    <string name="play_subtitle_closed" ns1:ignore="ExtraTranslation,ResourceName">字幕已关闭</string>
+    <string name="play_subtitle_off" ns1:ignore="ExtraTranslation,ResourceName">优惠</string>
+    <string name="play_subtitle_switched" ns1:ignore="ExtraTranslation,ResourceName">已切换%s字幕</string>
+    <string name="play_subtitles_cc" ns1:ignore="ExtraTranslation,ResourceName">字幕</string>
+    <string name="play_this_series_you_will_get">播放这部剧，您将获得</string>
+    <string name="play_traffic_playback" ns1:ignore="ResourceName">当前播放已用流量</string>
+    <string name="play_unlock" ns1:ignore="ExtraTranslation,ResourceName">解锁</string>
+    <string name="play_unlock_episode" ns1:ignore="ExtraTranslation,ResourceName">解锁剧集</string>
+    <string name="play_video_switched" ns1:ignore="ExtraTranslation,ResourceName">已切换%s视频分辨率</string>
+    <string name="play_watched" ns1:ignore="ExtraTranslation,ResourceName">抱歉，您已经观看了所有的免费广告</string>
+    <string name="play_wifi_switch" ns1:ignore="ResourceName">您的网络已切换到移动数据。您要继续播放吗？</string>
+    <string name="please_select_at_least_one_option">请至少选择一个选项</string>
+    <string name="reconsider">我再想想</string>
+    <string name="release_reminder_desc_text">请开启上映提醒。催促成功后，我们会在剧集上映时立即通知您。</string>
+    <string name="release_reminder_text">上映提醒</string>
+    <string name="remind_me">提醒我</string>
+    <string name="reminder_updated">此剧更新时提醒</string>
+    <string name="request_notification_permission_cancel_message">请打开通知开关</string>
+    <string name="request_open_notification_permission_content">开启通知，我们将在剧集发布时提醒您。</string>
+    <string name="reserved">已提醒</string>
+    <string name="restore">恢复购买</string>
+    <string name="rules">订阅：</string>
+    <string name="rules_text">1.每次购买FunTV周/月订阅套餐都会立即提供一定数量的奖励。
+\n2.对于每周订阅，连续7天每天登录以领取每日奖励。（未登录一天意味着错过该天的奖励）
+\n3.对于每月订阅，连续30天每天登录以领取每日奖励。（未登录一天意味着错过该天的奖励）
+\n4.在订阅期内，您可以每天从本地时区00:00开始领取每日奖励。
+\n5.您的Play商店帐户将在当前订阅期结束前24小时自动扣款续费费用。
+\n6.为避免收费，请在当前期限结束至少24小时前，在Play商店设置 - 管理订阅中禁用自动续订
+\n7.如果您有任何问题，请通过个人资料页面的反馈部分与我们联系
+</string>
+    <string name="search_delete_history">您确定要删除吗？</string>
+    <string name="search_hot_search">热门搜索</string>
+    <string name="search_no_results_found">无结果</string>
+    <string name="search_other_channel_content">此剧正在制作中.......\n点击催促上映，可提高上映速度</string>
+    <string name="search_please_enter_at_least_letters">请输入至少3个字母</string>
+    <string name="search_results">结果</string>
+    <string name="search_special_bonus">奖励币！</string>
+    <string name="setting_continue">在首页上显示继续观看</string>
+    <string name="setting_successful">设置成功</string>
+    <string name="setting_version">您已经是最新版本</string>
+    <string name="seven_content">七</string>
+    <string name="six_content">六</string>
+    <string name="submit">提交</string>
+    <string name="submit_succeed">提交成功</string>
+    <string name="subscription_des_text">金币订阅</string>
+    <string name="subscription_month_day_s">%s/%s</string>
+    <string name="subscription_receive_award_day">第%s天</string>
+    <string name="successful_login_with_facebook">使用Facebook登录成功</string>
+    <string name="successful_login_with_google">使用Google登录成功</string>
+    <string name="switch_to_language_content_s">切换到%s？</string>
+    <string name="this_page_can_help_you_solve_the_problem">此页面可以帮助您解决问题</string>
+    <string name="three_content">三</string>
+    <string name="tips">提示：</string>
+    <string name="to_my_list">添加到追剧</string>
+    <string name="tomorrow_day"> 今天最多可以购买%s次。明天再来</string>
+    <string name="top_up">充值</string>
+    <string name="total_month">总计可得%s/月</string>
+    <string name="total_week">总计可得%s/周</string>
+    <string name="trending_text">热播榜</string>
+    <string name="turn_on_notifications">打开通知开关</string>
+    <string name="turn_on_text">去开启</string>
+    <string name="two_content">两</string>
+    <string name="update_reminder">更新提醒</string>
+    <string name="update_to">上次观看至第</string>
+    <string name="updated_to">更新至%s集</string>
+    <string name="urge_for_release">催促上映</string>
+    <string name="urge_for_updates">催促上映</string>
+    <string name="urge_sent">已催促</string>
+    <string name="urge_successful">催促上映成功</string>
+    <string name="user_agreement_dialog_content_1">为了使用我们的产品和服务，您必须同意我们的\t</string>
+    <string name="user_agreement_dialog_content_2">\t其中概述了您必须遵循的规则和指南。\n此外，我们的\t</string>
+    <string name="user_agreement_dialog_content_3">\t详细说明了我们收集的信息类型以及如何使用这些信息为您提供服务。\n我们认真对待您信息的安全，并始终遵守这些协议中规定的条款。</string>
+    <string name="user_canceled">已取消</string>
+    <string name="view_more">查看更多</string>
+    <string name="vip_subscribe">VIP 订阅%s</string>
+    <string name="wait_day">现在还不能领取，你需要等待%s天</string>
+    <string name="watch_ad_is_waiting">广告正在准备中，请稍候</string>
+    <string name="watching_episode">上次观看至第%s集</string>
+    <string name="week_content">周</string>
+    <string name="weekly_login_day">累计登录领取：</string>
+    <string name="weekly_sub">每周订阅</string>
+    <string name="which_episode">第 %s 集</string>
+    <string name="which_episode_nowrap">第%s集</string>
+    <string name="year_month_day_s">%s年%s月%s日</string>
+    <string name="you_get">您已获得</string>
+    <string name="you_have_scrolled_to_the_bottom">您已抵达底部</string>
+    <string name="your_new_account_is_logged_in_successfully">您的新账户已成功登录</string>
+</resources>

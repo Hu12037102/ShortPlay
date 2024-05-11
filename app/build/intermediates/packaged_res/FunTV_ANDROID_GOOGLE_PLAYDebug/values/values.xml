@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <dimen name="dp_0" ns1:ignore="ResourceName">0dp</dimen>
+    <dimen name="dp_0_5" ns1:ignore="ResourceName">0.5dp</dimen>
+    <dimen name="dp_1" ns1:ignore="ResourceName">1dp</dimen>
+    <dimen name="dp_10" ns1:ignore="ResourceName">10dp</dimen>
+    <dimen name="dp_100" ns1:ignore="ResourceName">100dp</dimen>
+    <dimen name="dp_12" ns1:ignore="ResourceName">12dp</dimen>
+    <dimen name="dp_120" ns1:ignore="ResourceName">120dp</dimen>
+    <dimen name="dp_14" ns1:ignore="ResourceName">14dp</dimen>
+    <dimen name="dp_16" ns1:ignore="ResourceName">16dp</dimen>
+    <dimen name="dp_18" ns1:ignore="ResourceName">18dp</dimen>
+    <dimen name="dp_1_5" ns1:ignore="ResourceName">1.5dp</dimen>
+    <dimen name="dp_2" ns1:ignore="ResourceName">2dp</dimen>
+    <dimen name="dp_20" ns1:ignore="ResourceName">20dp</dimen>
+    <dimen name="dp_22" ns1:ignore="ResourceName">22dp</dimen>
+    <dimen name="dp_24" ns1:ignore="ResourceName">24dp</dimen>
+    <dimen name="dp_26" ns1:ignore="ResourceName">26dp</dimen>
+    <dimen name="dp_28" ns1:ignore="ResourceName">28dp</dimen>
+    <dimen name="dp_3" ns1:ignore="ResourceName">3dp</dimen>
+    <dimen name="dp_30" ns1:ignore="ResourceName">30dp</dimen>
+    <dimen name="dp_32" ns1:ignore="ResourceName">32dp</dimen>
+    <dimen name="dp_35" ns1:ignore="ResourceName">35dp</dimen>
+    <dimen name="dp_4" ns1:ignore="ResourceName">4dp</dimen>
+    <dimen name="dp_40" ns1:ignore="ResourceName">40dp</dimen>
+    <dimen name="dp_45" ns1:ignore="ResourceName">45dp</dimen>
+    <dimen name="dp_5" ns1:ignore="ResourceName">5dp</dimen>
+    <dimen name="dp_50" ns1:ignore="ResourceName">50dp</dimen>
+    <dimen name="dp_6" ns1:ignore="ResourceName">6dp</dimen>
+    <dimen name="dp_60" ns1:ignore="ResourceName">60dp</dimen>
+    <dimen name="dp_65" ns1:ignore="ResourceName">65dp</dimen>
+    <dimen name="dp_7" ns1:ignore="ResourceName">7dp</dimen>
+    <dimen name="dp_70" ns1:ignore="ResourceName">70dp</dimen>
+    <dimen name="dp_75" ns1:ignore="ResourceName">75dp</dimen>
+    <dimen name="dp_8" ns1:ignore="ResourceName">8dp</dimen>
+    <dimen name="dp_80" ns1:ignore="ResourceName">80dp</dimen>
+    <dimen name="dp_9" ns1:ignore="ResourceName">9dp</dimen>
+    <dimen name="dp_90" ns1:ignore="ResourceName">90dp</dimen>
+    <dimen name="sp_10" ns1:ignore="ResourceName">10sp</dimen>
+    <dimen name="sp_11" ns1:ignore="ResourceName">11sp</dimen>
+    <dimen name="sp_12" ns1:ignore="ResourceName">12sp</dimen>
+    <dimen name="sp_13" ns1:ignore="ResourceName">13sp</dimen>
+    <dimen name="sp_14" ns1:ignore="ResourceName">14sp</dimen>
+    <dimen name="sp_15" ns1:ignore="ResourceName">15sp</dimen>
+    <dimen name="sp_16" ns1:ignore="ResourceName">16sp</dimen>
+    <dimen name="sp_18" ns1:ignore="ResourceName">18sp</dimen>
+    <dimen name="sp_9" ns1:ignore="ResourceName">9sp</dimen>
+    <string name="app_name" ns1:ignore="ExtraTranslation,ResourceName">FunTV</string>
+    <string name="gcm_defaultSenderId" translatable="false">725589592891</string>
+    <string name="google_api_key" translatable="false">AIzaSyDUmLYkgWJnBmId3MFs4z6yT-ZTXc_RCPY</string>
+    <string name="google_app_id" translatable="false">1:725589592891:android:cf4fc6e3f29bb2bfef851e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDUmLYkgWJnBmId3MFs4z6yT-ZTXc_RCPY</string>
+    <string name="google_storage_bucket" translatable="false">funtv-test-cd48f.appspot.com</string>
+    <string name="project_id" translatable="false">funtv-test-cd48f</string>
+    <style name="BaseAppTheme.NoActionBar" parent="@style/Theme.AppCompat.DayNight" ns1:ignore="ResourceName">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="LoadingDialog" parent="@android:style/Theme.Dialog" ns1:ignore="ResourceName">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

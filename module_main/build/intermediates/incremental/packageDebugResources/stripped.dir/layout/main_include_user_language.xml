@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:layout_marginStart="18dp"
+    android:layout_marginEnd="18dp"
+    tools:ignore="MissingDefaultResource">
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_language_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/me_setting_language_icon"
+        android:layout_centerVertical="true"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_language_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/language_content"
+        android:layout_toStartOf="@+id/aiv_language_right"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf= "@+id/aiv_language_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sofiapro_medium"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_language_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/user_right_white_bold"
+        tools:ignore="RtlHardcoded"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="applovin_agree_message">如果您选择开始使用我们的应用，请点击\"继续\"</string>
+    <string name="applovin_alt_privacy_policy_text"/>
+    <string name="applovin_continue_button_text">继续</string>
+    <string name="applovin_pp_and_tos_title">使用%s之前, 您必须同意我们的服务条款，并确认您已经阅读并知悉我们的隐私政策。</string>
+    <string name="applovin_pp_title">使用%s之前, 您必须确认您已经阅读并知悉我们的隐私政策.</string>
+    <string name="applovin_privacy_policy_text">隐私政策</string>
+    <string name="applovin_terms_of_service_text">服务条款</string>
+    <string name="applovin_terms_of_use_text">使用条款</string>
+    <string formatted="false" name="srl_component_falsify">%s 虚假区域\n代表运行时拖动的高度【%.1fdp】 \n而不会显示任何东西</string>
+    <string name="srl_content_empty">SmartRefreshLayout中没有找到内容视图。您是否忘记在xml布局文件中添加？</string>
+    <string name="srl_footer_failed">加载失败</string>
+    <string name="srl_footer_finish">加载完成</string>
+    <string name="srl_footer_loading">正在加载…</string>
+    <string name="srl_footer_nothing">没有更多数据了</string>
+    <string name="srl_footer_pulling">上拉加载更多</string>
+    <string name="srl_footer_refreshing">等待头部刷新完成…</string>
+    <string name="srl_footer_release">释放立即加载</string>
+</resources>
