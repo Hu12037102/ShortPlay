@@ -18,7 +18,8 @@
         android:padding="@dimen/size_10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/icon_splash_service" />
+        app:srcCompat="@mipmap/icon_splash_service"
+        tools:visibility="visible"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"

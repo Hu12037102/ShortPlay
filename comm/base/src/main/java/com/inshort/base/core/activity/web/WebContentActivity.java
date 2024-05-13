@@ -11,6 +11,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
@@ -21,6 +22,8 @@ import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.ActivityWebContentBinding;
 import com.inshort.base.other.arouter.ARouterConfig;
+import com.inshort.base.weight.click.DelayedClick;
+
 @Route(path = ARouterConfig.Path.Comm.ACTIVITY_WEB_CONTENT)
 public class WebContentActivity extends BaseWebActivity<ActivityWebContentBinding, BaseCompatViewModel> {
     @Nullable
@@ -66,7 +69,24 @@ public class WebContentActivity extends BaseWebActivity<ActivityWebContentBindin
     protected void initEvent() {
         mViewBinding.webView.setWebViewClient(mWebViewClient);
         mViewBinding.webView.setWebChromeClient(mWebChromeClient);
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                onClickBack();
+            }
+        });
+        mViewBinding.pvTitle.getLeftView().setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                onClickBack();
+            }
+        });
     }
+
+    private void onClickBack() {
+        ViewsCompat.finishSetResult(this);
+    }
+
 
     private final WebViewClient mWebViewClient = new WebViewClient() {
         @Override
