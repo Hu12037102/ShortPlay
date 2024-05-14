@@ -9,4 +9,5 @@
     <color name="color_CCFFFFFF" tools:ignore="MissingDefaultResource">#CCFFFFFF</color>
     <color name="color_80FFFFFF" tools:ignore="MissingDefaultResource">#80FFFFFF</color>
     <color name="color_33000000" tools:ignore="MissingDefaultResource">#33000000</color>
+    <color name="color_CC000000" tools:ignore="MissingDefaultResource">#CC000000</color>
 </resources>

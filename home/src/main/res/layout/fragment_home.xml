@@ -34,8 +34,10 @@
             android:singleLine="true"
             android:textColor="@color/colorFF999999"
             android:textSize="@dimen/size_15sp"
+            app:fontFamily="@font/sofia_pro_medium"
             app:layout_constraintEnd_toStartOf="@id/aiv_search"
             app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/atv_keysearch"
             tools:ignore="SpUsage"
             tools:text="Love Etches" />
 
