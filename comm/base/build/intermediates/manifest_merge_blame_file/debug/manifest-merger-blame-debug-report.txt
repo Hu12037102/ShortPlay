@@ -1,0 +1,50 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.inshort.base" >
+4
+5    <uses-sdk android:minSdkVersion="23" />
+6
+7    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+7-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:4:5-79
+7-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:4:22-76
+8    <uses-permission android:name="android.permission.INTERNET" />
+8-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:5:5-66
+8-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:5:22-64
+9    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+9-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:6:5-75
+9-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:6:22-72
+10
+11    <application>
+11-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:8:5-25:19
+12        <meta-data
+12-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:9:9-11:76
+13            android:name="com.bumptech.glide.module.AppGlideModule"
+13-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:10:13-68
+14            android:value="com.inshort.base.other.glide.GlideInitModule" />
+14-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:11:13-73
+15        <meta-data
+15-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:12:9-14:35
+16            android:name="design_width_in_dp"
+16-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:13:13-46
+17            android:value="375" />
+17-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:14:13-32
+18        <meta-data
+18-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:15:9-17:35
+19            android:name="design_height_in_dp"
+19-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:16:13-47
+20            android:value="812" />
+20-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:17:13-32
+21
+22        <activity
+22-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:19:9-24:15
+23            android:name="com.inshort.base.core.activity.web.WebContentActivity"
+23-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:20:13-65
+24            android:exported="false"
+24-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:21:13-37
+25            android:launchMode="singleTop"
+25-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:22:13-43
+26            android:screenOrientation="portrait" />
+26-->E:\alce\InShort-Android\comm\base\src\main\AndroidManifest.xml:23:13-49
+27    </application>
+28
+29</manifest>

@@ -1,0 +1,2 @@
+com.inshort.home
+layout fragment_home
