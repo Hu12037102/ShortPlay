@@ -1,5 +1,6 @@
 package com.inshort.base.core.viewmodel
 
+import android.os.Looper
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -47,7 +48,6 @@ open class BaseViewModel : ViewModel() {
                 loadingLiveData.value = false
             }
 
-
         }
     }
 
@@ -59,7 +59,6 @@ open class BaseViewModel : ViewModel() {
         isJustRefresh:Boolean = false
     ) {
         try {
-
             if (response != null && response.code == IApiService.HttpCode.SUCCEED) {
                 if (isShowEmptyView) {
                     emptyViewLiveData.value = false
@@ -79,9 +78,10 @@ open class BaseViewModel : ViewModel() {
                 httpErrorLiveData.value = errorEntity
             }
             if (isJustRefresh){
-                refreshLiveData.value = isRefresh
+                refreshLiveData.value=isRefresh
             }
-            LogUtils.d("disposeRetrofit--", "$response")
+
+            LogUtils.d("disposeRetrofit--", "$response------${Looper.myLooper()}")
         } catch (e: Exception) {
             e.printStackTrace()
         }

@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.entity.HomeIndexEntity;
 import com.inshort.base.other.glide.GlideCompat;
+import com.inshort.base.utils.LogUtils;
 import com.inshort.home.databinding.ItemHomeBannerViewBinding;
 import com.youth.banner.adapter.BannerAdapter;
 
@@ -31,8 +33,10 @@ public class HomeBannerAdapter extends BannerAdapter<HomeIndexEntity.Banner, Hom
 
     @Override
     public void onBindView(ViewHolder holder, HomeIndexEntity.Banner entity, int position, int size) {
-        GlideCompat.loadImage(entity.imageUrl, holder.viewBinding.aivContent);
+       GlideCompat.loadImage(entity.imageUrl, holder.viewBinding.aivContent);
+       // Glide.with(mContext).load(entity.imageUrl).into(holder.viewBinding.aivContent);
         UICompat.setText(holder.viewBinding.atvContent, entity.bannerIntroduction);
+        LogUtils.d("HomeBannerAdapter", "数据展示:" + entity.imageUrl + "---" + entity.bannerIntroduction);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

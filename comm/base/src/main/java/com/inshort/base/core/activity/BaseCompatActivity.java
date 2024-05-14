@@ -115,8 +115,8 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
 
     protected void buildParentLayout(@NonNull FrameLayout frameLayout) {
         ViewTools viewTools = new ViewTools();
-        SmartRefreshLayout refreshLayout = viewTools.findSmartRefreshLayout(frameLayout);
-        initRefreshLayout(refreshLayout);
+        mRefreshLayout = viewTools.findSmartRefreshLayout(frameLayout);
+        initRefreshLayout();
 
         if (isLoadEmptyView()) {
             mEmptyLayout = new EmptyLayout(this);
@@ -142,23 +142,22 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
         dismissLoadingView();
     }
 
-    private void initRefreshLayout(@Nullable SmartRefreshLayout refreshLayout) {
-        if (DataCompat.isNull(refreshLayout)) {
+    private void initRefreshLayout() {
+        if (DataCompat.isNull(mRefreshLayout)) {
             return;
         }
-        this.mRefreshLayout = refreshLayout;
-        SmartRefreshLayoutCompat.initDefault(refreshLayout);
-        refreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
+        SmartRefreshLayoutCompat.initDefault(mRefreshLayout);
+        mRefreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.pagerReset();
-                loadSmartData(refreshLayout, true);
+                loadSmartData( false);
             }
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.setRefresh(false);
-                loadSmartData(refreshLayout, false);
+                loadSmartData( true);
             }
         });
     }
@@ -194,5 +193,7 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
             mEmptyLayout.hide();
         }
     }
+    protected void loadSmartData( boolean isRefresh) {
 
+    }
 }
