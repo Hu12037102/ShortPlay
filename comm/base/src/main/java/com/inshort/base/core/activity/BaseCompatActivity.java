@@ -16,14 +16,17 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.BaseRootFrameViewBinding;
 import com.inshort.base.databinding.BaseRootLoadingViewBinding;
+import com.inshort.base.entity.base.ResponseErrorEntity;
 import com.inshort.base.entity.base.UserEntity;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.tools.ViewTools;
 import com.inshort.base.utils.LogUtils;
+import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.view.EmptyLayout;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -85,9 +88,19 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
         mViewModel.getUserLiveData().observe(this, new Observer<UserEntity>() {
             @Override
             public void onChanged(UserEntity userEntity) {
-                if (!DataCompat.isNull(userEntity)){
+                if (!DataCompat.isNull(userEntity)) {
                     onUserUpdate(userEntity);
-                    LogUtils.w("getUserLiveData",userEntity.toString());
+                    LogUtils.w("getUserLiveData", userEntity.toString());
+                }
+            }
+        });
+        mViewModel.getEmptyViewLiveData().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean isShow) {
+                if (isShow) {
+                    showEmptyView();
+                } else {
+                    hideEmptyView();
                 }
             }
         });
@@ -101,8 +114,16 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
 
         if (isLoadEmptyView()) {
             mEmptyLayout = new EmptyLayout(this);
-            frameLayout.addView(mEmptyLayout, 0, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+            frameLayout.addView(mEmptyLayout, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
             mEmptyLayout.hide();
+            mEmptyLayout.setPadding(PhoneCompat.dp2px(this, 10), PhoneCompat.dp2px(this, 10),
+                    PhoneCompat.dp2px(this, 10), PhoneCompat.dp2px(this, 10));
+            mEmptyLayout.setOnClickListener(new DelayedClick() {
+                @Override
+                public void onDelayedClick(View view) {
+                    onClickEmptyView(mEmptyLayout);
+                }
+            });
         }
         mLoadingViewBinding = BaseRootLoadingViewBinding.inflate(getLayoutInflater());
         AppCompatImageView aivLoading = mLoadingViewBinding.aivLoading;
@@ -154,4 +175,18 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
             mLoadingViewBinding.getRoot().setVisibility(View.GONE);
         }
     }
+
+
+    protected void showEmptyView() {
+        if (mEmptyLayout != null) {
+            mEmptyLayout.show();
+        }
+    }
+
+    protected void hideEmptyView() {
+        if (mEmptyLayout != null) {
+            mEmptyLayout.hide();
+        }
+    }
+
 }

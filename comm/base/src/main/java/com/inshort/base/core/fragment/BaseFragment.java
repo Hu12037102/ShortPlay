@@ -2,6 +2,7 @@ package com.inshort.base.core.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,5 +22,8 @@ public abstract class BaseFragment extends Fragment {
     }
     protected void onUserUpdate(@Nullable UserEntity userEntity) {
         UserInfoStore.get().putData(userEntity);
+    }
+    protected void onClickEmptyView(@NonNull View view){
+
     }
 }

@@ -1,4 +1,0 @@
-com.inshort.splash
-id aiv_content
-id aiv_service
-layout activity_splash

@@ -7,4 +7,5 @@
     <string name="search_content">Search</string>
     <string name="mylist_content">My List</string>
     <string name="me_content">Me</string>
+    <string name="top_again_to_quit_app">Tap again to quit InShort</string>
 </resources>

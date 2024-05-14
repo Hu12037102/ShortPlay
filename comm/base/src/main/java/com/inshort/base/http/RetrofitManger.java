@@ -71,6 +71,7 @@ public final class RetrofitManger {
                 Buffer buffer = new Buffer();
                 requestBody.writeTo(buffer);
                 String json = buffer.readString(StandardCharsets.UTF_8);
+                buffer.close();
                 Gson gson = new Gson();
                 baseRequestBody = gson.fromJson(json, Object.class);
                 LogUtils.w("mHeadInterceptor", "Interceptor1:" + json);

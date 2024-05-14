@@ -87,4 +87,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onUserUpdate(@NonNull UserEntity userEntity) {
         UserInfoStore.get().putData(userEntity);
     }
+
+    protected void onClickEmptyView(@NonNull View view){
+
+    }
 }

@@ -3,6 +3,7 @@ package com.inshort.base.compat;
 import static android.os.Build.VERSION_CODES.R;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,5 +63,23 @@ public final class ViewsCompat {
         }
         marginLayoutParams.topMargin = PhoneCompat.getStatusBarHeight(activity) + addMargin;
         view.setLayoutParams(marginLayoutParams);
+
     }
+
+
+    public static void finishSetResult(@Nullable Activity activity, @Nullable Intent intent) {
+        if (!DataCompat.isNull(activity)) {
+            if (DataCompat.notNull(intent)) {
+                activity.setResult(Activity.RESULT_OK, intent);
+            } else {
+                activity.setResult(Activity.RESULT_OK);
+            }
+            activity.finish();
+        }
+    }
+
+    public static void finishSetResult(@Nullable Activity activity) {
+        finishSetResult(activity, null);
+    }
+
 }

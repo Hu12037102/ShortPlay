@@ -15,6 +15,7 @@ public interface IApiService {
 
     interface HttpCode {
         int SUCCEED = HttpURLConnection.HTTP_OK;
+        int UNAVAILABLE = HttpURLConnection.HTTP_UNAVAILABLE;
 
     }
 
