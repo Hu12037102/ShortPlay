@@ -2,25 +2,17 @@ package com.inshort.base.core.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import androidx.annotation.AnimRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewbinding.ViewBinding;
 
 import com.inshort.base.R;
-import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.ViewsCompat;
-import com.inshort.base.databinding.BaseRootFrameViewBinding;
-import com.inshort.base.entity.base.UserEntity;
-import com.inshort.base.other.mmkv.UserInfoStore;
-import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
-import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.inshort.base.entity.UserEntity;
+import com.inshort.base.other.mmkv.UserDataStore;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
-import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private boolean isFirstWindowFocus = true;
@@ -85,7 +77,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void onUserUpdate(@NonNull UserEntity userEntity) {
-        UserInfoStore.get().putData(userEntity);
+        UserDataStore.get().putData(userEntity);
     }
 
     protected void onClickEmptyView(@NonNull View view){

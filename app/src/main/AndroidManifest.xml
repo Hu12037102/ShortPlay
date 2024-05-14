@@ -27,6 +27,7 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.NotStatusBar"
             tools:ignore="LockedOrientationActivity">
            <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

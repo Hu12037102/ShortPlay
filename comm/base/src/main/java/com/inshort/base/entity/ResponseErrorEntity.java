@@ -1,4 +1,4 @@
-package com.inshort.base.entity.base;
+package com.inshort.base.entity;
 
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;

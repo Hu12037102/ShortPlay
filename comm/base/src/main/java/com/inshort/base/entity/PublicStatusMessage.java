@@ -1,4 +1,4 @@
-package com.inshort.base.entity.base;
+package com.inshort.base.entity;
 
 public final class PublicStatusMessage {
 

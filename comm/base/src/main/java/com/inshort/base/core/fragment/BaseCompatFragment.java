@@ -23,7 +23,7 @@ import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.BaseRootFrameViewBinding;
 import com.inshort.base.databinding.BaseRootLoadingViewBinding;
-import com.inshort.base.entity.base.UserEntity;
+import com.inshort.base.entity.UserEntity;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.tools.ViewTools;
 import com.inshort.base.utils.LogUtils;
@@ -35,9 +35,9 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 
 public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends BaseCompatViewModel> extends BaseFragment {
 
-    private VB mViewBinding = null;
+    protected VB mViewBinding = null;
 
-    private VM mViewModel = null;
+    protected VM mViewModel = null;
 
 
     protected abstract VB getViewBinding();
@@ -176,6 +176,12 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
                 } else {
                     hideEmptyView();
                 }
+            }
+        });
+        mViewModel.getRefreshLiveData().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean isRefresh) {
+                SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
             }
         });
     }

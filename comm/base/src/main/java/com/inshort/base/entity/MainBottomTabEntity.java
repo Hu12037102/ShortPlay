@@ -1,4 +1,4 @@
-package com.inshort.base.entity.main;
+package com.inshort.base.entity;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IntRange;
