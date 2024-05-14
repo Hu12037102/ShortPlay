@@ -42,13 +42,11 @@ open class BaseViewModel : ViewModel() {
             val response = kotlin.runCatching {
                 black.invoke()
             }.getOrDefault(null)
-            disposeRetrofit(liveData, response, isShowEmptyView)
+            disposeRetrofit(liveData, response, isShowEmptyView,isJustRefresh)
             if (isShowLoading) {
                 loadingLiveData.value = false
             }
-            if (isJustRefresh){
-                refreshLiveData.value = isRefresh
-            }
+
 
         }
     }
@@ -58,6 +56,7 @@ open class BaseViewModel : ViewModel() {
         liveData: MutableLiveData<T>,
         response: ResponseEntity<T>?,
         isShowEmptyView: Boolean,
+        isJustRefresh:Boolean = false
     ) {
         try {
 
@@ -79,8 +78,9 @@ open class BaseViewModel : ViewModel() {
                 }
                 httpErrorLiveData.value = errorEntity
             }
-
-
+            if (isJustRefresh){
+                refreshLiveData.value = isRefresh
+            }
             LogUtils.d("disposeRetrofit--", "$response")
         } catch (e: Exception) {
             e.printStackTrace()
