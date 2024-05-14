@@ -48,7 +48,7 @@ public final class ViewsCompat {
         window.getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
         window.setStatusBarColor(Color.TRANSPARENT);
-        /*window.getDecorView().setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+        window.getDecorView().setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
             @NonNull
             @Override
             public WindowInsets onApplyWindowInsets(@NonNull View v, @NonNull WindowInsets insets) {
@@ -60,7 +60,7 @@ public final class ViewsCompat {
                 );
                 return insets.consumeSystemWindowInsets();
             }
-        });*/
+        });
     }
 
     public static void setStatusBarMargin(@Nullable View view, @Nullable Activity activity, int addMargin) {
