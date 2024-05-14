@@ -1,5 +1,12 @@
 *.iml
 /app/build
+/comm/base/build
+/comm/library/build
+/home/build
+/me/build
+/mylist/build
+/search/build
+/splash/build
 /app/bugly
 /galleryfinal
 /libcocos2dx/build
