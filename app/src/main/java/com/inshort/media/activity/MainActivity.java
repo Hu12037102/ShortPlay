@@ -12,13 +12,14 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.NetworkCompat;
+import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.core.fragment.BaseCompatFragment;
-import com.inshort.base.entity.main.MainBottomTabEntity;
+import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.utils.LogUtils;
-import com.inshort.home.activity.HomeFragment;
+import com.inshort.home.fragment.HomeFragment;
 import com.inshort.me.fragment.MeFragment;
 import com.inshort.media.adapter.MainBottomTabAdapter;
 import com.inshort.media.databinding.ActivityMainBinding;
@@ -40,6 +41,7 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
 
     @Override
     protected void initView() {
+        ViewsCompat.hideStatusBar(getWindow());
         mViewBinding.rvBottom.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 

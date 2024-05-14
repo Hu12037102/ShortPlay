@@ -13,7 +13,7 @@ import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.compat.ViewsCompat;
-import com.inshort.base.entity.main.MainBottomTabEntity;
+import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.media.databinding.ItemMainTabViewBinding;
 

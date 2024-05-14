@@ -3,10 +3,13 @@ package com.inshort.base.compat;
 import android.content.Context;
 import android.text.TextUtils;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import androidx.core.content.ContextCompat;
 
 import com.inshort.base.core.application.BaseApplication;
 
@@ -88,6 +91,10 @@ public final class DataCompat {
         } else {
             return content;
         }
+    }
+    @ColorInt
+    public static int getColor(@Nullable Context context, @ColorRes int colorRes){
+        return ContextCompat.getColor(checkContext(context),colorRes);
     }
 
     @NonNull

@@ -9,16 +9,14 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.config.AppConfig;
 import com.inshort.base.digest.MD5Compat;
-import com.inshort.base.entity.base.RequestEntity;
-import com.inshort.base.other.mmkv.UserInfoStore;
+import com.inshort.base.entity.RequestEntity;
+import com.inshort.base.other.mmkv.UserDataStore;
 import com.inshort.base.utils.LogUtils;
 
-import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
@@ -115,7 +112,7 @@ public final class RetrofitManger {
             sig = MD5Compat.stringToString(sig);
             LogUtils.w("mHeadInterceptor", "sort:" + sb);
             RequestEntity.PostDataEntity postDataEntity = new RequestEntity.PostDataEntity(
-                    baseRequestBody, publicEntity, extendEntity, UserInfoStore.get().getAccessToken(), sig);
+                    baseRequestBody, publicEntity, extendEntity, UserDataStore.get().getAccessToken(), sig);
 
             RequestEntity requestEntity = new RequestEntity(postDataEntity);
             Gson gson = new Gson();

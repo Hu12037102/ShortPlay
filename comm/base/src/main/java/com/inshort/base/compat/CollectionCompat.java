@@ -16,6 +16,7 @@ public final class CollectionCompat {
     public static <T> boolean isEmptyList(@Nullable List<T> list) {
         return getListSize(list) == 0;
     }
+    public static <T> boolean notEmptyList(@Nullable List<T> list){return !isEmptyList(list);}
 
     public static <K, V> boolean isEmptyMap(@Nullable Map<K, V> map) {
         return map == null || map.isEmpty();

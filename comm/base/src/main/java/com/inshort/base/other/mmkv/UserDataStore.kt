@@ -2,16 +2,16 @@ package com.inshort.base.other.mmkv
 
 import android.text.TextUtils
 import com.inshort.base.compat.DataCompat
-import com.inshort.base.entity.base.UserEntity
+import com.inshort.base.entity.UserEntity
 
-class UserInfoStore private constructor() {
+class UserDataStore private constructor() {
 
     companion object {
        private const val KEY_USER = "mmkv_user_store"
-        private val mInstance: UserInfoStore by lazy(LazyThreadSafetyMode.SYNCHRONIZED) { UserInfoStore() }
+        private val mInstance: UserDataStore by lazy(LazyThreadSafetyMode.SYNCHRONIZED) { UserDataStore() }
 
         @JvmStatic
-        fun get(): UserInfoStore = mInstance
+        fun get(): UserDataStore = mInstance
 
     }
 

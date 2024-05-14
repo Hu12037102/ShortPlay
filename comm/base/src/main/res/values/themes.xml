@@ -13,5 +13,9 @@
         <item name="android:windowSplashScreenBackground" tools:targetApi="s">@android:color/transparent</item>
         <item name="android:windowSplashScreenIconBackgroundColor" tools:targetApi="s">@android:color/transparent</item>
     </style>
+    <style name="Theme.NotStatusBar" parent="Theme.ShortPlay">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
 
 </resources>

@@ -10,7 +10,10 @@ public interface IApiService {
     interface Path {
         //APP初始化接口
        String SPLASH_INIT="/app/initialize";
+       //初始化user登录接口
        String SPLASH_USER_LOGIN="/app/user";
+       //首页接口
+        String HOME_INDEX="/app/index";
     }
 
     interface HttpCode {

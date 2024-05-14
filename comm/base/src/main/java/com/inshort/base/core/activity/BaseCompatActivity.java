@@ -21,8 +21,7 @@ import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.BaseRootFrameViewBinding;
 import com.inshort.base.databinding.BaseRootLoadingViewBinding;
-import com.inshort.base.entity.base.ResponseErrorEntity;
-import com.inshort.base.entity.base.UserEntity;
+import com.inshort.base.entity.UserEntity;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.tools.ViewTools;
 import com.inshort.base.utils.LogUtils;
@@ -102,6 +101,13 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
                 } else {
                     hideEmptyView();
                 }
+            }
+        });
+        mViewModel.getRefreshLiveData().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean isRefresh) {
+                LogUtils.d("getRefreshLiveData--", isRefresh + "---" + mRefreshLayout);
+                SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
             }
         });
 

@@ -1,4 +1,4 @@
-package com.inshort.base.entity.base;
+package com.inshort.base.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
-import com.inshort.base.entity.splash.InitEntity;
 
 import java.util.ArrayList;
 import java.util.List;

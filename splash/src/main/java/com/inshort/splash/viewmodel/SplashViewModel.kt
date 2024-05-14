@@ -2,7 +2,7 @@ package com.inshort.splash.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.inshort.base.core.viewmodel.BaseCompatViewModel
-import com.inshort.base.entity.splash.InitEntity
+import com.inshort.base.entity.InitEntity
 import com.inshort.base.http.RetrofitManger
 import com.inshort.splash.SplashService
 

@@ -2,19 +2,13 @@ package com.inshort.splash.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.lifecycle.Observer;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -22,19 +16,17 @@ import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
-import com.inshort.base.entity.base.ResponseErrorEntity;
-import com.inshort.base.entity.base.UserEntity;
-import com.inshort.base.entity.splash.InitEntity;
+import com.inshort.base.entity.InitEntity;
+import com.inshort.base.entity.ResponseErrorEntity;
+import com.inshort.base.entity.UserEntity;
 import com.inshort.base.http.IApiService;
 import com.inshort.base.other.arouter.ARouterActivity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.glide.GlideCompat;
-import com.inshort.base.utils.LogUtils;
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.splash.databinding.ActivitySplashBinding;
 import com.inshort.splash.viewmodel.SplashViewModel;
-import com.scwang.smart.refresh.layout.api.RefreshLayout;
 
 @Route(path = ARouterConfig.Path.Splash.ACTIVITY_SPLASH)
 public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, SplashViewModel> {

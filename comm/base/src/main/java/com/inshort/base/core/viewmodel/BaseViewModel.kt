@@ -1,23 +1,22 @@
 package com.inshort.base.core.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.inshort.base.Contracts
-import com.inshort.base.entity.base.ResponseEntity
-import com.inshort.base.entity.base.ResponseErrorEntity
+import com.inshort.base.entity.ResponseEntity
+import com.inshort.base.entity.ResponseErrorEntity
 import com.inshort.base.http.IApiService
 import com.inshort.base.utils.LogUtils
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import retrofit2.Response
 
 open class BaseViewModel : ViewModel() {
     val httpErrorLiveData = MutableLiveData<ResponseErrorEntity>()
     val loadingLiveData = MutableLiveData<Boolean>()
-
     val emptyViewLiveData = MutableLiveData<Boolean>()
+    val refreshLiveData = MutableLiveData<Boolean>()
+
     var isRefresh = true
     val pageSize = Contracts.DEFAULT_PAGE_SIZE
     var page = Contracts.DEFAULT_PAGE
@@ -32,6 +31,7 @@ open class BaseViewModel : ViewModel() {
         liveData: MutableLiveData<T>,
         isShowLoading: Boolean = false,
         isShowEmptyView: Boolean = true,
+        isJustRefresh:Boolean = false,
         black: suspend () -> ResponseEntity<T>
     ) {
         viewModelScope.launch {
@@ -46,19 +46,26 @@ open class BaseViewModel : ViewModel() {
             if (isShowLoading) {
                 loadingLiveData.value = false
             }
+            if (isJustRefresh){
+                refreshLiveData.value = isRefresh
+            }
 
         }
     }
 
+
     private fun <T> disposeRetrofit(
-        liveData: MutableLiveData<T>, response: ResponseEntity<T>?,
-        isShowEmptyView: Boolean
+        liveData: MutableLiveData<T>,
+        response: ResponseEntity<T>?,
+        isShowEmptyView: Boolean,
     ) {
         try {
+
             if (response != null && response.code == IApiService.HttpCode.SUCCEED) {
                 if (isShowEmptyView) {
                     emptyViewLiveData.value = false
                 }
+
                 val data = response.data
                 liveData.value = data
 
@@ -74,29 +81,6 @@ open class BaseViewModel : ViewModel() {
             }
 
 
-            /* if (response == null) {
-                 if (isShowEmptyView) {
-                     emptyViewLiveData.value = true
-                 }
-             } else {
-                 when (response.code) {
-                     IApiService.HttpCode.SUCCEED -> {
-                         if (isShowEmptyView) {
-                             emptyViewLiveData.value = false
-                         }
-                         val data = response.data
-                         liveData.value = data
-
-                     }
-
-
-                     else -> {
-                         if (isShowEmptyView) {
-                             emptyViewLiveData.value = true
-                         }
-                     }
-                 }
-             }*/
             LogUtils.d("disposeRetrofit--", "$response")
         } catch (e: Exception) {
             e.printStackTrace()

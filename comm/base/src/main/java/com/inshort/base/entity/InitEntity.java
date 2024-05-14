@@ -1,4 +1,4 @@
-package com.inshort.base.entity.splash;
+package com.inshort.base.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,12 +10,10 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import retrofit2.http.PUT;
-
-public class InitEntity implements Parcelable{
+public class InitEntity implements Parcelable {
     public InitEntity(){}
     @SerializedName("update_info")
-    public UpdateInfo updateInfo;
+    public InitEntity.UpdateInfo updateInfo;
     @SerializedName("feedback_url")
     public String feedbackUrl;
     @SerializedName("api_hostname")
@@ -28,7 +26,7 @@ public class InitEntity implements Parcelable{
     public List<String> domainNameList;
 
     protected InitEntity(Parcel in) {
-        updateInfo = in.readParcelable(UpdateInfo.class.getClassLoader());
+        updateInfo = in.readParcelable(InitEntity.UpdateInfo.class.getClassLoader());
         feedbackUrl = in.readString();
         apiHostName = in.readString();
         fqaUrl = in.readString();
@@ -85,15 +83,15 @@ public class InitEntity implements Parcelable{
             version = in.readInt();
         }
 
-        public static final Creator<UpdateInfo> CREATOR = new Creator<UpdateInfo>() {
+        public static final Creator<InitEntity.UpdateInfo> CREATOR = new Creator<InitEntity.UpdateInfo>() {
             @Override
-            public UpdateInfo createFromParcel(Parcel in) {
-                return new UpdateInfo(in);
+            public InitEntity.UpdateInfo createFromParcel(Parcel in) {
+                return new InitEntity.UpdateInfo(in);
             }
 
             @Override
-            public UpdateInfo[] newArray(int size) {
-                return new UpdateInfo[size];
+            public InitEntity.UpdateInfo[] newArray(int size) {
+                return new InitEntity.UpdateInfo[size];
             }
         };
 
