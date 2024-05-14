@@ -39,13 +39,12 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
         mViewBinding.rvBottom.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 
-
     @Override
     protected void initData() {
         initBottomTabAdapter();
         initPageAdapter();
         LogUtils.w("initData--", NetworkCompat.getMobileNetType(DataCompat.applicationContext()));
-        LogUtils.w("initData--", NetworkCompat.getMobileNetType(DataCompat.applicationContext()));
+
     }
 
     private void initPageAdapter() {
