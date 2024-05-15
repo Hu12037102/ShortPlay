@@ -14,6 +14,16 @@ public interface IApiService {
        String SPLASH_USER_LOGIN="/app/user";
        //首页接口
         String HOME_INDEX="/app/index";
+
+        //mylist
+        String MY_LIST_INDEX="/app/my_list";
+
+        //back his
+        String PLAYBACK_HISTORY_LIST="/app/my_list/playback_history/list";
+
+        //back love
+        String PLAYBACK_LOVE_LIST="/app/my_list/collect_history/list";
+
     }
 
     interface HttpCode {
