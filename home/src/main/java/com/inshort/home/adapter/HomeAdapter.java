@@ -2,12 +2,12 @@ package com.inshort.home.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.ArrayMap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +19,8 @@ import com.inshort.base.entity.ColumnEntity;
 import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
 import com.inshort.base.utils.LogUtils;
+import com.inshort.base.weight.click.DelayedClick;
+import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.home.databinding.ItemHomeHorizontalViewBinding;
 import com.inshort.home.databinding.ItemHomeTrendingViewBinding;
 import com.inshort.home.databinding.ItemHomeVerticalViewBinding;
@@ -32,8 +34,12 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
     public static final int VIEW_TYPE_HORIZONTAL = 2;
     public static final int VIEW_TYPE_WATERFALL = 3;
     public static final int VIEW_TYPE_TRENDING = 5;
-    private final ArrayMap<Integer, List<TrendingTypeEntity>> mTrendingTypeMap = new ArrayMap<>();
-    private final ArrayMap<Integer, List<DramaSeriesEntity>> mTrendingDramaSeriesMap = new ArrayMap<>();
+    @Nullable
+    private OnHomeItemClickListener mOnHomeItemClickListener;
+
+    public void setOnHomeItemClickListener(@Nullable OnHomeItemClickListener onTrendingItemClickListener) {
+        this.mOnHomeItemClickListener = onTrendingItemClickListener;
+    }
 
     public HomeAdapter(@NonNull Context mContext, @NonNull List<ColumnEntity> data) {
         super(mContext, data);
@@ -52,6 +58,14 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
         } else if (viewHolder instanceof TrendingViewHolder trendingViewHolder) {
             initTrendingTypeHolder(trendingViewHolder, entity, i);
             initTrendingContentHolder(trendingViewHolder, entity, i);
+            trendingViewHolder.viewBinding.atvViewMore.setOnClickListener(new DelayedClick() {
+                @Override
+                public void onDelayedClick(View view) {
+                    if (mOnHomeItemClickListener!=null){
+                        mOnHomeItemClickListener.onClickTrendingMore(view,getSelectorTrendingTypeContent());
+                    }
+                }
+            });
         }
     }
 
@@ -60,22 +74,42 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
         RecyclerView rvContent = trendingViewHolder.viewBinding.rvContent;
         List<DramaSeriesEntity> dramaSeriesEntities = entity.dramaSeriesList;
         RecyclerView.Adapter<?> adapter = rvContent.getAdapter();
-        List<DramaSeriesEntity> data = mTrendingDramaSeriesMap.get(i);
-        if (DataCompat.isNull(data)) {
-            data = new ArrayList<>();
-            mTrendingDramaSeriesMap.put(i, data);
-        }
-        data.clear();
-        if (DataCompat.notNull(dramaSeriesEntities)) {
-            data.addAll(dramaSeriesEntities);
-        }
-        if (DataCompat.isNull(adapter)) {
-            rvContent.setLayoutManager(new GridLayoutManager(getMContext(), 3, GridLayoutManager.HORIZONTAL, false));
-            adapter = new HomeTrendingAdapter(getMContext(), data);
-            rvContent.setAdapter(adapter);
+        HomeTrendingAdapter trendingAdapter;
+        if (adapter instanceof HomeTrendingAdapter) {
+            trendingAdapter = (HomeTrendingAdapter) adapter;
+            trendingAdapter.notifyRefreshData(dramaSeriesEntities);
         } else {
-            adapter.notifyDataSetChanged();
+            rvContent.setLayoutManager(new GridLayoutManager(getMContext(), 3, GridLayoutManager.HORIZONTAL, false));
+            List<DramaSeriesEntity> data = new ArrayList<>();
+            if (DataCompat.notNull(dramaSeriesEntities)) {
+                data.addAll(dramaSeriesEntities);
+            }
+            trendingAdapter = new HomeTrendingAdapter(getMContext(), data);
+            rvContent.setAdapter(trendingAdapter);
         }
+        trendingAdapter.setOnItemClickListener(new OnItemClickListener<DramaSeriesEntity>() {
+            @Override
+            public void onItemClick(@Nullable View view, @Nullable DramaSeriesEntity entity) {
+                if (mOnHomeItemClickListener != null) {
+                    mOnHomeItemClickListener.onClickTrendingItem(view, entity);
+                }
+            }
+        });
+    }
+
+    @Nullable
+    private String getSelectorTrendingTypeContent() {
+        String content = null;
+        for (ColumnEntity entity : getMData()) {
+            if (DataCompat.notNull(entity.trendingTypes)) {
+                for (TrendingTypeEntity typeEntity : entity.trendingTypes) {
+                    if (typeEntity.isCheck) {
+                        content = typeEntity.content;
+                    }
+                }
+            }
+        }
+        return content;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -83,23 +117,27 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
         RecyclerView rvType = trendingViewHolder.viewBinding.rvType;
         List<TrendingTypeEntity> trendingTypes = entity.trendingTypes;
         RecyclerView.Adapter<?> adapter = rvType.getAdapter();
-        List<TrendingTypeEntity> typeData = mTrendingTypeMap.get(i);
-        if (DataCompat.isNull(typeData)) {
-            typeData = new ArrayList<>();
-            mTrendingTypeMap.put(i, typeData);
-        }
-        typeData.clear();
-        if (DataCompat.notNull(trendingTypes)) {
-            typeData.addAll(trendingTypes);
-        }
+        HomeTrendingTypeAdapter typeAdapter;
         if (DataCompat.isNull(adapter)) {
             rvType.setLayoutManager(new LinearLayoutManager(getMContext(), LinearLayoutManager.HORIZONTAL, false));
-            adapter = new HomeTrendingTypeAdapter(getMContext(), typeData);
-            rvType.setAdapter(adapter);
+            List<TrendingTypeEntity> data = new ArrayList<>();
+            if (DataCompat.notNull(trendingTypes)) {
+                data.addAll(trendingTypes);
+            }
+            typeAdapter = new HomeTrendingTypeAdapter(getMContext(), data);
+            rvType.setAdapter(typeAdapter);
         } else {
-            adapter.notifyDataSetChanged();
+            typeAdapter = (HomeTrendingTypeAdapter) adapter;
+            typeAdapter.notifyRefreshData(trendingTypes);
         }
-
+        typeAdapter.setOnItemClickListener(new OnItemClickListener<TrendingTypeEntity>() {
+            @Override
+            public void onItemClick(@Nullable View view, @Nullable TrendingTypeEntity entity) {
+                if (mOnHomeItemClickListener != null) {
+                    mOnHomeItemClickListener.onClickTrendingType(view, entity);
+                }
+            }
+        });
         LogUtils.w("HomeAdapter", "我是TrendingViewHolder--" + entity.trendingTypes + "---\n" + trendingTypes);
     }
 
@@ -161,5 +199,13 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
             super(viewBinding.getRoot());
             this.viewBinding = viewBinding;
         }
+    }
+
+    public interface OnHomeItemClickListener {
+        void onClickTrendingItem(View view, DramaSeriesEntity entity);
+
+        void onClickTrendingType(View view, TrendingTypeEntity entity);
+
+        void onClickTrendingMore(View view, @Nullable String selectorTrendingType);
     }
 }

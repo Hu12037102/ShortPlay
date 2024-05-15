@@ -17,6 +17,7 @@ import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
+import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.imp.OnItemClickListener;
@@ -81,7 +82,14 @@ public class HomeTrendingTypeAdapter extends RecyclerView.Adapter<HomeTrendingTy
         });
     }
 
-
+    @SuppressLint("NotifyDataSetChanged")
+    public void notifyRefreshData(@Nullable List<TrendingTypeEntity> data) {
+        mData.clear();
+        if (DataCompat.notNull(data)) {
+            mData.addAll(data);
+        }
+        notifyDataSetChanged();
+    }
     @Override
     public int getItemCount() {
         return CollectionCompat.getListSize(mData);

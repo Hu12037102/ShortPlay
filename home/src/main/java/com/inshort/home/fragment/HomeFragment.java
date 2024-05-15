@@ -1,16 +1,24 @@
 package com.inshort.home.fragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.view.View;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.huxiaobai.adapter.BaseRecyclerAdapter;
 import com.inshort.base.compat.AdapterCompat;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
@@ -19,9 +27,13 @@ import com.inshort.base.compat.UICompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.ColumnEntity;
+import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.HomeIndexEntity;
+import com.inshort.base.entity.RequestTrendsByTypeEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
+import com.inshort.base.entity.TrendsPageEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
+import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.utils.LogUtils;
 import com.inshort.home.adapter.HomeAdapter;
 import com.inshort.home.adapter.HomeBannerAdapter;
@@ -91,6 +103,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                     .setIndicator(new RectangleIndicator(requireContext()), true)
                     .setAdapter(mBannerAdapter)
                     .setOnBannerListener((data, position) -> {
+
                     })
                     .start();
         }
@@ -107,9 +120,41 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
 
     @Override
     protected void initEvent() {
+        if (mAdapter != null) {
+            mAdapter.setOnHomeItemClickListener(new HomeAdapter.OnHomeItemClickListener() {
+                @Override
+                public void onClickTrendingItem(View view, DramaSeriesEntity entity) {
 
+                }
+
+                @Override
+                public void onClickTrendingType(View view, TrendingTypeEntity entity) {
+                    RequestTrendsByTypeEntity requestEntity = new RequestTrendsByTypeEntity();
+                    requestEntity.isHomeIndex = true;
+                    requestEntity.type = entity.content;
+                    mViewModel.findTrendsByType(requestEntity, false, false, false);
+                }
+
+                @Override
+                public void onClickTrendingMore(View view, @Nullable String selectorTrendingType) {
+                    Postcard postcard = ARouters.build(ARouterConfig.Path.Home.ACTIVITY_TRENDING);
+                    if (postcard != null) {
+                        postcard = postcard.withString(ARouterConfig.Key.CONTENT, selectorTrendingType);
+                        Intent intent = ARouters.getIntent(getContext(), postcard);
+                        mTrendingActivityResultLauncher.launch(intent);
+                    }
+                }
+            });
+        }
 
     }
+
+    private final ActivityResultLauncher<Intent> mTrendingActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), o -> {
+        if (o != null && o.getResultCode() == Activity.RESULT_OK) {
+
+        }
+    });
+
 
     @Override
     protected void initObserve() {
@@ -138,6 +183,16 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 AdapterCompat.notifyAdapterAddDateChanged(mEmptyLayout, mAdapter, mViewModel.isRefresh(),
                         mData, columnEntities, null);
             }
+        });
+        mViewModel.getTrendsPageLiveData().observe(this, trendsPageEntity -> {
+            if (DataCompat.notNull(trendsPageEntity) && DataCompat.notNull(trendsPageEntity.data)) {
+                for (ColumnEntity entity : mData) {
+                    if (entity.viewType == HomeAdapter.VIEW_TYPE_TRENDING) {
+                        entity.dramaSeriesList = trendsPageEntity.data;
+                    }
+                }
+            }
+            AdapterCompat.notifyAdapterUpdateDateChanged(mEmptyLayout, mAdapter, mData);
         });
     }
 

@@ -12,6 +12,6 @@ class HomeViewModel : BaseCompatViewModel() {
         httpRequest(indexLiveData, isShowLoading = true, isShowEmptyView = false, isJustRefresh = true) {
             RetrofitManger.getInstance().create(HomeService::class.java).homeIndex()
         }
-
     }
+
 }

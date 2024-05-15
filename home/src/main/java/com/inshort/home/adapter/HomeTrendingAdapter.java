@@ -1,5 +1,6 @@
 package com.inshort.home.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +22,8 @@ import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.other.glide.GlideCompat;
+import com.inshort.base.weight.click.DelayedClick;
+import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.home.databinding.ItemHomeTrendingChildViewBinding;
 
 import java.util.List;
@@ -28,11 +32,18 @@ public class HomeTrendingAdapter extends RecyclerView.Adapter<HomeTrendingAdapte
     private final Context mContext;
     private final List<DramaSeriesEntity> mData;
 
+
     public HomeTrendingAdapter(Context context, List<DramaSeriesEntity> data) {
         this.mContext = context;
         this.mData = data;
     }
 
+    @Nullable
+    private OnItemClickListener<DramaSeriesEntity> mOnItemClickListener;
+
+    public void setOnItemClickListener(@Nullable OnItemClickListener<DramaSeriesEntity> onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
+    }
 
     @NonNull
     @Override
@@ -74,6 +85,23 @@ public class HomeTrendingAdapter extends RecyclerView.Adapter<HomeTrendingAdapte
         } else {
             holder.viewBinding.atvLabel.setVisibility(View.INVISIBLE);
         }
+        holder.itemView.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                if (mOnItemClickListener != null) {
+                    mOnItemClickListener.onItemClick(view, entity);
+                }
+            }
+        });
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void notifyRefreshData(@Nullable List<DramaSeriesEntity> data) {
+        mData.clear();
+        if (DataCompat.notNull(data)) {
+            mData.addAll(data);
+        }
+        notifyDataSetChanged();
     }
 
     @Override

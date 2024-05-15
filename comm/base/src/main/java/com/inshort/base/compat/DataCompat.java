@@ -1,6 +1,7 @@
 package com.inshort.base.compat;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.text.TextUtils;
 
 import androidx.annotation.ColorInt;
@@ -103,6 +104,10 @@ public final class DataCompat {
     @ColorInt
     public static int getColor(@Nullable Context context, @ColorRes int colorRes) {
         return ContextCompat.getColor(checkContext(context), colorRes);
+    }
+    public static ColorStateList getColorStateList(@Nullable Context context, @ColorRes int colorRes){
+        return ContextCompat.getColorStateList(DataCompat.checkContext(context),colorRes);
+
     }
 
     @NonNull
