@@ -53,5 +53,4 @@
             app:srcCompat="@mipmap/icon_home_search" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

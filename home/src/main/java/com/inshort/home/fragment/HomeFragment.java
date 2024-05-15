@@ -20,6 +20,7 @@ import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.ColumnEntity;
 import com.inshort.base.entity.HomeIndexEntity;
+import com.inshort.base.entity.TrendingTypeEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.utils.LogUtils;
 import com.inshort.home.adapter.HomeAdapter;
@@ -35,7 +36,7 @@ import java.util.List;
 @Route(path = ARouterConfig.Path.Home.FRAGMENT_HOME)
 public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeViewModel> {
     @Nullable
-    private BaseRecyclerAdapter<ColumnEntity> mAdapter;
+    private HomeAdapter mAdapter;
     @Nullable
     private ItemHeadHomeViewBinding mHeadViewBinding;
     private final ArrayList<ColumnEntity> mData = new ArrayList<>();
@@ -126,9 +127,16 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 }
 
                 LogUtils.d("getIndexLiveData--", mBannerData.size() + "--" + homeIndexEntity);
-                //   mBannerAdapter.notifyDataSetChanged();
+                List<ColumnEntity> columnEntities = homeIndexEntity.columnList;
+                if (CollectionCompat.notEmptyList(columnEntities)) {
+                    for (ColumnEntity entity : columnEntities) {
+                        if (entity.viewType == HomeAdapter.VIEW_TYPE_TRENDING) {
+                            entity.trendingTypes = TrendingTypeEntity.stringList2EntityList(homeIndexEntity.trendClassifyList);
+                        }
+                    }
+                }
                 AdapterCompat.notifyAdapterAddDateChanged(mEmptyLayout, mAdapter, mViewModel.isRefresh(),
-                        mData, homeIndexEntity.columnList, null);
+                        mData, columnEntities, null);
             }
         });
     }

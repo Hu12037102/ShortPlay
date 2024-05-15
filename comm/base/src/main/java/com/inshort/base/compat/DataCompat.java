@@ -37,9 +37,11 @@ public final class DataCompat {
     public static boolean isNull(@Nullable Object obj) {
         return obj == null;
     }
-    public static boolean notNull(@Nullable Object object){
+
+    public static boolean notNull(@Nullable Object object) {
         return !isNull(object);
     }
+
     public static int dimen2px(@Nullable Context context, @DimenRes int dimenRes) {
         if (isNull(context)) {
             return 0;
@@ -78,7 +80,7 @@ public final class DataCompat {
 
     @NonNull
     public static String checkString(@Nullable String content) {
-      return checkString(content,null);
+        return checkString(content, null);
     }
 
     @NonNull
@@ -92,9 +94,15 @@ public final class DataCompat {
             return content;
         }
     }
+
+    @NonNull
+    public static String toString(@Nullable Object object) {
+        return object + "";
+    }
+
     @ColorInt
-    public static int getColor(@Nullable Context context, @ColorRes int colorRes){
-        return ContextCompat.getColor(checkContext(context),colorRes);
+    public static int getColor(@Nullable Context context, @ColorRes int colorRes) {
+        return ContextCompat.getColor(checkContext(context), colorRes);
     }
 
     @NonNull

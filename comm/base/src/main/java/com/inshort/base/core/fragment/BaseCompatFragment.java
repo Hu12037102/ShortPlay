@@ -203,13 +203,13 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
         mRefreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                mViewModel.pagerReset();
+                mViewModel.setRefresh(false);
                 loadSmartData( false);
             }
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                mViewModel.setRefresh(false);
+                mViewModel.pagerReset();
                 loadSmartData( true);
             }
         });

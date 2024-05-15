@@ -8,4 +8,7 @@
     <string name="mylist_content">My List</string>
     <string name="me_content">Me</string>
     <string name="top_again_to_quit_app">Tap again to quit InShort</string>
+    <string name="trending_content">Trending</string>
+    <string name="view_more_content">View More</string>
+    <string name="update_to_s">Update to %s</string>
 </resources>
