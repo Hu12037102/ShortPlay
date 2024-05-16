@@ -12,7 +12,7 @@ public final class SmartRefreshLayoutCompat {
 
     public static void initDefault(@Nullable SmartRefreshLayout refreshLayout) {
         if (refreshLayout != null) {
-            refreshLayout.setEnableLoadMore(false);
+            refreshLayout.setEnableLoadMore(true);
             refreshLayout.setEnableRefresh(true);
             //  refreshLayout.setEnableOverScrollDrag(true);
             //  refreshLayout.setEnableOverScrollBounce(true);

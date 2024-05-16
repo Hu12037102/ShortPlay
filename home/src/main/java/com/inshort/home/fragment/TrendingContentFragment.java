@@ -2,11 +2,9 @@ package com.inshort.home.fragment;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -15,7 +13,6 @@ import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.RequestTrendsByTypeEntity;
-import com.inshort.base.entity.TrendsPageEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.utils.LogUtils;
@@ -23,7 +20,6 @@ import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.home.adapter.TrendingAdapter;
 import com.inshort.home.databinding.FragmentTrendingContentBinding;
 import com.inshort.home.viewmodel.TrendingContentViewModel;
-import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;

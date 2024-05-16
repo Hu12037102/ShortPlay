@@ -18,6 +18,8 @@ public interface IApiService {
         String FIND_TRENDING_LIST_BY_TYPE = "/app/index/trend_ranking";
         //所有的TrendingType
         String LOAD_ALL_TRENDING_TYPES="/app/index/ranking_classify";
+        //首页更多数据
+        String LOAD_HOME_MORE_LIST="/app/index/waterfall_column";
     }
 
     interface HttpCode {

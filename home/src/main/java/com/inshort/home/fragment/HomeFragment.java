@@ -1,15 +1,13 @@
 package com.inshort.home.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,17 +26,20 @@ import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.ColumnEntity;
 import com.inshort.base.entity.DramaSeriesEntity;
+import com.inshort.base.entity.DramaSeriesPageEntity;
 import com.inshort.base.entity.HomeIndexEntity;
+import com.inshort.base.entity.RequestPageEntity;
 import com.inshort.base.entity.RequestTrendsByTypeEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
-import com.inshort.base.entity.TrendsPageEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
+import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.utils.LogUtils;
 import com.inshort.home.adapter.HomeAdapter;
 import com.inshort.home.adapter.HomeBannerAdapter;
 import com.inshort.home.databinding.FragmentHomeBinding;
 import com.inshort.home.databinding.ItemHeadHomeViewBinding;
+import com.inshort.home.databinding.ItemHomeNotMoreFooterViewBinding;
 import com.inshort.home.viewmodel.HomeViewModel;
 import com.youth.banner.indicator.RectangleIndicator;
 
@@ -71,6 +72,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         ViewCompat.setBackground(mViewBinding.clSearchParent, getSearchBackground());
         ViewsCompat.setStatusBarMargin(mViewBinding.clSearchParent, getActivity(), PhoneCompat.dp2px(requireContext(), 6));
         mViewBinding.rvContent.setLayoutManager(new LinearLayoutManager(getContext()));
+        mViewBinding.refreshLayout.setEnableLoadMore(true);
         initHeadView();
     }
 
@@ -91,6 +93,9 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         super.loadSmartData(isRefresh);
         if (isRefresh) {
             mViewModel.loadIndex();
+        } else {
+
+            mViewModel.loadMore();
         }
     }
 
@@ -190,6 +195,10 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                         }
                     }
                 }
+                if (mAdapter != null) {
+                    mAdapter.removeFootView();
+                }
+                SmartRefreshLayoutCompat.initDefault(mViewBinding.refreshLayout);
                 AdapterCompat.notifyAdapterAddDateChanged(mEmptyLayout, mAdapter, mViewModel.isRefresh(),
                         mData, columnEntities, null);
             }
@@ -203,6 +212,33 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 }
             }
             AdapterCompat.notifyAdapterUpdateDateChanged(mEmptyLayout, mAdapter, mData);
+        });
+        mViewModel.getDramaSeriesPageLiveData().observe(this, new Observer<DramaSeriesPageEntity>() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onChanged(DramaSeriesPageEntity dramaSeriesPageEntity) {
+                if (DataCompat.notNull(dramaSeriesPageEntity)) {
+                    List<DramaSeriesEntity> data = dramaSeriesPageEntity.data;
+                    boolean hasMore = dramaSeriesPageEntity.page < dramaSeriesPageEntity.pageCount;
+                    if (mAdapter != null) {
+                        mAdapter.removeFootView();
+                        if (!hasMore) {
+                            mAdapter.addFootView(ItemHomeNotMoreFooterViewBinding.inflate(getLayoutInflater(), mViewBinding.rvContent, false).getRoot());
+                        }
+                        for (ColumnEntity entity : mData) {
+                            if (entity.viewType == 3) {
+                                if (DataCompat.notNull(entity.dramaSeriesList)) {
+                                    entity.dramaSeriesList.addAll(data);
+                                }
+
+                            }
+                        }
+                        mAdapter.notifyDataSetChanged();
+                    }
+                    mViewBinding.refreshLayout.setEnableLoadMore(hasMore);
+
+                }
+            }
         });
     }
 

@@ -189,7 +189,11 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
             @Override
             public void onChanged(Boolean isRefresh) {
                 LogUtils.d("getRefreshLiveData--", isRefresh + "---" + mRefreshLayout);
-                  SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
+                if (!mViewModel.isRefresh()){
+                    mViewModel.pagerMore();
+                }
+                SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
+
 
             }
         });

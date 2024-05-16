@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class TrendsPageEntity {
+public class DramaSeriesPageEntity {
     @SerializedName("drama_series_list")
     public List<DramaSeriesEntity> data;
     @SerializedName("page")
