@@ -144,6 +144,16 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                         mTrendingActivityResultLauncher.launch(intent);
                     }
                 }
+
+                @Override
+                public void onClickViewMore(View view, ColumnEntity entity) {
+
+                }
+
+                @Override
+                public void onClickNewEpisode(View view, DramaSeriesEntity entity) {
+
+                }
             });
         }
 

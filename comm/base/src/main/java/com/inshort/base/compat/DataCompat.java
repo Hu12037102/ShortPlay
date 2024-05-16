@@ -105,8 +105,9 @@ public final class DataCompat {
     public static int getColor(@Nullable Context context, @ColorRes int colorRes) {
         return ContextCompat.getColor(checkContext(context), colorRes);
     }
-    public static ColorStateList getColorStateList(@Nullable Context context, @ColorRes int colorRes){
-        return ContextCompat.getColorStateList(DataCompat.checkContext(context),colorRes);
+
+    public static ColorStateList getColorStateList(@Nullable Context context, @ColorRes int colorRes) {
+        return ContextCompat.getColorStateList(DataCompat.checkContext(context), colorRes);
 
     }
 
@@ -126,5 +127,13 @@ public final class DataCompat {
         id += timestamp;
         id += (Math.random() * 10000);
         return id;
+    }
+
+    public static int getTextLength(@Nullable CharSequence text) {
+        if (DataCompat.isNull(text)) {
+            return 0;
+        } else {
+            return text.length();
+        }
     }
 }

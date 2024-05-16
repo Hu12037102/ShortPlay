@@ -9,12 +9,13 @@
     android:layout_marginEnd="@dimen/size_10dp"
     android:maxHeight="@dimen/size_540dp"
     app:cardCornerRadius="@dimen/size_14dp"
-    app:cardElevation="@dimen/size_0dp">
+    app:cardElevation="@dimen/size_0dp"
+    app:cardBackgroundColor="@color/color_FFF8F8F8">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_White">
+       >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
@@ -53,7 +54,7 @@
             android:text="@string/view_more_content"
             android:textColor="@color/color_FFFF5C4F"
             android:textSize="@dimen/size_13sp"
-            app:drawableEndCompat="@mipmap/icon_view_more"
+            app:drawableEndCompat="@mipmap/icon_view_more_red"
             app:fontFamily="@font/sofia_pro_medium"
             app:layout_constraintBottom_toBottomOf="@id/atv_trending_title"
             app:layout_constraintEnd_toEndOf="parent"

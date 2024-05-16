@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/color_White">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_king"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toLeftOf="@id/atv_rank"
+        app:layout_constraintRight_toRightOf="@id/atv_rank"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/icon_trending_king_1" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_image"
+        android:layout_width="95dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="18dp"
+        app:cardCornerRadius="@dimen/size_6dp"
+        app:cardElevation="@dimen/size_0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aiv_king">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aiv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLength="3"
+        android:textColor="@color/color_White"
+        app:fontFamily="@font/sofia_pro_medium"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/cv_image"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintHeight_min="22dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="@id/cv_image"
+        app:layout_constraintRight_toRightOf="@id/cv_image"
+        app:layout_constraintTop_toTopOf="@id/cv_image"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintWidth_min="22dp"
+        tools:text="1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="18dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="2dp"
+        android:maxLines="2"
+        android:textColor="@color/color_White"
+        android:textSize="15sp"
+        app:fontFamily="@font/sofia_pro_medium"
+        app:layout_constraintLeft_toRightOf="@id/cv_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cv_image"
+        tools:text="就卡速度加快撒娇达拉斯萨克贷记卡数量收垃圾的卡拉赛季开打烧录卡就打开拉萨几率大傻得可怜撒" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="2dp"
+        android:maxLines="3"
+        android:textColor="@color/colorFF999999"
+        android:textSize="12sp"
+        app:fontFamily="@font/sofia_pro_medium"
+        app:layout_constraintLeft_toLeftOf="@id/atv_title"
+        app:layout_constraintRight_toRightOf="@id/atv_title"
+        app:layout_constraintTop_toBottomOf="@id/atv_title"
+        tools:text="kldsalkjdklsajdsalkjdksakldjlsakjdlskajdklsajdklsaKjlksjadklsajkldsjakldjslaskaljdlkasjsdaksjdlajdklsajkldasjlkdjsalkjdklasjdlksjksaldsajkdlsadlsajdsalksdadsa" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="64dp"
+        android:minHeight="18dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="@color/color_FF2E2E2E"
+        android:textSize="11sp"
+        app:fontFamily="@font/sofia_pro_medium"
+        app:layout_constraintBottom_toBottomOf="@id/cv_image"
+        app:layout_constraintLeft_toLeftOf="@id/atv_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_hot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_FF2E2E2E"
+        android:textSize="11sp"
+        app:drawableStartCompat="@mipmap/icon_trending_heat"
+        app:fontFamily="@font/sofia_pro_medium"
+        app:layout_constraintBottom_toBottomOf="@id/atv_tag"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/atv_tag"
+        tools:text="722k" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_update"
+        android:layout_width="84dp"
+        android:layout_height="18dp"
+        android:fontFamily="@font/sofia_pro_medium"
+        android:gravity="center"
+        android:textColor="@color/color_White"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_image"
+        app:layout_constraintEnd_toEndOf="@+id/cv_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

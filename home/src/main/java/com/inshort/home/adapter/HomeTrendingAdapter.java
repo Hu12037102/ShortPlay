@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.inshort.base.Contracts;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.GradientDrawableCompat;
 import com.inshort.base.compat.NumberCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
@@ -59,6 +60,7 @@ public class HomeTrendingAdapter extends RecyclerView.Adapter<HomeTrendingAdapte
         } else {
             holder.viewBinding.atvUpdate.setVisibility(View.VISIBLE);
             UICompat.setText(holder.viewBinding.atvUpdate, DataCompat.getResString(mContext, com.inshort.base.R.string.update_to_s, DataCompat.toString(entity.episodeUpdated)));
+            ViewCompat.setBackground(holder.viewBinding.atvUpdate, GradientDrawableCompat.getUpdateEpisodeBackground(mContext));
         }
         if (position == 0) {
             holder.viewBinding.aivKing.setVisibility(View.VISIBLE);

@@ -11,4 +11,16 @@
     <string name="trending_content">Trending</string>
     <string name="view_more_content">View More</string>
     <string name="update_to_s">Update to %s</string>
+    <string name="jan_content">Jan</string>
+    <string name="feb_content">Feb</string>
+    <string name="mar_content">Mar</string>
+    <string name="apr_content">Apr</string>
+    <string name="may_content">May</string>
+    <string name="jun_content">Jun</string>
+    <string name="jul_content">Jul</string>
+    <string name="aug_content">Aug</string>
+    <string name="sep_content">Sep</string>
+    <string name="oct_content">Oct</string>
+    <string name="nov_content">Nov</string>
+    <string name="dec_content">Dec</string>
 </resources>

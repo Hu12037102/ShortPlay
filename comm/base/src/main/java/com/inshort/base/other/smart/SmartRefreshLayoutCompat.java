@@ -14,8 +14,8 @@ public final class SmartRefreshLayoutCompat {
         if (refreshLayout != null) {
             refreshLayout.setEnableLoadMore(false);
             refreshLayout.setEnableRefresh(true);
-          //  refreshLayout.setEnableOverScrollDrag(true);
-          //  refreshLayout.setEnableOverScrollBounce(true);
+            //  refreshLayout.setEnableOverScrollDrag(true);
+            //  refreshLayout.setEnableOverScrollBounce(true);
         }
     }
 
@@ -41,4 +41,10 @@ public final class SmartRefreshLayoutCompat {
         }
     }
 
+    public static void setEnableMore(@Nullable SmartRefreshLayout refreshLayout, int dataSize, int defaultSize) {
+        if (refreshLayout == null) {
+            return;
+        }
+        refreshLayout.setEnableLoadMore(dataSize >= defaultSize);
+    }
 }

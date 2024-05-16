@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.huxiaobai.adapter.BaseRecyclerAdapter;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.UICompat;
 import com.inshort.base.entity.ColumnEntity;
 import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
@@ -49,11 +50,15 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
     @Override
     public void onBindChildViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         ColumnEntity entity = getMData().get(i);
-        if (viewHolder instanceof HorizontalViewHolder) {
+        if (viewHolder instanceof HorizontalViewHolder horizontalViewHolder) {
+            initHorizontalViewHolder(horizontalViewHolder, entity, i);
 
-        } else if (viewHolder instanceof VerticalViewHolder) {
+        } else if (viewHolder instanceof VerticalViewHolder verticalViewHolder) {
+            initVerticalViewHolder(verticalViewHolder, entity, i);
 
-        } else if (viewHolder instanceof WaterfallViewHolder) {
+
+        } else if (viewHolder instanceof WaterfallViewHolder waterfallViewHolder) {
+            initWaterfallViewHolder(waterfallViewHolder, entity, i);
 
         } else if (viewHolder instanceof TrendingViewHolder trendingViewHolder) {
             initTrendingTypeHolder(trendingViewHolder, entity, i);
@@ -61,12 +66,101 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
             trendingViewHolder.viewBinding.atvViewMore.setOnClickListener(new DelayedClick() {
                 @Override
                 public void onDelayedClick(View view) {
-                    if (mOnHomeItemClickListener!=null){
-                        mOnHomeItemClickListener.onClickTrendingMore(view,getSelectorTrendingTypeContent());
+                    if (mOnHomeItemClickListener != null) {
+                        mOnHomeItemClickListener.onClickTrendingMore(view, getSelectorTrendingTypeContent());
                     }
                 }
             });
         }
+    }
+
+    private void initWaterfallViewHolder(WaterfallViewHolder waterfallViewHolder, ColumnEntity entity, int i) {
+        UICompat.setText(waterfallViewHolder.viewBinding.atvTitle, entity.columnName);
+        RecyclerView rvContent = waterfallViewHolder.viewBinding.rvContent;
+        List<DramaSeriesEntity> dramaSeriesEntities = entity.dramaSeriesList;
+        RecyclerView.Adapter<?> adapter = rvContent.getAdapter();
+        HomeWaterfallAdapter waterfallAdapter;
+        if (adapter instanceof HomeWaterfallAdapter){
+            waterfallAdapter = (HomeWaterfallAdapter) adapter;
+            waterfallAdapter.notifyRefreshData(dramaSeriesEntities);
+        }else {
+            rvContent.setLayoutManager(new GridLayoutManager(getMContext(), 3));
+            List<DramaSeriesEntity> data = new ArrayList<>();
+            if (CollectionCompat.notEmptyList(dramaSeriesEntities)) {
+                data.addAll(dramaSeriesEntities);
+            }
+            waterfallAdapter = new HomeWaterfallAdapter(getMContext(), data);
+            rvContent.setAdapter(waterfallAdapter);
+        }
+    }
+
+    private void initHorizontalViewHolder(HorizontalViewHolder horizontalViewHolder, ColumnEntity entity, int i) {
+        if (hasViewMore(entity.dramaReleaseType)) {
+            horizontalViewHolder.viewBinding.atvViewMore.setVisibility(View.VISIBLE);
+        } else {
+            horizontalViewHolder.viewBinding.atvViewMore.setVisibility(View.GONE);
+        }
+        UICompat.setText(horizontalViewHolder.viewBinding.atvTitle, entity.columnName);
+        RecyclerView rvContent = horizontalViewHolder.viewBinding.rvContent;
+        List<DramaSeriesEntity> dramaSeriesEntities = entity.dramaSeriesList;
+        RecyclerView.Adapter<?> adapter = rvContent.getAdapter();
+        HomeHorizontalAdapter horizontalAdapter;
+        if (adapter instanceof HomeHorizontalAdapter) {
+            horizontalAdapter = (HomeHorizontalAdapter) adapter;
+            horizontalAdapter.notifyRefreshData(dramaSeriesEntities);
+        } else {
+            rvContent.setLayoutManager(new LinearLayoutManager(getMContext(), LinearLayoutManager.HORIZONTAL, false));
+            List<DramaSeriesEntity> data = new ArrayList<>();
+            if (CollectionCompat.notEmptyList(dramaSeriesEntities)) {
+                data.addAll(dramaSeriesEntities);
+            }
+            horizontalAdapter = new HomeHorizontalAdapter(getMContext(), data);
+            rvContent.setAdapter(horizontalAdapter);
+        }
+
+
+        horizontalViewHolder.viewBinding.atvViewMore.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                if (mOnHomeItemClickListener != null) {
+                    mOnHomeItemClickListener.onClickViewMore(view, entity);
+                }
+            }
+        });
+    }
+
+    private void initVerticalViewHolder(VerticalViewHolder verticalViewHolder, ColumnEntity entity, int i) {
+        if (hasViewMore(entity.dramaReleaseType)) {
+            verticalViewHolder.viewBinding.atvViewMore.setVisibility(View.VISIBLE);
+        } else {
+            verticalViewHolder.viewBinding.atvViewMore.setVisibility(View.GONE);
+        }
+        UICompat.setText(verticalViewHolder.viewBinding.atvTitle, entity.columnName);
+        RecyclerView rvContent = verticalViewHolder.viewBinding.rvContent;
+        List<DramaSeriesEntity> dramaSeriesEntities = entity.dramaSeriesList;
+        RecyclerView.Adapter<?> adapter = rvContent.getAdapter();
+        HomeVerticalAdapter verticalAdapter;
+        if (adapter instanceof HomeVerticalAdapter) {
+            verticalAdapter = (HomeVerticalAdapter) adapter;
+            verticalAdapter.notifyRefreshData(dramaSeriesEntities);
+        } else {
+            rvContent.setLayoutManager(new LinearLayoutManager(getMContext()));
+            List<DramaSeriesEntity> data = new ArrayList<>();
+            if (CollectionCompat.notEmptyList(dramaSeriesEntities)) {
+                data.addAll(dramaSeriesEntities);
+            }
+            verticalAdapter = new HomeVerticalAdapter(getMContext(), data);
+            rvContent.setAdapter(verticalAdapter);
+        }
+        verticalViewHolder.viewBinding.atvViewMore.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                if (mOnHomeItemClickListener != null) {
+                    mOnHomeItemClickListener.onClickViewMore(view, entity);
+                }
+            }
+        });
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -207,5 +301,14 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
         void onClickTrendingType(View view, TrendingTypeEntity entity);
 
         void onClickTrendingMore(View view, @Nullable String selectorTrendingType);
+
+        void onClickViewMore(View view, ColumnEntity entity);
+
+        void onClickNewEpisode(View view, DramaSeriesEntity entity);
+
+    }
+
+    public boolean hasViewMore(int dramaReleaseType) {
+        return dramaReleaseType == 2;
     }
 }

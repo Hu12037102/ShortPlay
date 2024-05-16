@@ -81,7 +81,7 @@ open class BaseViewModel : ViewModel() {
                 refreshLiveData.value=isRefresh
             }
 
-            LogUtils.d("disposeRetrofit--", "$response------${Looper.myLooper()}")
+            LogUtils.d("disposeRetrofit--", "$response--")
         } catch (e: Exception) {
             e.printStackTrace()
         }

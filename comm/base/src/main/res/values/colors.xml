@@ -19,5 +19,12 @@
     <color name="color_FF333333" tools:ignore="MissingDefaultResource">#FF333333</color>
     <color name="color_1AFFFFFF" tools:ignore="MissingDefaultResource">#1AFFFFFF</color>
     <color name="color_1A000000" tools:ignore="MissingDefaultResource">#1A000000</color>
+    <color name="color_FFCCCCCC" tools:ignore="MissingDefaultResource">#FFCCCCCC</color>
+    <color name="color_FF00C063" tools:ignore="MissingDefaultResource">#FF00C063</color>
+    <color name="color_FFE9F4FF" tools:ignore="MissingDefaultResource">#FFE9F4FF</color>
+    <color name="color_FFFFF5DA" tools:ignore="MissingDefaultResource">#FFFFF5DA</color>
+    <color name="color_FFFFF2F1" tools:ignore="MissingDefaultResource">#FFFFF2F1</color>
+    <color name="color_FFF8F8F8" tools:ignore="MissingDefaultResource">#FFF8F8F8</color>
+
 
 </resources>
