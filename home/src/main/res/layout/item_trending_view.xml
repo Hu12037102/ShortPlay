@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_12dp"
     tools:background="@color/color_White">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -64,7 +65,7 @@
         android:ellipsize="end"
         android:lineSpacingExtra="2dp"
         android:maxLines="2"
-        android:textColor="@color/color_White"
+        android:textColor="@color/color_FF2E2E2E"
         android:textSize="15sp"
         app:fontFamily="@font/sofia_pro_medium"
         app:layout_constraintLeft_toRightOf="@id/cv_image"

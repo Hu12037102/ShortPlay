@@ -122,6 +122,7 @@ public class TrendingActivity extends BaseCompatActivity<ActivityTrendingBinding
                 }
 
                 mViewBinding.vpContent.setOffscreenPageLimit(CollectionCompat.getListSize(mFragments));
+                mViewBinding.vpContent.setUserInputEnabled(false);
                 mViewBinding.vpContent.setAdapter(mFragmentAdapter);
                 mViewBinding.vpContent.setCurrentItem(initIndex, false);
 

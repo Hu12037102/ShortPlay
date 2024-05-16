@@ -69,6 +69,7 @@ public class TrendingAdapter extends BaseRecyclerAdapter<DramaSeriesEntity> {
             UICompat.setText(holder.viewBinding.atvRank, DataCompat.toString(rank));
             ViewCompat.setBackground(holder.viewBinding.atvRank, getRankBackground(position));
             UICompat.setText(holder.viewBinding.atvTitle, entity.dramaTitle);
+            UICompat.setText(holder.viewBinding.atvDesc,entity.introduction);
             UICompat.setText(holder.viewBinding.atvHot, NumberCompat.getHotText(entity.heatValue, Contracts.DEFAULT_STRING));
             if (CollectionCompat.notEmptyList(entity.dramaClassifies)) {
                 ViewCompat.setBackground(holder.viewBinding.atvTag, getLabelBackground());
