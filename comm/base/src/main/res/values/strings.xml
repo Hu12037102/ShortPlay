@@ -23,4 +23,15 @@
     <string name="oct_content">Oct</string>
     <string name="nov_content">Nov</string>
     <string name="dec_content">Dec</string>
+    <string name="cancel_content">Cancel</string>
+    <string name="sign_in_content">Sign in</string>
+    <string name="my_wallet_content">My Wallet</string>
+    <string name="detail_content">Detail</string>
+    <string name="top_up_content">Top-up</string>
+    <string name="coins_content">Coins</string>
+    <string name="bonus_content">Bonus</string>
+    <string name="id_content_s">ID %s</string>
+    <string name="bonus_center_content">Bonus Center</string>
+    <string name="playback_history_content">Playback History</string>
+    <string name="my_list_content">My List</string>
 </resources>

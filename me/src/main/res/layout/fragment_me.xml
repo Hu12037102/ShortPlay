@@ -1,6 +1,480 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/color_FFF7F7F7">
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_head_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aiv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_12dp"
+            android:layout_marginEnd="@dimen/size_6dp"
+            android:padding="@dimen/size_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icon_me_setting" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_head"
+            android:layout_width="@dimen/size_56dp"
+            android:layout_height="@dimen/size_56dp"
+            android:layout_marginStart="@dimen/size_15dp"
+            android:layout_marginTop="@dimen/size_12dp"
+            app:cardBackgroundColor="@color/color_White"
+            app:cardCornerRadius="@dimen/size_28dp"
+            app:cardElevation="@dimen/size_0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/aiv_setting">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aiv_head"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_12dp"
+            android:layout_marginEnd="@dimen/size_12dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/size_20sp"
+            app:fontFamily="@font/sofia_pro_medium"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/atv_id"
+            app:layout_constraintEnd_toStartOf="@id/atv_sign_in"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/cv_head"
+            app:layout_constraintTop_toTopOf="@id/cv_head"
+            tools:ignore="SpUsage"
+            tools:text="Guest" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_12dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_FF666666"
+            android:textSize="@dimen/size_12sp"
+            app:fontFamily="@font/sofia_pro_medium"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/cv_head"
+            app:layout_constraintEnd_toStartOf="@id/atv_sign_in"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/atv_name"
+            app:layout_constraintTop_toBottomOf="@id/atv_name"
+            tools:ignore="SpUsage"
+            tools:text="1000000000100000000000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_15dp"
+            android:gravity="center"
+            android:minWidth="@dimen/size_73dp"
+            android:minHeight="@dimen/size_30dp"
+            android:text="@string/sign_in_content"
+            android:textColor="@color/color_White"
+            android:textSize="@dimen/size_14sp"
+            app:fontFamily="@font/sofia_pro_medium"
+            app:layout_constraintBottom_toBottomOf="@id/cv_head"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cv_head"
+            tools:ignore="SpUsage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0dp"
+        android:layout_marginTop="@dimen/size_10dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_head_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_wallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_15dp"
+                android:layout_marginTop="@dimen/size_6dp"
+                android:layout_marginEnd="@dimen/size_15dp"
+                app:cardBackgroundColor="@color/color_FF161B28"
+                app:cardCornerRadius="@dimen/size_16dp"
+                app:cardElevation="@dimen/size_0dp"
+                app:layout_constraintHeight_min="@dimen/size_120dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/atv_wallet_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size_18dp"
+                        android:layout_marginTop="@dimen/size_16dp"
+                        android:text="@string/my_wallet_content"
+                        android:textColor="@color/color_FFEECC9A"
+                        android:textSize="@dimen/size_17sp"
+                        app:fontFamily="@font/sofia_pro_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpUsage" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/atv_wallet_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_6dp"
+                        android:layout_marginEnd="@dimen/size_8dp"
+                        android:drawablePadding="@dimen/size_6dp"
+                        android:padding="@dimen/size_10dp"
+                        android:text="@string/detail_content"
+                        android:textColor="@color/color_FFEECC9A"
+                        android:textSize="@dimen/size_13sp"
+                        app:drawableEndCompat="@mipmap/icon_view_more_gray"
+                        app:drawableTint="@color/color_FFEECC9A"
+                        app:fontFamily="@font/sofia_pro_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpUsage" />
+
+                    <View
+                        android:id="@+id/line1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_1dp"
+                        android:layout_marginStart="@dimen/size_18dp"
+                        android:layout_marginTop="@dimen/size_14dp"
+                        android:layout_marginEnd="@dimen/size_18dp"
+                        android:background="@color/color_FF202632"
+                        app:layout_constraintTop_toBottomOf="@id/atv_wallet_title" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/atv_top_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/size_18dp"
+                        android:gravity="center"
+                        android:minWidth="@dimen/size_90dp"
+                        android:minHeight="@dimen/size_35dp"
+                        android:text="@string/top_up_content"
+                        android:textColor="@color/color_FFCC481E"
+                        android:textSize="@dimen/size_14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line1"
+                        tools:ignore="SpUsage" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_coins_parent"
+                        android:layout_width="@dimen/size_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/size_6dp"
+                        app:layout_constraintBottom_toBottomOf="@id/atv_top_up"
+                        app:layout_constraintEnd_toStartOf="@id/cl_bonus_parent"
+                        app:layout_constraintStart_toStartOf="@id/atv_wallet_title"
+                        app:layout_constraintTop_toTopOf="@id/atv_top_up">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/aiv_coins"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/icon_me_coins" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_coins_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_4dp"
+                            android:textColor="@color/color_FFEECC9A"
+                            android:textSize="@dimen/size_16sp"
+                            app:fontFamily="@font/sofia_pro_bold"
+                            app:layout_constraintStart_toEndOf="@id/aiv_coins"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage"
+                            tools:text="100000" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/coins_content"
+                            android:textColor="@color/color_FFEECC9A"
+                            android:textSize="@dimen/size_11sp"
+                            app:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintStart_toStartOf="@id/atv_coins_count"
+                            app:layout_constraintTop_toBottomOf="@id/atv_coins_count"
+                            tools:ignore="SpUsage" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_bonus_parent"
+                        android:layout_width="@dimen/size_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/size_6dp"
+                        app:layout_constraintBottom_toBottomOf="@id/atv_top_up"
+                        app:layout_constraintEnd_toStartOf="@id/atv_top_up"
+                        app:layout_constraintStart_toEndOf="@id/cl_coins_parent"
+                        app:layout_constraintTop_toTopOf="@id/atv_top_up">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/aiv_bonus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/icon_me_bonus" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_bonus_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_4dp"
+                            android:textColor="@color/color_FFEECC9A"
+                            android:textSize="@dimen/size_16sp"
+                            app:fontFamily="@font/sofia_pro_bold"
+                            app:layout_constraintStart_toEndOf="@id/aiv_bonus"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage"
+                            tools:text="100000" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bonus_content"
+                            android:textColor="@color/color_FFEECC9A"
+                            android:textSize="@dimen/size_11sp"
+                            app:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintStart_toStartOf="@id/atv_bonus_count"
+                            app:layout_constraintTop_toBottomOf="@id/atv_bonus_count"
+                            tools:ignore="SpUsage" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_15dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_marginEnd="@dimen/size_15dp"
+                app:cardBackgroundColor="@color/color_White"
+                app:cardCornerRadius="@dimen/size_10dp"
+                app:cardElevation="@dimen/size_0dp"
+                app:layout_constraintTop_toBottomOf="@id/cv_wallet">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_item_bonus_center"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_70dp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_bonus_center_left"
+                            android:layout_width="@dimen/size_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_18dp"
+                            android:layout_marginEnd="@dimen/size_10dp"
+                            android:drawablePadding="@dimen/size_6dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/bonus_center_content"
+                            android:textColor="@color/color_FF222222"
+                            android:textSize="@dimen/size_15sp"
+                            app:drawableStartCompat="@mipmap/icon_me_bonus_center"
+                            app:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/atv_bonus_center_right"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_bonus_center_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/size_18dp"
+                            android:drawablePadding="@dimen/size_6dp"
+                            app:drawableEndCompat="@mipmap/icon_me_item_right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_item_playback_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_70dp"
+                        app:layout_constraintTop_toBottomOf="@id/cl_item_bonus_center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_playback_history_left"
+                            android:layout_width="@dimen/size_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_18dp"
+                            android:layout_marginEnd="@dimen/size_10dp"
+                            android:drawablePadding="@dimen/size_6dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/playback_history_content"
+                            android:textColor="@color/color_FF222222"
+                            android:textSize="@dimen/size_15sp"
+                            app:drawableStartCompat="@mipmap/icon_me_playback_history"
+                            app:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/atv_playback_history_right"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_playback_history_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/size_18dp"
+                            android:drawablePadding="@dimen/size_6dp"
+                            app:drawableEndCompat="@mipmap/icon_me_item_right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_item_my_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_70dp"
+                        app:layout_constraintTop_toBottomOf="@id/cl_item_playback_history">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_my_list_left"
+                            android:layout_width="@dimen/size_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_18dp"
+                            android:layout_marginEnd="@dimen/size_10dp"
+                            android:drawablePadding="@dimen/size_6dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/my_list_content"
+                            android:textColor="@color/color_FF222222"
+                            android:textSize="@dimen/size_15sp"
+                            app:drawableStartCompat="@mipmap/icon_me_my_list"
+                            app:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/atv_my_list_right"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_my_list_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/size_18dp"
+                            android:drawablePadding="@dimen/size_6dp"
+                            app:drawableEndCompat="@mipmap/icon_me_item_right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_item_feedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_70dp"
+                        app:layout_constraintTop_toBottomOf="@id/cl_item_my_list">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_feedback_left"
+                            android:layout_width="@dimen/size_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_18dp"
+                            android:layout_marginEnd="@dimen/size_10dp"
+                            android:drawablePadding="@dimen/size_6dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/feedback_content"
+                            android:textColor="@color/color_FF222222"
+                            android:textSize="@dimen/size_15sp"
+                            app:drawableStartCompat="@mipmap/icon_me_feedback"
+                            app:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/atv_feedback_right"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/atv_feedback_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/size_18dp"
+                            android:drawablePadding="@dimen/size_6dp"
+                            app:drawableEndCompat="@mipmap/icon_me_item_right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_content"
+                app:srcCompat="@mipmap/icon_not_more" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

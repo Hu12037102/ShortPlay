@@ -25,6 +25,18 @@
     <color name="color_FFFFF5DA" tools:ignore="MissingDefaultResource">#FFFFF5DA</color>
     <color name="color_FFFFF2F1" tools:ignore="MissingDefaultResource">#FFFFF2F1</color>
     <color name="color_FFF8F8F8" tools:ignore="MissingDefaultResource">#FFF8F8F8</color>
+    <color name="color_FFFFE0EA" tools:ignore="MissingDefaultResource">#FFFFE0EA</color>
+    <color name="color_FFF7F7F7" tools:ignore="MissingDefaultResource">#FFF7F7F7</color>
+    <color name="color_FF666666" tools:ignore="MissingDefaultResource">#FF666666</color>
+    <color name="color_FF161B28" tools:ignore="MissingDefaultResource">#FF161B28</color>
+    <color name="color_FFEECC9A" tools:ignore="MissingDefaultResource">#FFEECC9A</color>
+    <color name="color_FF202632" tools:ignore="MissingDefaultResource">#FF202632</color>
+    <color name="color_FFCC481E" tools:ignore="MissingDefaultResource">#FFCC481E</color>
+    <color name="color_FFFF798B" tools:ignore="MissingDefaultResource">#FFFF798B</color>
+    <color name="color_FFFFFAF4" tools:ignore="MissingDefaultResource">#FFFFFAF4</color>
+    <color name="color_FFFFE3CA" tools:ignore="MissingDefaultResource">#FFFFE3CA</color>
+    <color name="color_FF222222" tools:ignore="MissingDefaultResource">#FF222222</color>
+
 
 
 </resources>

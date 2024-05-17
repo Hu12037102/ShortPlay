@@ -3,6 +3,8 @@ package com.inshort.base.compat;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.text.TextUtils;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
@@ -109,6 +111,21 @@ public final class DataCompat {
     public static ColorStateList getColorStateList(@Nullable Context context, @ColorRes int colorRes) {
         return ContextCompat.getColorStateList(DataCompat.checkContext(context), colorRes);
 
+    }
+
+    @NonNull
+    public static CharSequence getText(@Nullable TextView text) {
+        if (text == null) {
+            return "";
+        }
+        return text.getText() + "";
+    }
+
+    public static boolean isTextViewTextEmpty(@Nullable TextView textView) {
+        if (DataCompat.isNull(textView)) {
+            return true;
+        }
+        return TextUtils.getTrimmedLength(getText(textView)) == 0;
     }
 
     @NonNull
