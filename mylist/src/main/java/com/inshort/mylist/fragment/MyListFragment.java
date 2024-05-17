@@ -71,10 +71,9 @@ public class MyListFragment extends BaseCompatFragment<FragmentMyListBinding, My
     @Override
     protected void initData() {
         List<Fragment> fragmentList = new ArrayList<>();
-        for (int i = 0; i <2 ; i++) {
+        for (int i = 0; i < 2 ; i++) {
             fragmentList.add(HisFragment.getSingle(i));
         }
-
         myPagerAdapter = new MyPagerAdapter(getChildFragmentManager(),getLifecycle(),fragmentList);
         mViewBinding.viewPager.setAdapter(myPagerAdapter);
     }
