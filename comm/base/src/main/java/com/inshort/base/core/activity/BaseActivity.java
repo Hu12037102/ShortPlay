@@ -64,9 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    protected void loadSmartData(@Nullable RefreshLayout refreshLayout, boolean isRefresh) {
 
-    }
 
     protected boolean isLoadEmptyView() {
         return false;

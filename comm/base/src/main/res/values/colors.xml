@@ -9,6 +9,7 @@
     <color name="color_CCFFFFFF" tools:ignore="MissingDefaultResource">#CCFFFFFF</color>
     <color name="color_80FFFFFF" tools:ignore="MissingDefaultResource">#80FFFFFF</color>
     <color name="color_33000000" tools:ignore="MissingDefaultResource">#33000000</color>
+<<<<<<< HEAD
     <color name="color_99FFFFFF" tools:ignore="MissingDefaultResource">#99FFFFFF</color>
     <color name="color_999999" tools:ignore="MissingDefaultResource">#999999</color>
     <color name="color_80000000">#80000000</color>
@@ -18,5 +19,36 @@
     <color name="color_D9D9D9" tools:ignore="ResourceName">#D9D9D9</color>
     <color name="color_F7F7F7" tools:ignore="ResourceName">#F7F7F7</color>
     <color name="color_FE2442" tools:ignore="ResourceName">#FE2442</color>
+=======
+    <color name="color_CC000000" tools:ignore="MissingDefaultResource">#CC000000</color>
+    <color name="color_FFFF5C4F" tools:ignore="MissingDefaultResource">#FFFF5C4F</color>
+    <color name="color_FFEEEEEE" tools:ignore="MissingDefaultResource">#FFEEEEEE</color>
+    <color name="color_FF2E2E2E" tools:ignore="MissingDefaultResource">#FF2E2E2E</color>
+    <color name="color_FFFF0056" tools:ignore="MissingDefaultResource">#FFFF0056</color>
+    <color name="color_FFFF8200" tools:ignore="MissingDefaultResource">#FFFF8200</color>
+    <color name="color_FF7699D5" tools:ignore="MissingDefaultResource">#FF7699D5</color>
+    <color name="color_FF333333" tools:ignore="MissingDefaultResource">#FF333333</color>
+    <color name="color_1AFFFFFF" tools:ignore="MissingDefaultResource">#1AFFFFFF</color>
+    <color name="color_1A000000" tools:ignore="MissingDefaultResource">#1A000000</color>
+    <color name="color_FFCCCCCC" tools:ignore="MissingDefaultResource">#FFCCCCCC</color>
+    <color name="color_FF00C063" tools:ignore="MissingDefaultResource">#FF00C063</color>
+    <color name="color_FFE9F4FF" tools:ignore="MissingDefaultResource">#FFE9F4FF</color>
+    <color name="color_FFFFF5DA" tools:ignore="MissingDefaultResource">#FFFFF5DA</color>
+    <color name="color_FFFFF2F1" tools:ignore="MissingDefaultResource">#FFFFF2F1</color>
+    <color name="color_FFF8F8F8" tools:ignore="MissingDefaultResource">#FFF8F8F8</color>
+    <color name="color_FFFFE0EA" tools:ignore="MissingDefaultResource">#FFFFE0EA</color>
+    <color name="color_FFF7F7F7" tools:ignore="MissingDefaultResource">#FFF7F7F7</color>
+    <color name="color_FF666666" tools:ignore="MissingDefaultResource">#FF666666</color>
+    <color name="color_FF161B28" tools:ignore="MissingDefaultResource">#FF161B28</color>
+    <color name="color_FFEECC9A" tools:ignore="MissingDefaultResource">#FFEECC9A</color>
+    <color name="color_FF202632" tools:ignore="MissingDefaultResource">#FF202632</color>
+    <color name="color_FFCC481E" tools:ignore="MissingDefaultResource">#FFCC481E</color>
+    <color name="color_FFFF798B" tools:ignore="MissingDefaultResource">#FFFF798B</color>
+    <color name="color_FFFFFAF4" tools:ignore="MissingDefaultResource">#FFFFFAF4</color>
+    <color name="color_FFFFE3CA" tools:ignore="MissingDefaultResource">#FFFFE3CA</color>
+    <color name="color_FF222222" tools:ignore="MissingDefaultResource">#FF222222</color>
+
+
+>>>>>>> feature.inshort.1000.hql
 
 </resources>

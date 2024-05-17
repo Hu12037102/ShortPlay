@@ -11,9 +11,7 @@ import com.inshort.base.other.mmkv.UserDataStore;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 
 public abstract class BaseFragment extends Fragment {
-    protected void loadSmartData(@Nullable RefreshLayout refreshLayout, boolean isRefresh) {
 
-    }
 
     protected boolean isLoadEmptyView() {
         return false;

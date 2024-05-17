@@ -49,7 +49,39 @@ public class HomeIndexEntity {
         public String dramaTitle;
         @SerializedName("is_deleted")
         public boolean isDeleted;
+
+        @Override
+        public String toString() {
+            return "Banner{" +
+                    "dramaClassify=" + dramaClassify +
+                    ", bannerTag=" + bannerTag +
+                    ", imageUrl='" + imageUrl + '\'' +
+                    ", configurationBannerId=" + configurationBannerId +
+                    ", isAutoLock=" + isAutoLock +
+                    ", episodeChargeStart=" + episodeChargeStart +
+                    ", episodeUpdated=" + episodeUpdated +
+                    ", episodeNumber=" + episodeNumber +
+                    ", maxUnlockedEpisode=" + maxUnlockedEpisode +
+                    ", playProgress=" + playProgress +
+                    ", isCollected=" + isCollected +
+                    ", collectSum=" + collectSum +
+                    ", dramaIndex=" + dramaIndex +
+                    ", dramaSeriesId=" + dramaSeriesId +
+                    ", bannerIntroduction='" + bannerIntroduction + '\'' +
+                    ", dramaTitle='" + dramaTitle + '\'' +
+                    ", isDeleted=" + isDeleted +
+                    '}';
+        }
     }
 
 
+    @Override
+    public String toString() {
+        return "HomeIndexEntity{" +
+                "banners=" + banners +
+                ", columnList=" + columnList +
+                ", searcherKeyword='" + searcherKeyword + '\'' +
+                ", trendClassifyList=" + trendClassifyList +
+                '}';
+    }
 }

@@ -9,6 +9,7 @@ import java.util.List;
 import retrofit2.http.PUT;
 
 public class ColumnEntity {
+
     @SerializedName("column_index")
     public int columnIndex;
     @SerializedName("his_index")

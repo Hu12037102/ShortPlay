@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserEntity implements Parcelable {
+
+
     @SerializedName("access_token")
     public String accessToken;
     @SerializedName("language")
@@ -100,6 +102,9 @@ public class UserEntity implements Parcelable {
 
 
   public   static class Info implements Parcelable {
+      public static final int PLATFORM_DEFAULT=0;
+      public static final int PLATFORM_FACEBOOK=1;
+      public static final int PLATFORM_GOOGLE=4;
         @SerializedName("avatar")
         public String avatar;
         @SerializedName("balance")
@@ -116,7 +121,15 @@ public class UserEntity implements Parcelable {
         public long userId;
         @SerializedName("vip_expiration_time")
         public int vipExpirationTime;
-        @SerializedName("platform")
+      /**
+       * 0.Default
+       * 1.Facebook
+       * 2.Google+
+       * 3.Twitter
+       * 4.Google
+       * 5.Apple
+       */
+      @SerializedName("platform")
         public int platform;
         @SerializedName("is_new")
         public boolean isNew;

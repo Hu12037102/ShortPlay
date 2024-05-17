@@ -1,7 +1,10 @@
 package com.inshort.base.compat;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.text.TextUtils;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
@@ -37,9 +40,11 @@ public final class DataCompat {
     public static boolean isNull(@Nullable Object obj) {
         return obj == null;
     }
-    public static boolean notNull(@Nullable Object object){
+
+    public static boolean notNull(@Nullable Object object) {
         return !isNull(object);
     }
+
     public static int dimen2px(@Nullable Context context, @DimenRes int dimenRes) {
         if (isNull(context)) {
             return 0;
@@ -78,7 +83,7 @@ public final class DataCompat {
 
     @NonNull
     public static String checkString(@Nullable String content) {
-      return checkString(content,null);
+        return checkString(content, null);
     }
 
     @NonNull
@@ -92,9 +97,35 @@ public final class DataCompat {
             return content;
         }
     }
+
+    @NonNull
+    public static String toString(@Nullable Object object) {
+        return object + "";
+    }
+
     @ColorInt
-    public static int getColor(@Nullable Context context, @ColorRes int colorRes){
-        return ContextCompat.getColor(checkContext(context),colorRes);
+    public static int getColor(@Nullable Context context, @ColorRes int colorRes) {
+        return ContextCompat.getColor(checkContext(context), colorRes);
+    }
+
+    public static ColorStateList getColorStateList(@Nullable Context context, @ColorRes int colorRes) {
+        return ContextCompat.getColorStateList(DataCompat.checkContext(context), colorRes);
+
+    }
+
+    @NonNull
+    public static CharSequence getText(@Nullable TextView text) {
+        if (text == null) {
+            return "";
+        }
+        return text.getText() + "";
+    }
+
+    public static boolean isTextViewTextEmpty(@Nullable TextView textView) {
+        if (DataCompat.isNull(textView)) {
+            return true;
+        }
+        return TextUtils.getTrimmedLength(getText(textView)) == 0;
     }
 
     @NonNull
@@ -113,5 +144,13 @@ public final class DataCompat {
         id += timestamp;
         id += (Math.random() * 10000);
         return id;
+    }
+
+    public static int getTextLength(@Nullable CharSequence text) {
+        if (DataCompat.isNull(text)) {
+            return 0;
+        } else {
+            return text.length();
+        }
     }
 }

@@ -17,13 +17,23 @@ open class BaseViewModel : ViewModel() {
     val emptyViewLiveData = MutableLiveData<Boolean>()
     val refreshLiveData = MutableLiveData<Boolean>()
 
+    protected open fun getInitPage(): Int = Contracts.DEFAULT_PAGE
+
     var isRefresh = true
     val pageSize = Contracts.DEFAULT_PAGE_SIZE
-    var page = Contracts.DEFAULT_PAGE
+    var page: Int = Contracts.DEFAULT_PAGE
 
     fun pagerReset() {
         isRefresh = true
-        page = Contracts.DEFAULT_PAGE
+        page = getInitPage()
+    }
+
+    init {
+        pagerReset()
+    }
+
+    fun pagerAdd() {
+        page++
     }
 
 
@@ -31,7 +41,7 @@ open class BaseViewModel : ViewModel() {
         liveData: MutableLiveData<T>,
         isShowLoading: Boolean = false,
         isShowEmptyView: Boolean = true,
-        isJustRefresh:Boolean = false,
+        isJustRefresh: Boolean = false,
         black: suspend () -> ResponseEntity<T>
     ) {
         viewModelScope.launch {
@@ -42,11 +52,10 @@ open class BaseViewModel : ViewModel() {
             val response = kotlin.runCatching {
                 black.invoke()
             }.getOrDefault(null)
-            disposeRetrofit(liveData, response, isShowEmptyView,isJustRefresh)
+            disposeRetrofit(liveData, response, isShowEmptyView, isJustRefresh)
             if (isShowLoading) {
                 loadingLiveData.value = false
             }
-
 
         }
     }
@@ -56,10 +65,12 @@ open class BaseViewModel : ViewModel() {
         liveData: MutableLiveData<T>,
         response: ResponseEntity<T>?,
         isShowEmptyView: Boolean,
-        isJustRefresh:Boolean = false
+        isJustRefresh: Boolean = false
     ) {
         try {
-
+            if (isJustRefresh) {
+                refreshLiveData.value = isRefresh
+            }
             if (response != null && response.code == IApiService.HttpCode.SUCCEED) {
                 if (isShowEmptyView) {
                     emptyViewLiveData.value = false
@@ -78,10 +89,8 @@ open class BaseViewModel : ViewModel() {
                 }
                 httpErrorLiveData.value = errorEntity
             }
-            if (isJustRefresh){
-                refreshLiveData.value = isRefresh
-            }
-            LogUtils.d("disposeRetrofit--", "$response")
+
+            LogUtils.d("disposeRetrofit--", "$response--")
         } catch (e: Exception) {
             e.printStackTrace()
         }

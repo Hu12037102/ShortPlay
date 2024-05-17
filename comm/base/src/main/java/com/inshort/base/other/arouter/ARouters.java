@@ -66,6 +66,8 @@ public final class ARouters {
         return fragment instanceof BaseCompatFragment<?, ?> baseCompatFragment ? baseCompatFragment : null;
     }
 
+
+
     @Nullable
     public static Intent getIntent(@Nullable Context context, @Nullable String path) {
         Intent intent = null;

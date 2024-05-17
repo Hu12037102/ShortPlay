@@ -9,6 +9,7 @@ import retrofit2.http.POST;
 public interface IApiService {
     interface Path {
         //APP初始化接口
+<<<<<<< HEAD
        String SPLASH_INIT="/app/initialize";
        //初始化user登录接口
        String SPLASH_USER_LOGIN="/app/user";
@@ -24,6 +25,21 @@ public interface IApiService {
         //back love
         String PLAYBACK_LOVE_LIST="/app/my_list/collect_history/list";
 
+=======
+        String SPLASH_INIT = "/app/initialize";
+        //初始化user登录接口
+        String SPLASH_USER_LOGIN = "/app/user";
+        //首页接口
+        String HOME_INDEX = "/app/index";
+        //通过trendingType 获取 Trending列表
+        String FIND_TRENDING_LIST_BY_TYPE = "/app/index/trend_ranking";
+        //所有的TrendingType
+        String LOAD_ALL_TRENDING_TYPES="/app/index/ranking_classify";
+        //首页更多数据
+        String LOAD_HOME_MORE_LIST="/app/index/waterfall_column";
+        //获取首页ViewMore列表
+        String LOAD_HOME_VIEW_MORE_LIST="/app/index/get_column_dramas";
+>>>>>>> feature.inshort.1000.hql
     }
 
     interface HttpCode {

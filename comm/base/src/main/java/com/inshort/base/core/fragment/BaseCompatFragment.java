@@ -65,7 +65,7 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        LogUtils.w("FragmentCompatFragment--", "onAttach----1");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onAttach----1");
     }
 
     @Override
@@ -73,30 +73,30 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
         super.onCreate(savedInstanceState);
         mViewBinding = getViewBinding();
         mViewModel = new ViewModelProvider(this).get(getViewModelClass());
-        LogUtils.w("FragmentCompatFragment--", "onCreate----2");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onCreate----2");
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LogUtils.w("FragmentCompatFragment--", "onCreateView----3");
-        mRootParent = BaseRootFrameViewBinding.inflate(getLayoutInflater()).getRoot();
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onCreateView----3");
+        mRootParent = BaseRootFrameViewBinding.inflate(getLayoutInflater(), container, false).getRoot();
         ViewsCompat.setViewSize(mRootParent, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        mRootParent.addView(mViewBinding.getRoot());
-
+        mRootParent.addView(mViewBinding.getRoot(),
+                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         return mRootParent;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        LogUtils.w("FragmentCompatFragment--", "onViewCreated----4");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onViewCreated----4");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        LogUtils.w("FragmentCompatFragment--", "onStart----5");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onStart----5");
     }
 
     @Override
@@ -106,8 +106,9 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
             buildParentLayout();
             init();
             isFirstCreate = false;
+            LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onResume----6");
         }
-        LogUtils.w("FragmentCompatFragment--", "onResume----6");
+
     }
 
     protected void buildParentLayout() {
@@ -115,12 +116,12 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
             return;
         }
         ViewTools viewTools = new ViewTools();
-        SmartRefreshLayout refreshLayout = viewTools.findSmartRefreshLayout(mRootParent);
-        initRefreshLayout(refreshLayout);
+        mRefreshLayout = viewTools.findSmartRefreshLayout(mRootParent);
+        initRefreshLayout();
 
         if (isLoadEmptyView()) {
             mEmptyLayout = new EmptyLayout(mRootParent.getContext());
-            mRootParent.addView(mEmptyLayout,  new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+            mRootParent.addView(mEmptyLayout, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
             mEmptyLayout.setPadding(PhoneCompat.dp2px(requireContext(), 10), PhoneCompat.dp2px(requireContext(), 10),
                     PhoneCompat.dp2px(requireContext(), 10), PhoneCompat.dp2px(requireContext(), 10));
             mEmptyLayout.setOnClickListener(new DelayedClick() {
@@ -162,9 +163,9 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
         mViewModel.getUserLiveData().observe(this, new Observer<UserEntity>() {
             @Override
             public void onChanged(UserEntity userEntity) {
-                if (!DataCompat.isNull(userEntity)){
+                if (!DataCompat.isNull(userEntity)) {
                     onUserUpdate(userEntity);
-                    LogUtils.w("getUserLiveData",userEntity.toString());
+                    LogUtils.w("getUserLiveData", userEntity.toString());
                 }
             }
         });
@@ -178,31 +179,35 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
                 }
             }
         });
+
         mViewModel.getRefreshLiveData().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean isRefresh) {
+                LogUtils.d("getRefreshLiveData--", isRefresh + "---" + mRefreshLayout);
+                mViewModel.pagerAdd();
                 SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
+
+
             }
         });
     }
 
-    private void initRefreshLayout(@Nullable SmartRefreshLayout refreshLayout) {
-        if (DataCompat.isNull(refreshLayout)) {
+    private void initRefreshLayout() {
+        if (DataCompat.isNull(mRefreshLayout)) {
             return;
         }
-        this.mRefreshLayout = refreshLayout;
-        SmartRefreshLayoutCompat.initDefault(refreshLayout);
-        refreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
+        SmartRefreshLayoutCompat.initDefault(mRefreshLayout);
+        mRefreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                mViewModel.pagerReset();
-                loadSmartData(refreshLayout, true);
+                mViewModel.setRefresh(false);
+                loadSmartData( false);
             }
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                mViewModel.setRefresh(false);
-                loadSmartData(refreshLayout, false);
+                mViewModel.pagerReset();
+                loadSmartData( true);
             }
         });
     }
@@ -210,33 +215,33 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
     @Override
     public void onPause() {
         super.onPause();
-        LogUtils.w("FragmentCompatFragment--", "onPause----7");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onPause----7");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        LogUtils.w("FragmentCompatFragment--", "onStop----8");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onStop----8");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        LogUtils.w("FragmentCompatFragment--", "onDestroyView----9");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onDestroyView----9");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         isFirstCreate = false;
-        LogUtils.w("FragmentCompatFragment--", "onDestroy----10");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onDestroy----10");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
 
-        LogUtils.w("FragmentCompatFragment--", "onDetach----11");
+        LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onDetach----11");
     }
 
     protected void showLoadingView() {
@@ -268,5 +273,8 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
         if (mEmptyLayout != null) {
             mEmptyLayout.hide();
         }
+    }
+    protected void loadSmartData( boolean isRefresh) {
+
     }
 }
