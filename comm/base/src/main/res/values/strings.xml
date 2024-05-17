@@ -8,7 +8,7 @@
     <string name="mylist_content">My List</string>
     <string name="me_content">Me</string>
     <string name="top_again_to_quit_app">Tap again to quit InShort</string>
-<<<<<<< HEAD
+
 
     <string name="history">Playback History</string>
     <string name="play_history">Play History</string>
@@ -29,7 +29,7 @@
     <string name="delete" tools:ignore="ExtraTranslation,ResourceName">Delete</string>
     <string name="cancel" tools:ignore="ExtraTranslation,ResourceName">Cancel</string>
     <string name="ep_episode_number" tools:ignore="ExtraTranslation,ResourceName">EP.%s/ EP.%s</string>
-=======
+
     <string name="trending_content">Trending</string>
     <string name="view_more_content">View More</string>
     <string name="update_to_s">Update to %s</string>
@@ -56,5 +56,4 @@
     <string name="bonus_center_content">Bonus Center</string>
     <string name="playback_history_content">Playback History</string>
     <string name="my_list_content">My List</string>
->>>>>>> feature.inshort.1000.hql
 </resources>

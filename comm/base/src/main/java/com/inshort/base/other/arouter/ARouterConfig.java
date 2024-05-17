@@ -1,7 +1,6 @@
 package com.inshort.base.other.arouter;
 
 public interface ARouterConfig {
-<<<<<<< HEAD
     interface Key{
         String WEB_URL="web_url";
         String WEB_TITLE="web_title";
@@ -10,13 +9,8 @@ public interface ARouterConfig {
 
         int LIST_HISTORY =1; //历史记录
         int LIST_LOVE =2;  //喜爱记录
-=======
-    interface Key {
-        String WEB_URL = "web_url";
-        String WEB_TITLE = "web_title";
         String CONTENT = "content";
         String ID = "id";
->>>>>>> feature.inshort.1000.hql
     }
 
     interface Path {
@@ -39,14 +33,12 @@ public interface ARouterConfig {
         }
 
         interface MyList {
-<<<<<<< HEAD
+
             String FRAGMENT_MYLIST="/mylist/fragment/mylist";
 
             // back his
             String ACTIVITY_BACK_HIS="/back/activity/his";
-=======
-            String FRAGMENT_MYLIST = "/mylist/fragment/mylist";
->>>>>>> feature.inshort.1000.hql
+
         }
 
         interface Login {

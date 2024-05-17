@@ -9,17 +9,14 @@
     <color name="color_CCFFFFFF" tools:ignore="MissingDefaultResource">#CCFFFFFF</color>
     <color name="color_80FFFFFF" tools:ignore="MissingDefaultResource">#80FFFFFF</color>
     <color name="color_33000000" tools:ignore="MissingDefaultResource">#33000000</color>
-<<<<<<< HEAD
     <color name="color_99FFFFFF" tools:ignore="MissingDefaultResource">#99FFFFFF</color>
     <color name="color_999999" tools:ignore="MissingDefaultResource">#999999</color>
     <color name="color_80000000">#80000000</color>
-    <color name="color_1AFFFFFF" tools:ignore="ResourceName">#1AFFFFFF</color>
     <color name="color_666666" tools:ignore="ResourceName">#666666</color>
     <color name="color_FF1860" tools:ignore="ResourceName">#FF1860</color>
     <color name="color_D9D9D9" tools:ignore="ResourceName">#D9D9D9</color>
     <color name="color_F7F7F7" tools:ignore="ResourceName">#F7F7F7</color>
     <color name="color_FE2442" tools:ignore="ResourceName">#FE2442</color>
-=======
     <color name="color_CC000000" tools:ignore="MissingDefaultResource">#CC000000</color>
     <color name="color_FFFF5C4F" tools:ignore="MissingDefaultResource">#FFFF5C4F</color>
     <color name="color_FFEEEEEE" tools:ignore="MissingDefaultResource">#FFEEEEEE</color>
@@ -47,8 +44,4 @@
     <color name="color_FFFFFAF4" tools:ignore="MissingDefaultResource">#FFFFFAF4</color>
     <color name="color_FFFFE3CA" tools:ignore="MissingDefaultResource">#FFFFE3CA</color>
     <color name="color_FF222222" tools:ignore="MissingDefaultResource">#FF222222</color>
-
-
->>>>>>> feature.inshort.1000.hql
-
 </resources>

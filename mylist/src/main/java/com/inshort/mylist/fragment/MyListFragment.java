@@ -21,6 +21,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.MyListEntity;
 import com.inshort.base.entity.MyListTypeEntity;
@@ -58,6 +59,7 @@ public class MyListFragment extends BaseCompatFragment<FragmentMyListBinding, My
 
     @Override
     protected void initView() {
+        ViewsCompat.setStatusBarMargin(mViewBinding.rlv,requireActivity(),0);
         data.add(new MyListTypeEntity(getResources().getString(com.inshort.base.R.string.love),true));
         data.add(new MyListTypeEntity(getResources().getString(com.inshort.base.R.string.play_history),false));
         myListRVAdapter = new MyListRVAdapter(R.layout.fragment_rv_my_list);
