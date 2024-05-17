@@ -4,6 +4,11 @@ public interface ARouterConfig {
     interface Key{
         String WEB_URL="web_url";
         String WEB_TITLE="web_title";
+
+        String IS_HIS = "is_his";
+
+        int LIST_HISTORY =1; //历史记录
+        int LIST_LOVE =2;  //喜爱记录
     }
     interface Path {
         interface Splash {
@@ -23,6 +28,9 @@ public interface ARouterConfig {
 
         interface MyList {
             String FRAGMENT_MYLIST="/mylist/fragment/mylist";
+
+            // back his
+            String ACTIVITY_BACK_HIS="/back/activity/his";
         }
 
         interface Login {

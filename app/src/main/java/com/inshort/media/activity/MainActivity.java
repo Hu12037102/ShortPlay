@@ -1,23 +1,26 @@
 package com.inshort.media.activity;
+
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.NetworkCompat;
+import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.core.fragment.BaseCompatFragment;
-import com.inshort.base.entity.main.MainBottomTabEntity;
+import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.utils.LogUtils;
-import com.inshort.home.activity.HomeFragment;
+import com.inshort.home.fragment.HomeFragment;
 import com.inshort.me.fragment.MeFragment;
-import com.inshort.media.BuildConfig;
 import com.inshort.media.adapter.MainBottomTabAdapter;
 import com.inshort.media.databinding.ActivityMainBinding;
 import com.inshort.media.viewmodel.MainViewModel;
@@ -33,9 +36,12 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
     private MainBottomTabAdapter mBottomTabAdapter = null;
     private final List<MainBottomTabEntity> mBottomTabData = new ArrayList<>();
     private final List<BaseCompatFragment<?, ?>> mFragments = new ArrayList<>();
+    private long mExitTimeMillis = 0;
+
 
     @Override
     protected void initView() {
+        ViewsCompat.hideStatusBar(getWindow());
         mViewBinding.rvBottom.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 
@@ -44,7 +50,6 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
         initBottomTabAdapter();
         initPageAdapter();
         LogUtils.w("initData--", NetworkCompat.getMobileNetType(DataCompat.applicationContext()));
-
     }
 
     private void initPageAdapter() {
@@ -91,15 +96,29 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
     @Override
     protected void initEvent() {
         mViewBinding.vpContent.registerOnPageChangeCallback(mOnPageChangeCallback);
-        if (mBottomTabAdapter!=null){
+        if (mBottomTabAdapter != null) {
             mBottomTabAdapter.setOnItemClickListener((view, position) -> {
-                if (position!=null){
-                    mViewBinding.vpContent.setCurrentItem(position,false);
+                if (position != null) {
+                    mViewBinding.vpContent.setCurrentItem(position, false);
                 }
             });
         }
-
+        getOnBackPressedDispatcher().addCallback(mOnBackPressedCallback);
     }
+
+    private final OnBackPressedCallback mOnBackPressedCallback = new OnBackPressedCallback(true) {
+        @Override
+        public void handleOnBackPressed() {
+            LogUtils.d("handleOnBackPressed", "我点击了返回");
+            long backTimeMillis = System.currentTimeMillis();
+            if (backTimeMillis - mExitTimeMillis < 2000) {
+                finish();
+            } else {
+                mViewModel.showToast(DataCompat.getResString(MainActivity.this, com.inshort.base.R.string.top_again_to_quit_app));
+                mExitTimeMillis = backTimeMillis;
+            }
+        }
+    };
 
     private final ViewPager2.OnPageChangeCallback mOnPageChangeCallback = new ViewPager2.OnPageChangeCallback() {
         @Override
@@ -110,7 +129,7 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
         @Override
         public void onPageSelected(int position) {
             super.onPageSelected(position);
-            if (mBottomTabAdapter!=null){
+            if (mBottomTabAdapter != null) {
                 mBottomTabAdapter.selectorItem(position);
             }
 
@@ -148,4 +167,6 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
         super.onDestroy();
         mViewBinding.vpContent.unregisterOnPageChangeCallback(mOnPageChangeCallback);
     }
+
+
 }

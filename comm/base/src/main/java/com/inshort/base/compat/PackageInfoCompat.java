@@ -24,7 +24,7 @@ public final class PackageInfoCompat {
         if (DataCompat.isNull(packageInfo)) {
             return "";
         } else {
-            return packageInfo.packageName;
+            return packageInfo.versionName;
         }
     }
 

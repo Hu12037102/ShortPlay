@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/history_tv"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/color_Black"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:textSize="19sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/history"
+        android:fontFamily="@font/sofia_pro_medium"
+        />
+
+    <TextView
+        android:id="@+id/more_history"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="@string/more"
+        android:textColor="@color/color_999999"
+        android:textSize="12sp"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:drawablePadding="11dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/sofia_pro_medium"
+        app:drawableRightCompat="@mipmap/user_right_white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginStart="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_tv" />
+
+
+    <ViewStub
+        android:id="@+id/view_stub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/history_tv"
+        android:layout_marginTop="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout="@layout/history_empty"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

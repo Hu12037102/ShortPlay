@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/empty_iv"
+        android:layout_width="62dp"
+        android:layout_height="53dp"
+        app:layout_constraintStart_toStartOf="@+id/more_history_riv"
+        app:layout_constraintEnd_toEndOf="@+id/more_history_riv"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@mipmap/data_empty_logo"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_666666"
+        app:layout_constraintTop_toBottomOf="@+id/empty_iv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/more_history_riv"
+        android:layout_width="wrap_content"
+        android:minWidth="110dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/discover_more"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/color_Black"
+        app:background_normal="@color/color_FF1860"
+        app:background_selected="@color/color_FF1860"
+        app:corner_radius="25dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:fontFamily="@font/sofia_pro_medium"
+        app:layout_constraintTop_toBottomOf="@+id/title_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

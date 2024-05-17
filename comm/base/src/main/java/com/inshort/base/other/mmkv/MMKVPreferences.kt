@@ -69,7 +69,7 @@ class MMKVPreferences(private val mmkv: MMKV) {
     fun getInt(key: String, defaultInt: Int = 0): Int = kotlin.runCatching { mmkv.decodeInt(key, defaultInt) }.getOrDefault(defaultInt)
 
     fun getFloat(key: String, defaultFloat: Float = 0F): Float = kotlin.runCatching { mmkv.decodeFloat(key, defaultFloat) }.getOrDefault(defaultFloat)
-    fun <T : Parcelable> getParcelable(key: String, clazz: Class<T>): Parcelable? =
+    fun <T : Parcelable> getParcelable(key: String, clazz: Class<T>): T? =
         kotlin.runCatching { mmkv.decodeParcelable(key, clazz) }.getOrDefault(null)
 
     fun getBoolean(key: String, defaultBoolean: Boolean = false): Boolean =

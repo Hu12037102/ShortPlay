@@ -3,7 +3,7 @@ package com.inshort.media.viewmodel
 import android.content.Context
 import com.inshort.base.compat.DataCompat
 import com.inshort.base.core.viewmodel.BaseCompatViewModel
-import com.inshort.base.entity.main.MainBottomTabEntity
+import com.inshort.base.entity.MainBottomTabEntity
 import com.inshort.base.other.arouter.ARouterConfig
 
 class MainViewModel : BaseCompatViewModel() {

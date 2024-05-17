@@ -13,17 +13,21 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.BaseRootFrameViewBinding;
 import com.inshort.base.databinding.BaseRootLoadingViewBinding;
+import com.inshort.base.entity.UserEntity;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.tools.ViewTools;
 import com.inshort.base.utils.LogUtils;
+import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.view.EmptyLayout;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -31,9 +35,9 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 
 public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends BaseCompatViewModel> extends BaseFragment {
 
-    private VB mViewBinding = null;
+    protected VB mViewBinding = null;
 
-    private VM mViewModel = null;
+    protected VM mViewModel = null;
 
 
     protected abstract VB getViewBinding();
@@ -116,7 +120,15 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
 
         if (isLoadEmptyView()) {
             mEmptyLayout = new EmptyLayout(mRootParent.getContext());
-            mRootParent.addView(mEmptyLayout, 0, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+            mRootParent.addView(mEmptyLayout,  new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+            mEmptyLayout.setPadding(PhoneCompat.dp2px(requireContext(), 10), PhoneCompat.dp2px(requireContext(), 10),
+                    PhoneCompat.dp2px(requireContext(), 10), PhoneCompat.dp2px(requireContext(), 10));
+            mEmptyLayout.setOnClickListener(new DelayedClick() {
+                @Override
+                public void onDelayedClick(View view) {
+                    onClickEmptyView(mEmptyLayout);
+                }
+            });
             mEmptyLayout.hide();
         }
         mLoadingViewBinding = BaseRootLoadingViewBinding.inflate(getLayoutInflater());
@@ -139,11 +151,39 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
 
     protected void initObserve() {
         mViewModel.getLoadingLiveData().observe(this, isLoading -> {
-
+            if (isLoading) {
+                showLoadingView();
+            } else {
+                dismissLoadingView();
+            }
 
         });
 
-
+        mViewModel.getUserLiveData().observe(this, new Observer<UserEntity>() {
+            @Override
+            public void onChanged(UserEntity userEntity) {
+                if (!DataCompat.isNull(userEntity)){
+                    onUserUpdate(userEntity);
+                    LogUtils.w("getUserLiveData",userEntity.toString());
+                }
+            }
+        });
+        mViewModel.getEmptyViewLiveData().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean isShow) {
+                if (isShow) {
+                    showEmptyView();
+                } else {
+                    hideEmptyView();
+                }
+            }
+        });
+        mViewModel.getRefreshLiveData().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean isRefresh) {
+                SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
+            }
+        });
     }
 
     private void initRefreshLayout(@Nullable SmartRefreshLayout refreshLayout) {
@@ -215,6 +255,18 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
         }
         if (mLoadingViewBinding != null) {
             mLoadingViewBinding.getRoot().setVisibility(View.GONE);
+        }
+    }
+
+    protected void showEmptyView() {
+        if (mEmptyLayout != null) {
+            mEmptyLayout.show();
+        }
+    }
+
+    protected void hideEmptyView() {
+        if (mEmptyLayout != null) {
+            mEmptyLayout.hide();
         }
     }
 }

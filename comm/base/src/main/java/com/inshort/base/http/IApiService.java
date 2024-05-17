@@ -10,10 +10,25 @@ public interface IApiService {
     interface Path {
         //APP初始化接口
        String SPLASH_INIT="/app/initialize";
+       //初始化user登录接口
+       String SPLASH_USER_LOGIN="/app/user";
+       //首页接口
+        String HOME_INDEX="/app/index";
+
+        //mylist
+        String MY_LIST_INDEX="/app/my_list";
+
+        //back his
+        String PLAYBACK_HISTORY_LIST="/app/my_list/playback_history/list";
+
+        //back love
+        String PLAYBACK_LOVE_LIST="/app/my_list/collect_history/list";
+
     }
 
     interface HttpCode {
         int SUCCEED = HttpURLConnection.HTTP_OK;
+        int UNAVAILABLE = HttpURLConnection.HTTP_UNAVAILABLE;
 
     }
 

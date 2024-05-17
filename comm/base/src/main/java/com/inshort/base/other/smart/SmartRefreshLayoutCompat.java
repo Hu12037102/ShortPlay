@@ -24,5 +24,12 @@ public final class SmartRefreshLayoutCompat {
 
         }
     }
+    public static void finishAll(@Nullable SmartRefreshLayout refreshLayout){
+        if (refreshLayout!=null){
+            refreshLayout.finishRefresh();
+            refreshLayout.finishLoadMore();
+
+        }
+    }
 
 }

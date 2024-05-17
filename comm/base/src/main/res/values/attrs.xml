@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <declare-styleable name="EmptyLayout">
         <attr name="srcCompat" />
         <attr name="android:textSize" />
         <attr name="android:textColor" />
         <attr name="android:text"/>
     </declare-styleable>
+
+    <!--上倒下-->
+    <array name="top_bottom" tools:ignore="MissingDefaultResource,ResourceName">
+        <item>#00CF39</item>
+        <item>#00BA1F</item>
+    </array>
+
 </resources>
