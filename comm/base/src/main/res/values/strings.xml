@@ -10,6 +10,7 @@
     <string name="top_again_to_quit_app">Tap again to quit InShort</string>
 
     <string name="history">Playback History</string>
+    <string name="play_history">Play History</string>
     <string name="more">More</string>
     <string name="love" >My List</string>
     <string name="updated_to">Updated to %s</string>
@@ -21,4 +22,10 @@
     <string name="time_minutes" tools:ignore="ExtraTranslation,ResourceName">%s minutes ago</string>
     <string name="time_hours" tools:ignore="ExtraTranslation,ResourceName">%s hours ago</string>
     <string name="time_days" tools:ignore="ExtraTranslation,ResourceName">%s days ago</string>
+    <string name="edit" tools:ignore="ExtraTranslation,ResourceName">Edit</string>
+    <string name="select_all" tools:ignore="ExtraTranslation,ResourceName">Select All</string>
+    <string name="deselect_all" tools:ignore="ExtraTranslation,ResourceName">Deselect all</string>
+    <string name="delete" tools:ignore="ExtraTranslation,ResourceName">Delete</string>
+    <string name="cancel" tools:ignore="ExtraTranslation,ResourceName">Cancel</string>
+    <string name="ep_episode_number" tools:ignore="ExtraTranslation,ResourceName">EP.%s/ EP.%s</string>
 </resources>

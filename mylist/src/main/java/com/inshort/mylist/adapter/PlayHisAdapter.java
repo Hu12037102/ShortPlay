@@ -12,6 +12,7 @@ import com.inshort.base.other.glide.GlideCompat;
 import com.inshort.base.utils.ColorUtil;
 import com.inshort.base.utils.LogUtils;
 import com.inshort.mylist.R;
+import com.inshort.mylist.callback.PlayHisClickCallBack;
 
 /**
  * @author: 张勇
@@ -19,25 +20,53 @@ import com.inshort.mylist.R;
  */
 public class PlayHisAdapter extends BaseQuickAdapter<MyListEntity.CollectData,BaseViewHolder>{
 
+    private PlayHisClickCallBack clickCallBack;
+
     private boolean isHis = false;
-    public PlayHisAdapter(int layoutResId,boolean isHis) {
+    public PlayHisAdapter(int layoutResId,boolean isHis,PlayHisClickCallBack clickCallBack) {
         super(layoutResId);
         this.isHis = isHis;
+        this.clickCallBack = clickCallBack;
     }
 
     @Override
     protected void convert(@NonNull BaseViewHolder holder, MyListEntity.CollectData item) {
         LogUtils.d("PlayHisAdapter","PlayHisAdapter >>> ");
         showLoveView(holder,isHis);
-        showLove(holder,item.isCollected());
         GlideCompat.loadImage(item.getCoverImageUrl(),holder.getView(R.id.coverImageUrl_iv));
         holder.setText(R.id.love_title,item.getDramaTitle())
-                .setText(R.id.love_current_set, ColorUtil.getGatherColor(item.getEpisodeNumber(),item.getEpisodeUpdated()))
+                .setText(R.id.love_current_set,String.format(getContext().getResources().getString(com.inshort.base.R.string.ep_episode_number),
+                        String.valueOf(item.getEpisodeNumber()),
+                        String.valueOf(item.getEpisodeUpdated())))
                 .setText(R.id.his_title_tv,item.getDramaTitle())
                 .setText(R.id.vertical_tv_flag,String.format(getContext().getResources().getString(com.inshort.base.R.string.played_to_episode),String.valueOf(item.getEpisodeNumber())))
                 .setText(R.id.introduce_tv,getTime(item.getLastTime()*1000L));
+        //his 点赞勾选
+        holder.getView(R.id.his_select_iv).setOnClickListener(v -> {
+            if(item.isState()){
+                item.setDelete(!item.isDelete());
+                showDelete(holder,item.isDelete());
+                clickCallBack.deleteClick();
+            }else {
+                item.setCollected(!item.isCollected());
+                showLove(holder,item.isCollected());
+                clickCallBack.loveClick();
+            }
+        });
+        //love 勾选
+        holder.getView(R.id.love_select).setOnClickListener(v -> {
+            item.setDelete(!item.isDelete());
+            showDelete(holder,item.isDelete());
+            clickCallBack.deleteClick();
+        });
 
 
+        if(item.isState()){
+            showDelete(holder,item.isDelete());
+        }else {
+            holder.getView(R.id.love_select).setVisibility(View.GONE);
+            showLove(holder,item.isCollected());
+        }
 
     }
 
@@ -55,11 +84,18 @@ public class PlayHisAdapter extends BaseQuickAdapter<MyListEntity.CollectData,Ba
 
     private void showDelete(BaseViewHolder baseViewHolder,boolean isDelete){
         if(isDelete){
-            baseViewHolder.setImageResource(R.id.his_select_iv, com.inshort.base.R.mipmap.select_all);
+            baseViewHolder.setImageResource(isHis?R.id.his_select_iv:R.id.love_select, com.inshort.base.R.mipmap.select_all);
         }else {
-            baseViewHolder.setImageResource(R.id.his_select_iv, com.inshort.base.R.mipmap.select_all_logo);
+            baseViewHolder.setImageResource(isHis?R.id.his_select_iv:R.id.love_select, isHis?com.inshort.base.R.mipmap.select_all_logo:com.inshort.base.R.mipmap.my_list_select_all_logo);
+        }
+
+        if(isHis){
+            baseViewHolder.getView(R.id.love_select).setVisibility(View.GONE);
+        }else {
+            baseViewHolder.getView(R.id.love_select).setVisibility(View.VISIBLE);
         }
     }
+
 
 
 
@@ -72,6 +108,7 @@ public class PlayHisAdapter extends BaseQuickAdapter<MyListEntity.CollectData,Ba
         if(isHis){
             baseViewHolder.getView(R.id.love_title).setVisibility(View.GONE);
             baseViewHolder.getView(R.id.love_current_set).setVisibility(View.GONE);
+            baseViewHolder.getView(R.id.love_select).setVisibility(View.GONE);
         }else {
             baseViewHolder.getView(R.id.his_title_tv).setVisibility(View.GONE);
             baseViewHolder.getView(R.id.vertical_tv_flag).setVisibility(View.GONE);

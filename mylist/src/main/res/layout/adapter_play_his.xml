@@ -149,7 +149,7 @@
         app:layout_constraintStart_toStartOf="@+id/coverImageUrl_iv"
         android:layout_marginTop="6dp"
         android:textSize="11sp"
-        android:textColor="@color/color_1AFFFFFF"
+        android:textColor="@color/color_999999"
         android:ellipsize="end"
         android:lines="1"
         android:fontFamily="@font/sofia_pro_medium"

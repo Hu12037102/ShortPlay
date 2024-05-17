@@ -34,4 +34,18 @@ class PlayHisViewModel : BaseCompatViewModel() {
         }
     }
 
+
+    /**
+     * 收藏
+     */
+    fun collectUpdate(isCancel:Boolean,dramaSeriesId:Int,episodeNumber:Int){
+        val map = mutableMapOf<String,Any>()
+        map["drama_series_id"] = dramaSeriesId
+        map["is_cancel"] = !isCancel
+        map["episode_number"] = episodeNumber
+        httpRequest(backLiveData, isShowLoading = true, isShowEmptyView = false, isJustRefresh = true) {
+            RetrofitManger.getInstance().create(MyListService::class.java).requestHisData()
+        }
+    }
+
 }
