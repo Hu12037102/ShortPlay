@@ -56,4 +56,12 @@
     <string name="bonus_center_content">Bonus Center</string>
     <string name="playback_history_content">Playback History</string>
     <string name="my_list_content">My List</string>
+    <string name="display_continue_playing_on_home">Display Continue playing on Home</string>
+    <string name="terms_of_service_content">Terms of Service</string>
+    <string name="privacy_policy_content">Privacy Policy</string>
+    <string name="delete_account_content">Delete Account</string>
+    <string name="clear_cache_content">Clear Cache</string>
+    <string name="version_content">Version</string>
+    <string name="sign_out_content">Sign Out</string>
+    <string name="setting_content">Setting</string>
 </resources>

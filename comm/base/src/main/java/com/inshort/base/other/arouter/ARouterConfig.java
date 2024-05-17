@@ -47,6 +47,7 @@ public interface ARouterConfig {
 
         interface Me {
             String FRAGMENT_ME = "/me/fragment/me";
+            String ACTIVITY_SETTING="/me/activity/setting";
 
         }
 

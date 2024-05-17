@@ -15,8 +15,10 @@ import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
+import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.glide.GlideCompat;
 import com.inshort.base.other.mmkv.UserDataStore;
+import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.me.databinding.FragmentMeBinding;
 import com.inshort.me.viewmodel.MeViewModel;
 
@@ -73,7 +75,12 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
 
     @Override
     protected void initEvent() {
-
+        mViewBinding.aivSetting.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_SETTING);
+            }
+        });
     }
 
     private Drawable getTopBackground() {

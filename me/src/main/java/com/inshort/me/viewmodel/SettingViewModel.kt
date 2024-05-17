@@ -1,4 +1,6 @@
 package com.inshort.me.viewmodel
 
-class SettingViewModel {
+import com.inshort.base.core.viewmodel.BaseCompatViewModel
+
+class SettingViewModel : BaseCompatViewModel(){
 }
