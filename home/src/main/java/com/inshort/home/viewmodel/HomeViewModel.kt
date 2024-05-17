@@ -12,7 +12,6 @@ import com.inshort.home.HomeService
 class HomeViewModel : BaseCompatViewModel() {
     val indexLiveData = MutableLiveData<HomeIndexEntity>()
     val dramaSeriesPageLiveData = MutableLiveData<DramaSeriesPageEntity>()
-    override fun getInitPage(): Int = 2
     fun loadIndex() {
         httpRequest(indexLiveData, isShowLoading = true, isShowEmptyView = false, isJustRefresh = true) {
             RetrofitManger.getInstance().create(HomeService::class.java).homeIndex()

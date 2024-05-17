@@ -21,6 +21,8 @@ import com.inshort.base.compat.UICompat;
 import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.TagEntity;
 import com.inshort.base.other.glide.GlideCompat;
+import com.inshort.base.weight.click.DelayedClick;
+import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.base.weight.text.SpanTextHelper;
 import com.inshort.home.databinding.ItemHomeHorizontalChildViewBinding;
 
@@ -29,6 +31,12 @@ import java.util.List;
 public class HomeHorizontalAdapter extends RecyclerView.Adapter<HomeHorizontalAdapter.ViewHolder> {
     private final Context mContext;
     private final List<DramaSeriesEntity> mData;
+    @Nullable
+    private OnItemClickListener<DramaSeriesEntity> mOnItemClickListener;
+
+    public void setOnItemClickListener(@Nullable OnItemClickListener<DramaSeriesEntity> onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
+    }
 
     public HomeHorizontalAdapter(@NonNull Context context, @NonNull List<DramaSeriesEntity> data) {
         this.mContext = context;
@@ -85,6 +93,14 @@ public class HomeHorizontalAdapter extends RecyclerView.Adapter<HomeHorizontalAd
             } else {
                 holder.itemView.setPadding(0, 0, PhoneCompat.dp2px(mContext, 10), 0);
             }
+            holder.itemView.setOnClickListener(new DelayedClick() {
+                @Override
+                public void onDelayedClick(View view) {
+                    if (mOnItemClickListener!=null){
+                        mOnItemClickListener.onItemClick(view,entity);
+                    }
+                }
+            });
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,5 +129,6 @@ public class HomeHorizontalAdapter extends RecyclerView.Adapter<HomeHorizontalAd
             this.viewBinding = viewBinding;
         }
     }
+
 
 }

@@ -80,10 +80,10 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
         List<DramaSeriesEntity> dramaSeriesEntities = entity.dramaSeriesList;
         RecyclerView.Adapter<?> adapter = rvContent.getAdapter();
         HomeWaterfallAdapter waterfallAdapter;
-        if (adapter instanceof HomeWaterfallAdapter){
+        if (adapter instanceof HomeWaterfallAdapter) {
             waterfallAdapter = (HomeWaterfallAdapter) adapter;
             waterfallAdapter.notifyRefreshData(dramaSeriesEntities);
-        }else {
+        } else {
             rvContent.setLayoutManager(new GridLayoutManager(getMContext(), 3));
             List<DramaSeriesEntity> data = new ArrayList<>();
             if (CollectionCompat.notEmptyList(dramaSeriesEntities)) {
@@ -126,6 +126,16 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
                     mOnHomeItemClickListener.onClickViewMore(view, entity);
                 }
             }
+        });
+        horizontalAdapter.setOnItemClickListener((view, entity1) -> {
+            if (entity1 != null && mOnHomeItemClickListener != null) {
+                if (entity1.dramaReleaseType == 2) {
+                    mOnHomeItemClickListener.onClickNewEpisode(view, entity1);
+                } else {
+                    mOnHomeItemClickListener.onClickItem(view, entity1);
+                }
+            }
+
         });
     }
 
@@ -185,7 +195,7 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
             @Override
             public void onItemClick(@Nullable View view, @Nullable DramaSeriesEntity entity) {
                 if (mOnHomeItemClickListener != null) {
-                    mOnHomeItemClickListener.onClickTrendingItem(view, entity);
+                    mOnHomeItemClickListener.onClickItem(view, entity);
                 }
             }
         });
@@ -296,7 +306,6 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
     }
 
     public interface OnHomeItemClickListener {
-        void onClickTrendingItem(View view, DramaSeriesEntity entity);
 
         void onClickTrendingType(View view, TrendingTypeEntity entity);
 
@@ -305,6 +314,8 @@ public class HomeAdapter extends BaseRecyclerAdapter<ColumnEntity> {
         void onClickViewMore(View view, ColumnEntity entity);
 
         void onClickNewEpisode(View view, DramaSeriesEntity entity);
+
+        void onClickItem(View view, DramaSeriesEntity entity);
 
     }
 

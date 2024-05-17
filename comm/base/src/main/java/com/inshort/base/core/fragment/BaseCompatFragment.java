@@ -179,19 +179,12 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
                 }
             }
         });
-        mViewModel.getRefreshLiveData().observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean isRefresh) {
-                SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
-            }
-        });
+
         mViewModel.getRefreshLiveData().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean isRefresh) {
                 LogUtils.d("getRefreshLiveData--", isRefresh + "---" + mRefreshLayout);
-                if (!mViewModel.isRefresh()){
-                    mViewModel.pagerMore();
-                }
+                mViewModel.pagerAdd();
                 SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
 
 

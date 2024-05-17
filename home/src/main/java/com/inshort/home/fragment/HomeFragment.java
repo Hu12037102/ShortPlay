@@ -128,11 +128,6 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         if (mAdapter != null) {
             mAdapter.setOnHomeItemClickListener(new HomeAdapter.OnHomeItemClickListener() {
                 @Override
-                public void onClickTrendingItem(View view, DramaSeriesEntity entity) {
-
-                }
-
-                @Override
                 public void onClickTrendingType(View view, TrendingTypeEntity entity) {
                     RequestTrendsByTypeEntity requestEntity = new RequestTrendsByTypeEntity();
                     requestEntity.isHomeIndex = true;
@@ -152,11 +147,21 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
 
                 @Override
                 public void onClickViewMore(View view, ColumnEntity entity) {
-
+                    Postcard postcard = ARouters.build(ARouterConfig.Path.Home.ACTIVITY_VIEW_MORE);
+                    if (postcard != null) {
+                        postcard.withString(ARouterConfig.Key.CONTENT, entity.columnName)
+                                .withInt(ARouterConfig.Key.ID, entity.configurationColumnId)
+                                .navigation();
+                    }
                 }
 
                 @Override
                 public void onClickNewEpisode(View view, DramaSeriesEntity entity) {
+
+                }
+
+                @Override
+                public void onClickItem(View view, DramaSeriesEntity entity) {
 
                 }
             });

@@ -106,10 +106,8 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
         mViewModel.getRefreshLiveData().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean isRefresh) {
-                LogUtils.d("getRefreshLiveData--", isRefresh + "---" + mRefreshLayout);
-                if (!mViewModel.isRefresh()){
-                    mViewModel.pagerMore();
-                }
+                mViewModel.pagerAdd();
+                LogUtils.d("getRefreshLiveData--", isRefresh + "---" + mViewModel.getPage());
                 SmartRefreshLayoutCompat.finishAll(mRefreshLayout);
             }
         });

@@ -5,6 +5,7 @@ public interface ARouterConfig {
         String WEB_URL = "web_url";
         String WEB_TITLE = "web_title";
         String CONTENT = "content";
+        String ID = "id";
     }
 
     interface Path {
@@ -17,6 +18,7 @@ public interface ARouterConfig {
             String FRAGMENT_HOME = "/home/fragment/home";
             String ACTIVITY_TRENDING = "/home/activity/trending";
             String FRAGMENT_TRENDING_CONTENT = "/home/fragment/trending/content";
+            String ACTIVITY_VIEW_MORE = "/home/activity/view/more";
 
         }
 

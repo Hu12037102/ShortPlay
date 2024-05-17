@@ -1,6 +1,5 @@
 package com.inshort.base.core.viewmodel
 
-import android.os.Looper
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -33,8 +32,7 @@ open class BaseViewModel : ViewModel() {
         pagerReset()
     }
 
-    fun pagerMore() {
-        isRefresh = false
+    fun pagerAdd() {
         page++
     }
 
@@ -70,6 +68,9 @@ open class BaseViewModel : ViewModel() {
         isJustRefresh: Boolean = false
     ) {
         try {
+            if (isJustRefresh) {
+                refreshLiveData.value = isRefresh
+            }
             if (response != null && response.code == IApiService.HttpCode.SUCCEED) {
                 if (isShowEmptyView) {
                     emptyViewLiveData.value = false
@@ -87,9 +88,6 @@ open class BaseViewModel : ViewModel() {
                     it.liveData = liveData
                 }
                 httpErrorLiveData.value = errorEntity
-            }
-            if (isJustRefresh) {
-                refreshLiveData.value = isRefresh
             }
 
             LogUtils.d("disposeRetrofit--", "$response--")

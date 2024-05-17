@@ -20,6 +20,8 @@ public interface IApiService {
         String LOAD_ALL_TRENDING_TYPES="/app/index/ranking_classify";
         //首页更多数据
         String LOAD_HOME_MORE_LIST="/app/index/waterfall_column";
+        //获取首页ViewMore列表
+        String LOAD_HOME_VIEW_MORE_LIST="/app/index/get_column_dramas";
     }
 
     interface HttpCode {
