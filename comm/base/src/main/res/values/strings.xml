@@ -64,4 +64,12 @@
     <string name="version_content">Version</string>
     <string name="sign_out_content">Sign Out</string>
     <string name="setting_content">Setting</string>
+    <string name="transaction_history_content">Transaction History</string>
+    <string name="episodes_unlocked_content">Episodes Unlocked</string>
+    <string name="bonus_recpt_and_exp_history_content">Bonus Recpt &amp; Exp History</string>
+    <string name="version_s">V %s</string>
+    <string name="delete_account_desc_1">• Permanently deleting your account means you can no longer use it to log in to this app.</string>
+    <string name="delete_account_desc_2">• All your personal data, including identity information, nickname, browsing history, associations with third-party accounts, and purchase records, will be permanently erased.</string>
+    <string name="agree_delete_account_agreement_content">I have read and agree to all terms.</string>
+    <string name="you_must_check_the_agreement_before_delete_the_account_content">You must check the agreement before delete the account</string>
 </resources>

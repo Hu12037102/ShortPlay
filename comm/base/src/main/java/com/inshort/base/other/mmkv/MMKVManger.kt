@@ -22,6 +22,7 @@ class MMKVManger private constructor() {
     object Key {
         const val MAC_ID: String = "mmkv_mac_id"
         const val UUID: String = "mmkv_uuid"
+        const val WATCHING_STATUS="mmkv_watching_status"
     }
 
 

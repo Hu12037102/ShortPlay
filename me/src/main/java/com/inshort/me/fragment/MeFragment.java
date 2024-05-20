@@ -81,6 +81,12 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
                 ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_SETTING);
             }
         });
+        mViewBinding.atvWalletDetail.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_MY_WALLET);
+            }
+        });
     }
 
     private Drawable getTopBackground() {

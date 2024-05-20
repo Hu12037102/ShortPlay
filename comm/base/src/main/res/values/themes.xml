@@ -21,4 +21,16 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="Theme.BaseCompat.Dialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/BaseDialogAnimation</item>
+    </style>
+
+    <style name="BaseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/anim_bottom_to_center</item>
+        <item name="android:windowExitAnimation">@anim/anim_center_to_bottom</item>
+    </style>
+
 </resources>

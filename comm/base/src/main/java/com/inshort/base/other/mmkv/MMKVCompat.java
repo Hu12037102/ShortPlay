@@ -26,4 +26,12 @@ public final class MMKVCompat {
         }
         return uuid;
     }
+    public static boolean isOpenWatching(){
+        MMKVPreferences preferences =  MMKVManger.getDefaultPreferences();
+        return preferences.getBoolean(MMKVManger.Key.WATCHING_STATUS,true);
+    }
+    public static void setOpenWatching(boolean status){
+        MMKVPreferences preferences =  MMKVManger.getDefaultPreferences();
+        preferences.putObject(MMKVManger.Key.WATCHING_STATUS,status);
+    }
 }

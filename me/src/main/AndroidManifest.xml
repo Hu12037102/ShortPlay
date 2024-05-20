@@ -8,5 +8,11 @@
         android:launchMode="singleTop"
         android:screenOrientation="portrait"
         tools:ignore="LockedOrientationActivity" />
+    <activity
+        android:name=".activity.MyWalletActivity"
+        android:exported="false"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait"
+        tools:ignore="LockedOrientationActivity" />
 </application>
 </manifest>

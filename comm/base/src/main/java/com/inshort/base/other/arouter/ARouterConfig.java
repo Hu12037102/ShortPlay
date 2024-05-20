@@ -48,6 +48,8 @@ public interface ARouterConfig {
         interface Me {
             String FRAGMENT_ME = "/me/fragment/me";
             String ACTIVITY_SETTING="/me/activity/setting";
+            String ACTIVITY_MY_WALLET="/me/activity/my/wallet";
+            String DIALOG_DELETE_ACCOUNT="/me/dialog/delete/account";
 
         }
 

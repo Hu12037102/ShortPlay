@@ -35,6 +35,8 @@ import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.utils.LogUtils;
+import com.inshort.base.weight.click.DelayedClick;
+import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.home.adapter.HomeAdapter;
 import com.inshort.home.adapter.HomeBannerAdapter;
 import com.inshort.home.databinding.FragmentHomeBinding;
@@ -56,6 +58,11 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     private final List<HomeIndexEntity.Banner> mBannerData = new ArrayList<>();
     @Nullable
     private HomeBannerAdapter mBannerAdapter;
+    private OnItemClickListener<String> mOnSelectorSearchListener;
+
+    public void setOnItemClickListener(OnItemClickListener<String> onSelectorSearchListener) {
+        this.mOnSelectorSearchListener = onSelectorSearchListener;
+    }
 
     @Override
     protected FragmentHomeBinding getViewBinding() {
@@ -167,6 +174,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
             });
         }
 
+
     }
 
     private final ActivityResultLauncher<Intent> mTrendingActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), o -> {
@@ -182,6 +190,19 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         mViewModel.getIndexLiveData().observe(this, new Observer<HomeIndexEntity>() {
             @Override
             public void onChanged(HomeIndexEntity homeIndexEntity) {
+                if (homeIndexEntity==null){
+                    return;
+                }
+
+                mViewBinding.clSearchParent.setOnClickListener(new DelayedClick() {
+                    @Override
+                    public void onDelayedClick(View view) {
+                        if (mOnSelectorSearchListener!=null){
+                            mOnSelectorSearchListener.onItemClick(view,homeIndexEntity.searcherKeyword);
+                        }
+                    }
+                });
+
                 UICompat.setText(mViewBinding.atvKeysearch, homeIndexEntity.searcherKeyword);
                 mBannerData.clear();
                 if (CollectionCompat.notEmptyList(homeIndexEntity.banners)) {
@@ -255,4 +276,6 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         drawable.setCornerRadius(PhoneCompat.dp2px(requireContext(), 50f));
         return drawable;
     }
+
+
 }

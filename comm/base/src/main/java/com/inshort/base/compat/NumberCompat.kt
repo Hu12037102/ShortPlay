@@ -50,16 +50,16 @@ object NumberCompat {
                         resultM.toDouble(),
                         1,
                         defaultNumber = defaultValue
-                    )/*.replace(".0", "") */+ "M"
+                    )/*.replace(".0", "") */ + "M"
                 } else {
-                    val resultK = numberDecimal.divide(oneK,1, RoundingMode.HALF_UP)
-                    if (resultK.toDouble()>=1){
+                    val resultK = numberDecimal.divide(oneK, 1, RoundingMode.HALF_UP)
+                    if (resultK.toDouble() >= 1) {
                         keepDecimalNumber(
                             numberDecimal.divide(oneK, 1, RoundingMode.HALF_UP).toDouble(),
                             1,
                             defaultNumber = defaultValue
                         )/*.replace(".0", "")*/ + "K"
-                    }else{
+                    } else {
                         "${numberDecimal.toInt()}"
                     }
 
@@ -67,4 +67,20 @@ object NumberCompat {
             }
             result
         }.getOrDefault(defaultValue)
+
+    @JvmStatic
+    fun getB2M(fileSize: Double): String {
+        val oneKB: Long = 1000
+        val oneM = oneKB * oneKB
+        val oneG = oneKB * oneKB * oneKB
+        return if (fileSize < oneKB) {
+            "${fileSize}B"
+        } else if (fileSize < oneM) {
+            keepDecimalNumber(fileSize / oneKB, 1) + "KB"
+        } else if (fileSize < oneG) {
+            keepDecimalNumber(fileSize / oneM, 1) + "M"
+        } else {
+            keepDecimalNumber(fileSize / oneG, 1) + "G"
+        }
+    }
 }

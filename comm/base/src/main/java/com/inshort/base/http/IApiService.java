@@ -32,6 +32,8 @@ public interface IApiService {
         String LOAD_HOME_MORE_LIST="/app/index/waterfall_column";
         //获取首页ViewMore列表
         String LOAD_HOME_VIEW_MORE_LIST="/app/index/get_column_dramas";
+        //删除用户信息
+        String DELETE_USER_ACCOUNT="/app/user/delete_account";
     }
 
     interface HttpCode {
@@ -42,5 +44,7 @@ public interface IApiService {
 
     interface Url {
         String FAQ = "https://www.funbl.com/feedback/fun.html";
+        String PRIVACY_AGREEMENT = "https://h5.quanzishuzi.com/#/pages/my/conceal";
+        String TERMS_SERVICE = "https://www.funbl.com/termsPage.html?app=true";
     }
 }
