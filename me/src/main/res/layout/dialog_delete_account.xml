@@ -1,130 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_content_parent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="284dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/black">
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/size_46dp"
+        android:layout_marginEnd="@dimen/size_46dp">
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/atv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:drawablePadding="6dp"
-            android:fontFamily="@font/sofiapro_bold"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:drawablePadding="@dimen/size_6dp"
+            android:fontFamily="@font/sofia_pro_bold"
             android:gravity="center_vertical"
-            android:text="@string/me_setting_delete_account"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:drawableStartCompat="@drawable/delete_account_warning"
+            android:text="@string/delete_account_content"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/size_18sp"
+            app:drawableStartCompat="@mipmap/icon_delete_account_warning"
             app:layout_constrainedWidth="true"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/atv_desc_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="24dp"
-            android:fontFamily="@font/sofiapro_medium"
-            android:lineSpacingExtra="2dp"
-            android:text="@string/me_setting_delete_account_desc_1"
-            android:textColor="@color/white_ff_70"
-            android:textSize="14sp"
+            android:layout_marginStart="@dimen/size_24dp"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:layout_marginEnd="@dimen/size_24dp"
+            android:fontFamily="@font/sofia_pro_medium"
+            android:lineSpacingExtra="@dimen/size_2dp"
+            android:text="@string/delete_account_desc_1"
+            android:textColor="@color/color_FF2E2E2E"
+            android:textSize="@dimen/size_14sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/atv_title" />
+            app:layout_constraintTop_toBottomOf="@id/atv_title"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/atv_desc_2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:fontFamily="@font/sofiapro_medium"
-            android:lineSpacingExtra="2dp"
-            android:text="@string/me_setting_delete_account_desc_2"
-            android:textColor="@color/white_ff_70"
-            android:textSize="14sp"
+            android:layout_marginStart="@dimen/size_24dp"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:layout_marginEnd="@dimen/size_24dp"
+            android:fontFamily="@font/sofia_pro_medium"
+            android:lineSpacingExtra="@dimen/size_2dp"
+            android:text="@string/delete_account_desc_2"
+            android:textColor="@color/color_FF2E2E2E"
+            android:textSize="@dimen/size_14sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/atv_desc_1" />
-
-       <!-- <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/atv_desc_3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:fontFamily="@font/sofiapro_medium"
-            android:visibility="gone"
-            android:lineSpacingExtra="2dp"
-            android:text="@string/me_setting_delete_account_desc_3"
-            android:textColor="@color/white_ff_70"
-            android:textSize="14sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/atv_desc_2" />-->
-
+            app:layout_constraintTop_toBottomOf="@id/atv_desc_1"
+            tools:ignore="SpUsage" />
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/aiv_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:padding="@dimen/size_4dp"
             app:layout_constraintBottom_toBottomOf="@id/atv_check_text"
             app:layout_constraintLeft_toLeftOf="@id/atv_desc_2"
             app:layout_constraintTop_toTopOf="@id/atv_check_text"
-            app:srcCompat="@drawable/setting_delete_account_normal" />
-
+            app:srcCompat="@mipmap/icon_delete_account_normal" />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/atv_check_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/me_setting_agree_delete_account_agreement"
-            android:textColor="@color/white_ff_99"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:text="@string/agree_delete_account_agreement_content"
+            android:textColor="@color/color_FF999999"
             android:textSize="12sp"
-            app:fontFamily="@font/sofiapro_medium"
+            app:fontFamily="@font/sofia_pro_medium"
             app:layout_constrainedWidth="true"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintLeft_toRightOf="@id/aiv_check"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/atv_desc_2" />
-
         <View
             android:id="@+id/line1"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/white_ff_1a"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="@dimen/size_1dp"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:background="@color/color_1A000000"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/atv_check_text" />
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/atv_delete"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:gravity="center"
-            android:text="@string/delete_text"
-            android:textColor="@color/white_ff_99"
+            android:text="@string/delete"
+            app:fontFamily="@font/sofia_pro_medium"
+            android:textColor="@color/color_FF222222"
             android:textSize="15sp"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -133,9 +113,9 @@
 
         <View
             android:id="@+id/line2"
-            android:layout_width="1dp"
-            android:layout_height="48dp"
-            android:background="@color/white_ff_1a"
+            android:layout_width="@dimen/size_1dp"
+            android:layout_height="@dimen/size_48dp"
+            android:background="@color/color_1A000000"
             app:layout_constraintLeft_toRightOf="@id/atv_delete"
             app:layout_constraintRight_toLeftOf="@id/cl_cancel"
             app:layout_constraintTop_toTopOf="@id/atv_delete" />
@@ -158,12 +138,16 @@
                 android:layout_marginEnd="18dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
-                android:text="@string/cancel_text"
-                android:textColor="@color/white"
+                android:text="@string/cancel_content"
+                android:textColor="@color/color_White"
+                app:fontFamily="@font/sofia_pro_medium"
                 android:textSize="15sp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
