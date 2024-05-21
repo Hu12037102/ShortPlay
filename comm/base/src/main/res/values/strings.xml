@@ -13,7 +13,7 @@
     <string name="history">Playback History</string>
     <string name="play_history">Play History</string>
     <string name="more">More</string>
-    <string name="love" >My List</string>
+    <string name="love">My List</string>
     <string name="updated_to">Updated to %s</string>
     <string name="discover_more">Discover More</string>
     <string name="no_data_hitory">No playback history yet.</string>
@@ -72,4 +72,13 @@
     <string name="delete_account_desc_2">• All your personal data, including identity information, nickname, browsing history, associations with third-party accounts, and purchase records, will be permanently erased.</string>
     <string name="agree_delete_account_agreement_content">I have read and agree to all terms.</string>
     <string name="you_must_check_the_agreement_before_delete_the_account_content">You must check the agreement before delete the account</string>
+    <string name="search_history_content">Search History</string>
+    <string name="no_results_found_content">No results found</string>
+    <string name="trending_search_content">Trending search</string>
+    <string name="search_please_enter_at_least_letters_content">Please enter at least 3 letters.</string>
+    <string name="hot_search_content">Hot Search</string>
+    <string name="result_content">Result</string>
+    <string name="sure_content">Sure</string>
+    <string name="are_you_sure_you_want_to_delete_content">Are you sure you want to delete?</string>
+    <string name="confirm_content">Confirm</string>
 </resources>

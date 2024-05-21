@@ -24,13 +24,17 @@ import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
+import com.inshort.base.core.viewmodel.AppViewModel;
 import com.inshort.base.entity.ColumnEntity;
 import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.DramaSeriesPageEntity;
 import com.inshort.base.entity.HomeIndexEntity;
+import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.entity.RequestPageEntity;
 import com.inshort.base.entity.RequestTrendsByTypeEntity;
+import com.inshort.base.entity.SearchHandEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
+import com.inshort.base.manger.AppViewModelManger;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
@@ -56,13 +60,14 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     private ItemHeadHomeViewBinding mHeadViewBinding;
     private final ArrayList<ColumnEntity> mData = new ArrayList<>();
     private final List<HomeIndexEntity.Banner> mBannerData = new ArrayList<>();
+
     @Nullable
     private HomeBannerAdapter mBannerAdapter;
-    private OnItemClickListener<String> mOnSelectorSearchListener;
+  /*  private OnItemClickListener<String> mOnSelectorSearchListener;
 
     public void setOnItemClickListener(OnItemClickListener<String> onSelectorSearchListener) {
         this.mOnSelectorSearchListener = onSelectorSearchListener;
-    }
+    }*/
 
     @Override
     protected FragmentHomeBinding getViewBinding() {
@@ -90,15 +95,16 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
 
     @Override
     protected void initData() {
+
         initBannerAdapter();
         initAdapter();
-        loadSmartData(mViewModel.isRefresh());
+        loadSmartData();
     }
 
     @Override
-    protected void loadSmartData(boolean isRefresh) {
-        super.loadSmartData(isRefresh);
-        if (isRefresh) {
+    protected void loadSmartData() {
+        super.loadSmartData();
+        if (mViewModel.isRefresh()) {
             mViewModel.loadIndex();
         } else {
 
@@ -183,6 +189,10 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         }
     });
 
+    @Override
+    protected boolean isLoadAppViewModel() {
+        return true;
+    }
 
     @Override
     protected void initObserve() {
@@ -190,18 +200,20 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         mViewModel.getIndexLiveData().observe(this, new Observer<HomeIndexEntity>() {
             @Override
             public void onChanged(HomeIndexEntity homeIndexEntity) {
-                if (homeIndexEntity==null){
+                if (homeIndexEntity == null) {
                     return;
                 }
-
-                mViewBinding.clSearchParent.setOnClickListener(new DelayedClick() {
+               /* if (mAppViewModel != null) {
+                    mAppViewModel.getHomeKeywordLiveData().setValue(new SearchHandEntity(DataCompat.toString(homeIndexEntity.searcherKeyword), false));
+                }*/
+              /*  mViewBinding.clSearchParent.setOnClickListener(new DelayedClick() {
                     @Override
                     public void onDelayedClick(View view) {
-                        if (mOnSelectorSearchListener!=null){
-                            mOnSelectorSearchListener.onItemClick(view,homeIndexEntity.searcherKeyword);
+                        if (mOnSelectorSearchListener != null) {
+                            mOnSelectorSearchListener.onItemClick(view, homeIndexEntity.searcherKeyword);
                         }
                     }
-                });
+                });*/
 
                 UICompat.setText(mViewBinding.atvKeysearch, homeIndexEntity.searcherKeyword);
                 mBannerData.clear();
@@ -227,6 +239,8 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 SmartRefreshLayoutCompat.initDefault(mViewBinding.refreshLayout);
                 AdapterCompat.notifyAdapterAddDateChanged(mEmptyLayout, mAdapter, mViewModel.isRefresh(),
                         mData, columnEntities, null);
+                initSearchEvent(homeIndexEntity);
+
             }
         });
         mViewModel.getTrendsPageLiveData().observe(this, trendsPageEntity -> {
@@ -263,6 +277,27 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                     }
                     mViewBinding.refreshLayout.setEnableLoadMore(hasMore);
 
+                }
+            }
+        });
+    }
+
+    private void initSearchEvent(HomeIndexEntity homeIndexEntity) {
+        mViewBinding.aivSearch.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                if (mAppViewModel != null) {
+                    mAppViewModel.getHomeKeywordLiveData().setValue(new SearchHandEntity(DataCompat.toString(homeIndexEntity.searcherKeyword), true));
+                    mAppViewModel.getMainTabTypeSelectorLiveData().setValue(MainBottomTabEntity.TYPE_SEARCH);
+                }
+            }
+        });
+        mViewBinding.clSearchParent.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                if (mAppViewModel != null) {
+                    mAppViewModel.getHomeKeywordLiveData().setValue(new SearchHandEntity(DataCompat.toString(homeIndexEntity.searcherKeyword), false));
+                    mAppViewModel.getMainTabTypeSelectorLiveData().setValue(MainBottomTabEntity.TYPE_SEARCH);
                 }
             }
         });

@@ -59,6 +59,7 @@ public interface ARouterConfig {
 
         interface Comm {
             String ACTIVITY_WEB_CONTENT = "/comm/activity/web/content";
+            String DIALOG_TITLE="/comm/dialog/title";
         }
 
     }

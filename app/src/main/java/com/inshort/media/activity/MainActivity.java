@@ -1,11 +1,10 @@
 package com.inshort.media.activity;
 
-import android.view.View;
-
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
@@ -21,7 +20,6 @@ import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.utils.LogUtils;
-import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.home.fragment.HomeFragment;
 import com.inshort.me.fragment.MeFragment;
 import com.inshort.media.adapter.MainBottomTabAdapter;
@@ -61,12 +59,12 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
             String fragmentPath = tabEntity.fragmentPath;
             Object obj = ARouters.getBaseCompatFragment(fragmentPath);
             if (obj instanceof HomeFragment homeFragment) {
-                homeFragment.setOnItemClickListener(new OnItemClickListener<String>() {
+              /*  homeFragment.setOnItemClickListener(new OnItemClickListener<String>() {
                     @Override
                     public void onItemClick(@Nullable View view, @Nullable String s) {
                         mViewBinding.vpContent.setCurrentItem(1);
                     }
-                });
+                });*/
                 mFragments.add(homeFragment);
             } else if (obj instanceof SearchFragment searchFragment) {
                 mFragments.add(searchFragment);
@@ -103,6 +101,11 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
     }
 
     @Override
+    protected boolean isLoadAppViewModel() {
+        return true;
+    }
+
+    @Override
     protected void initEvent() {
         mViewBinding.vpContent.registerOnPageChangeCallback(mOnPageChangeCallback);
         if (mBottomTabAdapter != null) {
@@ -113,6 +116,21 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
             });
         }
         getOnBackPressedDispatcher().addCallback(mOnBackPressedCallback);
+        if (mAppViewModel != null) {
+            mAppViewModel.getMainTabTypeSelectorLiveData().observe(this, new Observer<Integer>() {
+                @Override
+                public void onChanged(Integer tabType) {
+                    for (int i = 0; i < CollectionCompat.getListSize(mBottomTabData); i++) {
+                        MainBottomTabEntity entity = mBottomTabData.get(i);
+                        if (entity.type == tabType) {
+                            mViewBinding.vpContent.setCurrentItem(i);
+                            LogUtils.w("MainTabTypeSelectorLiveData", "我选中了：" + i);
+                            break;
+                        }
+                    }
+                }
+            });
+        }
     }
 
     private final OnBackPressedCallback mOnBackPressedCallback = new OnBackPressedCallback(true) {

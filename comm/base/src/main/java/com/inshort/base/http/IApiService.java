@@ -34,6 +34,8 @@ public interface IApiService {
         String LOAD_HOME_VIEW_MORE_LIST="/app/index/get_column_dramas";
         //删除用户信息
         String DELETE_USER_ACCOUNT="/app/user/delete_account";
+        //搜索剧集
+        String SEARCH_LIST_BY_KEYWORD="app/drama_series/search";
     }
 
     interface HttpCode {

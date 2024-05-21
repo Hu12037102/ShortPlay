@@ -18,10 +18,12 @@ import androidx.viewbinding.ViewBinding;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.ViewsCompat;
+import com.inshort.base.core.viewmodel.AppViewModel;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.BaseRootFrameViewBinding;
 import com.inshort.base.databinding.BaseRootLoadingViewBinding;
 import com.inshort.base.entity.UserEntity;
+import com.inshort.base.manger.AppViewModelManger;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.tools.ViewTools;
 import com.inshort.base.utils.LogUtils;
@@ -43,6 +45,8 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
     protected AnimationDrawable mLoadingAnimationDrawable = null;
     @Nullable
     protected BaseRootLoadingViewBinding mLoadingViewBinding = null;
+    @Nullable
+    protected AppViewModel mAppViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +62,9 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
 
     protected void init() {
         mViewModel = new ViewModelProvider(this).get(getViewModelClass());
+        if (isLoadAppViewModel()){
+            mAppViewModel = AppViewModelManger.getInstance(getApplication()).getViewModel(AppViewModel.class);
+        }
         initView();
         initData();
         initEvent();
@@ -152,13 +159,13 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.setRefresh(false);
-                loadSmartData( false);
+                loadSmartData( );
             }
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.pagerReset();
-                loadSmartData( true);
+                loadSmartData( );
             }
         });
     }
@@ -194,7 +201,7 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
             mEmptyLayout.hide();
         }
     }
-    protected void loadSmartData( boolean isRefresh) {
+    protected void loadSmartData( ) {
 
     }
 }

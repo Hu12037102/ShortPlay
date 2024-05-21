@@ -28,7 +28,8 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NotStatusBar"
-            tools:ignore="LockedOrientationActivity">
+            tools:ignore="LockedOrientationActivity"
+            android:windowSoftInputMode="adjustResize|adjustPan|stateHidden">
            <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

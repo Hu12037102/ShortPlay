@@ -14,7 +14,7 @@ public final class DialogCompat {
             if (TextUtils.isEmpty(tag)) {
                 tag = TAG;
             }
-            dialogFragment.show(fragmentManager, tag);
+            dialogFragment.showNow(fragmentManager, tag);
         }
 
     }
