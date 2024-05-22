@@ -119,6 +119,7 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
             Dialog dialog = getDialog();
             if (DataCompat.notNull(dialog) && DataCompat.notNull(dialog.getWindow())) {
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setGravity(getGravity());
             }
             buildParentLayout();
             init();
@@ -128,6 +129,9 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
 
     }
 
+    protected int getGravity(){
+        return Gravity.CENTER;
+    }
     protected void buildParentLayout() {
         if (DataCompat.isNull(mRootParent)) {
             return;

@@ -20,6 +20,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.AdapterCompat;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.compat.ViewsCompat;
@@ -170,7 +171,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
 
                 @Override
                 public void onClickNewEpisode(View view, DramaSeriesEntity entity) {
-
+                    showNewEpisodeDialog(entity);
                 }
 
                 @Override
@@ -181,6 +182,14 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         }
 
 
+    }
+
+    private void showNewEpisodeDialog(DramaSeriesEntity entity) {
+        Postcard postcard = ARouters.build(ARouterConfig.Path.Home.DIALOG_NEW_EPISODE);
+        if (postcard != null) {
+            Object obj = postcard.withSerializable(ARouterConfig.Key.SERIALIZABLE, entity).navigation();
+            DialogCompat.showDialogFragment(obj, getChildFragmentManager());
+        }
     }
 
     private final ActivityResultLauncher<Intent> mTrendingActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), o -> {

@@ -81,4 +81,5 @@
     <string name="sure_content">Sure</string>
     <string name="are_you_sure_you_want_to_delete_content">Are you sure you want to delete?</string>
     <string name="confirm_content">Confirm</string>
+    <string name="launch_on_s_s">Launch on %s %s</string>
 </resources>

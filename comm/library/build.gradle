@@ -43,6 +43,7 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"
 
+    api "androidx.core:core:$config.core_ktx_version"
     api "androidx.appcompat:appcompat:${config.appcompat_version}"
     api "com.google.android.material:material:${config.material_version}"
     api "androidx.constraintlayout:constraintlayout:${config.constraintlayout_version}"

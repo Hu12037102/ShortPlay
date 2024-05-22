@@ -66,6 +66,8 @@ public class SearchAdapter extends BaseRecyclerAdapter<SearchPageEntity.Info> {
 
     }
 
+
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateChildViewHolder(@NonNull ViewGroup viewGroup, int i) {

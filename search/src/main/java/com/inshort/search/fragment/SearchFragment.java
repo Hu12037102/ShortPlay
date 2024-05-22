@@ -82,6 +82,7 @@ public class SearchFragment extends BaseCompatFragment<FragmentSearchBinding, Se
     protected void initView() {
         // mViewBinding.rvContent.setLayoutManager(new GridLayoutManager(requireContext(),2));
         mViewBinding.rvContent.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        mViewBinding.rvContent.setItemAnimator(null);
         ViewCompat.setBackground(mViewBinding.viewTop, getTopBackground());
         ViewCompat.setBackground(mViewBinding.clSearchContentParent, getSearchBackground());
         ViewsCompat.setStatusBarMargin(mViewBinding.clSearchRoot, getActivity(), PhoneCompat.dp2px(requireContext(), 10));
@@ -100,6 +101,7 @@ public class SearchFragment extends BaseCompatFragment<FragmentSearchBinding, Se
     protected void initData() {
         mAdapter = new SearchAdapter(requireContext(), mData);
         mAdapter.addHeadView(mHeadViewBinding.getRoot());
+
         mViewBinding.rvContent.setAdapter(mAdapter);
         loadSmartData();
     }

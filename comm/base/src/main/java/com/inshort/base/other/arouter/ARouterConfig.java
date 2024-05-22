@@ -11,6 +11,7 @@ public interface ARouterConfig {
         int LIST_LOVE =2;  //喜爱记录
         String CONTENT = "content";
         String ID = "id";
+        String SERIALIZABLE="serializable";
     }
 
     interface Path {
@@ -24,6 +25,7 @@ public interface ARouterConfig {
             String ACTIVITY_TRENDING = "/home/activity/trending";
             String FRAGMENT_TRENDING_CONTENT = "/home/fragment/trending/content";
             String ACTIVITY_VIEW_MORE = "/home/activity/view/more";
+            String DIALOG_NEW_EPISODE="/home/dialog/new/episode";
 
         }
 

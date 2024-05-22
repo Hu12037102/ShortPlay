@@ -10,7 +10,7 @@ import com.inshort.search.SearchService
 class SearchViewModel :BaseCompatViewModel(){
     val searchLiveData= MutableLiveData<SearchPageEntity>()
     fun findListByKeyword(keyword:String){
-        httpRequest(searchLiveData,false,false,true){
+        httpRequest(searchLiveData, isShowLoading = false, isShowEmptyView = true, isJustRefresh = true){
             RetrofitManger.getInstance().create(SearchService::class.java).searchListByKeyword(RequestSearchEntity().also {
                 it.page = page
                 it.searchKeyword = keyword
