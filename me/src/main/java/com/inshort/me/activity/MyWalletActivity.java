@@ -2,6 +2,7 @@ package com.inshort.me.activity;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.view.View;
 
 import androidx.core.view.ViewCompat;
 
@@ -12,7 +13,9 @@ import com.inshort.base.compat.UICompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
+import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.mmkv.UserDataStore;
+import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.me.databinding.ActivityMyWalletBinding;
 import com.inshort.me.viewmodel.MyWalletViewModel;
 
@@ -49,15 +52,29 @@ public class MyWalletActivity extends BaseCompatActivity<ActivityMyWalletBinding
         if (DataCompat.notNull(info)) {
             UICompat.setText(mViewBinding.atvCoinsCount, DataCompat.toString(info.coinsBalance));
             UICompat.setText(mViewBinding.atvBonusCount, DataCompat.toString(info.bonusBalance));
-        }else {
+        } else {
             UICompat.setText(mViewBinding.atvCoinsCount, DataCompat.toString(0));
             UICompat.setText(mViewBinding.atvBonusCount, DataCompat.toString(0));
         }
 
     }
 
+
+
     @Override
     protected void initEvent() {
+        mViewBinding.clTransactionHistory.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_TRANSACTION_HISTORY);
+            }
+        });
+        mViewBinding.clEpisodesUnlocked.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_EPISODES_UNLOCKED);
+            }
+        });
 
     }
 

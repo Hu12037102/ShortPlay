@@ -35,7 +35,11 @@ public interface IApiService {
         //删除用户信息
         String DELETE_USER_ACCOUNT="/app/user/delete_account";
         //搜索剧集
-        String SEARCH_LIST_BY_KEYWORD="app/drama_series/search";
+        String SEARCH_LIST_BY_KEYWORD="/app/drama_series/search";
+        //获取TransactionHistory历史记录
+        String LOAD_TRANSACTION_HISTORY_LIST="/app/user/transaction_history";
+        //获取EpisodesUnlocked记录
+        String LOAD_EPISODE_UNLOCK_LIST="/app/user/episodes_unlocked";
     }
 
     interface HttpCode {

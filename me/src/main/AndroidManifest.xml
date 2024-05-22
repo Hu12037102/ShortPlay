@@ -14,5 +14,17 @@
         android:launchMode="singleTop"
         android:screenOrientation="portrait"
         tools:ignore="LockedOrientationActivity" />
+    <activity
+        android:name=".activity.TransactionHistoryActivity"
+        android:exported="false"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait"
+        tools:ignore="LockedOrientationActivity" />
+    <activity
+        android:name=".activity.EpisodesUnlockedActivity"
+        android:exported="false"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait"
+        tools:ignore="LockedOrientationActivity" />
 </application>
 </manifest>

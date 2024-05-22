@@ -52,6 +52,8 @@ public interface ARouterConfig {
             String ACTIVITY_SETTING="/me/activity/setting";
             String ACTIVITY_MY_WALLET="/me/activity/my/wallet";
             String DIALOG_DELETE_ACCOUNT="/me/dialog/delete/account";
+            String ACTIVITY_TRANSACTION_HISTORY="/me/activity/transaction/history";
+            String ACTIVITY_EPISODES_UNLOCKED="/me/activity/episodes/unlocked";
 
         }
 

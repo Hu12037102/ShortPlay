@@ -26,6 +26,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -33,6 +34,7 @@ import com.inshort.base.compat.AdapterCompat;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.DialogCompat;
+import com.inshort.base.compat.KeySoftCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.compat.ViewsCompat;
@@ -140,8 +142,23 @@ public class SearchFragment extends BaseCompatFragment<FragmentSearchBinding, Se
                 }
             });
         }
+        mViewBinding.rvContent.addOnScrollListener(mOnScrollListener);
+    }
+private final RecyclerView.OnScrollListener mOnScrollListener= new RecyclerView.OnScrollListener() {
+    @Override
+    public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+        super.onScrollStateChanged(recyclerView, newState);
+        LogUtils.w("onScrollStateChanged",newState+"--");
+        if (newState==1){
+            KeySoftCompat.updateKeySoft(requireActivity().getWindow(),mViewBinding.aetContent,false);
+        }
     }
 
+    @Override
+    public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+        super.onScrolled(recyclerView, dx, dy);
+    }
+};
 
     private void showClearHistoryDialog() {
         Object obj = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_TITLE);
@@ -178,7 +195,7 @@ public class SearchFragment extends BaseCompatFragment<FragmentSearchBinding, Se
         }
         SearchHistoryDataStore.get().putData(mKeyword);
         updateSearchHistoryView();
-        WindowCompat.getInsetsController(requireActivity().getWindow(), mViewBinding.aetContent).hide(WindowInsetsCompat.Type.ime());
+        KeySoftCompat.updateKeySoft(requireActivity().getWindow(),mViewBinding.aetContent,false);
         mViewModel.pagerReset();
         loadSmartData();
     }
@@ -291,6 +308,7 @@ public class SearchFragment extends BaseCompatFragment<FragmentSearchBinding, Se
     public void onDestroy() {
         super.onDestroy();
         mViewBinding.aetContent.removeTextChangedListener(mTextWatcher);
+        mViewBinding.rvContent.removeOnScrollListener(mOnScrollListener);
     }
 
     private Drawable getTopBackground() {
