@@ -75,6 +75,12 @@ public class MyWalletActivity extends BaseCompatActivity<ActivityMyWalletBinding
                 ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_EPISODES_UNLOCKED);
             }
         });
+        mViewBinding.clBonusHistory.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_BONUS_EXPIRE);
+            }
+        });
 
     }
 

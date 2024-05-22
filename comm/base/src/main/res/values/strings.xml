@@ -83,4 +83,7 @@
     <string name="confirm_content">Confirm</string>
     <string name="launch_on_s_s">Launch on %s %s</string>
     <string name="episode_s">Episode %s</string>
+    <string name="expired_content">Expired</string>
+    <string name="expired_on_s">Expired on %s</string>
+
 </resources>

@@ -26,5 +26,11 @@
         android:launchMode="singleTop"
         android:screenOrientation="portrait"
         tools:ignore="LockedOrientationActivity" />
+    <activity
+        android:name=".activity.BonusExpireActivity"
+        android:exported="false"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait"
+        tools:ignore="LockedOrientationActivity" />
 </application>
 </manifest>

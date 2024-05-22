@@ -40,6 +40,8 @@ public interface IApiService {
         String LOAD_TRANSACTION_HISTORY_LIST="/app/user/transaction_history";
         //获取EpisodesUnlocked记录
         String LOAD_EPISODE_UNLOCK_LIST="/app/user/episodes_unlocked";
+        //获取bonus过期时间
+        String LOAD_BONUS_EXPIRE_LIST="/app/user/bonus_hitory";
     }
 
     interface HttpCode {

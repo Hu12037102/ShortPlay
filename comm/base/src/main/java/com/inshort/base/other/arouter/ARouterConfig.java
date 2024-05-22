@@ -54,6 +54,7 @@ public interface ARouterConfig {
             String DIALOG_DELETE_ACCOUNT="/me/dialog/delete/account";
             String ACTIVITY_TRANSACTION_HISTORY="/me/activity/transaction/history";
             String ACTIVITY_EPISODES_UNLOCKED="/me/activity/episodes/unlocked";
+            String ACTIVITY_BONUS_EXPIRE="/me/activity/bonus/expire";
 
         }
 
