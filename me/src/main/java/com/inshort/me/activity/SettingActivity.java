@@ -67,13 +67,10 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
 
     @Override
     protected void initEvent() {
-        mViewBinding.atvDisplayHomeRight.setOnClickListener(new DelayedClick() {
-            @Override
-            public void onDelayedClick(View view) {
-                boolean isOpenWatching = MMKVCompat.isOpenWatching();
-                MMKVCompat.setOpenWatching(!isOpenWatching);
-                updateDisplayWitchingView();
-            }
+        mViewBinding.atvDisplayHomeRight.setOnClickListener(v -> {
+            boolean isOpenWatching = MMKVCompat.isOpenWatching();
+            MMKVCompat.setOpenWatching(!isOpenWatching);
+            updateDisplayWitchingView();
         });
         mViewBinding.clItemTermsService.setOnClickListener(new DelayedClick() {
             @Override

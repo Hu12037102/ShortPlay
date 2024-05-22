@@ -15,6 +15,7 @@ public final class GlideCompat {
             return;
         }
         LogUtils.d("loadImage","Object >>>"+obj+">>> imageView >>"+imageView);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         GlideInShort.with(imageView).load(obj).into(imageView);
     }
     public static void loadImage(@Nullable Object obj, @Nullable ImageView imageView, @DrawableRes int placeholder){
