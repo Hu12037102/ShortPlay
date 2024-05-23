@@ -169,9 +169,6 @@ private final RecyclerView.OnScrollListener mOnScrollListener= new RecyclerView.
             bundle.putString(TitleDialog.KEY_RIGHT, DataCompat.getResString(requireContext(), com.inshort.base.R.string.confirm_content));
             titleDialog.setArguments(bundle);
             DialogCompat.showDialogFragment(titleDialog, getChildFragmentManager());
-           /* titleDialog.setContentText(DataCompat.getResString(requireContext(), com.inshort.base.R.string.are_you_sure_you_want_to_delete_content));
-            titleDialog.setLeftText(DataCompat.getResString(requireContext(), com.inshort.base.R.string.cancel_content));
-            titleDialog.setRightText(DataCompat.getResString(requireContext(), com.inshort.base.R.string.confirm_content));*/
             titleDialog.setOnDialogInfoClickListener(new TitleDialog.OnDialogInfoClickListener() {
                 @Override
                 public void onClickLeftView(View view) {

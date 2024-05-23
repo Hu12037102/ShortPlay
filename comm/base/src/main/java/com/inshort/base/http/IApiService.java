@@ -44,6 +44,7 @@ public interface IApiService {
         String LOAD_BONUS_EXPIRE_LIST="/app/user/bonus_hitory";
         //获取商品列表
         String LOAD_STORE_LIST="/app/store/details";
+
     }
 
     interface HttpCode {

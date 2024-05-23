@@ -22,4 +22,5 @@ interface MeService {
     suspend fun loadBonusExpireList(@Body body: RequestPageEntity):ResponseEntity<PageEntity<BonusExpireEntity>>
     @POST(IApiService.Path.LOAD_STORE_LIST)
     suspend fun loadStoreList():ResponseEntity<StoreEntity>
+
 }

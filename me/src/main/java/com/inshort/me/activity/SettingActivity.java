@@ -2,6 +2,7 @@ package com.inshort.me.activity;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.inshort.base.compat.PackageInfoCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
+import com.inshort.base.core.dialog.comm.TitleDialog;
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.http.IApiService;
 import com.inshort.base.manger.ActivityStateManger;
@@ -25,6 +27,8 @@ import com.inshort.base.other.arouter.ARouterActivity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.mmkv.MMKVCompat;
+import com.inshort.base.other.mmkv.SearchHistoryDataStore;
+import com.inshort.base.other.mmkv.UserDataStore;
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.me.databinding.ActivitySettingBinding;
@@ -98,7 +102,36 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
                 }
             }
         });
+        mViewBinding.atvSignOut.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                showSignOutDialog();
+            }
+        });
 
+    }
+
+    private void showSignOutDialog() {
+        Object obj = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_TITLE);
+        if (obj instanceof TitleDialog titleDialog) {
+            Bundle bundle = new Bundle();
+            bundle.putString(TitleDialog.KEY_TITLE, DataCompat.getResString(this, com.inshort.base.R.string.are_you_sure_you_want_to_sign_out_content));
+            bundle.putString(TitleDialog.KEY_LEFT, DataCompat.getResString(this, com.inshort.base.R.string.cancel_content));
+            bundle.putString(TitleDialog.KEY_RIGHT, DataCompat.getResString(this, com.inshort.base.R.string.sign_out_content));
+            titleDialog.setArguments(bundle);
+            DialogCompat.showDialogFragment(titleDialog, getSupportFragmentManager());
+            titleDialog.setOnDialogInfoClickListener(new TitleDialog.OnDialogInfoClickListener() {
+                @Override
+                public void onClickLeftView(View view) {
+                    titleDialog.dismiss();
+                }
+
+                @Override
+                public void onClickRightView(View view) {
+                    titleDialog.dismiss();
+                }
+            });
+        }
     }
 
     @Override
@@ -114,6 +147,7 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
         mViewModel.getNotResultLiveData().observe(this, new Observer<Object>() {
             @Override
             public void onChanged(Object o) {
+                UserDataStore.get().clear();
                 mViewModel.initUserLogin();
             }
         });

@@ -1,5 +1,7 @@
 package com.inshort.me.activity;
 
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,8 +14,10 @@ import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.entity.StoreEntity;
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
+import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.mmkv.UserDataStore;
 import com.inshort.base.utils.LogUtils;
+import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.text.SpanTextHelper;
 import com.inshort.me.adapter.StoreAdapter;
 import com.inshort.me.databinding.ActivityStoreBinding;
@@ -100,6 +104,12 @@ public class StoreActivity extends BaseCompatActivity<ActivityStoreBinding, Stor
 
     @Override
     protected void initEvent() {
+        mViewBinding.pvTitle.getRightView().setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_TRANSACTION_HISTORY);
+            }
+        });
 
     }
 

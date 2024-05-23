@@ -1,5 +1,6 @@
 package com.inshort.me.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
@@ -14,6 +15,8 @@ import com.inshort.base.compat.UICompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.UserEntity;
+import com.inshort.base.http.IApiService;
+import com.inshort.base.other.arouter.ARouterActivity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.glide.GlideCompat;
@@ -91,6 +94,13 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
             @Override
             public void onDelayedClick(View view) {
                 ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_STORE);
+            }
+        });
+        mViewBinding.clItemFeedback.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                ARouterActivity.startToWebContentActivity(IApiService.Url.FAQ, DataCompat.getResString(requireContext(),
+                        com.inshort.base.R.string.feedback_content));
             }
         });
     }

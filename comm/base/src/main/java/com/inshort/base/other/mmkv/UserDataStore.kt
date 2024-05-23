@@ -37,7 +37,9 @@ class UserDataStore private constructor() {
     fun getAccessToken() = DataCompat.checkString(getData()?.accessToken)
     fun isLogin(): Boolean = !TextUtils.isEmpty(getAccessToken())
 
-
+    fun clear() {
+        mPreferences.clear()
+    }
 
 
 }

@@ -11,12 +11,16 @@ import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.core.dialog.BaseCompatDialog;
 import com.inshort.base.core.viewmodel.BaseCompatViewModel;
 import com.inshort.base.databinding.DialogTitleBinding;
 import com.inshort.base.other.arouter.ARouterConfig;
+import com.inshort.base.other.arouter.ARouters;
+import com.inshort.base.other.mmkv.SearchHistoryDataStore;
 import com.inshort.base.weight.click.DelayedClick;
 
 @Route(path = ARouterConfig.Path.Comm.DIALOG_TITLE)
@@ -24,6 +28,7 @@ public class TitleDialog extends BaseCompatDialog<DialogTitleBinding, BaseCompat
     public static final String KEY_TITLE = "key_title";
     public static final String KEY_LEFT = "key_left";
     public static final String KEY_RIGHT = "key_right";
+
 
     @Nullable
     private OnDialogInfoClickListener mOnDialogInfoClickListener = null;
@@ -48,17 +53,6 @@ public class TitleDialog extends BaseCompatDialog<DialogTitleBinding, BaseCompat
 
     }
 
-   /* public void setLeftText(@NonNull CharSequence text) {
-        UICompat.setText(mViewBinding.atvLeft, text);
-    }
-
-    public void setRightText(@NonNull CharSequence text) {
-        UICompat.setText(mViewBinding.atvRight, text);
-    }
-
-    public void setContentText(@NonNull CharSequence text) {
-        UICompat.setText(mViewBinding.atvTitle, text);
-    }*/
 
     @Override
     protected void initData() {
