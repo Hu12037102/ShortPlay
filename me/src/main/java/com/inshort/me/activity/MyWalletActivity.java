@@ -81,6 +81,12 @@ public class MyWalletActivity extends BaseCompatActivity<ActivityMyWalletBinding
                 ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_BONUS_EXPIRE);
             }
         });
+        mViewBinding.atvTopUp.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                ARouters.startActivity(ARouterConfig.Path.Me.ACTIVITY_STORE);
+            }
+        });
 
     }
 

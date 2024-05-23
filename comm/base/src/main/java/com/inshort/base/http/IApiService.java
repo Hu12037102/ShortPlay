@@ -42,6 +42,8 @@ public interface IApiService {
         String LOAD_EPISODE_UNLOCK_LIST="/app/user/episodes_unlocked";
         //获取bonus过期时间
         String LOAD_BONUS_EXPIRE_LIST="/app/user/bonus_hitory";
+        //获取商品列表
+        String LOAD_STORE_LIST="/app/store/details";
     }
 
     interface HttpCode {

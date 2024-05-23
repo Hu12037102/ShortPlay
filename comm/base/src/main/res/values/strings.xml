@@ -85,5 +85,16 @@
     <string name="episode_s">Episode %s</string>
     <string name="expired_content">Expired</string>
     <string name="expired_on_s">Expired on %s</string>
+    <string name="store_content">Store</string>
+    <string name="add_proportion_discount_s">+%s%% Bonus</string>
+    <string name="tips_content">Tips</string>
+    <string name="store_tip_1">1. This App has free and paid content for everyone. You decide which content to unlock.</string>
+    <string name="store_tip_2">2. Coins will be used to unlock paid content.</string>
+    <string name="store_tip_3">3. Recharge does not support refund.</string>
+    <string name="store_tip_4">4. If you have other problems, please contact us.</string>
+    <string name="balance_say_content">Balance:</string>
+
+
+
 
 </resources>
