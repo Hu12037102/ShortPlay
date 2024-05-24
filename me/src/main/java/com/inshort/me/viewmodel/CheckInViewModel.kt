@@ -12,7 +12,7 @@ class CheckInViewModel : BaseCompatViewModel() {
     val awardDetailsLiveData = MutableLiveData<AwardDetailsEntity>()
     val dailyCheckInLiveData = MutableLiveData<DailyCheckInEntity>()
     fun loadData() {
-        httpRequest(awardDetailsLiveData, isShowLoading = true, isShowEmptyView = false, isJustRefresh = false) {
+        httpRequest(awardDetailsLiveData, isShowLoading = true, isShowEmptyView = true, isJustRefresh = false) {
             RetrofitManger.getInstance().create(MeService::class.java).loadAwardDetails().also {
                 updateBalance(it.data?.balance,it.data?.coinsBalance,it.data?.bonusBalance)
             }
