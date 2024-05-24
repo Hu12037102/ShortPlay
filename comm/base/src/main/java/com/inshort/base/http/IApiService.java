@@ -2,10 +2,6 @@ package com.inshort.base.http;
 
 import java.net.HttpURLConnection;
 
-import retrofit2.Response;
-import retrofit2.http.Body;
-import retrofit2.http.POST;
-
 public interface IApiService {
     interface Path {
         //APP初始化接口
@@ -44,6 +40,10 @@ public interface IApiService {
         String LOAD_BONUS_EXPIRE_LIST="/app/user/bonus_hitory";
         //获取商品列表
         String LOAD_STORE_LIST="/app/store/details";
+        //获取奖励中心详情
+        String LOAD_AWARD_DETAILS ="/app/activity/details";
+        //每日签到
+        String DAILY_CHECK_IN="/app/activity/daily_check_in";
 
     }
 

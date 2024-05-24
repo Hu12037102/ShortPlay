@@ -37,12 +37,12 @@ open class BaseCompatViewModel : BaseViewModel() {
         }
     }
 
-    fun updateBalance(balance: Int, coinsBalance: Int, bonusBalance: Int) {
+    fun updateBalance(balance: Int?, coinsBalance: Int?, bonusBalance: Int?) {
         val entity = UserDataStore.get().getData()
         if (DataCompat.notNull(entity)) {
-            entity?.info?.balance = balance
-            entity?.info?.coinsBalance = coinsBalance
-            entity?.info?.bonusBalance = bonusBalance
+            entity?.info?.balance = balance?:0
+            entity?.info?.coinsBalance = coinsBalance?:0
+            entity?.info?.bonusBalance = bonusBalance?:0
             userLiveData.value = entity
         }
     }

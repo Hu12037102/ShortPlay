@@ -56,6 +56,7 @@ public interface ARouterConfig {
             String ACTIVITY_EPISODES_UNLOCKED="/me/activity/episodes/unlocked";
             String ACTIVITY_BONUS_EXPIRE="/me/activity/bonus/expire";
             String ACTIVITY_STORE="/me/activity/store";
+            String DIALOG_CHECK_IN="/me/dialog/check/in";
 
         }
 

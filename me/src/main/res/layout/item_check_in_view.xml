@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/color_White"
+        app:cardCornerRadius="@dimen/size_6dp"
+        app:cardElevation="@dimen/size_1dp"
+        app:cardMaxElevation="@dimen/size_200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="@dimen/size_72dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_min="@dimen/size_38dp"
+        app:strokeColor="@color/color_White"
+        app:strokeWidth="@dimen/size_1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_content_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/atv_day_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/size_4dp"
+                android:paddingBottom="@dimen/size_4dp"
+                android:textColor="@color/color_FFB0B0B0"
+                android:textSize="@dimen/size_9sp"
+                app:fontFamily="@font/sofia_pro_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage"
+                tools:text="1Days" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aiv_bonus_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/atv_day_count"
+                tools:src="@mipmap/icon_check_bonus"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aiv_bonus_selector"
+                android:layout_width="14dp"
+                android:layout_height="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/aiv_bonus_icon"
+                app:layout_constraintEnd_toEndOf="@id/aiv_bonus_icon"
+                app:srcCompat="@mipmap/icon_check_in_bonus_selector" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/atv_bonus_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_2dp"
+                android:textSize="@dimen/size_12sp"
+                app:fontFamily="@font/sofia_pro_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/size_6dp"
+                tools:ignore="SpUsage"
+                tools:text="+100" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

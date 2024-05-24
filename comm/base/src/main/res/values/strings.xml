@@ -94,7 +94,11 @@
     <string name="store_tip_4">4. If you have other problems, please contact us.</string>
     <string name="balance_say_content">Balance:</string>
     <string name="are_you_sure_you_want_to_sign_out_content">Are you sure you want to sign out?</string>
-
+    <string name="return_tomorrow_content">Return tomorrow</string>
+    <string name="check_in_streak_say_content">Check-In Streak:</string>
+    <string name="day_say_content">Day(s)</string>
+    <string name="s_day_content">%s Days</string>
+    <string name="check_in">Check-In</string>
 
 
 

@@ -14,7 +14,7 @@ class StoreViewModel : BaseCompatViewModel() {
     fun loadData() {
         httpRequest(storeLiveData, isShowEmptyView = false, isShowLoading = true, isJustRefresh = false) {
             RetrofitManger.getInstance().create(MeService::class.java).loadStoreList().also {
-                updateBalance(it.data?.balance ?: 0, it.data?.coinsBalance ?: 0, it.data?.bonusBalance ?: 0)
+                updateBalance(it.data?.balance , it.data?.coinsBalance , it.data?.bonusBalance )
             }
         }
     }

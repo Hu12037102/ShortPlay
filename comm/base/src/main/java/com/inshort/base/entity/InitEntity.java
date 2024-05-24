@@ -24,6 +24,8 @@ public class InitEntity implements Parcelable {
     public boolean isReviewVersion;
     @SerializedName("domain_name_list")
     public List<String> domainNameList;
+    @SerializedName("play_hostname_list")
+    public List<String> playHostNames;
 
     protected InitEntity(Parcel in) {
         updateInfo = in.readParcelable(InitEntity.UpdateInfo.class.getClassLoader());
@@ -32,6 +34,7 @@ public class InitEntity implements Parcelable {
         fqaUrl = in.readString();
         isReviewVersion = in.readByte() != 0;
         domainNameList = in.createStringArrayList();
+        playHostNames = in.createStringArrayList();
     }
 
     public static final Creator<InitEntity> CREATOR = new Creator<InitEntity>() {
@@ -59,6 +62,7 @@ public class InitEntity implements Parcelable {
         dest.writeString(fqaUrl);
         dest.writeByte((byte) (isReviewVersion ? 1 : 0));
         dest.writeStringList(domainNameList);
+        dest.writeStringList(playHostNames);
     }
 
     public static class UpdateInfo implements Parcelable{
@@ -107,6 +111,17 @@ public class InitEntity implements Parcelable {
             dest.writeByte((byte) (isNecessary ? 1 : 0));
             dest.writeStringList(message);
             dest.writeInt(version);
+        }
+
+        @Override
+        public String toString() {
+            return "UpdateInfo{" +
+                    "downloadUrl='" + downloadUrl + '\'' +
+                    ", title='" + title + '\'' +
+                    ", isNecessary=" + isNecessary +
+                    ", message=" + message +
+                    ", version=" + version +
+                    '}';
         }
     }
 

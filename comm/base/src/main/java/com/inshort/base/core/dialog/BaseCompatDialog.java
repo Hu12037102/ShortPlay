@@ -222,13 +222,13 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.setRefresh(false);
-                loadSmartData(false);
+                loadSmartData();
             }
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.pagerReset();
-                loadSmartData(true);
+                loadSmartData();
             }
         });
     }
@@ -301,7 +301,7 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
         }
     }
 
-    protected void loadSmartData(boolean isRefresh) {
+    protected void loadSmartData() {
 
     }
 }

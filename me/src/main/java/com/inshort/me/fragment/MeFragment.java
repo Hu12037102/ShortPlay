@@ -1,19 +1,25 @@
 package com.inshort.me.fragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
+import com.inshort.base.entity.DailyCheckInEntity;
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.http.IApiService;
 import com.inshort.base.other.arouter.ARouterActivity;
@@ -21,8 +27,11 @@ import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.glide.GlideCompat;
 import com.inshort.base.other.mmkv.UserDataStore;
+import com.inshort.base.utils.LogUtils;
 import com.inshort.base.weight.click.DelayedClick;
+import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.me.databinding.FragmentMeBinding;
+import com.inshort.me.dialog.CheckInDialog;
 import com.inshort.me.viewmodel.MeViewModel;
 
 import io.google.projectview.weight.ProjectView;
@@ -53,6 +62,13 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
     protected void initData() {
 
     }
+
+    @Override
+    protected void onUserUpdate(@Nullable UserEntity userEntity) {
+        super.onUserUpdate(userEntity);
+        updateUserInfo();
+    }
+
 
     private void updateUserInfo() {
         UserEntity.Info userInfo = UserDataStore.get().getInfo();
@@ -101,6 +117,21 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
             public void onDelayedClick(View view) {
                 ARouterActivity.startToWebContentActivity(IApiService.Url.FAQ, DataCompat.getResString(requireContext(),
                         com.inshort.base.R.string.feedback_content));
+            }
+        });
+        mViewBinding.clItemBonusCenter.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                Fragment dialog = ARouters.getFragment(ARouterConfig.Path.Me.DIALOG_CHECK_IN);
+                DialogCompat.showDialogFragment(dialog, getChildFragmentManager());
+                if (dialog instanceof CheckInDialog checkInDialog) {
+                    checkInDialog.setOnCheckInClickListener(new OnItemClickListener<DailyCheckInEntity>() {
+                        @Override
+                        public void onItemClick(@Nullable View view, @Nullable DailyCheckInEntity dailyCheckInEntity) {
+                            updateUserInfo();
+                        }
+                    });
+                }
             }
         });
     }
