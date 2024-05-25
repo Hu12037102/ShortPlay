@@ -12,6 +12,7 @@ public interface ARouterConfig {
         String CONTENT = "content";
         String ID = "id";
         String SERIALIZABLE="serializable";
+        String NUMBER="number";
     }
 
     interface Path {
@@ -57,6 +58,7 @@ public interface ARouterConfig {
             String ACTIVITY_BONUS_EXPIRE="/me/activity/bonus/expire";
             String ACTIVITY_STORE="/me/activity/store";
             String DIALOG_CHECK_IN="/me/dialog/check/in";
+            String DIALOG_CHECK_IN_AWARD="/me/dialog/check/in/award";
 
         }
 

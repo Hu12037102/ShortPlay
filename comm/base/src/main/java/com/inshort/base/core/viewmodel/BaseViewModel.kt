@@ -57,7 +57,10 @@ open class BaseViewModel : ViewModel() {
             }
             val response = kotlin.runCatching {
                 black.invoke()
-            }.getOrDefault(null)
+            }.getOrElse {
+                it.printStackTrace()
+                null
+            }
             disposeRetrofit(liveData, response, isShowEmptyView, isJustRefresh)
             if (isShowLoading) {
                 loadingLiveData.value = false

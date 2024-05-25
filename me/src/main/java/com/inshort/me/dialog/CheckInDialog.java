@@ -10,14 +10,17 @@ import androidx.core.view.ViewCompat;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.core.dialog.BaseCompatDialog;
 import com.inshort.base.entity.AwardDetailsEntity;
 import com.inshort.base.entity.DailyCheckInEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
+import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.base.weight.text.SpanTextHelper;
@@ -33,7 +36,8 @@ public class CheckInDialog extends BaseCompatDialog<DialogCheckInBinding, CheckI
     private CheckInAdapter mAdapter = null;
 
     private OnItemClickListener<DailyCheckInEntity> mOnItemClickListener;
-    public void setOnCheckInClickListener(OnItemClickListener<DailyCheckInEntity> onItemClickListener){
+
+    public void setOnCheckInClickListener(OnItemClickListener<DailyCheckInEntity> onItemClickListener) {
         this.mOnItemClickListener = onItemClickListener;
     }
 
@@ -125,11 +129,24 @@ public class CheckInDialog extends BaseCompatDialog<DialogCheckInBinding, CheckI
             @Override
             public void onChanged(DailyCheckInEntity dailyCheckInEntity) {
                 loadSmartData();
-                if (mOnItemClickListener!=null){
-                    mOnItemClickListener.onItemClick(mViewBinding.atvCheckIn,dailyCheckInEntity);
+                if (dailyCheckInEntity != null) {
+                    if (mOnItemClickListener != null) {
+                        mOnItemClickListener.onItemClick(mViewBinding.atvCheckIn, dailyCheckInEntity);
+                    }
+                    showAwardDialog(dailyCheckInEntity.addCoins);
                 }
+
             }
         });
+
+    }
+
+    private void showAwardDialog(int addCoins) {
+        Postcard postcard = ARouters.build(ARouterConfig.Path.Me.DIALOG_CHECK_IN_AWARD);
+        if (postcard != null) {
+            Object object = postcard.withInt(ARouterConfig.Key.NUMBER, addCoins).navigation();
+            DialogCompat.showDialogFragment(object, getChildFragmentManager());
+        }
 
     }
 

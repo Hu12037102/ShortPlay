@@ -85,7 +85,8 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onCreateDialog----2.5");
-        return super.onCreateDialog(savedInstanceState);
+       Dialog dialog =  super.onCreateDialog(savedInstanceState);
+        return dialog;
 
     }
 
