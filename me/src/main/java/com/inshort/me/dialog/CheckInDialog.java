@@ -113,11 +113,11 @@ public class CheckInDialog extends BaseCompatDialog<DialogCheckInBinding, CheckI
                     if (checkInInfo.isCheckIn) {
                         ViewCompat.setBackground(mViewBinding.atvCheckIn, getNormalBackground());
                         UICompat.setText(mViewBinding.atvCheckIn, DataCompat.getResString(requireContext(), com.inshort.base.R.string.return_tomorrow_content));
-                        mViewBinding.atvCheckIn.setEnabled(false);
+                     //   mViewBinding.atvCheckIn.setEnabled(false);
                     } else {
                         ViewCompat.setBackground(mViewBinding.atvCheckIn, getCheckBackground());
                         UICompat.setText(mViewBinding.atvCheckIn, DataCompat.getResString(requireContext(), com.inshort.base.R.string.check_in));
-                        mViewBinding.atvCheckIn.setEnabled(true);
+                        //mViewBinding.atvCheckIn.setEnabled(true);
                     }
                     mAdapter.notifyData(checkInInfo.checkInDay, checkInInfo.awardCoinsList, checkInInfo.isCheckIn);
                 }

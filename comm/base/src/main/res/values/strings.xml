@@ -100,6 +100,8 @@
     <string name="s_day_content">%s Days</string>
     <string name="check_in">Check-In</string>
     <string name="add_content_s">+%s</string>
+    <string name="are_you_sure_you_want_to_clear_your_cache_content">Are you sure you want to clear your cache?</string>
+    <string name="clear_content">Clear</string>
 
 
     <string name="sign_login" tools:ignore="ExtraTranslation,ResourceName">Sign in with Google</string>

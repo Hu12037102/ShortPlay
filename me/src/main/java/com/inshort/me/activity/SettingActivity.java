@@ -108,7 +108,36 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
                 showSignOutDialog();
             }
         });
+        mViewBinding.clItemClearCache.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                showClearCacheDialog();
+            }
+        });
 
+    }
+    private void showClearCacheDialog(){
+        Object obj = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_TITLE);
+        if (obj instanceof TitleDialog titleDialog) {
+            Bundle bundle = new Bundle();
+            bundle.putString(TitleDialog.KEY_TITLE, DataCompat.getResString(this, com.inshort.base.R.string.are_you_sure_you_want_to_clear_your_cache_content));
+            bundle.putString(TitleDialog.KEY_LEFT, DataCompat.getResString(this, com.inshort.base.R.string.cancel_content));
+            bundle.putString(TitleDialog.KEY_RIGHT, DataCompat.getResString(this, com.inshort.base.R.string.clear_content));
+            titleDialog.setArguments(bundle);
+            DialogCompat.showDialogFragment(titleDialog, getSupportFragmentManager());
+            titleDialog.setOnDialogInfoClickListener(new TitleDialog.OnDialogInfoClickListener() {
+                @Override
+                public void onClickLeftView(View view) {
+                    titleDialog.dismiss();
+                }
+
+                @Override
+                public void onClickRightView(View view) {
+                    FileCompat.clearCacheFile();
+                    titleDialog.dismiss();
+                }
+            });
+        }
     }
 
     private void showSignOutDialog() {
