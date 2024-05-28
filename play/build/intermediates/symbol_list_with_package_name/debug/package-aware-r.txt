@@ -1,6 +1,0 @@
-com.inshort.play
-id root
-id video_rv
-layout activity_play
-layout play_adapter_ui_view
-layout play_ui_video_view
