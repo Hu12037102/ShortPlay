@@ -22,6 +22,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="711a22e8-73ac-4c5b-8a6f-c1f5430ae0c6" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/CollectEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__E__alce_Client_Android_lib_common_libs_OpenInstall_v2_8_2_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_2_4_aar.xml" beforeDir="false" />
@@ -263,6 +264,43 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mylist/src/main/java/com/inshort/mylist/fragment/MyListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/mylist/src/main/java/com/inshort/mylist/fragment/MyListFragment.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/assets/release.crt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/MyListRequestEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/PlayRequestEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/VideoUrlEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/utils/FileCacheUtil.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/utils/FileHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/utils/PlayUrlUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/utils/ThreadUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/PlayService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/activity/PlayActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/PlayListDiffCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/PlayVideoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/PlayVideoViewHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/manager/PlayVideoLayoutManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/manager/PlayVideoStandardListManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/controller/PlayVideoListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/listener/OnViewPagerListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/listener/PlayVideoListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/listener/onSeekListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/playvideoview/PlayUIVideoView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/playvideoview/PlayVideoListView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/preload/PlayPlayerPreload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/utils/GlobalSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/viewmodel/PlayViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/res/layout/activity_play.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/res/layout/play_adapter_ui_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/res/layout/play_ui_video_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/http/IApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/http/IApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/arouter/ARouterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/arouter/ARouterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comm/library/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/comm/library/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/config.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+>>>>>>> feature.inshort.1000.hql1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -365,13 +403,14 @@
     &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayRechargeView.kt_SELECTED&quot;: &quot;PlayRechargeView&quot;,
     &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlaySubtitlesView.kt_SELECTED&quot;: &quot;PlaySubtitlesView&quot;,
     &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_SELECTED&quot;: &quot;PlayUnClockRechargeView&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master__inshort&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/alce/FlutterDouBan&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature.inshort.1000.hql1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/alce/Client-Android/play/src/main/res&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
@@ -393,17 +432,21 @@
   }
 }</component>
   <component name="PsdUISettings">
-    <option name="MODULE_TAB" value="Signing Configs" />
+    <option name="MODULE_TAB" value="Properties" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\alce\Client-Android\play\src\main\res" />
+      <recent name="E:\alce\Client-Android\comm\base\src\main\java\com\inshort\base\entity" />
+      <recent name="E:\alce\Client-Android\comm\base\src\main" />
+      <recent name="E:\alce\Client-Android\play\src\main\java\com\inshort\play" />
       <recent name="E:\alce\Client-Android" />
-      <recent name="E:\alce\Client-Android\lib_common\src\main\res\drawable-xxhdpi" />
-      <recent name="E:\alce\Client-Android\lib_common\libs" />
-      <recent name="E:\alce\Client-Android\module_main\src\main\res\drawable-xxhdpi" />
-      <recent name="E:\alce\Client-Android\lib_common\src\main\res\drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\alce\Client-Android\comm\base\src\main\java\com\inshort\base\utils" />
+      <recent name="E:\alce\Client-Android\comm\base\src\main\java\com\inshort\base\entity" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.example.lib_common.dialog" />
@@ -412,6 +455,76 @@
   <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="ShortPlay.app.main" />
+<<<<<<< HEAD
+=======
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="play" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="ShortPlay.play.main" />
+>>>>>>> feature.inshort.1000.hql1
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -498,6 +611,19 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ShortPlay" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ShortPlay" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>

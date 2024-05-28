@@ -19,6 +19,7 @@ import com.bumptech.glide.load.engine.executor.GlideExecutor;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
+import com.inshort.base.R;
 import com.inshort.base.compat.FileCompat;
 import com.inshort.base.factory.FileFactory;
 
@@ -56,10 +57,12 @@ public class GlideInitModule extends AppGlideModule {
         return new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .skipMemoryCache(false)
-                .centerCrop()
+
                 .encodeQuality(80)
                 .format(DecodeFormat.PREFER_ARGB_8888)
-                .placeholder(android.R.color.white)
+               // .placeholder(android.R.color.white)
+                .placeholder(R.mipmap.icon_comm_placeholder)
+                .centerCrop()
                 .encodeFormat(Bitmap.CompressFormat.PNG)
                 .disallowHardwareConfig()
                 .priority(Priority.LOW);

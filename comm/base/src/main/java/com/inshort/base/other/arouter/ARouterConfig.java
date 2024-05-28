@@ -11,6 +11,8 @@ public interface ARouterConfig {
         int LIST_LOVE =2;  //喜爱记录
         String CONTENT = "content";
         String ID = "id";
+        String SERIALIZABLE="serializable";
+        String NUMBER="number";
     }
 
     interface Path {
@@ -24,6 +26,7 @@ public interface ARouterConfig {
             String ACTIVITY_TRENDING = "/home/activity/trending";
             String FRAGMENT_TRENDING_CONTENT = "/home/fragment/trending/content";
             String ACTIVITY_VIEW_MORE = "/home/activity/view/more";
+            String DIALOG_NEW_EPISODE="/home/dialog/new/episode";
 
         }
 
@@ -38,15 +41,27 @@ public interface ARouterConfig {
 
             // back his
             String ACTIVITY_BACK_HIS="/back/activity/his";
+        }
 
+        interface Play {
+            String PLAY_ACTIVITY_PLAY="/play/activity/play";
         }
 
         interface Login {
-
+            String LOGIN_ACTIVITY_LOGIN="/login/activity/login";
         }
 
         interface Me {
             String FRAGMENT_ME = "/me/fragment/me";
+            String ACTIVITY_SETTING="/me/activity/setting";
+            String ACTIVITY_MY_WALLET="/me/activity/my/wallet";
+            String DIALOG_DELETE_ACCOUNT="/me/dialog/delete/account";
+            String ACTIVITY_TRANSACTION_HISTORY="/me/activity/transaction/history";
+            String ACTIVITY_EPISODES_UNLOCKED="/me/activity/episodes/unlocked";
+            String ACTIVITY_BONUS_EXPIRE="/me/activity/bonus/expire";
+            String ACTIVITY_STORE="/me/activity/store";
+            String DIALOG_CHECK_IN="/me/dialog/check/in";
+            String DIALOG_CHECK_IN_AWARD="/me/dialog/check/in/award";
 
         }
 
@@ -56,6 +71,7 @@ public interface ARouterConfig {
 
         interface Comm {
             String ACTIVITY_WEB_CONTENT = "/comm/activity/web/content";
+            String DIALOG_TITLE="/comm/dialog/title";
         }
 
     }

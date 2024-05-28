@@ -43,6 +43,7 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"
 
+    api "androidx.core:core:$config.core_ktx_version"
     api "androidx.appcompat:appcompat:${config.appcompat_version}"
     api "com.google.android.material:material:${config.material_version}"
     api "androidx.constraintlayout:constraintlayout:${config.constraintlayout_version}"
@@ -80,5 +81,9 @@ dependencies {
     api "io.github.cymchad:BaseRecyclerViewAdapterHelper:$config.BaseRecyclerViewAdapterHelper"
     /*RWidgetHelper*/
     api "com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.14"
+    /*google login */
+    api "com.google.android.gms:play-services-auth:$config.play_services"
+    /*aliyun*/
+    api "com.aliyun.sdk.android:AliyunPlayer:$config.AliyunPlayer"
 
 }

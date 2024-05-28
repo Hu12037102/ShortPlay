@@ -7,7 +7,7 @@ import com.inshort.base.entity.UserEntity
 class UserDataStore private constructor() {
 
     companion object {
-       private const val KEY_USER = "mmkv_user_store"
+        private const val KEY_USER = "mmkv_user_store"
         private val mInstance: UserDataStore by lazy(LazyThreadSafetyMode.SYNCHRONIZED) { UserDataStore() }
 
         @JvmStatic
@@ -25,8 +25,21 @@ class UserDataStore private constructor() {
     }
 
     fun getInfo(): UserEntity.Info? = getData()?.info
+    fun putInfo(info: UserEntity.Info?) {
+        val entity = getData()
+        if (DataCompat.notNull(entity)) {
+            entity?.info = info
+            putData(entity)
+        }
+
+    }
 
     fun getAccessToken() = DataCompat.checkString(getData()?.accessToken)
-    fun isLogin(): Boolean = TextUtils.isEmpty(getAccessToken())
+    fun isLogin(): Boolean = !TextUtils.isEmpty(getAccessToken())
+
+    fun clear() {
+        mPreferences.clear()
+    }
+
 
 }

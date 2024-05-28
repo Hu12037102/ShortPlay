@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+id agreemen_atv
+id atv_tv
+id black_aiv
+id google_logo_aiv
+id login_aiv_bg
+id login_in_short
+id sign_login
+layout activity_login

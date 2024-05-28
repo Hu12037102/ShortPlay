@@ -2,9 +2,10 @@ package com.inshort.base.entity;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class DramaSeriesEntity {
+public class DramaSeriesEntity implements Serializable {
     @SerializedName("column_tag")
     public TagEntity columnTag;
     @SerializedName("cover_image_url")

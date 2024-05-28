@@ -2,10 +2,6 @@ package com.inshort.base.http;
 
 import java.net.HttpURLConnection;
 
-import retrofit2.Response;
-import retrofit2.http.Body;
-import retrofit2.http.POST;
-
 public interface IApiService {
     interface Path {
         //APP初始化接口
@@ -32,6 +28,25 @@ public interface IApiService {
         String LOAD_HOME_MORE_LIST="/app/index/waterfall_column";
         //获取首页ViewMore列表
         String LOAD_HOME_VIEW_MORE_LIST="/app/index/get_column_dramas";
+        //删除用户信息
+        String DELETE_USER_ACCOUNT="/app/user/delete_account";
+        //搜索剧集
+        String SEARCH_LIST_BY_KEYWORD="/app/drama_series/search";
+        //获取TransactionHistory历史记录
+        String LOAD_TRANSACTION_HISTORY_LIST="/app/user/transaction_history";
+        //获取EpisodesUnlocked记录
+        String LOAD_EPISODE_UNLOCK_LIST="/app/user/episodes_unlocked";
+        //获取bonus过期时间
+        String LOAD_BONUS_EXPIRE_LIST="/app/user/bonus_hitory";
+        //获取商品列表
+        String LOAD_STORE_LIST="/app/store/details";
+        //获取奖励中心详情
+        String LOAD_AWARD_DETAILS ="/app/activity/details";
+        //每日签到
+        String DAILY_CHECK_IN="/app/activity/daily_check_in";
+        //剧集信息
+        String PLAY_DRAMA_SERIES="/app/drama_series";
+
     }
 
     interface HttpCode {
@@ -42,5 +57,7 @@ public interface IApiService {
 
     interface Url {
         String FAQ = "https://www.funbl.com/feedback/fun.html";
+        String PRIVACY_AGREEMENT = "https://h5.quanzishuzi.com/#/pages/my/conceal";
+        String TERMS_SERVICE = "https://www.funbl.com/termsPage.html?app=true";
     }
 }

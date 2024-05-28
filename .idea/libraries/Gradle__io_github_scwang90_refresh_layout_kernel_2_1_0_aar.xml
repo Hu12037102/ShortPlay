@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.scwang90:refresh-layout-kernel:2.1.0@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4791535fd035648d7bd84440f3ac1d39/transformed/jetified-refresh-layout-kernel-2.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4791535fd035648d7bd84440f3ac1d39/transformed/jetified-refresh-layout-kernel-2.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4791535fd035648d7bd84440f3ac1d39/transformed/jetified-refresh-layout-kernel-2.1.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.scwang90/refresh-layout-kernel/2.1.0/b1ea5706ee283b75348bc015a3eaec2462183e87/refresh-layout-kernel-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

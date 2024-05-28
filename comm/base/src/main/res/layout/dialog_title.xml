@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_content_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_46dp"
+        android:layout_marginEnd="@dimen/size_46dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/color_Black">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="@dimen/size_2dp"
+            android:paddingStart="@dimen/size_25dp"
+            android:paddingTop="@dimen/size_30dp"
+            android:paddingEnd="@dimen/size_25dp"
+            android:paddingBottom="@dimen/size_30dp"
+            android:textColor="@color/color_FF222222"
+            android:textSize="@dimen/size_16sp"
+            app:fontFamily="@font/sofia_pro_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage"
+            tools:text="Are you ok"
+            tools:textColor="@color/color_White" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_1dp"
+            android:background="@color/color_1A000000"
+            app:layout_constraintTop_toBottomOf="@id/atv_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_left"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/cancel_content"
+            android:textColor="@color/color_FF2E2E2E"
+            android:textSize="15sp"
+            app:fontFamily="@font/sofia_pro_medium"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line2"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            tools:text="Cancel" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="@dimen/size_1dp"
+            android:layout_height="@dimen/size_48dp"
+            android:background="@color/color_1A000000"
+            app:layout_constraintLeft_toRightOf="@id/atv_left"
+            app:layout_constraintRight_toLeftOf="@id/atv_right"
+            app:layout_constraintTop_toTopOf="@id/atv_left" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_right"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/sure_content"
+            android:textColor="@color/color_FFFE2442"
+            android:textSize="15sp"
+            app:fontFamily="@font/sofia_pro_medium"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/line2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/atv_left"
+            tools:text="Sure" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

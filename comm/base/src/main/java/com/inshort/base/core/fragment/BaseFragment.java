@@ -16,10 +16,16 @@ public abstract class BaseFragment extends Fragment {
     protected boolean isLoadEmptyView() {
         return false;
     }
+
     protected void onUserUpdate(@Nullable UserEntity userEntity) {
         UserDataStore.get().putData(userEntity);
     }
-    protected void onClickEmptyView(@NonNull View view){
 
+    protected void onClickEmptyView(@NonNull View view) {
+
+    }
+
+    protected boolean isLoadAppViewModel() {
+        return false;
     }
 }

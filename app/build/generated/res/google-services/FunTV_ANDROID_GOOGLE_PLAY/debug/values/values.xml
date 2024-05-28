@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="gcm_defaultSenderId" translatable="false">725589592891</string>
-    <string name="google_api_key" translatable="false">AIzaSyDUmLYkgWJnBmId3MFs4z6yT-ZTXc_RCPY</string>
-    <string name="google_app_id" translatable="false">1:725589592891:android:cf4fc6e3f29bb2bfef851e</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDUmLYkgWJnBmId3MFs4z6yT-ZTXc_RCPY</string>
-    <string name="google_storage_bucket" translatable="false">funtv-test-cd48f.appspot.com</string>
-    <string name="project_id" translatable="false">funtv-test-cd48f</string>
-</resources>

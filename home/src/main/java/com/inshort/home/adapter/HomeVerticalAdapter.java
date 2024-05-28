@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.GradientDrawableCompat;
+import com.inshort.base.compat.InShortCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.TagEntity;
@@ -62,7 +63,7 @@ public class HomeVerticalAdapter extends RecyclerView.Adapter<HomeVerticalAdapte
         }
         UICompat.setText(holder.viewBinding.atvTitle, entity.dramaTitle);
         UICompat.setText(holder.viewBinding.atvContent, entity.introduction);
-        if (CollectionCompat.notEmptyList(entity.dramaClassifies)) {
+      /*  if (CollectionCompat.notEmptyList(entity.dramaClassifies)) {
             StringBuilder content = new StringBuilder();
             for (int i = 0; i < CollectionCompat.getListSize(entity.dramaClassifies); i++) {
                 String text = entity.dramaClassifies.get(i);
@@ -74,8 +75,8 @@ public class HomeVerticalAdapter extends RecyclerView.Adapter<HomeVerticalAdapte
 
             }
             UICompat.setText(holder.viewBinding.atvDesc, content);
-        }
-
+        }*/
+        UICompat.setText(holder.viewBinding.atvDesc, InShortCompat.getDramaClassifiesText(entity.dramaClassifies));
 
     }
 

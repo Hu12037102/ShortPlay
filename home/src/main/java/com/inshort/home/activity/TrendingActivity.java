@@ -68,12 +68,12 @@ public class TrendingActivity extends BaseCompatActivity<ActivityTrendingBinding
     @Override
     protected void initData() {
         mIntentType = getIntent().getStringExtra(ARouterConfig.Key.CONTENT);
-        loadSmartData(true);
+        loadSmartData();
     }
 
     @Override
-    protected void loadSmartData(boolean isRefresh) {
-        super.loadSmartData(isRefresh);
+    protected void loadSmartData() {
+        super.loadSmartData();
         mViewModel.loadTrendingTypes();
     }
 

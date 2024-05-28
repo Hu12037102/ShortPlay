@@ -52,12 +52,12 @@ public class ViewMoreActivity extends BaseCompatActivity<ActivityViewMoreBinding
     protected void initData() {
         mAdapter = new ViewMoreAdapter(this, mData);
         mViewBinding.rvContent.setAdapter(mAdapter);
-        loadSmartData(true);
+        loadSmartData();
     }
 
     @Override
-    protected void loadSmartData(boolean isRefresh) {
-        super.loadSmartData(isRefresh);
+    protected void loadSmartData() {
+        super.loadSmartData();
         mViewModel.loadData(mIntentId);
 
     }
