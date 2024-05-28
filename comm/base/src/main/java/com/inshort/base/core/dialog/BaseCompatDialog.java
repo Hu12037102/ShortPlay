@@ -12,13 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import androidx.annotation.AnimRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.StyleRes;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
+import com.inshort.base.R;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.ViewsCompat;
@@ -66,7 +70,6 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
     protected BaseRootLoadingViewBinding mLoadingViewBinding = null;
 
 
-
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -85,10 +88,11 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onCreateDialog----2.5");
-       Dialog dialog =  super.onCreateDialog(savedInstanceState);
-        return dialog;
+        return super.onCreateDialog(savedInstanceState);
 
     }
+
+
 
     @Nullable
     @Override
@@ -130,9 +134,10 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
 
     }
 
-    protected int getGravity(){
+    protected int getGravity() {
         return Gravity.CENTER;
     }
+
     protected void buildParentLayout() {
         if (DataCompat.isNull(mRootParent)) {
             return;

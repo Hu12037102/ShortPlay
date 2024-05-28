@@ -47,6 +47,10 @@ public class CheckInAwardDialog extends BaseCompatDialog<DialogCheckInAwardBindi
 
     }
 
+    @Override
+    public int getTheme() {
+        return com.inshort.base.R.style.Theme_NoAnimation_Dialog;
+    }
 
     @Override
     protected void initEvent() {
