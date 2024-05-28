@@ -102,5 +102,10 @@
     <string name="add_content_s">+%s</string>
 
 
+    <string name="sign_login" tools:ignore="ExtraTranslation,ResourceName">Sign in with Google</string>
+    <string name="login_agreemen_1">If you continue, you agree to the </string>
+    <string name="login_agreemen_2">\ Terms of Service</string>
+    <string name="login_agreemen_3">\ and \t</string>
+    <string name="login_agreemen_4" tools:ignore="ExtraTranslation,ResourceName"> Privacy Policy</string>
 
 </resources>

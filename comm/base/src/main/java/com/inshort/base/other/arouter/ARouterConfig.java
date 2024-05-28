@@ -41,11 +41,14 @@ public interface ARouterConfig {
 
             // back his
             String ACTIVITY_BACK_HIS="/back/activity/his";
+        }
 
+        interface Play {
+            String PLAY_ACTIVITY_PLAY="/play/activity/play";
         }
 
         interface Login {
-
+            String LOGIN_ACTIVITY_LOGIN="/login/activity/login";
         }
 
         interface Me {

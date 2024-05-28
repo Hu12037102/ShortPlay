@@ -81,5 +81,9 @@ dependencies {
     api "io.github.cymchad:BaseRecyclerViewAdapterHelper:$config.BaseRecyclerViewAdapterHelper"
     /*RWidgetHelper*/
     api "com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.14"
+    /*google login */
+    api "com.google.android.gms:play-services-auth:$config.play_services"
+    /*aliyun*/
+    api "com.aliyun.sdk.android:AliyunPlayer:$config.AliyunPlayer"
 
 }

@@ -44,6 +44,8 @@ public interface IApiService {
         String LOAD_AWARD_DETAILS ="/app/activity/details";
         //每日签到
         String DAILY_CHECK_IN="/app/activity/daily_check_in";
+        //剧集信息
+        String PLAY_DRAMA_SERIES="/app/drama_series";
 
     }
 

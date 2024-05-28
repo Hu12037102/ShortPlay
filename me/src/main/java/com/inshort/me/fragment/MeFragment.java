@@ -94,6 +94,9 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
 
     @Override
     protected void initEvent() {
+        mViewBinding.clHeadParent.setOnClickListener(v -> {
+            ARouters.startActivity(ARouterConfig.Path.Login.LOGIN_ACTIVITY_LOGIN);
+        });
         mViewBinding.aivSetting.setOnClickListener(new DelayedClick() {
             @Override
             public void onDelayedClick(View view) {

@@ -10,144 +10,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="711a22e8-73ac-4c5b-8a6f-c1f5430ae0c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/DialogCompat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/InShortCompat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/KeySoftCompat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/dialog/BaseCompatDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/dialog/BaseDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/dialog/comm/TitleDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/viewmodel/AppViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/AwardDetailsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/BonusExpireEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/DailyCheckInEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/PageEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/RequestBonusExpireEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/RequestSearchEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/SearchHandEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/SearchPageEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/StoreEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/TransactionHistoryEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/html/HtmlHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/manger/AppViewModelManger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/mmkv/InitDataStore.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/mmkv/SearchHistoryDataStore.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/layout/dialog_title.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_banner_placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_big_bonus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_check_bonus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_check_in_bonus_selector.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_check_last_bonus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_comm_placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_delete_account_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_delete_account_selector.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_delete_account_warning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_new_episode_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_new_episode_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_search_history_clear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_store_history.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_transaction_history_coins.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/dialog/NewEpisodeDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/src/main/res/layout/dialog_new_episode.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/activity/BonusExpireActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/activity/EpisodesUnlockedActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/activity/MyWalletActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/activity/StoreActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/activity/TransactionHistoryActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/adapter/BonusExpireAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/adapter/CheckInAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/adapter/EpisodesUnlockAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/adapter/StoreAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/adapter/TransactionHistoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/dialog/CheckInAwardDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/dialog/CheckInDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/dialog/DeleteAccountDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/BonusExpireViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/CheckInAwardViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/CheckInViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/EpisodesUnlockedViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/MyWalletViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/StoreViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/TransactionHistoryViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/activity_bonus_expire.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/activity_episodes_unlocked.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/activity_my_wallet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/activity_store.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/activity_transaction_history.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/dialog_check_in.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/dialog_check_in_award.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/item_check_in_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/item_episodes_unlocked_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/item_store_footer_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/item_store_head_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/item_store_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/me/src/main/res/layout/item_transaction_history_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/src/main/java/com/inshort/search/SearchService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/src/main/java/com/inshort/search/adapter/SearchAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/src/main/java/com/inshort/search/adapter/SearchTrendingAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/src/main/res/layout/item_seacher_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/src/main/res/layout/item_search_head_trend_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/src/main/res/layout/item_search_head_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/assets/release.crt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/MyListRequestEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/PlayRequestEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/VideoUrlEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/utils/FileCacheUtil.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/utils/FileHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/utils/PlayUrlUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/utils/ThreadUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/PlayService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/activity/PlayActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/PlayListDiffCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/PlayVideoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/PlayVideoViewHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/manager/PlayVideoLayoutManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/adapter/manager/PlayVideoStandardListManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/controller/PlayVideoListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/listener/OnViewPagerListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/listener/PlayVideoListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/listener/onSeekListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/playvideoview/PlayUIVideoView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/playvideoview/PlayVideoListView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/preload/PlayPlayerPreload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/aliyun/utils/GlobalSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/java/com/inshort/play/viewmodel/PlayViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/res/layout/activity_play.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/res/layout/play_adapter_ui_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play/src/main/res/layout/play_ui_video_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/inshort/media/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/inshort/media/activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/AdapterCompat.kt" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/AdapterCompat.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/DateCompat.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/DateCompat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/FileCompat.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/FileCompat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/NumberCompat.kt" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/NumberCompat.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/ViewsCompat.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/compat/ViewsCompat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/activity/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/activity/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/activity/BaseCompatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/activity/BaseCompatActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/application/BaseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/application/BaseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/fragment/BaseCompatFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/fragment/BaseCompatFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/fragment/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/fragment/BaseFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/viewmodel/BaseCompatViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/viewmodel/BaseCompatViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/viewmodel/BaseViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/core/viewmodel/BaseViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/DramaSeriesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/DramaSeriesEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/InitEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/InitEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/entity/PublicStatusMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/http/BaseService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/http/BaseService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/http/IApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/http/IApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/manger/ActivityStateManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/manger/ActivityStateManger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/arouter/ARouterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/arouter/ARouterConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/glide/GlideCompat.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/glide/GlideCompat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/glide/GlideInitModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/glide/GlideInitModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/mmkv/MMKVCompat.java" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/mmkv/MMKVCompat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/mmkv/MMKVManger.kt" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/mmkv/MMKVManger.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/mmkv/UserDataStore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/java/com/inshort/base/other/mmkv/UserDataStore.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_episodes_unlock_bonus.png" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_episodes_unlock_bonus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_episodes_unlock_coins.png" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_episodes_unlock_coins.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_query.webp" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/res/mipmap-xxhdpi/icon_query.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comm/base/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comm/base/src/main/res/values/themes.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comm/library/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/comm/library/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/config.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/activity/TrendingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/activity/TrendingActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/activity/ViewMoreActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/activity/ViewMoreActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/adapter/HomeBannerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/adapter/HomeBannerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/adapter/HomeVerticalAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/adapter/HomeVerticalAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/fragment/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/fragment/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/fragment/TrendingContentFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/home/src/main/java/com/inshort/home/fragment/TrendingContentFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/MeService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/MeService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/activity/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/activity/SettingActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/fragment/MeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/fragment/MeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/SettingViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/java/com/inshort/me/viewmodel/SettingViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/res/layout/activity_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/res/layout/activity_setting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/res/layout/dialog_delete_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/res/layout/dialog_delete_account.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/res/layout/fragment_me.xml" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/res/layout/fragment_me.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/me/src/main/res/layout/item_bonus_expire_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/me/src/main/res/layout/item_bonus_expire_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/src/main/java/com/inshort/search/fragment/SearchFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/search/src/main/java/com/inshort/search/fragment/SearchFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/src/main/java/com/inshort/search/viewmodel/SearchViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/search/src/main/java/com/inshort/search/viewmodel/SearchViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/src/main/res/layout/fragment_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/search/src/main/res/layout/fragment_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/splash/src/main/java/com/inshort/splash/SplashService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/splash/src/main/java/com/inshort/splash/SplashService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/splash/src/main/java/com/inshort/splash/viewmodel/SplashViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/splash/src/main/java/com/inshort/splash/viewmodel/SplashViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,61 +119,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ApkExportedModule": "ShortVideo.app",
-    "BundleExportedModule": "ShortVideo.app",
-    "ExportApk.ApkPathForShortVideo.app": "E:\\alce\\Client-Android\\app",
-    "ExportBundle.BundlePathForShortVideo.app": "E:\\alce\\Client-Android\\app",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.3.0/f4de7876e10ff121102f131b26d4a98b1613a012/recyclerview-1.3.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED": "RecyclerView",
-    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/androidx/viewpager2/widget/ViewPager2.java_SELECTED": "ViewPager2",
-    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/cn.carbs.android/ExpandableTextView/1.0.0/60424be9ce8b7fa43cee37a39677f2795d217936/ExpandableTextView-1.0.0-sources.jar!/cn/carbs/android/expandabletextview/library/ExpandableTextView.java_SELECTED": "ExpandableTextView",
-    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.RuffianZhong/RWidgetHelper/androidx.v0.0.14/2a0db016de58ecfd8338eb2596820c98cd2fd6d8/RWidgetHelper-androidx.v0.0.14-sources.jar!/com/ruffian/library/widget/RTextView.java_SELECTED": "RTextView",
-    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.zhpanvip/BannerViewPager/3.5.0/6ae52728eb5422f76a25db054838e34e79ec1fc/BannerViewPager-3.5.0-sources.jar!/com/zhpan/bannerview/BannerViewPager.java_SELECTED": "BannerViewPager",
-    "android-custom-viewD:/andorid_sdk/sources/android-33/android/view/View.java_SELECTED": "View",
-    "android-custom-viewD:/andorid_sdk/sources/android-33/android/view/ViewGroup.java_SELECTED": "ViewGroup",
-    "android-custom-viewD:/andorid_sdk/sources/android-33/android/widget/TextView.java_SELECTED": "TextView",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideo/AUIVideoManger.kt_SELECTED": "AUIVideoManger",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideofunctionlist/AUIVideoFunctionListView.kt_SELECTED": "AUIVideoFunctionListView",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideolistcommon/AUIVideoListView.kt_SELECTED": "AUIVideoListView",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideostandradlist/AUIVideoStandardListView.kt_SELECTED": "AUIVideoStandardListView",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideostandradlist/view/RecyclerViewEmptySupport.java_SELECTED": "RecyclerViewEmptySupport",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/player/PlayBaseVideo.kt_SELECTED": "PlayBaseVideo",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/player/PlayCoverVideo.kt_SELECTED": "PlayCoverVideo",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayEpisodeView.kt_SELECTED": "PlayEpisodeView",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayRechargeView.kt_SELECTED": "PlayRechargeView",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlaySubtitlesView.kt_SELECTED": "PlaySubtitlesView",
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_SELECTED": "PlayUnClockRechargeView",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Merging feature.inshort.1000.hql1",
-    "last_opened_file_path": "E:/alce/FlutterDouBan",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "show.do.not.copy.http.proxy.settings.to.gradle": "false",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ApkExportedModule&quot;: &quot;ShortVideo.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;ShortVideo.app&quot;,
+    &quot;ExportApk.ApkPathForShortVideo.app&quot;: &quot;E:\\alce\\Client-Android\\app&quot;,
+    &quot;ExportBundle.BundlePathForShortVideo.app&quot;: &quot;E:\\alce\\Client-Android\\app&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.3.0/f4de7876e10ff121102f131b26d4a98b1613a012/recyclerview-1.3.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED&quot;: &quot;RecyclerView&quot;,
+    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/androidx/viewpager2/widget/ViewPager2.java_SELECTED&quot;: &quot;ViewPager2&quot;,
+    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/cn.carbs.android/ExpandableTextView/1.0.0/60424be9ce8b7fa43cee37a39677f2795d217936/ExpandableTextView-1.0.0-sources.jar!/cn/carbs/android/expandabletextview/library/ExpandableTextView.java_SELECTED&quot;: &quot;ExpandableTextView&quot;,
+    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.RuffianZhong/RWidgetHelper/androidx.v0.0.14/2a0db016de58ecfd8338eb2596820c98cd2fd6d8/RWidgetHelper-androidx.v0.0.14-sources.jar!/com/ruffian/library/widget/RTextView.java_SELECTED&quot;: &quot;RTextView&quot;,
+    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.zhpanvip/BannerViewPager/3.5.0/6ae52728eb5422f76a25db054838e34e79ec1fc/BannerViewPager-3.5.0-sources.jar!/com/zhpan/bannerview/BannerViewPager.java_SELECTED&quot;: &quot;BannerViewPager&quot;,
+    &quot;android-custom-viewD:/andorid_sdk/sources/android-33/android/view/View.java_SELECTED&quot;: &quot;View&quot;,
+    &quot;android-custom-viewD:/andorid_sdk/sources/android-33/android/view/ViewGroup.java_SELECTED&quot;: &quot;ViewGroup&quot;,
+    &quot;android-custom-viewD:/andorid_sdk/sources/android-33/android/widget/TextView.java_SELECTED&quot;: &quot;TextView&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideo/AUIVideoManger.kt_SELECTED&quot;: &quot;AUIVideoManger&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideofunctionlist/AUIVideoFunctionListView.kt_SELECTED&quot;: &quot;AUIVideoFunctionListView&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideolistcommon/AUIVideoListView.kt_SELECTED&quot;: &quot;AUIVideoListView&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideostandradlist/AUIVideoStandardListView.kt_SELECTED&quot;: &quot;AUIVideoStandardListView&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideostandradlist/view/RecyclerViewEmptySupport.java_SELECTED&quot;: &quot;RecyclerViewEmptySupport&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/player/PlayBaseVideo.kt_SELECTED&quot;: &quot;PlayBaseVideo&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/player/PlayCoverVideo.kt_SELECTED&quot;: &quot;PlayCoverVideo&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayEpisodeView.kt_SELECTED&quot;: &quot;PlayEpisodeView&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayRechargeView.kt_SELECTED&quot;: &quot;PlayRechargeView&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlaySubtitlesView.kt_SELECTED&quot;: &quot;PlaySubtitlesView&quot;,
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_SELECTED&quot;: &quot;PlayUnClockRechargeView&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature.inshort.1000.hql1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/alce/Client-Android/play/src/main/res&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;show.do.not.copy.http.proxy.settings.to.gradle&quot;: &quot;false&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   },
-  "keyToStringList": {
-    "ExportApk.BuildVariants": [
-      "FunTV_ANDROID_GOOGLE_PLAYRelease"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;FunTV_ANDROID_GOOGLE_PLAYRelease&quot;
     ],
-    "android-custom-viewD:/andorid_sdk/sources/android-33/android/widget/TextView.java_TextView_DIMENSIONS": [
-      "1080",
-      "1920"
+    &quot;android-custom-viewD:/andorid_sdk/sources/android-33/android/widget/TextView.java_TextView_DIMENSIONS&quot;: [
+      &quot;1080&quot;,
+      &quot;1920&quot;
     ],
-    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_PlayUnClockRechargeView_DIMENSIONS": [
-      "1080",
-      "1920"
+    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_PlayUnClockRechargeView_DIMENSIONS&quot;: [
+      &quot;1080&quot;,
+      &quot;1920&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Properties" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
@@ -284,11 +182,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\alce\Client-Android\play\src\main\res" />
+      <recent name="E:\alce\Client-Android\comm\base\src\main\java\com\inshort\base\entity" />
+      <recent name="E:\alce\Client-Android\comm\base\src\main" />
+      <recent name="E:\alce\Client-Android\play\src\main\java\com\inshort\play" />
       <recent name="E:\alce\Client-Android" />
-      <recent name="E:\alce\Client-Android\lib_common\src\main\res\drawable-xxhdpi" />
-      <recent name="E:\alce\Client-Android\lib_common\libs" />
-      <recent name="E:\alce\Client-Android\module_main\src\main\res\drawable-xxhdpi" />
-      <recent name="E:\alce\Client-Android\lib_common\src\main\res\drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\alce\Client-Android\comm\base\src\main\java\com\inshort\base\utils" />
+      <recent name="E:\alce\Client-Android\comm\base\src\main\java\com\inshort\base\entity" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.example.lib_common.dialog" />

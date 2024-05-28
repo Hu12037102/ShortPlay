@@ -4,42 +4,23 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ShortPlay.iml" filepath="$PROJECT_DIR$/.idea/modules/ShortPlay.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ShortPlay.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ShortPlay.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ShortPlay.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ShortPlay.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ShortPlay.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ShortPlay.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ShortPlay.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ShortPlay.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/ShortPlay.comm.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/ShortPlay.comm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/base/ShortPlay.comm.base.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/base/ShortPlay.comm.base.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/base/ShortPlay.comm.base.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/base/ShortPlay.comm.base.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/base/ShortPlay.comm.base.main.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/base/ShortPlay.comm.base.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/base/ShortPlay.comm.base.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/base/ShortPlay.comm.base.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/library/ShortPlay.comm.library.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/library/ShortPlay.comm.library.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/library/ShortPlay.comm.library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/library/ShortPlay.comm.library.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/library/ShortPlay.comm.library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/library/ShortPlay.comm.library.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/library/ShortPlay.comm.library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/library/ShortPlay.comm.library.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/home/ShortPlay.home.iml" filepath="$PROJECT_DIR$/.idea/modules/home/ShortPlay.home.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/home/ShortPlay.home.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/home/ShortPlay.home.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/home/ShortPlay.home.main.iml" filepath="$PROJECT_DIR$/.idea/modules/home/ShortPlay.home.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/home/ShortPlay.home.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/home/ShortPlay.home.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/me/ShortPlay.me.iml" filepath="$PROJECT_DIR$/.idea/modules/me/ShortPlay.me.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/me/ShortPlay.me.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/me/ShortPlay.me.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/me/ShortPlay.me.main.iml" filepath="$PROJECT_DIR$/.idea/modules/me/ShortPlay.me.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/me/ShortPlay.me.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/me/ShortPlay.me.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.iml" filepath="$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.iml" filepath="$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.main.iml" filepath="$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.iml" filepath="$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.main.iml" filepath="$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splash/ShortPlay.splash.iml" filepath="$PROJECT_DIR$/.idea/modules/splash/ShortPlay.splash.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/splash/ShortPlay.splash.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/splash/ShortPlay.splash.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/splash/ShortPlay.splash.main.iml" filepath="$PROJECT_DIR$/.idea/modules/splash/ShortPlay.splash.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splash/ShortPlay.splash.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/splash/ShortPlay.splash.unitTest.iml" />
     </modules>
   </component>
 </project>
