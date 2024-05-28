@@ -47,8 +47,8 @@ public class TrendingContentFragment extends BaseCompatFragment<FragmentTrending
     }
 
     @Override
-    protected void loadSmartData(boolean isRefresh) {
-        super.loadSmartData(isRefresh);
+    protected void loadSmartData() {
+        super.loadSmartData();
         RequestTrendsByTypeEntity entity = new RequestTrendsByTypeEntity();
         entity.type = mIntentContent;
         entity.isHomeIndex = false;
@@ -69,7 +69,7 @@ public class TrendingContentFragment extends BaseCompatFragment<FragmentTrending
         }
         mAdapter = new TrendingAdapter(requireContext(), mData);
         mViewBinding.rvContent.setAdapter(mAdapter);
-        loadSmartData(true);
+        loadSmartData();
     }
 
     @Override

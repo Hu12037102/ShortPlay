@@ -20,21 +20,28 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.AdapterCompat;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
+import com.inshort.base.core.viewmodel.AppViewModel;
 import com.inshort.base.entity.ColumnEntity;
 import com.inshort.base.entity.DramaSeriesEntity;
 import com.inshort.base.entity.DramaSeriesPageEntity;
 import com.inshort.base.entity.HomeIndexEntity;
+import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.entity.RequestPageEntity;
 import com.inshort.base.entity.RequestTrendsByTypeEntity;
+import com.inshort.base.entity.SearchHandEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
+import com.inshort.base.manger.AppViewModelManger;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
 import com.inshort.base.other.smart.SmartRefreshLayoutCompat;
 import com.inshort.base.utils.LogUtils;
+import com.inshort.base.weight.click.DelayedClick;
+import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.home.adapter.HomeAdapter;
 import com.inshort.home.adapter.HomeBannerAdapter;
 import com.inshort.home.databinding.FragmentHomeBinding;
@@ -54,8 +61,14 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     private ItemHeadHomeViewBinding mHeadViewBinding;
     private final ArrayList<ColumnEntity> mData = new ArrayList<>();
     private final List<HomeIndexEntity.Banner> mBannerData = new ArrayList<>();
+
     @Nullable
     private HomeBannerAdapter mBannerAdapter;
+  /*  private OnItemClickListener<String> mOnSelectorSearchListener;
+
+    public void setOnItemClickListener(OnItemClickListener<String> onSelectorSearchListener) {
+        this.mOnSelectorSearchListener = onSelectorSearchListener;
+    }*/
 
     @Override
     protected FragmentHomeBinding getViewBinding() {
@@ -83,15 +96,16 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
 
     @Override
     protected void initData() {
+
         initBannerAdapter();
         initAdapter();
-        loadSmartData(mViewModel.isRefresh());
+        loadSmartData();
     }
 
     @Override
-    protected void loadSmartData(boolean isRefresh) {
-        super.loadSmartData(isRefresh);
-        if (isRefresh) {
+    protected void loadSmartData() {
+        super.loadSmartData();
+        if (mViewModel.isRefresh()) {
             mViewModel.loadIndex();
         } else {
 
@@ -157,7 +171,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
 
                 @Override
                 public void onClickNewEpisode(View view, DramaSeriesEntity entity) {
-
+                    showNewEpisodeDialog(entity);
                 }
 
                 @Override
@@ -167,6 +181,15 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
             });
         }
 
+
+    }
+
+    private void showNewEpisodeDialog(DramaSeriesEntity entity) {
+        Postcard postcard = ARouters.build(ARouterConfig.Path.Home.DIALOG_NEW_EPISODE);
+        if (postcard != null) {
+            Object obj = postcard.withSerializable(ARouterConfig.Key.SERIALIZABLE, entity).navigation();
+            DialogCompat.showDialogFragment(obj, getChildFragmentManager());
+        }
     }
 
     private final ActivityResultLauncher<Intent> mTrendingActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), o -> {
@@ -175,6 +198,10 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         }
     });
 
+    @Override
+    protected boolean isLoadAppViewModel() {
+        return true;
+    }
 
     @Override
     protected void initObserve() {
@@ -182,6 +209,21 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         mViewModel.getIndexLiveData().observe(this, new Observer<HomeIndexEntity>() {
             @Override
             public void onChanged(HomeIndexEntity homeIndexEntity) {
+                if (homeIndexEntity == null) {
+                    return;
+                }
+               /* if (mAppViewModel != null) {
+                    mAppViewModel.getHomeKeywordLiveData().setValue(new SearchHandEntity(DataCompat.toString(homeIndexEntity.searcherKeyword), false));
+                }*/
+              /*  mViewBinding.clSearchParent.setOnClickListener(new DelayedClick() {
+                    @Override
+                    public void onDelayedClick(View view) {
+                        if (mOnSelectorSearchListener != null) {
+                            mOnSelectorSearchListener.onItemClick(view, homeIndexEntity.searcherKeyword);
+                        }
+                    }
+                });*/
+
                 UICompat.setText(mViewBinding.atvKeysearch, homeIndexEntity.searcherKeyword);
                 mBannerData.clear();
                 if (CollectionCompat.notEmptyList(homeIndexEntity.banners)) {
@@ -206,6 +248,8 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 SmartRefreshLayoutCompat.initDefault(mViewBinding.refreshLayout);
                 AdapterCompat.notifyAdapterAddDateChanged(mEmptyLayout, mAdapter, mViewModel.isRefresh(),
                         mData, columnEntities, null);
+                initSearchEvent(homeIndexEntity);
+
             }
         });
         mViewModel.getTrendsPageLiveData().observe(this, trendsPageEntity -> {
@@ -247,6 +291,27 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         });
     }
 
+    private void initSearchEvent(HomeIndexEntity homeIndexEntity) {
+        mViewBinding.aivSearch.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                if (mAppViewModel != null) {
+                    mAppViewModel.getHomeKeywordLiveData().setValue(new SearchHandEntity(DataCompat.toString(homeIndexEntity.searcherKeyword), true));
+                    mAppViewModel.getMainTabTypeSelectorLiveData().setValue(MainBottomTabEntity.TYPE_SEARCH);
+                }
+            }
+        });
+        mViewBinding.clSearchParent.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                if (mAppViewModel != null) {
+                    mAppViewModel.getHomeKeywordLiveData().setValue(new SearchHandEntity(DataCompat.toString(homeIndexEntity.searcherKeyword), false));
+                    mAppViewModel.getMainTabTypeSelectorLiveData().setValue(MainBottomTabEntity.TYPE_SEARCH);
+                }
+            }
+        });
+    }
+
     @NonNull
     private Drawable getSearchBackground() {
         GradientDrawable drawable = new GradientDrawable();
@@ -255,4 +320,6 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         drawable.setCornerRadius(PhoneCompat.dp2px(requireContext(), 50f));
         return drawable;
     }
+
+
 }

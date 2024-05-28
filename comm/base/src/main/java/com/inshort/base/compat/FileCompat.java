@@ -61,6 +61,30 @@ public final class FileCompat {
         }
         return file;
     }
-
+    public static long getFileLength(File file) {
+        int initSize = 0;
+        if (file == null) {
+            return initSize;
+        }
+        if (file.isDirectory()) {
+            File[] list = file.listFiles();
+            if (list != null) {
+                for (File childFile : list) {
+                    initSize += getFileLength(childFile);
+                }
+            }
+        } else {
+            initSize += file.length();
+        }
+        return initSize;
+    }
+    public static long getCacheFileLength() {
+        Context context = DataCompat.applicationContext();
+        File externalCacheDir = context.getExternalCacheDir();
+        File cacheDir = context.getCacheDir();
+        LogUtils.w("getCacheFileLength--", getFileLength(externalCacheDir) + "--"
+                + getFileLength(cacheDir) + "--" + getFileLength(externalCacheDir) + getFileLength(cacheDir));
+        return getFileLength(externalCacheDir) + getFileLength(cacheDir);
+    }
 
 }

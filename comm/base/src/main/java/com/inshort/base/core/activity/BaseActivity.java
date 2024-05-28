@@ -81,4 +81,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onClickEmptyView(@NonNull View view){
 
     }
+    protected boolean isLoadAppViewModel() {
+        return false;
+    }
 }

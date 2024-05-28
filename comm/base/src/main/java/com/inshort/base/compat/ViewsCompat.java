@@ -12,6 +12,9 @@ import android.view.WindowInsets;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.graphics.Insets;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
@@ -63,6 +66,20 @@ public final class ViewsCompat {
                 return insets.consumeSystemWindowInsets();
             }
         });
+        /*ViewCompat.setOnApplyWindowInsetsListener(window.getDecorView(), new OnApplyWindowInsetsListener() {
+            @NonNull
+            @Override
+            public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowInsetsCompat insets) {
+                Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(
+                        systemInsets.left,
+                        0,
+                        systemInsets.right,
+                        systemInsets.bottom
+                );
+                return insets.consumeSystemWindowInsets();
+            }
+        });*/
     }
 
     public static void setStatusBarMargin(@Nullable View view, @Nullable Activity activity, int addMargin) {

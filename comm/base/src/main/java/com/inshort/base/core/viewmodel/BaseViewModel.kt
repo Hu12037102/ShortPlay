@@ -1,5 +1,6 @@
 package com.inshort.base.core.viewmodel
 
+import android.text.TextUtils
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +9,7 @@ import com.inshort.base.entity.ResponseEntity
 import com.inshort.base.entity.ResponseErrorEntity
 import com.inshort.base.http.IApiService
 import com.inshort.base.utils.LogUtils
+import com.inshort.base.weight.view.Toasts
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -26,6 +28,10 @@ open class BaseViewModel : ViewModel() {
     fun pagerReset() {
         isRefresh = true
         page = getInitPage()
+    }
+
+    fun showToast(text: String?) {
+        Toasts.get().showToast(text)
     }
 
     init {
@@ -51,7 +57,10 @@ open class BaseViewModel : ViewModel() {
             }
             val response = kotlin.runCatching {
                 black.invoke()
-            }.getOrDefault(null)
+            }.getOrElse {
+                it.printStackTrace()
+                null
+            }
             disposeRetrofit(liveData, response, isShowEmptyView, isJustRefresh)
             if (isShowLoading) {
                 loadingLiveData.value = false
@@ -88,8 +97,11 @@ open class BaseViewModel : ViewModel() {
                     it.liveData = liveData
                 }
                 httpErrorLiveData.value = errorEntity
+                val message = response?.message
+                if (!TextUtils.isEmpty(message)) {
+                    showToast(response?.message)
+                }
             }
-
             LogUtils.d("disposeRetrofit--", "$response--")
         } catch (e: Exception) {
             e.printStackTrace()

@@ -10,6 +10,5 @@ interface SplashService {
     @POST(IApiService.Path.SPLASH_INIT)
     suspend fun splashInit(): ResponseEntity<InitEntity>
 
-    @POST(IApiService.Path.SPLASH_USER_LOGIN)
-    suspend fun splashUserLogin(): ResponseEntity<UserEntity>
+
 }

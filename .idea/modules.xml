@@ -28,6 +28,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mylist/ShortPlay.mylist.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.iml" filepath="$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.main.iml" filepath="$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/play/ShortPlay.play.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.iml" filepath="$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.main.iml" filepath="$PROJECT_DIR$/.idea/modules/search/ShortPlay.search.main.iml" />

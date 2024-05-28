@@ -1,12 +1,15 @@
 package com.inshort.base.compat;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
 
 import com.inshort.base.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public final class DateCompat {
     private DateCompat() {
@@ -19,6 +22,7 @@ public final class DateCompat {
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         return new int[]{month, day};
     }
+
 
     @NonNull
     public static String intMonth2English(Context context, int month) {
@@ -37,5 +41,17 @@ public final class DateCompat {
             case 12 -> DataCompat.getResString(context, R.string.dec_content);
             default -> "";
         };
+    }
+
+    @NonNull
+    public static String getFormatYearMonthDayHourMinute(long timestamp) {
+        try {
+            @SuppressLint("SimpleDateFormat")
+            SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+            return format.format(new Date(timestamp));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

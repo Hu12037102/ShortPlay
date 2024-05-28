@@ -42,7 +42,7 @@ public class HomeBannerAdapter extends BannerAdapter<HomeIndexEntity.Banner, Hom
     @Override
     public void onBindView(ViewHolder holder, HomeIndexEntity.Banner entity, int position, int size) {
         try {
-            GlideCompat.loadImage(entity.imageUrl, holder.viewBinding.aivContent);
+            GlideCompat.loadImage(entity.imageUrl, holder.viewBinding.aivContent, com.inshort.base.R.mipmap.icon_banner_placeholder);
             // Glide.with(mContext).load(entity.imageUrl).into(holder.viewBinding.aivContent);
             UICompat.setText(holder.viewBinding.atvContent, entity.bannerIntroduction);
             TagEntity tagEntity = entity.bannerTag;

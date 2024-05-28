@@ -21,7 +21,7 @@ import com.tencent.mmkv.MMKV;
 
 import java.io.File;
 
-public class BaseApplication extends MultiDexApplication {
+public class BaseApplication extends MultiDexApplication  {
 
     @SuppressLint("StaticFieldLeak")
     private static Context mContext = null;
@@ -29,6 +29,13 @@ public class BaseApplication extends MultiDexApplication {
     public static Context getContext() {
         return mContext;
     }
+
+   /* private static AppViewModel mAppViewModel;
+
+    public static AppViewModel getAppViewModel() {
+        return mAppViewModel;
+    }*/
+
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -45,7 +52,8 @@ public class BaseApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
+   /*     ViewModelProvider.AndroidViewModelFactory factory = ViewModelProvider.AndroidViewModelFactory.getInstance(this);
+        BaseApplication.mAppViewModel = new ViewModelProvider(this, factory).get(AppViewModel.class);*/
         init();
 
     }
@@ -104,4 +112,10 @@ public class BaseApplication extends MultiDexApplication {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator((context, layout) -> new MaterialHeader(context));
         SmartRefreshLayout.setDefaultRefreshFooterCreator(((context, layout) -> new ClassicsFooter(context)));
     }
+
+   /* @NonNull
+    @Override
+    public ViewModelStore getViewModelStore() {
+        return new ViewModelStore();
+    }*/
 }

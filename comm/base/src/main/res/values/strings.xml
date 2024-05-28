@@ -13,7 +13,7 @@
     <string name="history">Playback History</string>
     <string name="play_history">Play History</string>
     <string name="more">More</string>
-    <string name="love" >My List</string>
+    <string name="love">My List</string>
     <string name="updated_to">Updated to %s</string>
     <string name="discover_more">Discover More</string>
     <string name="no_data_hitory">No playback history yet.</string>
@@ -64,4 +64,43 @@
     <string name="version_content">Version</string>
     <string name="sign_out_content">Sign Out</string>
     <string name="setting_content">Setting</string>
+    <string name="transaction_history_content">Transaction History</string>
+    <string name="episodes_unlocked_content">Episodes Unlocked</string>
+    <string name="bonus_recpt_and_exp_history_content">Bonus Recpt &amp; Exp History</string>
+    <string name="version_s">V %s</string>
+    <string name="delete_account_desc_1">• Permanently deleting your account means you can no longer use it to log in to this app.</string>
+    <string name="delete_account_desc_2">• All your personal data, including identity information, nickname, browsing history, associations with third-party accounts, and purchase records, will be permanently erased.</string>
+    <string name="agree_delete_account_agreement_content">I have read and agree to all terms.</string>
+    <string name="you_must_check_the_agreement_before_delete_the_account_content">You must check the agreement before delete the account</string>
+    <string name="search_history_content">Search History</string>
+    <string name="no_results_found_content">No results found</string>
+    <string name="trending_search_content">Trending search</string>
+    <string name="search_please_enter_at_least_letters_content">Please enter at least 3 letters.</string>
+    <string name="hot_search_content">Hot Search</string>
+    <string name="result_content">Result</string>
+    <string name="sure_content">Sure</string>
+    <string name="are_you_sure_you_want_to_delete_content">Are you sure you want to delete?</string>
+    <string name="confirm_content">Confirm</string>
+    <string name="launch_on_s_s">Launch on %s %s</string>
+    <string name="episode_s">Episode %s</string>
+    <string name="expired_content">Expired</string>
+    <string name="expired_on_s">Expired on %s</string>
+    <string name="store_content">Store</string>
+    <string name="add_proportion_discount_s">+%s%% Bonus</string>
+    <string name="tips_content">Tips</string>
+    <string name="store_tip_1">1. This App has free and paid content for everyone. You decide which content to unlock.</string>
+    <string name="store_tip_2">2. Coins will be used to unlock paid content.</string>
+    <string name="store_tip_3">3. Recharge does not support refund.</string>
+    <string name="store_tip_4">4. If you have other problems, please contact us.</string>
+    <string name="balance_say_content">Balance:</string>
+    <string name="are_you_sure_you_want_to_sign_out_content">Are you sure you want to sign out?</string>
+    <string name="return_tomorrow_content">Return tomorrow</string>
+    <string name="check_in_streak_say_content">Check-In Streak:</string>
+    <string name="day_say_content">Day(s)</string>
+    <string name="s_day_content">%s Days</string>
+    <string name="check_in">Check-In</string>
+    <string name="add_content_s">+%s</string>
+
+
+
 </resources>
