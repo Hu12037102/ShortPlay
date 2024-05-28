@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.14@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eb08e68063f8e15e6cec4bcf6e632954/transformed/jetified-RWidgetHelper-androidx.v0.0.14/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eb08e68063f8e15e6cec4bcf6e632954/transformed/jetified-RWidgetHelper-androidx.v0.0.14/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/eb08e68063f8e15e6cec4bcf6e632954/transformed/jetified-RWidgetHelper-androidx.v0.0.14/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/860659659d09bbf5e2780a9ceb260036/transformed/jetified-RWidgetHelper-androidx.v0.0.14/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/860659659d09bbf5e2780a9ceb260036/transformed/jetified-RWidgetHelper-androidx.v0.0.14/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/860659659d09bbf5e2780a9ceb260036/transformed/jetified-RWidgetHelper-androidx.v0.0.14/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

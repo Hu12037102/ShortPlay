@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: io.github.scwang90:refresh-header-material:2.1.0@aar" external-system-id="GRADLE">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4d6853aa217a2e8b54ec5f0e69d1ae5e/transformed/jetified-refresh-header-material-2.1.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/44d2a1c72543742046c12a463a840b7e/transformed/jetified-refresh-header-material-2.1.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4d6853aa217a2e8b54ec5f0e69d1ae5e/transformed/jetified-refresh-header-material-2.1.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4d6853aa217a2e8b54ec5f0e69d1ae5e/transformed/jetified-refresh-header-material-2.1.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4d6853aa217a2e8b54ec5f0e69d1ae5e/transformed/jetified-refresh-header-material-2.1.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/44d2a1c72543742046c12a463a840b7e/transformed/jetified-refresh-header-material-2.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/44d2a1c72543742046c12a463a840b7e/transformed/jetified-refresh-header-material-2.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/44d2a1c72543742046c12a463a840b7e/transformed/jetified-refresh-header-material-2.1.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

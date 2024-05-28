@@ -11465,61 +11465,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ApkExportedModule&quot;: &quot;ShortVideo.app&quot;,
-    &quot;BundleExportedModule&quot;: &quot;ShortVideo.app&quot;,
-    &quot;ExportApk.ApkPathForShortVideo.app&quot;: &quot;E:\\alce\\Client-Android\\app&quot;,
-    &quot;ExportBundle.BundlePathForShortVideo.app&quot;: &quot;E:\\alce\\Client-Android\\app&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.3.0/f4de7876e10ff121102f131b26d4a98b1613a012/recyclerview-1.3.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED&quot;: &quot;RecyclerView&quot;,
-    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/androidx/viewpager2/widget/ViewPager2.java_SELECTED&quot;: &quot;ViewPager2&quot;,
-    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/cn.carbs.android/ExpandableTextView/1.0.0/60424be9ce8b7fa43cee37a39677f2795d217936/ExpandableTextView-1.0.0-sources.jar!/cn/carbs/android/expandabletextview/library/ExpandableTextView.java_SELECTED&quot;: &quot;ExpandableTextView&quot;,
-    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.RuffianZhong/RWidgetHelper/androidx.v0.0.14/2a0db016de58ecfd8338eb2596820c98cd2fd6d8/RWidgetHelper-androidx.v0.0.14-sources.jar!/com/ruffian/library/widget/RTextView.java_SELECTED&quot;: &quot;RTextView&quot;,
-    &quot;android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.zhpanvip/BannerViewPager/3.5.0/6ae52728eb5422f76a25db054838e34e79ec1fc/BannerViewPager-3.5.0-sources.jar!/com/zhpan/bannerview/BannerViewPager.java_SELECTED&quot;: &quot;BannerViewPager&quot;,
-    &quot;android-custom-viewD:/andorid_sdk/sources/android-33/android/view/View.java_SELECTED&quot;: &quot;View&quot;,
-    &quot;android-custom-viewD:/andorid_sdk/sources/android-33/android/view/ViewGroup.java_SELECTED&quot;: &quot;ViewGroup&quot;,
-    &quot;android-custom-viewD:/andorid_sdk/sources/android-33/android/widget/TextView.java_SELECTED&quot;: &quot;TextView&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideo/AUIVideoManger.kt_SELECTED&quot;: &quot;AUIVideoManger&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideofunctionlist/AUIVideoFunctionListView.kt_SELECTED&quot;: &quot;AUIVideoFunctionListView&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideolistcommon/AUIVideoListView.kt_SELECTED&quot;: &quot;AUIVideoListView&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideostandradlist/AUIVideoStandardListView.kt_SELECTED&quot;: &quot;AUIVideoStandardListView&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideostandradlist/view/RecyclerViewEmptySupport.java_SELECTED&quot;: &quot;RecyclerViewEmptySupport&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/player/PlayBaseVideo.kt_SELECTED&quot;: &quot;PlayBaseVideo&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/player/PlayCoverVideo.kt_SELECTED&quot;: &quot;PlayCoverVideo&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayEpisodeView.kt_SELECTED&quot;: &quot;PlayEpisodeView&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayRechargeView.kt_SELECTED&quot;: &quot;PlayRechargeView&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlaySubtitlesView.kt_SELECTED&quot;: &quot;PlaySubtitlesView&quot;,
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_SELECTED&quot;: &quot;PlayUnClockRechargeView&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master__inshort&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/alce/FlutterDouBan&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
-    &quot;show.do.not.copy.http.proxy.settings.to.gradle&quot;: &quot;false&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ApkExportedModule": "ShortVideo.app",
+    "BundleExportedModule": "ShortVideo.app",
+    "ExportApk.ApkPathForShortVideo.app": "E:\\alce\\Client-Android\\app",
+    "ExportBundle.BundlePathForShortVideo.app": "E:\\alce\\Client-Android\\app",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.3.0/f4de7876e10ff121102f131b26d4a98b1613a012/recyclerview-1.3.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED": "RecyclerView",
+    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/androidx/viewpager2/widget/ViewPager2.java_SELECTED": "ViewPager2",
+    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/cn.carbs.android/ExpandableTextView/1.0.0/60424be9ce8b7fa43cee37a39677f2795d217936/ExpandableTextView-1.0.0-sources.jar!/cn/carbs/android/expandabletextview/library/ExpandableTextView.java_SELECTED": "ExpandableTextView",
+    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.RuffianZhong/RWidgetHelper/androidx.v0.0.14/2a0db016de58ecfd8338eb2596820c98cd2fd6d8/RWidgetHelper-androidx.v0.0.14-sources.jar!/com/ruffian/library/widget/RTextView.java_SELECTED": "RTextView",
+    "android-custom-viewC:/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.zhpanvip/BannerViewPager/3.5.0/6ae52728eb5422f76a25db054838e34e79ec1fc/BannerViewPager-3.5.0-sources.jar!/com/zhpan/bannerview/BannerViewPager.java_SELECTED": "BannerViewPager",
+    "android-custom-viewD:/andorid_sdk/sources/android-33/android/view/View.java_SELECTED": "View",
+    "android-custom-viewD:/andorid_sdk/sources/android-33/android/view/ViewGroup.java_SELECTED": "ViewGroup",
+    "android-custom-viewD:/andorid_sdk/sources/android-33/android/widget/TextView.java_SELECTED": "TextView",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideo/AUIVideoManger.kt_SELECTED": "AUIVideoManger",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideofunctionlist/AUIVideoFunctionListView.kt_SELECTED": "AUIVideoFunctionListView",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideolistcommon/AUIVideoListView.kt_SELECTED": "AUIVideoListView",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideostandradlist/AUIVideoStandardListView.kt_SELECTED": "AUIVideoStandardListView",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/aliplayer/auivideostandradlist/view/RecyclerViewEmptySupport.java_SELECTED": "RecyclerViewEmptySupport",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/player/PlayBaseVideo.kt_SELECTED": "PlayBaseVideo",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/player/PlayCoverVideo.kt_SELECTED": "PlayCoverVideo",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayEpisodeView.kt_SELECTED": "PlayEpisodeView",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayRechargeView.kt_SELECTED": "PlayRechargeView",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlaySubtitlesView.kt_SELECTED": "PlaySubtitlesView",
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_SELECTED": "PlayUnClockRechargeView",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "E:/alce/FlutterDouBan",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "show.do.not.copy.http.proxy.settings.to.gradle": "false",
+    "show.migrate.to.gradle.popup": "false"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ExportApk.BuildVariants&quot;: [
-      &quot;FunTV_ANDROID_GOOGLE_PLAYRelease&quot;
+  "keyToStringList": {
+    "ExportApk.BuildVariants": [
+      "FunTV_ANDROID_GOOGLE_PLAYRelease"
     ],
-    &quot;android-custom-viewD:/andorid_sdk/sources/android-33/android/widget/TextView.java_TextView_DIMENSIONS&quot;: [
-      &quot;1080&quot;,
-      &quot;1920&quot;
+    "android-custom-viewD:/andorid_sdk/sources/android-33/android/widget/TextView.java_TextView_DIMENSIONS": [
+      "1080",
+      "1920"
     ],
-    &quot;android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_PlayUnClockRechargeView_DIMENSIONS&quot;: [
-      &quot;1080&quot;,
-      &quot;1920&quot;
+    "android-custom-viewE:/alce/Client-Android/module_play/src/main/java/com/example/module_play/views/PlayUnClockRechargeView.kt_PlayUnClockRechargeView_DIMENSIONS": [
+      "1080",
+      "1920"
     ]
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Signing Configs" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
@@ -11539,7 +11538,7 @@
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="ShortVideo.app.main" />
+      <module name="ShortPlay.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -11626,6 +11625,19 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ShortPlay" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ShortPlay" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
