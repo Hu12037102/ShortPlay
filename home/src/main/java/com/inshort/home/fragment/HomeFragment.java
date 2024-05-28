@@ -1,11 +1,14 @@
 package com.inshort.home.fragment;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -14,9 +17,11 @@ import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.google.android.gms.dynamic.IFragmentWrapper;
 import com.inshort.base.compat.AdapterCompat;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
@@ -64,6 +69,9 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
 
     @Nullable
     private HomeBannerAdapter mBannerAdapter;
+    @Nullable
+    private ObjectAnimator mPlayShowHistoryAnimator = null;
+    private ObjectAnimator mPlayHideHistoryAnimator = null;
   /*  private OnItemClickListener<String> mOnSelectorSearchListener;
 
     public void setOnItemClickListener(OnItemClickListener<String> onSelectorSearchListener) {
@@ -180,8 +188,72 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 }
             });
         }
+        mViewBinding.rvContent.addOnScrollListener(mOnScrollListener);
 
+    }
 
+    private final RecyclerView.OnScrollListener mOnScrollListener = new RecyclerView.OnScrollListener() {
+        /**
+         * SCROLL_STATE_IDLE (0)：表示 RecyclerView 当前不是滚动状态。这意味着 RecyclerView 已经停止滚动。
+         * SCROLL_STATE_DRAGGING (1)：表示 RecyclerView 当前被用户拖动。用户正在用手指拖动 RecyclerView，这时 RecyclerView 处于拖动状态。
+         * SCROLL_STATE_SETTLING (2)：表示 RecyclerView 当前正在惯性滚动（flinging）。当用户放开手指时，RecyclerView 继续滚动直到停止，这种状态称为 Settling。
+         */
+        @Override
+        public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+            super.onScrollStateChanged(recyclerView, newState);
+            LogUtils.w("mOnScrollListener", newState + "-----" + mViewBinding.includedPlayHistory.getRoot().getVisibility());
+
+            if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                hideHistoryAnimator();
+            } else if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
+                showHistoryAnimator();
+            } /*else if (newState == RecyclerView.SCROLL_STATE_SETTLING) {
+                hideHistoryAnimator();
+            }*/
+        }
+
+        @Override
+        public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+            super.onScrolled(recyclerView, dx, dy);
+        }
+    };
+
+    private void showHistoryAnimator() {
+        if (mViewBinding.includedPlayHistory.getRoot().getVisibility() == View.GONE) {
+            return;
+        }
+        if (DataCompat.notNull(mPlayHideHistoryAnimator) && mPlayHideHistoryAnimator.isRunning()) {
+            return;
+        }
+        if (mPlayShowHistoryAnimator == null) {
+            mPlayShowHistoryAnimator = ObjectAnimator.ofFloat(mViewBinding.includedPlayHistory.getRoot(), "translationY", 0, mViewBinding.includedPlayHistory.getRoot().getMeasuredHeight());
+            mPlayShowHistoryAnimator.setDuration(300);
+            mPlayShowHistoryAnimator.setInterpolator(new LinearInterpolator());
+            mPlayShowHistoryAnimator.setRepeatCount(0);
+        }
+        if (!mPlayShowHistoryAnimator.isRunning()) {
+            mPlayShowHistoryAnimator.start();
+        }
+        mPlayShowHistoryAnimator.start();
+    }
+
+    private void hideHistoryAnimator() {
+        if (mViewBinding.includedPlayHistory.getRoot().getVisibility() == View.GONE) {
+            return;
+        }
+        if (DataCompat.notNull(mPlayShowHistoryAnimator) && mPlayShowHistoryAnimator.isRunning()) {
+            return;
+        }
+        if (mPlayHideHistoryAnimator == null) {
+            mPlayHideHistoryAnimator = ObjectAnimator.ofFloat(mViewBinding.includedPlayHistory.getRoot(), "translationY", mViewBinding.includedPlayHistory.getRoot().getMeasuredHeight(), 0);
+            mPlayHideHistoryAnimator.setDuration(300);
+            mPlayHideHistoryAnimator.setInterpolator(new LinearInterpolator());
+            mPlayHideHistoryAnimator.setRepeatCount(0);
+        }
+        if (!mPlayHideHistoryAnimator.isRunning()) {
+            mPlayHideHistoryAnimator.start();
+        }
+        // mPlayHideHistoryAnimator.start();
     }
 
     private void showNewEpisodeDialog(DramaSeriesEntity entity) {
@@ -321,5 +393,14 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         return drawable;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mViewBinding.rvContent.removeOnScrollListener(mOnScrollListener);
+    }
+
+    private void showPlayHistoryAnimation() {
+
+    }
 
 }

@@ -20,7 +20,7 @@ class PlayHisViewModel : BaseCompatViewModel() {
      * 获取历史数据
      */
     fun requestHisData(){
-        httpRequest(backLiveData, isShowLoading = true, isShowEmptyView = false, isJustRefresh = true) {
+        httpRequest(backLiveData, isShowLoading = true, isShowEmptyView = true, isJustRefresh = true) {
             RetrofitManger.getInstance().create(MyListService::class.java).requestHisData()
         }
     }
@@ -29,7 +29,7 @@ class PlayHisViewModel : BaseCompatViewModel() {
      * 获取喜爱数据
      */
     fun requestLoveData(){
-        httpRequest(backLiveData, isShowLoading = true, isShowEmptyView = false, isJustRefresh = true) {
+        httpRequest(backLiveData, isShowLoading = true, isShowEmptyView = true, isJustRefresh = true) {
             RetrofitManger.getInstance().create(MyListService::class.java).requestLoveData()
         }
     }

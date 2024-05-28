@@ -33,13 +33,13 @@ public class DramaSeriesEntity implements Serializable {
     @SerializedName("episode_charge_start")
     public int episodeChargeStart;
     @SerializedName("max_unlocked_episode")
-    public int maxUnlockedEpisode ; // 相思相见知何日？此时此夜难为情！
+    public int maxUnlockedEpisode; // 相思相见知何日？此时此夜难为情！
 
     @SerializedName("episode_updated")
     public int episodeUpdated;  // 相思相见知何日？此时此夜难为情！
 
     @SerializedName("play_progress")
-    public int playProgress ; // 相思相见知何日？此时此夜难为情！
+    public int playProgress; // 相思相见知何日？此时此夜难为情！
 
     @SerializedName("is_collected")
     public boolean isCollected; // 相思相见知何日？此时此夜难为情！
@@ -55,7 +55,8 @@ public class DramaSeriesEntity implements Serializable {
 
     @SerializedName("is_drama_launch_reserved")
     public boolean isDramaLaunchReserved;
-
-
-
+    @SerializedName("archived_path")
+    public String archivedPath;
+    @SerializedName("archived_version")
+    public int archivedVersion;
 }

@@ -28,10 +28,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField("String", "BASE_URL", '"https://app.funbl.com/"')
         }
-        debug{
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "BASE_URL", '"https://test-alb.funbl.com"')
+            // buildConfigField("String", "BASE_URL", '"https://test-alb.funbl.com"')
+            buildConfigField("String", "BASE_URL", '"https://test-app.funbl.com"')
         }
     }
     compileOptions {
@@ -48,5 +49,5 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"
     annotationProcessor "com.alibaba:arouter-compiler:${config.arouter_compiler_version}"
-    annotationProcessor  "com.github.bumptech.glide:compiler:$config.glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$config.glide_version"
 }

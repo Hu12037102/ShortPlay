@@ -26,6 +26,38 @@ object AdapterCompat {
         emptyView: EmptyLayout? = null,
         adapter: RecyclerView.Adapter<*>?,
         isRefresh: Boolean = true,
+        parentData: MutableList<T>,
+        addData: List<T>?,
+        notMoreFootView: View? = null
+    ) {
+        if (isRefresh) {
+            parentData.clear()
+        }
+        if (CollectionCompat.notEmptyList(addData)) {
+            parentData.addAll(addData!!)
+        }
+        if (adapter is BaseRecyclerAdapter<*> && notMoreFootView != null) {
+            if (adapter.mHasFootView) {
+                adapter.removeFootView()
+            }
+            adapter.addFootView(notMoreFootView)
+            /* if (CollectionCompat.isEmptyList(addData) && CollectionCompat.notEmptyList(parentData)) {
+                 adapter.addFootView(notMoreFootView)
+             } else {
+                 adapter.removeFootView()
+             }*/
+
+        }
+
+        adapter?.notifyDataSetChanged()
+        notifyDataEmptyView(emptyView, parentData)
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    @JvmStatic
+    fun <T> notifyAdapterAddDateChanged(
+        emptyView: EmptyLayout? = null,
+        adapter: RecyclerView.Adapter<*>?,
+        isRefresh: Boolean = true,
         parentData: ArrayList<T>,
         addData: List<T>?,
         notMoreFootView: View? = null

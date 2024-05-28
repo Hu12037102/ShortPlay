@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.DialogCompat;
@@ -134,6 +135,24 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
                             updateUserInfo();
                         }
                     });
+                }
+            }
+        });
+        mViewBinding.clItemMyList.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                Postcard postcard = ARouters.build(ARouterConfig.Path.MyList.ACTIVITY_BACK_HIS);
+                if (postcard != null) {
+                    postcard.withBoolean(ARouterConfig.Key.IS_HIS, false).navigation();
+                }
+            }
+        });
+        mViewBinding.clItemPlaybackHistory.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                Postcard postcard = ARouters.build(ARouterConfig.Path.MyList.ACTIVITY_BACK_HIS);
+                if (postcard != null) {
+                    postcard.withBoolean(ARouterConfig.Key.IS_HIS, true).navigation();
                 }
             }
         });

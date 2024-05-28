@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.inshort.base.compat.AdapterCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.entity.MyListEntity;
@@ -88,7 +89,8 @@ public class PlayHisActivity  extends BaseCompatActivity<ActivityPlayHisBinding,
     protected void initObserve() {
         super.initObserve();
         mViewModel.getBackLiveData().observe(this, collectData -> {
-            mAdapter.setList(collectData);
+            AdapterCompat.notifyAdapterAddDateChanged(mEmptyLayout,mAdapter,true,mAdapter.getData(),collectData,null);
+           // mAdapter.setList(collectData);
         });
     }
 
@@ -198,4 +200,8 @@ public class PlayHisActivity  extends BaseCompatActivity<ActivityPlayHisBinding,
         }
     }
 
+    @Override
+    protected boolean isLoadEmptyView() {
+        return true;
+    }
 }
