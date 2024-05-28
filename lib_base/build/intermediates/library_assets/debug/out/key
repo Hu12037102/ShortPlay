@@ -1,0 +1,15 @@
+{
+    "primaryKeyId": 719845012,
+    "key": [
+        {
+            "keyData": {
+                "typeUrl": "type.googleapis.com/google.crypto.tink.HpkePrivateKey",
+                "value": "EioSBggBEAEYAhogsJFAWEZI++nXxojfZy74hER3GtNDJ3HaNg5TlzV5ykkaIPe7871DqEPcIIfHj45xRdMZEmpbnlrMstwo7DwzJmir",
+                "keyMaterialType": "ASYMMETRIC_PRIVATE"
+            },
+            "status": "ENABLED",
+            "keyId": 719845012,
+            "outputPrefixType": "TINK"
+        }
+    ]
+}

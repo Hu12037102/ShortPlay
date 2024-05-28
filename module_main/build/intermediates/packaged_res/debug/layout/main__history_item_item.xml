@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+
+    <RelativeLayout
+        android:id="@+id/history_ll"
+        android:layout_width="95dp"
+        android:layout_height="127dp">
+
+        <com.ruffian.library.widget.RImageView
+            android:id="@+id/history_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:corner_radius="6dp"
+            android:scaleType="centerCrop"
+            />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/history_ranking"
+            android:layout_width="48dp"
+            android:layout_height="16dp"
+            app:corner_radius_top_left="6dp"
+            app:corner_radius_bottom_right="6dp"
+            app:background_normal="@color/color_80000000"
+            android:drawableStart="@drawable/main_progress_logo"
+            android:textSize="12sp"
+            android:drawablePadding="3dp"
+            android:textColor="@color/white"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            tools:ignore="MissingConstraints,RtlSymmetry,SmallSp" />
+
+
+        <com.ruffian.library.widget.RRelativeLayout
+            android:id="@+id/rr_has_updated"
+            android:layout_width="20dp"
+            android:layout_height="18dp"
+            app:corner_radius_top_right="6dp"
+            app:corner_radius_bottom_left="6dp"
+            app:background_normal="@array/array_list"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/common_small_bell_bg"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                />
+
+
+        </com.ruffian.library.widget.RRelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/history_name"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/history_ll"
+        android:layout_marginTop="7dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:fontFamily="@font/sofiapro_medium"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/current_set"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/history_name"
+        android:textSize="11sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sofiapro_medium"
+        android:ellipsize="end"
+        android:lines="1"
+        tools:ignore="SmallSp" />
+
+
+</RelativeLayout>

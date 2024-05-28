@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                   
+
+    
+
+           
+
+    <RelativeLayout
+        android:id="@+id/wallet_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingDefaultResource" android:tag="layout/main_include_user_wallet_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+
+        <ImageView
+            android:id="@+id/wallet_logo_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user_wallet"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/wallet_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="@string/main_user_wallet"
+            android:layout_toLeftOf="@+id/wallet_num"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/wallet_logo_iv"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/white"
+            android:ellipsize="end"
+            android:fontFamily="@font/sofiapro_medium"
+            android:lines="1" />
+
+
+        <TextView
+            android:id="@+id/wallet_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_toStartOf="@+id/user_wallet_right_iv"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:gravity="right"
+            android:drawablePadding="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:drawableLeft="@drawable/user_money_logo" />
+
+        <ImageView
+            android:id="@+id/user_wallet_right_iv"
+            android:layout_width="6dp"
+            android:layout_height="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/user_right_white_bold"
+            tools:ignore="RtlHardcoded" />
+
+    </RelativeLayout>
+         

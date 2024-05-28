@@ -1,0 +1,47 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:2:1-33:12
+	package
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+		INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:5:22-76
+application
+ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:6:5-32:19
+service#com.example.lib_common.fcm.service.FCMPushService
+ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:23:9-31:19
+	android:enabled
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:26:13-35
+	android:exported
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:24:13-55
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:27:13-30:29
+	android:priority
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:28:17-40
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:29:17-79
+	android:name
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:29:25-75
+uses-sdk
+INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+		INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+		ADDED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+		INJECTED from E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml

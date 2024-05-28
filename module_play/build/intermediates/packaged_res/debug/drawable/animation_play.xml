@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ResourceName">
+    <item android:drawable="@drawable/play_00000" android:duration="40"/>
+    <item android:drawable="@drawable/play_00001" android:duration="40"/>
+    <item android:drawable="@drawable/play_00002" android:duration="40"/>
+    <item android:drawable="@drawable/play_00003" android:duration="40"/>
+    <item android:drawable="@drawable/play_00004" android:duration="40"/>
+    <item android:drawable="@drawable/play_00005" android:duration="40"/>
+    <item android:drawable="@drawable/play_00006" android:duration="40"/>
+    <item android:drawable="@drawable/play_00007" android:duration="40"/>
+    <item android:drawable="@drawable/play_00008" android:duration="40"/>
+    <item android:drawable="@drawable/play_00009" android:duration="40"/>
+    <item android:drawable="@drawable/play_00010" android:duration="40"/>
+    <item android:drawable="@drawable/play_00011" android:duration="40"/>
+    <item android:drawable="@drawable/play_00012" android:duration="40"/>
+    <item android:drawable="@drawable/play_00013" android:duration="40"/>
+    <item android:drawable="@drawable/play_00014" android:duration="40"/>
+    <item android:drawable="@drawable/play_00015" android:duration="40"/>
+    <item android:drawable="@drawable/play_00016" android:duration="40"/>
+    <item android:drawable="@drawable/play_00017" android:duration="40"/>
+    <item android:drawable="@drawable/play_00018" android:duration="40"/>
+    <item android:drawable="@drawable/play_00019" android:duration="40"/>
+    <item android:drawable="@drawable/play_00020" android:duration="40"/>
+    <item android:drawable="@drawable/play_00021" android:duration="40"/>
+    <item android:drawable="@drawable/play_00022" android:duration="40"/>
+    <item android:drawable="@drawable/play_00023" android:duration="40"/>
+    <item android:drawable="@drawable/play_00024" android:duration="40"/>
+</animation-list>

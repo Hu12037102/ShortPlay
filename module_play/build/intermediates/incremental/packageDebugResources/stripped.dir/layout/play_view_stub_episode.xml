@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.module_play.views.PlayEpisodeView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/play_episode_view"
+    android:layout_width="match_parent"
+    android:visibility="invisible"
+    android:layout_height="wrap_content">
+
+</com.example.module_play.views.PlayEpisodeView>

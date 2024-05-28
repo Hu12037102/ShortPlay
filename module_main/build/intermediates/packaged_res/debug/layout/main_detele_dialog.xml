@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+
+
+    <com.ruffian.library.widget.RConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background_normal="@color/black_22"
+        app:corner_radius="6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp">
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="114dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+           android:fontFamily="@font/sofiapro_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="25dp"
+            />
+
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white_10"
+          app:layout_constraintTop_toBottomOf="@id/content_tv"
+            />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:background="@color/white_10"
+            app:layout_constraintLeft_toRightOf="@id/cancel"
+            app:layout_constraintRight_toLeftOf="@id/remove"
+            app:layout_constraintTop_toTopOf="@id/cancel"
+            />
+
+
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/play_cancel"
+            android:gravity="center"
+            android:layout_toStartOf="@+id/view"
+            android:textSize="16sp"
+            android:fontFamily="@font/sofiapro_medium"
+            android:textColor="@color/white_ff_99"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            app:layout_constraintRight_toLeftOf="@id/view"
+            app:layout_constraintHorizontal_weight="1"
+            />
+        <TextView
+            android:id="@+id/remove"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/main_delete_remove"
+            android:gravity="center"
+            android:textColor="@color/red_ff"
+            android:layout_toEndOf="@+id/view"
+            android:textSize="16sp"
+            android:fontFamily="@font/sofiapro_medium"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cancel"
+            />
+
+
+
+
+
+    </com.ruffian.library.widget.RConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

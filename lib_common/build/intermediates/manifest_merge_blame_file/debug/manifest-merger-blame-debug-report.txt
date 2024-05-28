@@ -1,0 +1,61 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.lib_common" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="21"
+6-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+7        android:targetSdkVersion="33" />
+7-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml
+8
+9    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+9-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:5:5-79
+9-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:5:22-76
+10
+11    <application>
+11-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:6:5-32:19
+12
+13        <!--
+14     Set custom default icon. This is used when no icon is set for incoming notification messages.
+15     See README(https://goo.gl/l4GJaQ) for more.
+16        -->
+17        <!--
+18            <meta-data
+19            android:name="com.google.firebase.messaging.default_notification_icon"
+20            android:resource="@drawable/ic_stat_ic_notification" />
+21        -->
+22        <!--
+23             Set color used with incoming notification messages. This is used when no color is set for the incoming
+24             notification message. See README(https://goo.gl/6BKBk7) for more.
+25        -->
+26        <!--
+27            <meta-data
+28            android:name="com.google.firebase.messaging.default_notification_color"
+29            android:resource="@color/colorAccent" />
+30        -->
+31        <!-- 自定义推送通道 -->
+32        <!--
+33            <meta-data
+34            android:name="com.google.firebase.messaging.default_notification_channel_id"
+35            android:value="@string/default_notification_channel_id" />
+36        -->
+37
+38        <service
+38-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:23:9-31:19
+39            android:name="com.example.lib_common.fcm.service.FCMPushService"
+39-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:24:13-55
+40            android:enabled="true"
+40-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:26:13-35
+41            android:exported="false" >
+41-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:25:13-37
+42            <intent-filter android:priority="1000" >
+42-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:27:13-30:29
+42-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:28:17-40
+43                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+43-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:29:17-79
+43-->E:\alce\Client-Android\lib_common\src\main\AndroidManifest.xml:29:25-75
+44            </intent-filter>
+45        </service>
+46    </application>
+47
+48</manifest>

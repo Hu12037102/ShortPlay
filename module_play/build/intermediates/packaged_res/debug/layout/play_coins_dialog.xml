@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="326dp"
+    android:layout_height="365.67dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    tools:ignore="MissingDefaultResource">
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bonus_logo"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="189dp"
+            android:layout_height="23dp"
+            android:text="CONGRATULATIONS"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="87.33dp"
+            android:textColor="#ffffffff"
+            android:textSize="17sp"
+            android:gravity="center"
+            />
+
+        <ImageView
+            android:id="@+id/money_logo"
+            android:layout_width="66.67dp"
+            android:layout_height="70.33dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="156dp"
+            android:src="@drawable/increase_money"
+            />
+
+        <TextView
+            android:id="@+id/content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/money_logo"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center" />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/confirm_tv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="14sp"
+            app:corner_radius="20dp"
+            app:background_normal="@color/red_056"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="40dp"
+            android:textColor="@color/white"
+            android:text="@string/play_ok"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

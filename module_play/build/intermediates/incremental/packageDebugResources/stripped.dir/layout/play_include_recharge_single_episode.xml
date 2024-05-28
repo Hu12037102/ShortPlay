@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:corner_radius_top_left="15dp"
+    app:corner_radius_top_right="15dp"
+    android:layout_alignParentBottom="true"
+    app:background_normal="@drawable/play_episode_bg"
+    app:gradient_type="linear"
+    android:layout_gravity="bottom"
+    app:gradient_orientation="TOP_BOTTOM">
+
+    <com.ruffian.library.widget.RView
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        app:background_normal="@color/black_10"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        app:corner_radius="2dp"/>
+
+
+
+    <TextView
+        android:id="@+id/recharge_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_insuffcient"
+        android:textSize="18sp"
+        android:textColor="@color/black_22"
+        android:fontFamily="@font/sofiapro_medium"
+        android:layout_marginStart="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/bonus_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_bonus_title"
+        android:textSize="16sp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:layout_toStartOf="@+id/bonus_content"
+        android:layout_below="@+id/recharge_title"
+        android:textColor="@color/color_999999"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:id="@+id/bonus_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@+id/recharge_title"
+        android:textColor="@color/black_00"
+        android:layout_marginStart="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:layout_marginTop="26dp"
+        tools:text="0"/>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="1dp"
+        android:layout_height="12dp"
+        android:background="@color/black_fb2"
+        android:layout_toStartOf="@id/bonus_title"
+        android:layout_below="@+id/recharge_title"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginStart="6dp"
+        />
+
+    <TextView
+        android:id="@+id/recharge_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_coins_title"
+        android:textSize="16sp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:layout_toStartOf="@+id/recharge_balance_coins"
+        android:layout_below="@+id/recharge_title"
+        android:textColor="@color/color_999999"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:id="@+id/recharge_balance_coins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@+id/recharge_title"
+        android:textColor="@color/black_00"
+        android:layout_marginStart="2dp"
+        android:layout_toStartOf="@id/line1"
+        android:fontFamily="@font/sofiapro_medium"
+        android:layout_marginTop="26dp"
+        tools:text="0"/>
+
+
+    <TextView
+        android:id="@+id/recharge_costs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/sofiapro_medium"
+        android:text="@string/play_costs"
+        android:layout_below="@+id/recharge_title"
+        android:textColor="@color/color_999999"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:id="@+id/recharge_costs_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_toEndOf="@+id/recharge_costs"
+        android:layout_below="@+id/recharge_title"
+        android:layout_marginStart="2dp"
+        android:textColor="@color/black_00"
+        android:fontFamily="@font/sofiapro_medium"
+        android:layout_marginTop="26dp" />
+
+
+
+<!--    <View-->
+<!--        android:id="@+id/recharge_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/white_ff_1a"-->
+<!--        android:layout_below="@+id/recharge_costs"-->
+<!--        android:layout_marginTop="11dp" />-->
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/episode_type_rv"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/recharge_title"
+        android:visibility="invisible"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="51dp"/>
+
+
+    <ViewStub
+        android:id="@+id/try_algin_view"
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        android:layout_marginTop="13dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout="@layout/no_network"
+        />
+
+
+
+    <TextView
+        android:id="@+id/recharge_more"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/episode_type_rv"
+        android:layout_marginTop="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/episode_type_rv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/rcharge_auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:layout_toEndOf="@+id/check_isBox"
+            android:textColor="@color/black_12"
+            android:text="@string/play_auto_unlock"
+            android:layout_marginStart="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/sofiapro_medium"
+            tools:ignore="SmallSp" />
+        <ImageView
+            android:id="@+id/check_isBox"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/play_icon_select"
+            />
+    </RelativeLayout>
+
+
+</com.ruffian.library.widget.RRelativeLayout>
