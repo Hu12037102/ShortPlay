@@ -3,6 +3,7 @@ package com.inshort.base.compat;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public final class PackageInfoCompat {
@@ -40,6 +41,19 @@ public final class PackageInfoCompat {
             e.printStackTrace();
         }
         return packageInfo;
+    }
+
+    @NonNull
+    public static String getAppName(@Nullable Context context) {
+        if (context == null) {
+            return "";
+        }
+        PackageInfo packageInfo = getPackageInfo(context);
+        if (DataCompat.notNull(packageInfo) && DataCompat.notNull(packageInfo.applicationInfo)) {
+            return DataCompat.toString(context.getPackageManager().getApplicationLabel(packageInfo.applicationInfo));
+        } else {
+            return "";
+        }
     }
 
 }

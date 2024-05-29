@@ -72,7 +72,11 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
 
 
     private void updateUserInfo() {
-        UserEntity.Info userInfo = UserDataStore.get().getInfo();
+        UserEntity userEntity = UserDataStore.get().getData();
+        if (DataCompat.isNull(userEntity)) {
+            return;
+        }
+        UserEntity.Info userInfo = userEntity.info;
         if (userInfo != null) {
             GlideCompat.loadImage(userInfo.avatar, mViewBinding.aivHead, com.inshort.base.R.mipmap.icon_head_placeholder);
             UICompat.setText(mViewBinding.atvName, userInfo.nickName);
@@ -84,6 +88,14 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
             } else {
                 mViewBinding.atvSignIn.setVisibility(View.GONE);
             }
+
+        }
+        UserEntity.CheckInInfo checkInInfo = userEntity.checkInInfo;
+        if (DataCompat.notNull(checkInInfo) && !checkInInfo.isCheckedIn) {
+            UICompat.setText(mViewBinding.atvBonusCenterRight,
+                    DataCompat.getResString(requireContext(), com.inshort.base.R.string.add_content_s, DataCompat.toString(checkInInfo.coins)));
+        } else {
+            UICompat.setText(mViewBinding.atvBonusCenterRight, null);
         }
     }
 

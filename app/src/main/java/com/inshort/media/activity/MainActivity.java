@@ -1,5 +1,7 @@
 package com.inshort.media.activity;
 
+import android.view.View;
+
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,15 +14,23 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.NetworkCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
+import com.inshort.base.core.dialog.BaseCompatDialog;
+import com.inshort.base.core.dialog.comm.PrivacyAgreementDialog;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.MainBottomTabEntity;
+import com.inshort.base.http.IApiService;
+import com.inshort.base.other.arouter.ARouterActivity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
+import com.inshort.base.other.mmkv.MMKVCompat;
+import com.inshort.base.other.mmkv.MMKVManger;
 import com.inshort.base.utils.LogUtils;
 import com.inshort.home.fragment.HomeFragment;
+import com.inshort.me.activity.SettingActivity;
 import com.inshort.me.fragment.MeFragment;
 import com.inshort.media.adapter.MainBottomTabAdapter;
 import com.inshort.media.databinding.ActivityMainBinding;
@@ -48,9 +58,34 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
 
     @Override
     protected void initData() {
+        initPrivacyAgreementDialog();
         initBottomTabAdapter();
         initPageAdapter();
         LogUtils.w("initData--", NetworkCompat.getMobileNetType(DataCompat.applicationContext()));
+    }
+
+    private void initPrivacyAgreementDialog() {
+      int status =  MMKVCompat.getPrivacyAgreementStatus();
+      if (status == MMKVCompat.PRIVACY_AGREEMENT_STATUS_UNKNOWN){
+          Fragment fragment = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_PRIVACY_AGREEMENT);
+          DialogCompat.showDialogFragment(fragment, getSupportFragmentManager());
+          if (fragment instanceof PrivacyAgreementDialog privacyAgreementDialog){
+              privacyAgreementDialog.setOnDialogInfoListener(new BaseCompatDialog.OnDialogInfoListener() {
+                  @Override
+                  public void onClickSure(View view, @Nullable Object object) {
+                      privacyAgreementDialog.dismiss();
+                      MMKVCompat.putPrivacyAgreementStatus(MMKVCompat.PRIVACY_AGREEMENT_STATUS_AGREE);
+                  }
+
+                  @Override
+                  public void onClickCancel(View view, @Nullable Object obj) {
+                    privacyAgreementDialog.dismiss();
+                  }
+              });
+          }
+
+      }
+
     }
 
     private void initPageAdapter() {

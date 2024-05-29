@@ -8,6 +8,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -19,6 +20,8 @@ import com.inshort.base.compat.PackageInfoCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.UICompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
+import com.inshort.base.core.dialog.BaseCompatDialog;
+import com.inshort.base.core.dialog.comm.PrivacyAgreementDialog;
 import com.inshort.base.core.dialog.comm.TitleDialog;
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.http.IApiService;
@@ -79,8 +82,30 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
         mViewBinding.clItemTermsService.setOnClickListener(new DelayedClick() {
             @Override
             public void onDelayedClick(View view) {
-                ARouterActivity.startToWebContentActivity(IApiService.Url.TERMS_SERVICE,
-                        DataCompat.getResString(SettingActivity.this, com.inshort.base.R.string.terms_of_service_content));
+                if (MMKVCompat.getPrivacyAgreementStatus() == MMKVCompat.PRIVACY_AGREEMENT_STATUS_AGREE){
+                    ARouterActivity.startToWebContentActivity(IApiService.Url.TERMS_SERVICE,
+                            DataCompat.getResString(SettingActivity.this, com.inshort.base.R.string.terms_of_service_content));
+                }else {
+                    Fragment fragment = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_PRIVACY_AGREEMENT);
+                    DialogCompat.showDialogFragment(fragment, getSupportFragmentManager());
+                    if (fragment instanceof PrivacyAgreementDialog privacyAgreementDialog){
+                        privacyAgreementDialog.setOnDialogInfoListener(new BaseCompatDialog.OnDialogInfoListener() {
+                            @Override
+                            public void onClickSure(View view, @Nullable Object object) {
+                                privacyAgreementDialog.dismiss();
+                                MMKVCompat.putPrivacyAgreementStatus(MMKVCompat.PRIVACY_AGREEMENT_STATUS_AGREE);
+                                ARouterActivity.startToWebContentActivity(IApiService.Url.TERMS_SERVICE,
+                                        DataCompat.getResString(SettingActivity.this, com.inshort.base.R.string.terms_of_service_content));
+                            }
+
+                            @Override
+                            public void onClickCancel(View view, @Nullable Object obj) {
+                                privacyAgreementDialog.dismiss();
+                            }
+                        });
+                    }
+                }
+
             }
         });
         mViewBinding.clItemPrivacyPolicy.setOnClickListener(new DelayedClick() {

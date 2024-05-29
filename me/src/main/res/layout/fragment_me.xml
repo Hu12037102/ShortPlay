@@ -334,10 +334,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="@dimen/size_18dp"
                             android:drawablePadding="@dimen/size_6dp"
+                            android:textColor="@color/color_FFF37E00"
+                            android:textSize="@dimen/size_16sp"
                             app:drawableEndCompat="@mipmap/icon_me_item_right"
+                            app:fontFamily="@font/sofia_pro_bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

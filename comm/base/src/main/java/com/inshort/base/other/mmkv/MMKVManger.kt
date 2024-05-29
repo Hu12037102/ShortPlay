@@ -32,6 +32,7 @@ class MMKVManger private constructor() {
         const val WATCHING_STATUS = "mmkv_watching_status"
         const val SEARCH_HISTORY_LIST = "mmkv_search_history_list"
         const val INIT_PARCELABLE:String="mmkv_init_parcelable"
+        const val PRIVACY_AGREEMENT_STATUS="mmkv_privacy_agreement_status"
     }
 
 

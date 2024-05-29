@@ -68,7 +68,12 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
     protected AnimationDrawable mLoadingAnimationDrawable = null;
     @Nullable
     protected BaseRootLoadingViewBinding mLoadingViewBinding = null;
+    @Nullable
+    protected OnDialogInfoListener mOnDialogInfoListener = null;
 
+    public void setOnDialogInfoListener(OnDialogInfoListener onDialogInfoListener) {
+        this.mOnDialogInfoListener = onDialogInfoListener;
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -91,7 +96,6 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
         return super.onCreateDialog(savedInstanceState);
 
     }
-
 
 
     @Nullable
@@ -309,5 +313,11 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
 
     protected void loadSmartData() {
 
+    }
+
+    public interface OnDialogInfoListener {
+        void onClickSure(View view, @Nullable Object object);
+
+        void onClickCancel(View view, @Nullable Object obj);
     }
 }

@@ -109,5 +109,13 @@
     <string name="login_agreemen_2">\ Terms of Service</string>
     <string name="login_agreemen_3">\ and \t</string>
     <string name="login_agreemen_4" tools:ignore="ExtraTranslation,ResourceName"> Privacy Policy</string>
-
+    <string name="terms_service_and_privacy_policy">Terms of Service &amp; Privacy Policy</string>
+    <string name="agree_content">Agree</string>
+    <string name="read_it_later_content">Read it later</string>
+    <string name="welcome_to_s_content">Welcome to %s</string>
+    <string name="user_privacy_agreement_content_1">In order to use our products and services, you must agree to our</string>
+    <string name="user_privacy_agreement_content_2">Terms of Service</string>
+    <string name="user_privacy_agreement_content_3">which outline the rules and guidelines that you must follow. Additionally, our</string>
+    <string name="user_privacy_agreement_content_4">our  details the type of information we collect and how we use it to provide you with our services. We take the security of your information seriously and will always adhere to the terms outlined in these agreements.</string>
+    <string name="user_privacy_agreement_content_5">By clicking "Agree," you acknowledge and agree to all of the terms and conditionsoutlined in our Terms of Service and Privacy Policy.</string>
 </resources>

@@ -32,7 +32,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             // buildConfigField("String", "BASE_URL", '"https://test-alb.funbl.com"')
-            buildConfigField("String", "BASE_URL", '"https://test-app.funbl.com"')
+            buildConfigField("String", "BASE_URL", '"https://test-app.funbl.com/"')
+           // buildConfigField("String", "BASE_URL", '"http://192.168.100.205:8292/"')
         }
     }
     compileOptions {
