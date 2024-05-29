@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.inshort.base.compat.AdapterCompat;
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.MyListEntity;
 import com.inshort.base.entity.TemporaryEntity;
@@ -71,10 +72,15 @@ public class HisFragment extends BaseCompatFragment<FragmentHisBinding,HisViewMo
     protected void initObserve() {
         super.initObserve();
         mViewModel.getBackLiveData().observe(this, collectData -> {
-            mAdapter.setList(collectData);
+          //  mAdapter.setList(collectData);
+            AdapterCompat.notifyAdapterAddDateChanged(mEmptyLayout,mAdapter,true,mAdapter.getData(),collectData,null);
         });
     }
 
+    @Override
+    protected boolean isLoadEmptyView() {
+        return true;
+    }
 
     @Override
     public void onResume() {
