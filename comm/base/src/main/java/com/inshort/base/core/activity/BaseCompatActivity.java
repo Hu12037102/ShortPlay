@@ -159,13 +159,15 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.setRefresh(false);
-                loadSmartData( );
+                mViewModel.setManualRefresh(false);
+                loadSmartData();
             }
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.pagerReset();
-                loadSmartData( );
+                mViewModel.setManualRefresh(true);
+                loadSmartData();
             }
         });
     }

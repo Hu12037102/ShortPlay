@@ -43,7 +43,8 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"
 
-    api "androidx.core:core:$config.core_ktx_version"
+    api "androidx.core:core-ktx:$config.core_version"
+    api "androidx.core:core:$config.core_version"
     api "androidx.appcompat:appcompat:${config.appcompat_version}"
     api "com.google.android.material:material:${config.material_version}"
     api "androidx.constraintlayout:constraintlayout:${config.constraintlayout_version}"
@@ -54,6 +55,7 @@ dependencies {
     api "io.github.scwang90:refresh-header-material:$config.refresh_header_version"
     api "io.github.scwang90:refresh-footer-classics:$config.refresh_footer_version"
     api "io.github.scwang90:refresh-layout-kernel:$config.refresh_core_version"
+    api  "io.github.scwang90:refresh-footer-ball:$config.footer_ball_version"
     /*网络请求*/
     api "com.squareup.retrofit2:retrofit:$config.retrofit_version"
     api "com.squareup.retrofit2:converter-gson:$config.converter_gson_version"

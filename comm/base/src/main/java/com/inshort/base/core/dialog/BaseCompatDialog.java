@@ -232,12 +232,14 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.setRefresh(false);
+                mViewModel.setManualRefresh(false);
                 loadSmartData();
             }
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.pagerReset();
+                mViewModel.setManualRefresh(true);
                 loadSmartData();
             }
         });

@@ -72,6 +72,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     @Nullable
     private ObjectAnimator mPlayShowHistoryAnimator = null;
     private ObjectAnimator mPlayHideHistoryAnimator = null;
+    private float mScrollY = 0;
   /*  private OnItemClickListener<String> mOnSelectorSearchListener;
 
     public void setOnItemClickListener(OnItemClickListener<String> onSelectorSearchListener) {
@@ -91,7 +92,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     @Override
     protected void initView() {
         ViewCompat.setBackground(mViewBinding.clSearchParent, getSearchBackground());
-        ViewsCompat.setStatusBarMargin(mViewBinding.clSearchParent, getActivity(), PhoneCompat.dp2px(requireContext(), 6));
+        // ViewsCompat.setStatusBarMargin(mViewBinding.clSearchParent, getActivity(), PhoneCompat.dp2px(requireContext(), 6));
         mViewBinding.rvContent.setLayoutManager(new LinearLayoutManager(getContext()));
         mViewBinding.refreshLayout.setEnableLoadMore(true);
         initHeadView();
@@ -215,6 +216,19 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         @Override
         public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
             super.onScrolled(recyclerView, dx, dy);
+            mScrollY += dy;
+            if (mHeadViewBinding != null) {
+                int height = mHeadViewBinding.banner.getMeasuredHeight();
+                if (height == 0) {
+                    height = 1;
+                }
+                if (mScrollY <= height) {
+                    mViewBinding.viewSearchAlpha.setAlpha(1 - mScrollY / height);
+                    mViewBinding.viewSearchScroll.setAlpha(mScrollY / height);
+                }
+            }
+            LogUtils.w("onScrolled--", dx + "----" + dy);
+
         }
     };
 

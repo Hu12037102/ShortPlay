@@ -11,17 +11,22 @@ import androidx.annotation.Nullable;
 import androidx.multidex.MultiDexApplication;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.inshort.base.R;
+import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.config.AppConfig;
 import com.inshort.base.factory.FileFactory;
 import com.inshort.base.manger.ActivityStateManger;
+import com.scwang.smart.refresh.footer.BallPulseFooter;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.MaterialHeader;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.constant.SpinnerStyle;
 import com.tencent.mmkv.MMKV;
 
 import java.io.File;
 
-public class BaseApplication extends MultiDexApplication  {
+public class BaseApplication extends MultiDexApplication {
 
     @SuppressLint("StaticFieldLeak")
     private static Context mContext = null;
@@ -109,8 +114,14 @@ public class BaseApplication extends MultiDexApplication  {
     };
 
     static {
-        SmartRefreshLayout.setDefaultRefreshHeaderCreator((context, layout) -> new MaterialHeader(context));
-        SmartRefreshLayout.setDefaultRefreshFooterCreator(((context, layout) -> new ClassicsFooter(context)));
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator((context, layout) -> new MaterialHeader(context).
+                setColorSchemeResources(R.color.color_FFFF5C4F, R.color.color_FFFE2442));
+        // SmartRefreshLayout.setDefaultRefreshFooterCreator(((context, layout) -> new ClassicsFooter(context)));
+        SmartRefreshLayout.setDefaultRefreshFooterCreator(((context, layout) -> new BallPulseFooter(context)
+                .setNormalColor(DataCompat.getColor(layout.getLayout().getContext(), R.color.color_FFFE2442))
+                .setNormalColor(DataCompat.getColor(layout.getLayout().getContext(), R.color.color_FFFF5C4F))
+                .setSpinnerStyle(SpinnerStyle.Translate)
+        ));
     }
 
    /* @NonNull

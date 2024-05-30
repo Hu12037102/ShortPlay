@@ -77,7 +77,7 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
         super.onCreate(savedInstanceState);
         mViewBinding = getViewBinding();
         mViewModel = new ViewModelProvider(this).get(getViewModelClass());
-        if (isLoadAppViewModel()){
+        if (isLoadAppViewModel()) {
             mAppViewModel = AppViewModelManger.getInstance(requireActivity().getApplication()).getViewModel(AppViewModel.class);
         }
         LogUtils.w("FragmentCompatFragment--", getClass().getSimpleName() + ":onCreate----2");
@@ -208,13 +208,15 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.setRefresh(false);
-                loadSmartData( );
+                mViewModel.setManualRefresh(false);
+                loadSmartData();
             }
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.pagerReset();
-                loadSmartData( );
+                mViewModel.setManualRefresh(true);
+                loadSmartData();
             }
         });
     }
@@ -281,6 +283,7 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
             mEmptyLayout.hide();
         }
     }
+
     protected void loadSmartData() {
 
     }

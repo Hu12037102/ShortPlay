@@ -18,6 +18,7 @@ open class BaseViewModel : ViewModel() {
     val loadingLiveData = MutableLiveData<Boolean>()
     val emptyViewLiveData = MutableLiveData<Boolean>()
     val refreshLiveData = MutableLiveData<Boolean>()
+     var isManualRefresh = false
 
     protected open fun getInitPage(): Int = Contracts.DEFAULT_PAGE
 
@@ -51,7 +52,8 @@ open class BaseViewModel : ViewModel() {
         black: suspend () -> ResponseEntity<T>
     ) {
         viewModelScope.launch {
-            if (isShowLoading) {
+            val autoRefresh = !isManualRefresh && isShowLoading
+            if (autoRefresh) {
                 loadingLiveData.value = true
                 delay(300)
             }
@@ -62,10 +64,10 @@ open class BaseViewModel : ViewModel() {
                 null
             }
             disposeRetrofit(liveData, response, isShowEmptyView, isJustRefresh)
-            if (isShowLoading) {
+            if (autoRefresh) {
                 loadingLiveData.value = false
             }
-
+            isManualRefresh = false
         }
     }
 

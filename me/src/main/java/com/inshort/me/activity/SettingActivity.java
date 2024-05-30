@@ -61,8 +61,20 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
         UICompat.setText(mViewBinding.atvVersionRight, DataCompat.getResString(this, com.inshort.base.R.string.version_s, PackageInfoCompat.getVersionName(this)));
         UICompat.setText(mViewBinding.atvClearCacheRight, NumberCompat.getB2M(FileCompat.getCacheFileLength()));
         updateDisplayWitchingView();
+        UserEntity.Info userInfo = UserDataStore.get().getInfo();
+        if (DataCompat.notNull(userInfo)){
+            if (userInfo.platform == UserEntity.Info.PLATFORM_DEFAULT) {
+                mViewBinding.atvSignOut.setVisibility(View.GONE);
+            } else {
+                mViewBinding.atvSignOut.setVisibility(View.VISIBLE);
+            }
+        }
+
 
     }
+
+
+
 
     private void updateDisplayWitchingView() {
         if (MMKVCompat.isOpenWatching()) {
