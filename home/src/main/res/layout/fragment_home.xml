@@ -22,7 +22,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_search_root"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/size_88dp"
+        android:layout_height="@dimen/size_78dp"
         app:layout_constraintTop_toTopOf="parent">
         <View
             android:id="@+id/view_search_scroll"

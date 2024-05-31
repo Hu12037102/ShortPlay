@@ -9,13 +9,19 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 
+import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.DeviceCompat;
+import com.inshort.base.compat.DialogCompat;
+import com.inshort.base.compat.PackageInfoCompat;
 import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
+import com.inshort.base.core.dialog.comm.VersionUpdatingDialog;
 import com.inshort.base.entity.InitEntity;
 import com.inshort.base.entity.ResponseErrorEntity;
 import com.inshort.base.entity.UserEntity;
@@ -52,7 +58,7 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
         initialize();
     }
 
-    private void initialize(){
+    private void initialize() {
         mViewBinding.aivService.setVisibility(View.GONE);
         mViewModel.initialize();
     }
@@ -65,9 +71,7 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
             public void onDelayedClick(View view) {
                 Intent intent = ARouterActivity.getWebContentIntent(SplashActivity.this, IApiService.Url.FAQ, DataCompat.getResString(SplashActivity.this,
                         com.inshort.base.R.string.feedback_content));
-                if (DataCompat.notNull(intent)) {
-                    mServiceLauncher.launch(intent);
-                }
+                mServiceLauncher.launch(intent);
                /* ARouterActivity.startToWebContentActivity(IApiService.Url.FAQ, DataCompat.getResString(SplashActivity.this,
                         com.inshort.base.R.string.feedback_content));*/
             }
@@ -102,8 +106,17 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
         mViewModel.getInitializeLiveData().observe(this, new Observer<InitEntity>() {
             @Override
             public void onChanged(InitEntity initEntity) {
-                mViewBinding.aivService.setVisibility(View.GONE);
-                mViewModel.initUserLogin();
+                int currentVersionCode = PackageInfoCompat.getVersionCode(SplashActivity.this);
+                if (initEntity != null && initEntity.updateInfo != null && initEntity.updateInfo.isNecessary && initEntity.updateInfo.version > currentVersionCode) {
+                    Object object = ARouters.build(ARouterConfig.Path.Comm.DIALOG_VERSION_UPDATING)
+                            .withParcelable(ARouterConfig.Key.PARCELABLE, initEntity.updateInfo)
+                            .navigation();
+                    DialogCompat.showDialogFragment(object, getSupportFragmentManager());
+                } else {
+                    mViewBinding.aivService.setVisibility(View.GONE);
+                    mViewModel.initUserLogin();
+                }
+
 
             }
         });

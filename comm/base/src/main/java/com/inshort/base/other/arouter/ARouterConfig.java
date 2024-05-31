@@ -13,6 +13,7 @@ public interface ARouterConfig {
         String ID = "id";
         String SERIALIZABLE = "serializable";
         String NUMBER = "number";
+        String PARCELABLE="parcelable";
     }
 
     interface Path {
@@ -73,6 +74,7 @@ public interface ARouterConfig {
             String ACTIVITY_WEB_CONTENT = "/comm/activity/web/content";
             String DIALOG_TITLE = "/comm/dialog/title";
             String DIALOG_PRIVACY_AGREEMENT = "/comm/dialog/privacy/agreement";
+            String DIALOG_VERSION_UPDATING = "/comm/dialog/version/updating";
         }
 
     }

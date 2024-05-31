@@ -84,6 +84,7 @@ public class StoreActivity extends BaseCompatActivity<ActivityStoreBinding, Stor
         loadSmartData();
     }
 
+
     @Override
     protected void onUserUpdate(@NonNull UserEntity userEntity) {
         super.onUserUpdate(userEntity);

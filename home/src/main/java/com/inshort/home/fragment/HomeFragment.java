@@ -38,6 +38,7 @@ import com.inshort.base.entity.HomeIndexEntity;
 import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.entity.RequestPageEntity;
 import com.inshort.base.entity.RequestTrendsByTypeEntity;
+import com.inshort.base.entity.ResponseErrorEntity;
 import com.inshort.base.entity.SearchHandEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
 import com.inshort.base.manger.AppViewModelManger;
@@ -91,6 +92,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
 
     @Override
     protected void initView() {
+        mViewBinding.getRoot().setVisibility(View.INVISIBLE);
         ViewCompat.setBackground(mViewBinding.clSearchParent, getSearchBackground());
         // ViewsCompat.setStatusBarMargin(mViewBinding.clSearchParent, getActivity(), PhoneCompat.dp2px(requireContext(), 6));
         mViewBinding.rvContent.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -117,7 +119,6 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         if (mViewModel.isRefresh()) {
             mViewModel.loadIndex();
         } else {
-
             mViewModel.loadMore();
         }
     }
@@ -144,6 +145,11 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
             mAdapter.addHeadView(mHeadViewBinding.getRoot());
         }
         mViewBinding.rvContent.setAdapter(mAdapter);
+    }
+
+    @Override
+    protected boolean isLoadEmptyView() {
+        return true;
     }
 
     @Override
@@ -222,10 +228,12 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 if (height == 0) {
                     height = 1;
                 }
-                if (mScrollY <= height) {
+                /*if (mScrollY <= height) {
                     mViewBinding.viewSearchAlpha.setAlpha(1 - mScrollY / height);
                     mViewBinding.viewSearchScroll.setAlpha(mScrollY / height);
-                }
+                }*/
+                mViewBinding.viewSearchAlpha.setAlpha(1 - mScrollY / height);
+                mViewBinding.viewSearchScroll.setAlpha(mScrollY / height);
             }
             LogUtils.w("onScrolled--", dx + "----" + dy);
 
@@ -271,11 +279,8 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     }
 
     private void showNewEpisodeDialog(DramaSeriesEntity entity) {
-        Postcard postcard = ARouters.build(ARouterConfig.Path.Home.DIALOG_NEW_EPISODE);
-        if (postcard != null) {
-            Object obj = postcard.withSerializable(ARouterConfig.Key.SERIALIZABLE, entity).navigation();
-            DialogCompat.showDialogFragment(obj, getChildFragmentManager());
-        }
+        Object obj = ARouters.build(ARouterConfig.Path.Home.DIALOG_NEW_EPISODE).withSerializable(ARouterConfig.Key.SERIALIZABLE, entity).navigation();
+        DialogCompat.showDialogFragment(obj, getChildFragmentManager());
     }
 
     private final ActivityResultLauncher<Intent> mTrendingActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), o -> {
@@ -298,6 +303,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 if (homeIndexEntity == null) {
                     return;
                 }
+                mViewBinding.getRoot().setVisibility(View.VISIBLE);
                /* if (mAppViewModel != null) {
                     mAppViewModel.getHomeKeywordLiveData().setValue(new SearchHandEntity(DataCompat.toString(homeIndexEntity.searcherKeyword), false));
                 }*/
@@ -375,6 +381,18 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 }
             }
         });
+        mViewModel.getHttpErrorLiveData().observe(this, new Observer<ResponseErrorEntity>() {
+            @Override
+            public void onChanged(ResponseErrorEntity responseErrorEntity) {
+                if (responseErrorEntity.liveData == mViewModel.getIndexLiveData()) {
+                    if (CollectionCompat.notEmptyList(mData)) {
+                        mViewBinding.getRoot().setVisibility(View.VISIBLE);
+                    } else {
+                        mViewBinding.getRoot().setVisibility(View.INVISIBLE);
+                    }
+                }
+            }
+        });
     }
 
     private void initSearchEvent(HomeIndexEntity homeIndexEntity) {
@@ -413,8 +431,9 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         mViewBinding.rvContent.removeOnScrollListener(mOnScrollListener);
     }
 
-    private void showPlayHistoryAnimation() {
-
+    @Override
+    protected void onClickEmptyView(@NonNull View view) {
+        //super.onClickEmptyView(view);
+        loadSmartData();
     }
-
 }

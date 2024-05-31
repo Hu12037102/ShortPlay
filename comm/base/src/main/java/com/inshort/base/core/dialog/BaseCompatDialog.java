@@ -204,7 +204,8 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
             @Override
             public void onChanged(Boolean isShow) {
                 if (isShow) {
-                    showEmptyView();
+                    //showEmptyView();
+                    ViewTools.showEmptyView(mViewBinding.getRoot(), mEmptyLayout);
                 } else {
                     hideEmptyView();
                 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -18,15 +19,10 @@ public final class ARouters {
     private ARouters() {
     }
 
-    @Nullable
+    @NonNull
     public static Postcard build(@Nullable String path) {
-        try {
-            int flag = Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP;
-            return ARouter.getInstance().build(path).withFlags(flag).greenChannel();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        int flag = Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP;
+        return ARouter.getInstance().build(path).withFlags(flag).greenChannel();
     }
 
     public static void startActivity(@Nullable String path) {
@@ -34,10 +30,7 @@ public final class ARouters {
             if (TextUtils.isEmpty(path)) {
                 return;
             }
-            Postcard postcard = build(path);
-            if (postcard != null) {
-                postcard.navigation();
-            }
+            build(path).navigation();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,12 +40,9 @@ public final class ARouters {
     public static Fragment getFragment(String fragmentPath) {
         Fragment fragment = null;
         try {
-            Postcard postcard = build(fragmentPath);
-            if (postcard != null) {
-                Object obj = postcard.navigation();
-                if (obj instanceof Fragment) {
-                    fragment = (Fragment) obj;
-                }
+            Object obj = build(fragmentPath).navigation();
+            if (obj instanceof Fragment) {
+                fragment = (Fragment) obj;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,10 +57,7 @@ public final class ARouters {
     }
 
 
-
-    @Nullable
     public static Intent getIntent(@Nullable Context context, @Nullable String path) {
-        Intent intent = null;
         if (DataCompat.isNull(context)) {
             context = DataCompat.applicationContext();
         }
@@ -78,23 +65,17 @@ public final class ARouters {
             return null;
         }
         Postcard postcard = build(path);
-        if (!DataCompat.isNull(postcard)) {
-            LogisticsCenter.completion(postcard);
-            intent = new Intent(context, postcard.getDestination());
-            intent.putExtras(postcard.getExtras());
-            if (context instanceof Application) {
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            }
+        LogisticsCenter.completion(postcard);
+        Intent intent = new Intent(context, postcard.getDestination());
+        intent.putExtras(postcard.getExtras());
+        if (context instanceof Application) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
         return intent;
     }
 
-    @Nullable
-    public static Intent getIntent(@Nullable Context context, @Nullable Postcard postcard) {
+    public static Intent getIntent(@Nullable Context context, @NonNull Postcard postcard) {
         context = DataCompat.checkContext(context);
-        if (postcard == null) {
-            return null;
-        }
         LogisticsCenter.completion(postcard);
         Intent intent = new Intent(context, postcard.getDestination());
         intent.putExtras(postcard.getExtras());

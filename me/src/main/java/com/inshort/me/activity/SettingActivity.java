@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.DataCompat;
+import com.inshort.base.compat.DateCompat;
 import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.FileCompat;
 import com.inshort.base.compat.NumberCompat;
@@ -23,12 +24,14 @@ import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.core.dialog.BaseCompatDialog;
 import com.inshort.base.core.dialog.comm.PrivacyAgreementDialog;
 import com.inshort.base.core.dialog.comm.TitleDialog;
+import com.inshort.base.entity.InitEntity;
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.http.IApiService;
 import com.inshort.base.manger.ActivityStateManger;
 import com.inshort.base.other.arouter.ARouterActivity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
+import com.inshort.base.other.mmkv.InitDataStore;
 import com.inshort.base.other.mmkv.MMKVCompat;
 import com.inshort.base.other.mmkv.SearchHistoryDataStore;
 import com.inshort.base.other.mmkv.UserDataStore;
@@ -62,7 +65,7 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
         UICompat.setText(mViewBinding.atvClearCacheRight, NumberCompat.getB2M(FileCompat.getCacheFileLength()));
         updateDisplayWitchingView();
         UserEntity.Info userInfo = UserDataStore.get().getInfo();
-        if (DataCompat.notNull(userInfo)){
+        if (DataCompat.notNull(userInfo)) {
             if (userInfo.platform == UserEntity.Info.PLATFORM_DEFAULT) {
                 mViewBinding.atvSignOut.setVisibility(View.GONE);
             } else {
@@ -72,8 +75,6 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
 
 
     }
-
-
 
 
     private void updateDisplayWitchingView() {
@@ -94,13 +95,13 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
         mViewBinding.clItemTermsService.setOnClickListener(new DelayedClick() {
             @Override
             public void onDelayedClick(View view) {
-                if (MMKVCompat.getPrivacyAgreementStatus() == MMKVCompat.PRIVACY_AGREEMENT_STATUS_AGREE){
+                if (MMKVCompat.getPrivacyAgreementStatus() == MMKVCompat.PRIVACY_AGREEMENT_STATUS_AGREE) {
                     ARouterActivity.startToWebContentActivity(IApiService.Url.TERMS_SERVICE,
                             DataCompat.getResString(SettingActivity.this, com.inshort.base.R.string.terms_of_service_content));
-                }else {
+                } else {
                     Fragment fragment = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_PRIVACY_AGREEMENT);
                     DialogCompat.showDialogFragment(fragment, getSupportFragmentManager());
-                    if (fragment instanceof PrivacyAgreementDialog privacyAgreementDialog){
+                    if (fragment instanceof PrivacyAgreementDialog privacyAgreementDialog) {
                         privacyAgreementDialog.setOnDialogInfoListener(new BaseCompatDialog.OnDialogInfoListener() {
                             @Override
                             public void onClickSure(View view, @Nullable Object object) {
@@ -132,9 +133,9 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
             public void onDelayedClick(View view) {
                 Object dialog = ARouters.getFragment(ARouterConfig.Path.Me.DIALOG_DELETE_ACCOUNT);
                 DialogCompat.showDialogFragment(dialog, getSupportFragmentManager());
-                if (dialog instanceof DeleteAccountDialog deleteAccountDialog){
+                if (dialog instanceof DeleteAccountDialog deleteAccountDialog) {
                     deleteAccountDialog.setOnDeleteClickListener((view1, o) -> {
-                            mViewModel.deleteAccount();
+                        mViewModel.deleteAccount();
                     });
                 }
             }
@@ -151,9 +152,25 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
                 showClearCacheDialog();
             }
         });
+        mViewBinding.clItemVersion.setOnClickListener(new DelayedClick() {
+            @Override
+            public void onDelayedClick(View view) {
+                InitEntity initEntity = InitDataStore.get().getData();
+                int currentVersionCode = PackageInfoCompat.getVersionCode(SettingActivity.this);
+                if (initEntity != null && initEntity.updateInfo != null && initEntity.updateInfo.version > currentVersionCode) {
+                    Object object = ARouters.build(ARouterConfig.Path.Comm.DIALOG_VERSION_UPDATING)
+                            .withParcelable(ARouterConfig.Key.PARCELABLE, initEntity.updateInfo)
+                            .navigation();
+                    DialogCompat.showDialogFragment(object, getSupportFragmentManager());
+                } else {
+                    mViewModel.showToast(DataCompat.getResString(SettingActivity.this, com.inshort.base.R.string.you_are_already_the_latest_version_content));
+                }
+            }
+        });
 
     }
-    private void showClearCacheDialog(){
+
+    private void showClearCacheDialog() {
         Object obj = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_TITLE);
         if (obj instanceof TitleDialog titleDialog) {
             Bundle bundle = new Bundle();

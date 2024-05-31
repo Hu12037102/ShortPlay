@@ -13,7 +13,7 @@ class HomeViewModel : BaseCompatViewModel() {
     val indexLiveData = MutableLiveData<HomeIndexEntity>()
     val dramaSeriesPageLiveData = MutableLiveData<DramaSeriesPageEntity>()
     fun loadIndex() {
-        httpRequest(indexLiveData, isShowLoading = true, isShowEmptyView = false, isJustRefresh = true) {
+        httpRequest(indexLiveData, isShowLoading = true, isShowEmptyView = true, isJustRefresh = true) {
             RetrofitManger.getInstance().create(HomeService::class.java).homeIndex()
         }
     }

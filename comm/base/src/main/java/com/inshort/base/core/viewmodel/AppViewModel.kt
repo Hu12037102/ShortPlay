@@ -6,5 +6,5 @@ import com.inshort.base.entity.SearchHandEntity
 class AppViewModel : BaseCompatViewModel() {
     val homeKeywordLiveData= MutableLiveData<SearchHandEntity>()
     val mainTabTypeSelectorLiveData = MutableLiveData<Int>()
-
+    val testLiveData = MutableLiveData<String>()
 }

@@ -118,4 +118,6 @@
     <string name="user_privacy_agreement_content_3">which outline the rules and guidelines that you must follow. Additionally, our</string>
     <string name="user_privacy_agreement_content_4">our  details the type of information we collect and how we use it to provide you with our services. We take the security of your information seriously and will always adhere to the terms outlined in these agreements.</string>
     <string name="user_privacy_agreement_content_5">By clicking "Agree," you acknowledge and agree to all of the terms and conditionsoutlined in our Terms of Service and Privacy Policy.</string>
+    <string name="update_content">Update</string>
+    <string name="you_are_already_the_latest_version_content">You are already the latest version.</string>
 </resources>

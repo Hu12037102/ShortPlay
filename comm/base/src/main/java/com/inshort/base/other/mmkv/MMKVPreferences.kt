@@ -50,7 +50,9 @@ class MMKVPreferences(private val mmkv: MMKV) {
                 is ArrayList<*> -> {
                     mmkv.encode(key, Gson().toJson(value))
                 }
-
+                is Long->{
+                    mmkv.encode(key,value)
+                }
                 else -> {
                     mmkv.encode(key, "$value")
                 }
@@ -69,6 +71,8 @@ class MMKVPreferences(private val mmkv: MMKV) {
     fun getInt(key: String, defaultInt: Int = 0): Int = kotlin.runCatching { mmkv.decodeInt(key, defaultInt) }.getOrDefault(defaultInt)
 
     fun getFloat(key: String, defaultFloat: Float = 0F): Float = kotlin.runCatching { mmkv.decodeFloat(key, defaultFloat) }.getOrDefault(defaultFloat)
+
+    fun getLong(key: String,defaultLong:Long =0):Long = runCatching { mmkv.decodeLong(key,defaultLong) }.getOrDefault(defaultLong)
     fun <T : Parcelable> getParcelable(key: String, clazz: Class<T>): T? =
         kotlin.runCatching { mmkv.decodeParcelable(key, clazz) }.getOrDefault(null)
 

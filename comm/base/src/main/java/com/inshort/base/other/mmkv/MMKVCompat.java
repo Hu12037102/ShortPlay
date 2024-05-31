@@ -54,5 +54,14 @@ public final class MMKVCompat {
         preferences.putObject(MMKVManger.Key.PRIVACY_AGREEMENT_STATUS, status);
     }
 
+    public static void putVersionUpdateTimestamp(long timestamp) {
+        MMKVPreferences preferences = MMKVManger.getDefaultPreferences();
+        preferences.putObject(MMKVManger.Key.VERSION_UPDATE_TIMESTAMP, timestamp);
+    }
+
+    public static long getVersionUpdateTimestamp() {
+        MMKVPreferences preferences = MMKVManger.getDefaultPreferences();
+        return preferences.getLong(MMKVManger.Key.VERSION_UPDATE_TIMESTAMP, 0);
+    }
 
 }

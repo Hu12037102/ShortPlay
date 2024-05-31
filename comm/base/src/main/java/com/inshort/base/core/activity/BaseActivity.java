@@ -2,6 +2,7 @@ package com.inshort.base.core.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import androidx.annotation.AnimRes;
 import androidx.annotation.NonNull;
@@ -9,10 +10,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.inshort.base.R;
+import com.inshort.base.compat.DateCompat;
+import com.inshort.base.compat.DialogCompat;
+import com.inshort.base.compat.PackageInfoCompat;
 import com.inshort.base.compat.ViewsCompat;
+import com.inshort.base.entity.InitEntity;
 import com.inshort.base.entity.UserEntity;
+import com.inshort.base.other.arouter.ARouterConfig;
+import com.inshort.base.other.arouter.ARouters;
+import com.inshort.base.other.mmkv.InitDataStore;
+import com.inshort.base.other.mmkv.MMKVCompat;
 import com.inshort.base.other.mmkv.UserDataStore;
-import com.scwang.smart.refresh.layout.api.RefreshLayout;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private boolean isFirstWindowFocus = true;
@@ -23,6 +31,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (isOpenActivityAnim()) {
             overridePendingTransition(getInActivityAnimRes(), R.anim.anim_normal);
         }
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
         super.onCreate(savedInstanceState);
 
 
@@ -84,4 +93,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected boolean isLoadAppViewModel() {
         return false;
     }
+
+
 }

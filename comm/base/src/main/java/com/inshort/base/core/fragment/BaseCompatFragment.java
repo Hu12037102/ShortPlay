@@ -180,7 +180,8 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
             @Override
             public void onChanged(Boolean isShow) {
                 if (isShow) {
-                    showEmptyView();
+                    ViewTools.showEmptyView(mViewBinding.getRoot(), mEmptyLayout);
+                  //  showEmptyView();
                 } else {
                     hideEmptyView();
                 }

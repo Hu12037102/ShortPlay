@@ -104,7 +104,8 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
             @Override
             public void onChanged(Boolean isShow) {
                 if (isShow) {
-                    showEmptyView();
+                 //   showEmptyView();
+                    ViewTools.showEmptyView(mViewBinding.getRoot(), mEmptyLayout);
                 } else {
                     hideEmptyView();
                 }

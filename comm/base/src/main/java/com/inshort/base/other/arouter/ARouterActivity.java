@@ -12,20 +12,16 @@ public final class ARouterActivity {
     }
 
     public static void startToWebContentActivity(@Nullable String webUrl, @Nullable String webTitle) {
-        Postcard postcard = ARouters.build(ARouterConfig.Path.Comm.ACTIVITY_WEB_CONTENT);
-        if (postcard != null) {
-            postcard.withString(ARouterConfig.Key.WEB_URL, webUrl)
-                    .withString(ARouterConfig.Key.WEB_TITLE, webTitle)
-                    .navigation();
-        }
+         ARouters.build(ARouterConfig.Path.Comm.ACTIVITY_WEB_CONTENT).withString(ARouterConfig.Key.WEB_URL, webUrl)
+                .withString(ARouterConfig.Key.WEB_TITLE, webTitle)
+                .navigation();
+
     }
 
     public static Intent getWebContentIntent(@Nullable Context context, @Nullable String webUrl, @Nullable String webTitle) {
-        Postcard postcard = ARouters.build(ARouterConfig.Path.Comm.ACTIVITY_WEB_CONTENT);
-        if (postcard != null) {
-            postcard.withString(ARouterConfig.Key.WEB_URL, webUrl)
-                    .withString(ARouterConfig.Key.WEB_TITLE, webTitle);
-        }
+        Postcard postcard = ARouters.build(ARouterConfig.Path.Comm.ACTIVITY_WEB_CONTENT)
+                .withString(ARouterConfig.Key.WEB_URL, webUrl)
+                .withString(ARouterConfig.Key.WEB_TITLE, webTitle);
         return ARouters.getIntent(context, postcard);
     }
 

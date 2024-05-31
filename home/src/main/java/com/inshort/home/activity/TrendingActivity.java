@@ -112,15 +112,10 @@ public class TrendingActivity extends BaseCompatActivity<ActivityTrendingBinding
                         mViewBinding.vpContent.setCurrentItem(Math.max(index, 0), false);
                     }
                 });
-                Postcard postcard = ARouters.build(ARouterConfig.Path.Home.FRAGMENT_TRENDING_CONTENT);
-                if (postcard != null) {
-                    Object obj = postcard.withString(ARouterConfig.Key.CONTENT, content).navigation();
-                    if (obj instanceof Fragment fragment) {
-                        mFragments.add(fragment);
-                    }
-
+                Object obj = ARouters.build(ARouterConfig.Path.Home.FRAGMENT_TRENDING_CONTENT).withString(ARouterConfig.Key.CONTENT, content).navigation();
+                if (obj instanceof Fragment fragment) {
+                    mFragments.add(fragment);
                 }
-
                 mViewBinding.vpContent.setOffscreenPageLimit(CollectionCompat.getListSize(mFragments));
                 mViewBinding.vpContent.setUserInputEnabled(false);
                 mViewBinding.vpContent.setAdapter(mFragmentAdapter);

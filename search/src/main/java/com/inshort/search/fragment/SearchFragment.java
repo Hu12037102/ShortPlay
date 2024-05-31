@@ -144,21 +144,22 @@ public class SearchFragment extends BaseCompatFragment<FragmentSearchBinding, Se
         }
         mViewBinding.rvContent.addOnScrollListener(mOnScrollListener);
     }
-private final RecyclerView.OnScrollListener mOnScrollListener= new RecyclerView.OnScrollListener() {
-    @Override
-    public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-        super.onScrollStateChanged(recyclerView, newState);
-        LogUtils.w("onScrollStateChanged",newState+"--");
-        if (newState==1){
-            KeySoftCompat.updateKeySoft(requireActivity().getWindow(),mViewBinding.aetContent,false);
-        }
-    }
 
-    @Override
-    public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-        super.onScrolled(recyclerView, dx, dy);
-    }
-};
+    private final RecyclerView.OnScrollListener mOnScrollListener = new RecyclerView.OnScrollListener() {
+        @Override
+        public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+            super.onScrollStateChanged(recyclerView, newState);
+            LogUtils.w("onScrollStateChanged", newState + "--");
+            if (newState == 1) {
+                KeySoftCompat.updateKeySoft(requireActivity().getWindow(), mViewBinding.aetContent, false);
+            }
+        }
+
+        @Override
+        public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+            super.onScrolled(recyclerView, dx, dy);
+        }
+    };
 
     private void showClearHistoryDialog() {
         Object obj = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_TITLE);
@@ -192,7 +193,7 @@ private final RecyclerView.OnScrollListener mOnScrollListener= new RecyclerView.
         }
         SearchHistoryDataStore.get().putData(mKeyword);
         updateSearchHistoryView();
-        KeySoftCompat.updateKeySoft(requireActivity().getWindow(),mViewBinding.aetContent,false);
+        KeySoftCompat.updateKeySoft(requireActivity().getWindow(), mViewBinding.aetContent, false);
         mViewModel.pagerReset();
         loadSmartData();
     }
@@ -267,8 +268,6 @@ private final RecyclerView.OnScrollListener mOnScrollListener= new RecyclerView.
             @Override
             public void onChanged(ResponseErrorEntity responseErrorEntity) {
                 if (responseErrorEntity.liveData == mViewModel.getSearchLiveData()) {
-
-
 
 
                 }
@@ -371,4 +370,13 @@ private final RecyclerView.OnScrollListener mOnScrollListener= new RecyclerView.
 
     }
 
+    @Override
+    protected boolean isLoadEmptyView() {
+        return true;
+    }
+
+    @Override
+    protected void onClickEmptyView(@NonNull View view) {
+        loadSmartData();
+    }
 }

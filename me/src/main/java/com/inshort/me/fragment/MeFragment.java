@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -153,22 +154,25 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
         mViewBinding.clItemMyList.setOnClickListener(new DelayedClick() {
             @Override
             public void onDelayedClick(View view) {
-                Postcard postcard = ARouters.build(ARouterConfig.Path.MyList.ACTIVITY_BACK_HIS);
-                if (postcard != null) {
-                    postcard.withBoolean(ARouterConfig.Key.IS_HIS, false).navigation();
-                }
+                 ARouters.build(ARouterConfig.Path.MyList.ACTIVITY_BACK_HIS).withBoolean(ARouterConfig.Key.IS_HIS, false).navigation();
+
             }
         });
         mViewBinding.clItemPlaybackHistory.setOnClickListener(new DelayedClick() {
             @Override
             public void onDelayedClick(View view) {
-                Postcard postcard = ARouters.build(ARouterConfig.Path.MyList.ACTIVITY_BACK_HIS);
-                if (postcard != null) {
-                    postcard.withBoolean(ARouterConfig.Key.IS_HIS, true).navigation();
-                }
+                ARouters.build(ARouterConfig.Path.MyList.ACTIVITY_BACK_HIS).withBoolean(ARouterConfig.Key.IS_HIS, true).navigation();
+
             }
         });
     }
+
+    @Override
+    protected void initObserve() {
+        super.initObserve();
+
+    }
+
 
     private Drawable getTopBackground() {
         GradientDrawable drawable = new GradientDrawable();
@@ -195,4 +199,8 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
                 DataCompat.getColor(getContext(), com.inshort.base.R.color.color_FFFFE3CA)});
         return drawable;
     }
+
+
+
+
 }
