@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <com.ruffian.library.widget.RImageView
+        android:id="@+id/coverImageUrl_iv"
+        android:layout_width="@dimen/size_103dp"
+        android:layout_height="@dimen/size_138dp"
+        app:corner_radius="6dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <com.ruffian.library.widget.RRelativeLayout
+        android:id="@+id/rr_has_updated"
+        android:layout_width="20dp"
+        android:layout_height="18dp"
+        app:corner_radius_top_right="6dp"
+        app:corner_radius_bottom_left="6dp"
+        app:background_normal="@array/top_bottom"
+        android:layout_alignParentEnd="true"
+        app:layout_constraintEnd_toEndOf="@+id/coverImageUrl_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/small_bell_bg"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+    </com.ruffian.library.widget.RRelativeLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/love_select"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintEnd_toEndOf="@+id/coverImageUrl_iv"
+        app:layout_constraintTop_toTopOf="@+id/coverImageUrl_iv"
+        android:src="@mipmap/select_all_logo"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        />
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/updated_to_tv"
+        android:layout_width="84dp"
+        android:layout_height="18dp"
+        app:corner_radius_top_left="6dp"
+        app:corner_radius_bottom_right="6dp"
+        app:background_normal="@color/color_80000000"
+        app:layout_constraintEnd_toEndOf="@+id/coverImageUrl_iv"
+        app:layout_constraintBottom_toBottomOf="@+id/coverImageUrl_iv"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:fontFamily="@font/sofia_pro_medium"
+        android:textColor="@color/color_Black"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/his_title_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/coverImageUrl_iv"
+        app:layout_constraintTop_toTopOf="@+id/coverImageUrl_iv"
+        app:layout_constraintEnd_toStartOf="@+id/his_select_iv"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="17dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/sofia_pro_medium"
+        android:textColor="@color/color_Black"
+        android:ellipsize="end"
+        android:maxLines="2"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/his_select_iv"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintTop_toTopOf="@+id/coverImageUrl_iv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="17.6dp" />
+
+
+    <TextView
+        android:id="@+id/vertical_tv_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/his_title_tv"
+        app:layout_constraintStart_toEndOf="@+id/coverImageUrl_iv"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="17dp"
+        android:fontFamily="@font/sofia_pro_medium"
+        android:textSize="12sp"
+        android:textColor="@color/color_Black"
+        android:ellipsize="end"
+        android:lines="1"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/introduce_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/coverImageUrl_iv"
+        app:layout_constraintTop_toBottomOf="@+id/vertical_tv_flag"
+        android:layout_below="@id/vertical_tv_flag"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="17dp"
+        android:textSize="12sp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/sofia_pro_medium"
+        android:textColor="@color/color_Black"
+        android:ellipsize="end"
+        android:lineSpacingExtra="5dp"
+        android:lines="1"
+        tools:ignore="SmallSp"
+        app:drawableStartCompat="@mipmap/introduce_log" />
+
+
+    <TextView
+        android:id="@+id/love_title"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/coverImageUrl_iv"
+        app:layout_constraintStart_toStartOf="@+id/coverImageUrl_iv"
+        android:layout_marginTop="6dp"
+        android:textSize="12sp"
+        android:textColor="@color/color_Black"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:fontFamily="@font/sofia_pro_medium"
+        tools:ignore="SmallSp" />
+
+
+    <TextView
+        android:id="@+id/love_current_set"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/love_title"
+        app:layout_constraintStart_toStartOf="@+id/coverImageUrl_iv"
+        android:layout_marginTop="6dp"
+        android:textSize="11sp"
+        android:textColor="@color/color_999999"
+        android:ellipsize="end"
+        android:lines="1"
+        android:fontFamily="@font/sofia_pro_medium"
+        tools:ignore="SmallSp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

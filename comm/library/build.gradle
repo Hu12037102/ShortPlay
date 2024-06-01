@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: "$rootDir/config.gradle"
+android {
+    namespace config.namespace_library
+    compileSdk config.compileSdk
+
+    defaultConfig {
+        minSdk config.minSdk
+
+        testInstrumentationRunner config.testInstrumentationRunner
+        consumerProguardFiles config.consumerProguardFiles
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        buildFeatures {
+            buildConfig true
+            viewBinding true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    testImplementation "junit:junit:${config.junit_version}"
+    androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"
+
+    api "androidx.core:core:$config.core_ktx_version"
+    api "androidx.appcompat:appcompat:${config.appcompat_version}"
+    api "com.google.android.material:material:${config.material_version}"
+    api "androidx.constraintlayout:constraintlayout:${config.constraintlayout_version}"
+    api "com.alibaba:arouter-api:${config.arouter_version}"
+    annotationProcessor "com.alibaba:arouter-compiler:${config.arouter_compiler_version}"
+    api "androidx.multidex:multidex:$config.multidex_version"
+    /*刷新加载*/
+    api "io.github.scwang90:refresh-header-material:$config.refresh_header_version"
+    api "io.github.scwang90:refresh-footer-classics:$config.refresh_footer_version"
+    api "io.github.scwang90:refresh-layout-kernel:$config.refresh_core_version"
+    /*网络请求*/
+    api "com.squareup.retrofit2:retrofit:$config.retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$config.converter_gson_version"
+    api "com.squareup.okhttp3:logging-interceptor:$config.logging_interceptor_version"
+    api "com.squareup.retrofit2:adapter-rxjava2:$config.adapter_rxjava2_version"
+    api "io.reactivex.rxjava2:rxjava:$config.rxjava_version"
+    api "io.reactivex.rxjava2:rxandroid:$config.rxandroid_version"
+    /*Gson解析*/
+    api "com.google.code.gson:gson:$config.gson_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$config.viewmodel_version"
+    /*AndroidAutoSize*/
+    api "com.github.JessYanCoding:AndroidAutoSize:$config.autosize_version"
+
+    api "com.github.Hu12037102:ProjectViewX:$config.project_view_version"
+    api "com.github.Hu12037102:KTBaseAdapter:$config.kt_baseadapter_version"
+    /*Glide*/
+    api "com.github.bumptech.glide:glide:$config.glide_version"
+
+    api "com.github.bumptech.glide:okhttp3-integration:$config.glide_okhttp_version"
+
+    api "com.tencent:mmkv:$config.mmkv_version"
+    api "io.github.youth5201314:banner:$config.banner_version"
+
+    /*BaseRecyclerViewAdapterHelper*/
+    api "io.github.cymchad:BaseRecyclerViewAdapterHelper:$config.BaseRecyclerViewAdapterHelper"
+    /*RWidgetHelper*/
+    api "com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.14"
+    /*google login */
+    api "com.google.android.gms:play-services-auth:$config.play_services"
+    /*aliyun*/
+    api "com.aliyun.sdk.android:AliyunPlayer:$config.AliyunPlayer"
+
+}

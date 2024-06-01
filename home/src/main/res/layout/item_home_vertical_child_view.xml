@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_15dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_image"
+        android:layout_width="@dimen/size_103dp"
+        android:layout_height="@dimen/size_137dp"
+        android:layout_marginStart="@dimen/size_10dp"
+        app:cardCornerRadius="@dimen/size_6dp"
+        app:cardElevation="@dimen/size_0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aiv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/size_40dp"
+        android:minHeight="@dimen/size_18dp"
+        app:layout_constraintStart_toStartOf="@id/cv_image"
+        app:layout_constraintTop_toTopOf="@id/cv_image" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_title"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10dp"
+        android:layout_marginEnd="@dimen/size_10dp"
+        android:textColor="@color/color_FF2E2E2E"
+        android:textSize="@dimen/size_14sp"
+        app:fontFamily="@font/sofia_pro_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cv_image"
+        app:layout_constraintTop_toTopOf="@id/cv_image"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_desc"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/colorFF999999"
+        android:textSize="@dimen/size_12sp"
+        app:fontFamily="@font/sofia_pro_medium"
+        app:layout_constraintEnd_toEndOf="@id/atv_title"
+        app:layout_constraintStart_toStartOf="@id/atv_title"
+        app:layout_constraintTop_toBottomOf="@id/atv_title"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_content"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_10dp"
+        android:ellipsize="end"
+        android:lines="3"
+        android:textColor="@color/colorFF999999"
+        android:textSize="@dimen/size_12sp"
+        app:fontFamily="@font/sofia_pro_medium"
+        app:layout_constraintEnd_toEndOf="@id/atv_title"
+        app:layout_constraintStart_toStartOf="@id/atv_title"
+        app:layout_constraintTop_toBottomOf="@id/atv_desc"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atv_update"
+        android:layout_width="84dp"
+        android:layout_height="18dp"
+        android:fontFamily="@font/sofia_pro_medium"
+        android:gravity="center"
+        android:textColor="@color/color_White"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_image"
+        app:layout_constraintEnd_toEndOf="@+id/cv_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

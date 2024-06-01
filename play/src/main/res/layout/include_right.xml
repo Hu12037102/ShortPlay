@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="66.33dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="right|bottom"
+    android:id="@+id/include_rl"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="125dp"
+    tools:ignore="RtlHardcoded">
+
+
+    <RelativeLayout
+        android:id="@+id/bonus_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/play_gift"
+            android:layout_width="30dp"
+            android:layout_height="32dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/icon_me_bonus" />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/play_gift_close"
+            android:layout_width="30dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/color_White"
+            android:textSize="11sp"
+            app:corner_radius="6dp"
+            android:gravity="center"
+            android:text="99"
+            android:visibility="gone"
+            android:layout_marginBottom="31dp"
+            app:background_normal="@color/color_FFFF0056"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/play_free_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/play_gift"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/bonus_content"
+            android:textColor="@color/color_FDC72F"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/play_love_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/bonus_rl">
+        <ImageView
+            android:id="@+id/love_iv"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/play_love_default_logo"
+            android:layout_marginStart="9dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/love_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/love_iv"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/color_White"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/help_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/play_love_rl"
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/help_iv"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/play_collect_logo"
+            android:layout_marginStart="9dp"/>
+
+        <TextView
+            android:id="@+id/help_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/help_iv"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/color_White"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/shar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/help_rl"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/share_iv"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/play_share_logo"
+            android:layout_marginStart="9dp"/>
+
+        <TextView
+            android:id="@+id/share_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/share_iv"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/share_text"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/color_White"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
