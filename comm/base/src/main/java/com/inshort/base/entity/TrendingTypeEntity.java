@@ -1,5 +1,7 @@
 package com.inshort.base.entity;
 
+import android.text.TextUtils;
+
 import androidx.annotation.Nullable;
 
 import com.inshort.base.compat.CollectionCompat;
@@ -25,6 +27,14 @@ public class TrendingTypeEntity {
         }
         LogUtils.w("TrendingTypeEntity", list + "--");
         return list;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if (obj instanceof TrendingTypeEntity entity) {
+            return TextUtils.equals(entity.content, this.content);
+        }
+        return super.equals(obj);
     }
 
     @Override

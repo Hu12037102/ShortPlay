@@ -5,15 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!-- app:banner_indicator_gravity="right"
-     app:banner_indicator_height="@dimen/size_3dp"
-     app:banner_indicator_margin="@dimen/size_3dp"
-     app:banner_indicator_marginRight="@dimen/size_20dp"
-     app:banner_indicator_normal_color="@color/color_80FFFFFF"
-     app:banner_indicator_normal_width="@dimen/size_3dp"
-     app:banner_indicator_selected_color="@color/color_White"
-     app:banner_indicator_selected_width="@dimen/size_8dp"-->
-
     <com.youth.banner.Banner
         android:id="@+id/banner"
         android:layout_width="match_parent"
@@ -36,8 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_70dp"
         android:background="@drawable/shape_home_banner_bottom_mask"
-        app:layout_constraintBottom_toBottomOf="@id/banner"
-
-        />
+        app:layout_constraintBottom_toBottomOf="@id/banner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

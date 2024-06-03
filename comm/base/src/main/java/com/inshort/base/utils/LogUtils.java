@@ -12,7 +12,7 @@ public final class LogUtils {
     private LogUtils() {
     }
 
-    private static final int MAX_LOG_LENGTH = 800;
+    private static final int MAX_LOG_LENGTH = 2000;
 
     public static void w(@Nullable String tag, @Nullable String msg) {
         try {

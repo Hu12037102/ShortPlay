@@ -8,12 +8,14 @@ import androidx.annotation.AnimRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.inshort.base.R;
 import com.inshort.base.compat.DateCompat;
 import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.PackageInfoCompat;
 import com.inshort.base.compat.ViewsCompat;
+import com.inshort.base.config.AppConfig;
 import com.inshort.base.entity.InitEntity;
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
@@ -31,7 +33,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (isOpenActivityAnim()) {
             overridePendingTransition(getInActivityAnimRes(), R.anim.anim_normal);
         }
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        if (!AppConfig.isDebug()) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        }
         super.onCreate(savedInstanceState);
 
 
@@ -74,7 +79,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-
     protected boolean isLoadEmptyView() {
         return false;
     }
@@ -87,9 +91,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         UserDataStore.get().putData(userEntity);
     }
 
-    protected void onClickEmptyView(@NonNull View view){
+    protected void onClickEmptyView(@NonNull View view) {
 
     }
+
     protected boolean isLoadAppViewModel() {
         return false;
     }

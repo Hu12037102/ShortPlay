@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
@@ -152,16 +153,23 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         return true;
     }
 
+    private void requestFindTrendsByType(TrendingTypeEntity entity) {
+        if (entity == null) {
+            return;
+        }
+        RequestTrendsByTypeEntity requestEntity = new RequestTrendsByTypeEntity();
+        requestEntity.isHomeIndex = true;
+        requestEntity.type = entity.content;
+        mViewModel.findTrendsByType(requestEntity, false, false, false);
+    }
+
     @Override
     protected void initEvent() {
         if (mAdapter != null) {
             mAdapter.setOnHomeItemClickListener(new HomeAdapter.OnHomeItemClickListener() {
                 @Override
                 public void onClickTrendingType(View view, TrendingTypeEntity entity) {
-                    RequestTrendsByTypeEntity requestEntity = new RequestTrendsByTypeEntity();
-                    requestEntity.isHomeIndex = true;
-                    requestEntity.type = entity.content;
-                    mViewModel.findTrendsByType(requestEntity, false, false, false);
+                    requestFindTrendsByType(entity);
                 }
 
                 @Override
@@ -284,8 +292,23 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     }
 
     private final ActivityResultLauncher<Intent> mTrendingActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), o -> {
-        if (o != null && o.getResultCode() == Activity.RESULT_OK) {
-
+        if (o != null && o.getResultCode() == Activity.RESULT_OK && o.getData() != null) {
+            String content = o.getData().getStringExtra(ARouterConfig.Key.CONTENT);
+            TrendingTypeEntity contentEntity = new TrendingTypeEntity();
+            contentEntity.isCheck = true;
+            contentEntity.content = content;
+            for (ColumnEntity entity : mData) {
+                if (entity.viewType == HomeAdapter.VIEW_TYPE_TRENDING && DataCompat.notNull(entity.trendingTypes) && entity.trendingTypes.contains(contentEntity)) {
+                    for (TrendingTypeEntity typeEntity : entity.trendingTypes) {
+                        typeEntity.isCheck = typeEntity.equals(contentEntity);
+                        if (typeEntity.isCheck) {
+                            requestFindTrendsByType(typeEntity);
+                        }
+                    }
+                }
+            }
+            AdapterCompat.notifyAdapterUpdateDateChanged(mEmptyLayout, mAdapter, mData);
+            LogUtils.d("mTrendingActivityResultLauncher", content + "--");
         }
     });
 

@@ -1,5 +1,7 @@
 package com.inshort.home.activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
@@ -34,6 +36,8 @@ import com.inshort.home.viewmodel.TrendingViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.google.projectview.weight.ProjectView;
 
 @Route(path = ARouterConfig.Path.Home.ACTIVITY_TRENDING)
 public class TrendingActivity extends BaseCompatActivity<ActivityTrendingBinding, TrendingViewModel> {
@@ -79,7 +83,17 @@ public class TrendingActivity extends BaseCompatActivity<ActivityTrendingBinding
 
     @Override
     protected void initEvent() {
+mViewBinding.pvTitle.setOnItemInfoClickListener(new ProjectView.OnItemInfoClickListener() {
+    @Override
+    public void clickLeftView(@NonNull View view) {
+        finish();
+    }
 
+    @Override
+    public void clickRightView(@NonNull View view) {
+
+    }
+});
     }
 
     @Override
@@ -110,6 +124,9 @@ public class TrendingActivity extends BaseCompatActivity<ActivityTrendingBinding
                         updateChildTextView(childView);
                         int index = mData.indexOf(content);
                         mViewBinding.vpContent.setCurrentItem(Math.max(index, 0), false);
+                        Intent intent= new Intent();
+                        intent.putExtra(ARouterConfig.Key.CONTENT,content);
+                        setResult(Activity.RESULT_OK,intent);
                     }
                 });
                 Object obj = ARouters.build(ARouterConfig.Path.Home.FRAGMENT_TRENDING_CONTENT).withString(ARouterConfig.Key.CONTENT, content).navigation();
