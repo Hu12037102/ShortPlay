@@ -35,6 +35,7 @@ import com.inshort.base.other.mmkv.InitDataStore;
 import com.inshort.base.other.mmkv.MMKVCompat;
 import com.inshort.base.other.mmkv.SearchHistoryDataStore;
 import com.inshort.base.other.mmkv.UserDataStore;
+import com.inshort.base.utils.LogUtils;
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.me.databinding.ActivitySettingBinding;
@@ -187,7 +188,7 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
 
                 @Override
                 public void onClickRightView(View view) {
-                    FileCompat.clearCacheFile();
+                    mViewModel.clearCache();
                     titleDialog.dismiss();
                 }
             });
@@ -234,7 +235,14 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
                 mViewModel.initUserLogin();
             }
         });
-
+        mViewModel.getClearCacheLiveData().observe(this, new Observer<Long>() {
+            @Override
+            public void onChanged(Long size) {
+                LogUtils.w("getClearCacheLiveData--",size+"----");
+                UICompat.setText(mViewBinding.atvClearCacheRight, NumberCompat.getB2M(size));
+                mViewModel.showToast(DataCompat.toString(com.inshort.base.R.string.claer_cache_succeed));
+            }
+        });
     }
 
     private Drawable getSignOutBackground() {

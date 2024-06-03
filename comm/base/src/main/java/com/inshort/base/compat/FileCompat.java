@@ -84,10 +84,11 @@ public final class FileCompat {
     public static long getCacheFileLength() {
         Context context = DataCompat.applicationContext();
         File externalCacheDir = context.getExternalCacheDir();
+        File codeCacheDir = context.getCodeCacheDir();
         File cacheDir = context.getCacheDir();
         LogUtils.w("getCacheFileLength--", getFileLength(externalCacheDir) + "--"
                 + getFileLength(cacheDir) + "--" + getFileLength(externalCacheDir) + getFileLength(cacheDir));
-        return getFileLength(externalCacheDir) + getFileLength(cacheDir);
+        return getFileLength(externalCacheDir) + getFileLength(cacheDir) + getFileLength(codeCacheDir);
     }
 
     public static void removeFile(@Nullable File file) {
