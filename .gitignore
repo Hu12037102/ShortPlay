@@ -19,7 +19,10 @@
 /captures
 /local.properties
 /tools/protobuf/com
+<<<<<<< HEAD
 /gradle.properties
+=======
+>>>>>>> master_inshort_develop
 /tmpmob
 app/local.properties
 app/.idea/gradle.xml

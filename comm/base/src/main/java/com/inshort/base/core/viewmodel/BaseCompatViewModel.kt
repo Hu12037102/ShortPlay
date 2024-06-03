@@ -6,11 +6,13 @@ import com.inshort.base.compat.DataCompat
 import com.inshort.base.entity.RequestTrendsByTypeEntity
 import com.inshort.base.entity.DramaSeriesPageEntity
 import com.inshort.base.entity.InitEntity
+
 import com.inshort.base.entity.UserEntity
 import com.inshort.base.http.BaseService
 import com.inshort.base.http.RetrofitManger
 import com.inshort.base.other.mmkv.UserDataStore
 import com.inshort.base.weight.view.Toasts
+
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

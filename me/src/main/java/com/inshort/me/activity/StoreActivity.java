@@ -20,6 +20,7 @@ import com.inshort.base.utils.LogUtils;
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.text.SpanTextHelper;
 import com.inshort.me.adapter.StoreAdapter;
+
 import com.inshort.me.databinding.ActivityStoreBinding;
 import com.inshort.me.databinding.ItemStoreFooterViewBinding;
 import com.inshort.me.databinding.ItemStoreHeadViewBinding;
@@ -83,7 +84,6 @@ public class StoreActivity extends BaseCompatActivity<ActivityStoreBinding, Stor
         mViewBinding.rvContent.setAdapter(mAdapter);
         loadSmartData();
     }
-
 
     @Override
     protected void onUserUpdate(@NonNull UserEntity userEntity) {

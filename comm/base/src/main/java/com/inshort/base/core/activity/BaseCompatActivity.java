@@ -106,6 +106,7 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
                 if (isShow) {
                  //   showEmptyView();
                     ViewTools.showEmptyView(mViewBinding.getRoot(), mEmptyLayout);
+                    showEmptyView();
                 } else {
                     hideEmptyView();
                 }
@@ -162,6 +163,7 @@ public abstract class BaseCompatActivity<VB extends ViewBinding, VM extends Base
                 mViewModel.setRefresh(false);
                 mViewModel.setManualRefresh(false);
                 loadSmartData();
+
             }
 
             @Override

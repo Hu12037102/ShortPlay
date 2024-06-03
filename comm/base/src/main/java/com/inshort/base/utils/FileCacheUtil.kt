@@ -52,7 +52,6 @@ fun getFilePath(mContext: Context,path:String,pajtName:String):File{
         val cacheDirPath = "/data/data/" + mContext.packageName + "/files/"
         cacheDir = File(cacheDirPath)
     }
-
     return File(cacheDir, "$path/$pajtName")
 }
 

@@ -13,4 +13,12 @@ public class PlayRequestEntity {
     @SerializedName("search_drama_id")
     public int searchDramaId;
 
+    @SerializedName("episode_number")
+    public int episodeNumber;
+    @SerializedName("is_cancel")
+    public Boolean isCancel = false;
+
+    @SerializedName("is_auto_unlock")
+    public Boolean isAutoUnlock = false;
+
 }

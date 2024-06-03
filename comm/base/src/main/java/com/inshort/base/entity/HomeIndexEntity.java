@@ -50,6 +50,12 @@ public class HomeIndexEntity {
         @SerializedName("is_deleted")
         public boolean isDeleted;
 
+        @SerializedName("archived_path")
+        public String archivedPath;
+
+        @SerializedName("archived_version")
+        public int archivedVersion;
+
         @Override
         public String toString() {
             return "Banner{" +

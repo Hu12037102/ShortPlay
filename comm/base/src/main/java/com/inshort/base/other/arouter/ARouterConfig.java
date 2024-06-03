@@ -1,19 +1,28 @@
 package com.inshort.base.other.arouter;
 
 public interface ARouterConfig {
-    interface Key {
-        String WEB_URL = "web_url";
-        String WEB_TITLE = "web_title";
+    interface Key{
+        String WEB_URL="web_url";
+        String WEB_TITLE="web_title";
 
         String IS_HIS = "is_his";
 
-        int LIST_HISTORY = 1; //历史记录
-        int LIST_LOVE = 2;  //喜爱记录
+        int LIST_HISTORY =1; //历史记录
+        int LIST_LOVE =2;  //喜爱记录
         String CONTENT = "content";
         String ID = "id";
-        String SERIALIZABLE = "serializable";
-        String NUMBER = "number";
+        String SERIALIZABLE="serializable";
+        String NUMBER="number";
+
         String PARCELABLE="parcelable";
+
+        String DRAMS_ID ="dramsID";  //剧集ID
+        String NUMBER_ ="number";  //集数
+        String SEARCH_ID ="searchID"; //搜索ID
+        String PLAY_PATH ="playPath"; //路径
+
+        String ARCHIVED_VERSION ="archivedVersion"; //版本
+        String MAX_EPISODE ="maxEpisode"; //最大集
     }
 
     interface Path {
@@ -38,31 +47,31 @@ public interface ARouterConfig {
 
         interface MyList {
 
-            String FRAGMENT_MYLIST = "/mylist/fragment/mylist";
+            String FRAGMENT_MYLIST="/mylist/fragment/mylist";
 
             // back his
-            String ACTIVITY_BACK_HIS = "/back/activity/his";
+            String ACTIVITY_BACK_HIS="/back/activity/his";
         }
 
         interface Play {
-            String PLAY_ACTIVITY_PLAY = "/play/activity/play";
+            String PLAY_ACTIVITY_PLAY="/play/activity/play";
         }
 
         interface Login {
-            String LOGIN_ACTIVITY_LOGIN = "/login/activity/login";
+            String LOGIN_ACTIVITY_LOGIN="/login/activity/login";
         }
 
         interface Me {
             String FRAGMENT_ME = "/me/fragment/me";
-            String ACTIVITY_SETTING = "/me/activity/setting";
-            String ACTIVITY_MY_WALLET = "/me/activity/my/wallet";
-            String DIALOG_DELETE_ACCOUNT = "/me/dialog/delete/account";
-            String ACTIVITY_TRANSACTION_HISTORY = "/me/activity/transaction/history";
-            String ACTIVITY_EPISODES_UNLOCKED = "/me/activity/episodes/unlocked";
-            String ACTIVITY_BONUS_EXPIRE = "/me/activity/bonus/expire";
-            String ACTIVITY_STORE = "/me/activity/store";
-            String DIALOG_CHECK_IN = "/me/dialog/check/in";
-            String DIALOG_CHECK_IN_AWARD = "/me/dialog/check/in/award";
+            String ACTIVITY_SETTING="/me/activity/setting";
+            String ACTIVITY_MY_WALLET="/me/activity/my/wallet";
+            String DIALOG_DELETE_ACCOUNT="/me/dialog/delete/account";
+            String ACTIVITY_TRANSACTION_HISTORY="/me/activity/transaction/history";
+            String ACTIVITY_EPISODES_UNLOCKED="/me/activity/episodes/unlocked";
+            String ACTIVITY_BONUS_EXPIRE="/me/activity/bonus/expire";
+            String ACTIVITY_STORE="/me/activity/store";
+            String DIALOG_CHECK_IN="/me/dialog/check/in";
+            String DIALOG_CHECK_IN_AWARD="/me/dialog/check/in/award";
 
         }
 

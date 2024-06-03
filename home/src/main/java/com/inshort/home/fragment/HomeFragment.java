@@ -2,6 +2,7 @@ package com.inshort.home.fragment;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -23,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.google.android.gms.dynamic.IFragmentWrapper;
+
 import com.inshort.base.compat.AdapterCompat;
 import com.inshort.base.compat.CollectionCompat;
 import com.inshort.base.compat.DataCompat;
@@ -40,6 +43,7 @@ import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.entity.RequestPageEntity;
 import com.inshort.base.entity.RequestTrendsByTypeEntity;
 import com.inshort.base.entity.ResponseErrorEntity;
+
 import com.inshort.base.entity.SearchHandEntity;
 import com.inshort.base.entity.TrendingTypeEntity;
 import com.inshort.base.manger.AppViewModelManger;
@@ -75,6 +79,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     private ObjectAnimator mPlayShowHistoryAnimator = null;
     private ObjectAnimator mPlayHideHistoryAnimator = null;
     private float mScrollY = 0;
+
   /*  private OnItemClickListener<String> mOnSelectorSearchListener;
 
     public void setOnItemClickListener(OnItemClickListener<String> onSelectorSearchListener) {
@@ -96,6 +101,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         mViewBinding.getRoot().setVisibility(View.INVISIBLE);
         ViewCompat.setBackground(mViewBinding.clSearchParent, getSearchBackground());
         // ViewsCompat.setStatusBarMargin(mViewBinding.clSearchParent, getActivity(), PhoneCompat.dp2px(requireContext(), 6));
+
         mViewBinding.rvContent.setLayoutManager(new LinearLayoutManager(getContext()));
         mViewBinding.refreshLayout.setEnableLoadMore(true);
         initHeadView();
@@ -133,7 +139,16 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                     .setIndicator(new RectangleIndicator(requireContext()), true)
                     .setAdapter(mBannerAdapter)
                     .setOnBannerListener((data, position) -> {
-
+                        Postcard postcard = ARouters.build(ARouterConfig.Path.Play.PLAY_ACTIVITY_PLAY);
+                        if (postcard != null) {
+                            postcard.withInt(ARouterConfig.Key.DRAMS_ID, mBannerData.get(position).dramaSeriesId);
+                            postcard.withInt(ARouterConfig.Key.NUMBER_, mBannerData.get(position).episodeNumber);
+                            postcard.withInt(ARouterConfig.Key.MAX_EPISODE, mBannerData.get(position).maxUnlockedEpisode);
+                            postcard.withString(ARouterConfig.Key.PLAY_PATH, mBannerData.get(position).archivedPath);
+                            postcard.withInt(ARouterConfig.Key.ARCHIVED_VERSION, mBannerData.get(position).archivedVersion);
+                            Intent intent = ARouters.getIntent(getContext(), postcard);
+                            mTrendingActivityResultLauncher.launch(intent);
+                        }
                     })
                     .start();
         }
@@ -164,6 +179,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
     }
 
     @Override
+
     protected void initEvent() {
         if (mAdapter != null) {
             mAdapter.setOnHomeItemClickListener(new HomeAdapter.OnHomeItemClickListener() {
@@ -327,6 +343,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                     return;
                 }
                 mViewBinding.getRoot().setVisibility(View.VISIBLE);
+
                /* if (mAppViewModel != null) {
                     mAppViewModel.getHomeKeywordLiveData().setValue(new SearchHandEntity(DataCompat.toString(homeIndexEntity.searcherKeyword), false));
                 }*/
@@ -416,6 +433,7 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
                 }
             }
         });
+
     }
 
     private void initSearchEvent(HomeIndexEntity homeIndexEntity) {
@@ -459,4 +477,5 @@ public class HomeFragment extends BaseCompatFragment<FragmentHomeBinding, HomeVi
         //super.onClickEmptyView(view);
         loadSmartData();
     }
+
 }

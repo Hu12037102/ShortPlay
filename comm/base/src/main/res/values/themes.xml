@@ -2,6 +2,7 @@
 
     <style name="Theme.ShortPlay" parent="Theme.Material3.DayNight.NoActionBar">
    <!-- <style name="Theme.ShortPlay" parent="Theme.AppCompat.Light.DarkActionBar">-->
+
    <!-- <style name="Theme.ShortPlay" parent="Theme.Material3.DayNight.NoActionBar">-->
         <item name="android:statusBarColor">@android:color/white</item>
         <item name="windowNoTitle">true</item>

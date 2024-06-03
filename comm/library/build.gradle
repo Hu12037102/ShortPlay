@@ -43,6 +43,7 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:${config.ext_junit_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${config.espresso_version}"
 
+
     api "androidx.core:core-ktx:$config.core_version"
    // api "androidx.core:core:$config.core_version"
     api "androidx.appcompat:appcompat:${config.appcompat_version}"
@@ -87,5 +88,7 @@ dependencies {
     api "com.google.android.gms:play-services-auth:$config.play_services"
     /*aliyun*/
     api "com.aliyun.sdk.android:AliyunPlayer:$config.AliyunPlayer"
+    /*google pay*/
+    api "com.android.billingclient:$config.billing"
 
 }

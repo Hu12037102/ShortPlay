@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 
 class SettingViewModel : BaseCompatViewModel(){
     val clearCacheLiveData = MutableLiveData<Long>()
+
     fun deleteAccount(){
         httpRequest(notResultLiveData, isShowLoading = true, isShowEmptyView = false, isJustRefresh = false){
             RetrofitManger.getInstance().create(MeService::class.java).deleteAccount()

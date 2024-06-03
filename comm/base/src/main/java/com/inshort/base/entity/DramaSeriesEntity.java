@@ -59,4 +59,5 @@ public class DramaSeriesEntity implements Serializable {
     public String archivedPath;
     @SerializedName("archived_version")
     public int archivedVersion;
+
 }

@@ -24,6 +24,7 @@ import com.inshort.base.other.mmkv.InitDataStore;
 import com.inshort.base.other.mmkv.MMKVCompat;
 import com.inshort.base.other.mmkv.UserDataStore;
 
+
 public abstract class BaseActivity extends AppCompatActivity {
     private boolean isFirstWindowFocus = true;
 
@@ -37,6 +38,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (!AppConfig.isDebug()) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         }
+
         super.onCreate(savedInstanceState);
 
 
@@ -78,7 +80,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-
     protected boolean isLoadEmptyView() {
         return false;
     }
@@ -98,6 +99,5 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected boolean isLoadAppViewModel() {
         return false;
     }
-
 
 }

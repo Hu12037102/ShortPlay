@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 
 import androidx.annotation.NonNull;
+
 import androidx.annotation.Nullable;
 
 public final class PackageInfoCompat {
@@ -42,7 +43,6 @@ public final class PackageInfoCompat {
         }
         return packageInfo;
     }
-
     @NonNull
     public static String getAppName(@Nullable Context context) {
         if (context == null) {
@@ -55,5 +55,4 @@ public final class PackageInfoCompat {
             return "";
         }
     }
-
 }

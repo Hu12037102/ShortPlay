@@ -4,11 +4,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.inshort.base.core.viewmodel.BaseCompatViewModel
+
+import com.inshort.base.entity.LikeHistoryEntity
 import com.inshort.base.entity.PlayRequestEntity
+import com.inshort.base.entity.StoreEntity
+import com.inshort.base.entity.VideoPurchaseEntity
 import com.inshort.base.entity.VideoUrlEntity
+import com.inshort.base.event.SingleLiveEvent
 import com.inshort.base.http.RetrofitManger
+import com.inshort.base.utils.LogUtils
 import com.inshort.base.utils.getPlayUrl
 import com.inshort.base.utils.readPlayVideoData
+import com.inshort.base.utils.switchPlayPath
 import com.inshort.base.utils.writePlayVideoData
 import com.inshort.play.PlayService
 import kotlinx.coroutines.Dispatchers
@@ -28,10 +35,21 @@ import java.io.IOException
 
  */
 class PlayViewModel : BaseCompatViewModel() {
+
+    var currentPosition:Int = 0  //当前进度
+    var extraValue:Long = 0 //当前进度毫秒
+    var positionLiveData : MutableLiveData<Int> = MutableLiveData(-1) //当前播放的位置
+    var selectEpisodeLiveData : MutableLiveData<VideoUrlEntity.DramaSeries.DramaEpisodeList> = MutableLiveData() // 选中剧集
+    var isAutoUnlockLiveData : MutableLiveData<Boolean> = MutableLiveData() // 是否开启默认解锁下一集
+
+
     var playVideoLiveData: MutableLiveData<List<VideoUrlEntity.PlayData>> = MutableLiveData() //播放数据
     var dramaSeriesLiveData: MutableLiveData<VideoUrlEntity.DramaSeries> = MutableLiveData() //播放数据
-
-
+    var playStateLiveData : MutableLiveData<Int> = MutableLiveData(-1)  //播放状态
+    var likeHistoryLiveData : MutableLiveData<LikeHistoryEntity> = MutableLiveData()  //点赞/收藏
+    var friendLiveData : SingleLiveEvent<String> = SingleLiveEvent() //邀请
+    var purchaseLiveData : SingleLiveEvent<VideoPurchaseEntity> = SingleLiveEvent() //金币解锁
+    val storeLiveData = MutableLiveData<StoreEntity>()  //商品信息
 
 
     /**
@@ -50,30 +68,33 @@ class PlayViewModel : BaseCompatViewModel() {
     private fun getCacheVideoData(dramsID:Int,number:Int,searchID:Int = 0,playPath:String,maxEpisode:Int = number){
         viewModelScope.launch(Dispatchers.IO) {
             val data = readPlayVideoData(playPath)
+            LogUtils.d("getPlayData data>> $data")
             data?.let {
                 //数据请求成功
                 mergePlayData(dramsID,it.data,playPath,searchID,maxEpisode)
-            }?: getPlayData(dramsID,number,searchID,playPath,maxEpisode)
+            }?: getPlayData(dramsID,number,searchID,playPath,maxEpisode,playPath.switchPlayPath(path = playPath))
         }
     }
 
     /**
      * 请求获取播放数据
      */
-    private fun getPlayData(dramsID:Int,number:Int,searchID:Int = 0,playPath:String,maxEpisode:Int = number){
+
+    private fun getPlayData(dramsID:Int,number:Int,searchID:Int = 0,playPath:String,maxEpisode:Int = number,url:String){
             // https://d1906xqz6h86jz.cloudfront.net/video/棺中凰妃/archived.json?v=1
             // video/棺中凰妃/archived.json?v=1
+        LogUtils.d("getPlayData  >>> $url")
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
-                val request = Request.Builder().url("https://d1906xqz6h86jz.cloudfront.net/video/棺中凰妃/archived.json?v=1").build()
+                val request = Request.Builder().url(url).build()
                 OkHttpClient().newCall(request).enqueue(object : Callback {
                     override fun onFailure(call: Call, e: IOException) {
-
+                        getPlayDataError(url,playPath)
                     }
-
                     override fun onResponse(call: Call, response: Response) {
                         if(response.isSuccessful){
                             val data = response.body?.string()
+                            LogUtils.d("getPlayData >> ${Gson().toJson(data)}")
                             data?.let {
                                 val playUrlData = Gson().fromJson<VideoUrlEntity>(data,VideoUrlEntity::class.java)
                                 if(playUrlData.code == 200  && playUrlData.data.isNotEmpty()){
@@ -81,13 +102,23 @@ class PlayViewModel : BaseCompatViewModel() {
                                     //数据请求成功
                                     mergePlayData(dramsID,playUrlData.data,playPath,searchID,maxEpisode)
                                     return
-                                }
-                            }
-                        }
+                                }else{ getPlayDataError(url,playPath)}
+                            }?: getPlayDataError(url,playPath)
+                        }else{ getPlayDataError(url,playPath)}
                     }
                 })
+            }.onFailure {
+
             }
         }
+    }
+
+    /**
+     * 获取播放数据列表失败，重试机制
+     */
+    private fun getPlayDataError(url:String,path:String){
+        url.switchPlayPath(path = path)
+//        getPlayData()
     }
 
 
@@ -113,44 +144,111 @@ class PlayViewModel : BaseCompatViewModel() {
      * 获取剧集信息
      */
     private fun requestDramaSeries(dramsID:Int,searchID:Int = 0){
-        httpRequest(dramaSeriesLiveData, isShowLoading = false, isShowEmptyView = false, isJustRefresh = true) {
+        httpRequest(dramaSeriesLiveData, isShowLoading = false, isShowEmptyView = false, isJustRefresh = false) {
             RetrofitManger.getInstance().create(PlayService::class.java).requestPlayDramaSeries(
                 PlayRequestEntity().also {
                     it.dramaSeriesId = dramsID
                     if(searchID > 0)it.searchDramaId = searchID
+                }
+            ).apply {
+                isAutoUnlockLiveData.value = this.data?.isAutoLock
+            }
+        }
+    }
+
+    /**
+     * 点赞
+     */
+    public fun requestLiked(dramsID:Int,episodeNumber:Int,isLiked: Boolean){
+        httpRequest(likeHistoryLiveData, isShowLoading = false, isShowEmptyView = false, isJustRefresh = false) {
+            RetrofitManger.getInstance().create(PlayService::class.java).requestLikeHistory(
+                PlayRequestEntity().also {
+                    it.dramaSeriesId = dramsID
+                    it.episodeNumber = episodeNumber
+                    it.isCancel = !isLiked
                 }
             )
         }
     }
 
     /**
-     * 整合剧集信息数据
+     * 收藏
      */
-    public fun mergeDramaSeries(dramaSeriesData:VideoUrlEntity.DramaSeries){
-//            playVideoLiveData.value?.let {
-//                dramaSeriesData.dramaEpisodeList?.run{
-//                    for (index in it.indices){
-//                        it[index].startEpisodeCurrent = dramaSeriesData.playHistory.episodeNumber
-//                        it[index].dramaTitle = dramaSeriesData.dramaTitle
-//                        it[index].playProgress = dramaSeriesData.playHistory.playProgress
-//                        it[index].episodeUpdated = dramaSeriesData.episodeUpdated
-//                        it[index].collectSum = dramaSeriesData.collectSum
-//                        it[index].episodeChargeStart = dramaSeriesData.episodeChargeStart
-//                        it[index].isFinished = dramaSeriesData.isFinished
-//                        it[index].updateTimeDesc = dramaSeriesData.updateTimeDesc
-//                        it[index].isPopupPromptsToAddCollection = dramaSeriesData.isPopupPromptsToAddCollection
-//                        it[index].isDramaUpdateReserved = dramaSeriesData.isDramaUpdateReserved
-//                    }
-//
-//
-//                }
-//        }
+    public fun requestCollection(dramsID:Int,episodeNumber:Int,isCollected: Boolean){
+        httpRequest(likeHistoryLiveData, isShowLoading = false, isShowEmptyView = false, isJustRefresh = false) {
+            RetrofitManger.getInstance().create(PlayService::class.java).requestCollectHistory(
+                PlayRequestEntity().also {
+                    it.dramaSeriesId = dramsID
+                    it.episodeNumber = episodeNumber
+                    it.isCancel = !isCollected
+                }
+            )
+        }
     }
 
+    /**
+     * 邀请好友
+     */
+    public fun requestFriend(dramsID:Int,episodeNumber:Int){
+        httpRequest(friendLiveData, isShowLoading = false, isShowEmptyView = false, isJustRefresh = false) {
+            RetrofitManger.getInstance().create(PlayService::class.java).requestFriend(
+                PlayRequestEntity().also {
+                    it.dramaSeriesId = dramsID
+                    it.episodeNumber = episodeNumber
+                }
+            )
+        }
+    }
 
+    /**
+     * 金币解锁
+     */
+    public fun purchaseEpisode(dramsID:Int,episodeNumber:Int,position:Int,isPreloading:Boolean){
+        httpRequest(purchaseLiveData, isShowLoading = false, isShowEmptyView = false, isJustRefresh = false) {
+          RetrofitManger.getInstance().create(PlayService::class.java).requestPurchase(
+                PlayRequestEntity().also {
+                    it.dramaSeriesId = dramsID
+                    it.episodeNumber = episodeNumber
+                }
+            ).apply {
+                this.data?.position= position
+                this.data?.episodeNumber = episodeNumber
+                this.data?.isPreloading = isPreloading
+                updateBalance(this.data?.userBalance,this.data?.userCoinsBalance,this.data?.userBonusBalance)
+                dramaSeriesLiveData.value?.dramaEpisodeList?.let {
+                  if(it.size > position){ it[position].isPurchased =true }
+              }
+          }
 
+        }
+    }
 
+    /**
+     * 获取商品信息
+     */
+    fun requestStore(dramsID:Int,episodeNumber:Int) {
+        httpRequest(storeLiveData, isShowEmptyView = false, isShowLoading = false, isJustRefresh = false) {
+            RetrofitManger.getInstance().create(PlayService::class.java).requestStore(
+                PlayRequestEntity().also {
+                    it.dramaSeriesId = dramsID
+                    it.episodeNumber = episodeNumber
+                }
+            ).also {
+                updateBalance(it.data?.balance , it.data?.coinsBalance , it.data?.bonusBalance )
+            }
+        }
+    }
 
+    fun requestIsAutoUnlock(isAutoUn:Boolean,dramsID:Int){
+        httpRequest(notResultLiveData, isShowEmptyView = false, isShowLoading = false, isJustRefresh = false) {
+            RetrofitManger.getInstance().create(PlayService::class.java).requestAutoLock(
+                PlayRequestEntity().also {
+                    it.dramaSeriesId = dramsID
+                    it.isAutoUnlock = isAutoUn
+                }
+            )
+        }
+    }
 
 
 

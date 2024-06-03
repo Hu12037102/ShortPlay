@@ -55,6 +55,11 @@
     <color name="color_FFF6F6F6" tools:ignore="MissingDefaultResource">#FFF6F6F6</color>
     <color name="color_FFF37E00" tools:ignore="MissingDefaultResource">#FFF37E00</color>
     <color name="color_Transparent" tools:ignore="MissingDefaultResource">#00000000</color>
+    <color name="color_FDC72F" tools:ignore="MissingDefaultResource">#FDC72F</color>
+    <color name="color_33D8D8D8" tools:ignore="MissingDefaultResource">#33D8D8D8</color>
+    <color name="color_F5F5F5" tools:ignore="MissingDefaultResource">#F5F5F5</color>
+    <color name="color_2E2E2E" tools:ignore="MissingDefaultResource">#2E2E2E</color>
+    <color name="color_AEAFB2" tools:ignore="MissingDefaultResource">#AEAFB2</color>
 
 
 </resources>

@@ -47,6 +47,26 @@ public interface IApiService {
         //剧集信息
         String PLAY_DRAMA_SERIES="/app/drama_series";
 
+        //点赞
+        String PLAY_LIKE_HISTORY="/app/my_list/like_history/update";
+        //收藏
+        String PLAY_COLLECT_HISTORY="/app/my_list/collect_history/update";
+
+        //分享
+        String PLAY_SHARE_DRAMA="/app/user/share_drama";
+
+        //金币解锁
+        String PLAY_BUY_DRAMA_EPISODE="/app/store/buy_drama_episode";
+
+        //快速购买详情
+        String PLAY_QUICK_BUY_DETAILS="/app/store/quick_buy_details";
+
+        //下一集是否勾选
+        String PLAY_AUTO_LOCK_DRAMA="/app/user/auto_lock_drama";
+
+        //google商品获取
+        String GOOGLE_PRODUCT_ID_LIST="/app/product_id_list";
+
     }
 
     interface HttpCode {

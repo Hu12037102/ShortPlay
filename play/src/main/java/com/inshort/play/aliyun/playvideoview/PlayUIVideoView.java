@@ -11,20 +11,34 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
+
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aliyun.player.AliPlayerGlobalSettings;
 import com.aliyun.player.bean.ErrorInfo;
 import com.aliyun.player.bean.InfoBean;
+import com.inshort.base.entity.VideoUrlEntity;
+import com.inshort.base.utils.FileCacheUtilKt;
 import com.inshort.play.R;
+import com.inshort.play.activity.PlayActivity;
 import com.inshort.play.aliyun.adapter.PlayListDiffCallback;
 import com.inshort.play.aliyun.adapter.PlayVideoAdapter;
 import com.inshort.play.aliyun.adapter.PlayVideoViewHolder;
 import com.inshort.play.aliyun.adapter.manager.PlayVideoLayoutManager;
 import com.inshort.play.aliyun.adapter.manager.PlayVideoStandardListManager;
-import com.inshort.play.aliyun.listener.OnViewPagerListener;
-import com.inshort.play.aliyun.listener.PlayVideoListener;
-import com.inshort.play.aliyun.listener.onSeekListener;
+
+import com.inshort.play.databinding.PlayEpisodeViewBinding;
+import com.inshort.play.databinding.PlayUiVideoViewBinding;
+import com.inshort.play.listener.EpisodeListener;
+import com.inshort.play.listener.OnAdapterClick;
+import com.inshort.play.listener.OnViewPagerListener;
+import com.inshort.play.listener.PlayVideoListener;
+import com.inshort.play.listener.onSeekListener;
+import com.inshort.play.aliyun.utils.GlobalSettings;
+import com.inshort.play.viewmodel.PlayViewModel;
 
 import java.util.List;
 
@@ -32,23 +46,23 @@ import java.util.List;
  * @author: 张勇
  * @date: 2024/5/22
  */
-public class PlayUIVideoView extends FrameLayout implements LifecycleOwner, PlayVideoListener, onSeekListener, OnViewPagerListener {
-
+public class PlayUIVideoView extends FrameLayout implements LifecycleOwner, PlayVideoListener, onSeekListener, OnViewPagerListener, OnAdapterClick, EpisodeListener {
+    protected PlayUiVideoViewBinding mViewBinding;
     private Context mContext;
-    private View mView;
+    protected PlayVideoLayoutManager manager;
+    protected PlayVideoAdapter mAdapter;
+    protected PlayViewModel mViewModel;
+    protected int selectedPosition; //当前选中的
+    protected boolean isPurchased;//当前是否解锁
 
-    protected RecyclerView mRecyclerView;
-    private PlayVideoAdapter mAdapter;
-    private PlayVideoLayoutManager manager;
+    protected int startEpisodes = 0; //开始集数
     private final LifecycleRegistry mLifecycleRegistry = new LifecycleRegistry(this);
 
     public PlayUIVideoView(@NonNull Context context) {
-        super(context);
+        this(context,null);
     }
 
-    public PlayUIVideoView(@NonNull Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-    }
+    public PlayUIVideoView(@NonNull Context context, @Nullable AttributeSet attrs) {this(context, attrs,0);}
 
     public PlayUIVideoView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -58,20 +72,39 @@ public class PlayUIVideoView extends FrameLayout implements LifecycleOwner, Play
 
     private void init(Context context){
         this.mContext = context;
-        mView = LayoutInflater.from(mContext).inflate(R.layout.play_ui_video_view,this,true);
-        mRecyclerView = mView.findViewById(R.id.video_rv);
+        mViewModel = new ViewModelProvider((PlayActivity)context).get(PlayViewModel.class);
+        mViewBinding = PlayUiVideoViewBinding.inflate(LayoutInflater.from(mContext),this,true);
         initRView();
+        initSettings();
     }
 
     private void initRView(){
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setItemAnimator(null);
-        mRecyclerView.setDrawingCacheEnabled(true);
-        mRecyclerView.setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
+        mViewBinding.episodeView.setEpisodeListener(this);
+        mViewBinding.videoRv.setHasFixedSize(true);
+        mViewBinding.videoRv.setItemAnimator(null);
+        mViewBinding.videoRv.setDrawingCacheEnabled(true);
+        mViewBinding.videoRv.setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
         mAdapter = new PlayVideoAdapter(new PlayListDiffCallback());
+        mAdapter.setOnAdapterClick(this);
         manager = new PlayVideoStandardListManager(mContext, LinearLayoutManager.VERTICAL,false);
-        mRecyclerView.setLayoutManager(manager);
-        mRecyclerView.setAdapter(mAdapter);
+        manager.setOnViewPagerListener(this);
+        mViewBinding.videoRv.setLayoutManager(manager);
+        mViewBinding.videoRv.setAdapter(mAdapter);
+        new PagerSnapHelper().attachToRecyclerView(mViewBinding.videoRv);
+    }
+
+    private void initSettings(){
+        GlobalSettings.CACHE_DIR = FileCacheUtilKt.getFilePath(mContext,"Aliyun","cache").getAbsolutePath();
+        AliPlayerGlobalSettings.enableLocalCache(
+                GlobalSettings.CACHE_IS_ENABLE,
+                GlobalSettings.CACHE_MEMORY_SIZE * 1024,
+                GlobalSettings.CACHE_DIR
+        );
+        AliPlayerGlobalSettings.setCacheFileClearConfig(
+                GlobalSettings.CACHE_EXPIRED_TIME,
+                GlobalSettings.CACHE_SIZE,
+                GlobalSettings.CACHE_FREE_STORAGE_SIZE
+        );
     }
 
     /**
@@ -80,7 +113,7 @@ public class PlayUIVideoView extends FrameLayout implements LifecycleOwner, Play
      * @return
      */
     protected PlayVideoViewHolder getViewHolderByPosition(int position){
-        return (PlayVideoViewHolder) mRecyclerView.findViewHolderForAdapterPosition(position);
+        return (PlayVideoViewHolder) mViewBinding.videoRv.findViewHolderForAdapterPosition(position);
     }
 
 
@@ -88,16 +121,16 @@ public class PlayUIVideoView extends FrameLayout implements LifecycleOwner, Play
      * 设置数据
      * @param videoBeanList
      */
-    public void setList(List<String> videoBeanList){
-//        mAdapter.setList(videoBeanList);
+    public void setList(List<VideoUrlEntity.PlayData> videoBeanList){
+        mAdapter.submitList(videoBeanList);
     }
 
     /**
      * 添加数据
      * @param addVideoBeanList
      */
-    public void addData(List<String> addVideoBeanList){
-//        mAdapter.addData(addVideoBeanList);
+    public void addData(List<VideoUrlEntity.PlayData> addVideoBeanList){
+//        mAdapter.submitList(addVideoBeanList);
     }
 
     @NonNull
@@ -151,4 +184,17 @@ public class PlayUIVideoView extends FrameLayout implements LifecycleOwner, Play
     public void onLoadingEnd() {}
     @Override
     public void onSeek(long seekPosition) {}
+
+    @Override
+    public void setPlayUrl(int position, boolean isPurchase) {}
+    @Override
+    public void onItemClick(int position) {}
+    @Override
+    public void onSeek(int position, long seekPosition) {}
+    @Override
+    public void setCurrentNumber(int currentNumber) {}
+    @Override
+    public void onClickPosition(int position) {}
+    @Override
+    public void closeView() {}
 }

@@ -269,10 +269,7 @@ public class SearchFragment extends BaseCompatFragment<FragmentSearchBinding, Se
             public void onChanged(ResponseErrorEntity responseErrorEntity) {
                 if (responseErrorEntity.liveData == mViewModel.getSearchLiveData()) {
 
-
                 }
-
-
             }
         });
 
@@ -379,4 +376,5 @@ public class SearchFragment extends BaseCompatFragment<FragmentSearchBinding, Se
     protected void onClickEmptyView(@NonNull View view) {
         loadSmartData();
     }
+
 }

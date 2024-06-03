@@ -38,6 +38,7 @@ public class TrendingTypeEntity {
     }
 
     @Override
+
     public String toString() {
         return "TrendingTypeEntity{" +
                 "content='" + content + '\'' +

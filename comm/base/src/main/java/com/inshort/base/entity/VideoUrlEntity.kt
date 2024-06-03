@@ -42,7 +42,6 @@ data class VideoUrlEntity(
         var isLiked: Boolean = false,
         @SerializedName("like_sum")
         var likeSum: Int = 0,
-
     )
 
 
@@ -71,14 +70,13 @@ data class VideoUrlEntity(
         @SerializedName("is_auto_unlock")
         var isAutoLock: Boolean = false,
         @SerializedName("is_collected")
-        var is_collected: Boolean = false,
+        var isCollected: Boolean = false,
         @SerializedName("drama_episode_list")
         var dramaEpisodeList: ArrayList<DramaEpisodeList>? = ArrayList(),
         @SerializedName("is_drama_update_reserved")
         var isDramaUpdateReserved: Boolean = false,
-
-
-
+        @SerializedName("drama_series_id")
+        var dramaSeriesId: Int = 0,
         ){
         data class PlayHistory(
             @SerializedName("episode_number")
@@ -102,6 +100,8 @@ data class VideoUrlEntity(
             var isPurchased: Boolean = false,
             @SerializedName("episode_coins")
             var episodeCoins: Int = 0,
+            @SerializedName("currentlyUnlockedEpisodes")
+            var currentlyUnlockedEpisodes: Boolean = false , //
             @SerializedName("is_liked")
             var isLiked: Boolean = false,
             @SerializedName("like_sum")

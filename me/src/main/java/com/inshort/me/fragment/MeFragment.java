@@ -11,9 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 
-import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.DataCompat;
 import com.inshort.base.compat.DialogCompat;
@@ -89,7 +87,6 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
             } else {
                 mViewBinding.atvSignIn.setVisibility(View.GONE);
             }
-
         }
         UserEntity.CheckInInfo checkInInfo = userEntity.checkInInfo;
         if (DataCompat.notNull(checkInInfo) && !checkInInfo.isCheckedIn) {
@@ -172,8 +169,6 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
         super.initObserve();
 
     }
-
-
     private Drawable getTopBackground() {
         GradientDrawable drawable = new GradientDrawable();
         drawable.setSize(PhoneCompat.screenWidth(requireContext()), PhoneCompat.dp2px(requireContext(), 170));
@@ -199,8 +194,4 @@ public class MeFragment extends BaseCompatFragment<FragmentMeBinding, MeViewMode
                 DataCompat.getColor(getContext(), com.inshort.base.R.color.color_FFFFE3CA)});
         return drawable;
     }
-
-
-
-
 }

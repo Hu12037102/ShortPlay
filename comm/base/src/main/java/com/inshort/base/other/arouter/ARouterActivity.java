@@ -22,6 +22,7 @@ public final class ARouterActivity {
         Postcard postcard = ARouters.build(ARouterConfig.Path.Comm.ACTIVITY_WEB_CONTENT)
                 .withString(ARouterConfig.Key.WEB_URL, webUrl)
                 .withString(ARouterConfig.Key.WEB_TITLE, webTitle);
+
         return ARouters.getIntent(context, postcard);
     }
 

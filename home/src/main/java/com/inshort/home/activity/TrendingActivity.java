@@ -2,6 +2,7 @@ package com.inshort.home.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
@@ -38,7 +39,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.google.projectview.weight.ProjectView;
-
 @Route(path = ARouterConfig.Path.Home.ACTIVITY_TRENDING)
 public class TrendingActivity extends BaseCompatActivity<ActivityTrendingBinding, TrendingViewModel> {
     private final List<String> mData = new ArrayList<>();
@@ -129,9 +129,13 @@ mViewBinding.pvTitle.setOnItemInfoClickListener(new ProjectView.OnItemInfoClickL
                         setResult(Activity.RESULT_OK,intent);
                     }
                 });
-                Object obj = ARouters.build(ARouterConfig.Path.Home.FRAGMENT_TRENDING_CONTENT).withString(ARouterConfig.Key.CONTENT, content).navigation();
-                if (obj instanceof Fragment fragment) {
-                    mFragments.add(fragment);
+                Postcard postcard = ARouters.build(ARouterConfig.Path.Home.FRAGMENT_TRENDING_CONTENT);
+                if (postcard != null) {
+                    Object obj = postcard.withString(ARouterConfig.Key.CONTENT, content).navigation();
+                    if (obj instanceof Fragment fragment) {
+                        mFragments.add(fragment);
+                    }
+
                 }
                 mViewBinding.vpContent.setOffscreenPageLimit(CollectionCompat.getListSize(mFragments));
                 mViewBinding.vpContent.setUserInputEnabled(false);

@@ -10,7 +10,6 @@ public final class MMKVCompat {
     public static final int PRIVACY_AGREEMENT_STATUS_UNKNOWN = 0;
     public static final int PRIVACY_AGREEMENT_STATUS_LATER = 1;
     public static final int PRIVACY_AGREEMENT_STATUS_AGREE = 2;
-
     private MMKVCompat() {
     }
 

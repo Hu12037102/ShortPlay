@@ -29,4 +29,5 @@
         android:background="@drawable/shape_home_banner_bottom_mask"
         app:layout_constraintBottom_toBottomOf="@id/banner" />
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,9 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.inshort.base.config.AppConfig;
 
+import com.inshort.base.Contracts;
+import com.inshort.base.config.AppConfig;
 
 public final class LogUtils {
     private LogUtils() {
@@ -77,7 +78,7 @@ public final class LogUtils {
     }
 
     public static void d(@Nullable String msg){
-        d(null,msg);
+        d("LogUtils",msg);
     }
 
 }

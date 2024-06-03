@@ -8,4 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <com.inshort.play.aliyun.ui.UIVideoManger
+        android:id="@+id/video_ui_manger"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

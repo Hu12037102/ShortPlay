@@ -70,7 +70,6 @@ class ViewTools {
         fun showEmptyView(parentView: View?, emptyView: EmptyLayout?) {
             val tools = ViewTools()
             tools.traversalView(parentView)
-
             tools.showRecyclerViewDataEmptyView(emptyView)
         }
     }

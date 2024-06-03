@@ -7,17 +7,17 @@ import com.aliyun.player.AliListPlayer;
 import com.aliyun.player.AliPlayerFactory;
 import com.aliyun.player.AliPlayerGlobalSettings;
 import com.aliyun.player.IPlayer;
-import com.aliyun.player.bean.ErrorInfo;
-import com.aliyun.player.bean.InfoBean;
+
 import com.aliyun.player.nativeclass.PlayerConfig;
 import com.aliyun.player.source.UrlSource;
-import com.inshort.play.aliyun.listener.PlayVideoListener;
+import com.inshort.base.compat.PackageInfoCompat;
+import com.inshort.base.entity.VideoUrlEntity;
+import com.inshort.base.other.mmkv.UserDataStore;
+import com.inshort.base.utils.LogUtils;
+import com.inshort.play.listener.PlayVideoListener;
 import com.inshort.play.aliyun.preload.PlayPlayerPreload;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author: 张勇
@@ -26,7 +26,7 @@ import java.util.Map;
 public class PlayVideoListController {
     private Context mContext;
     private AliListPlayer mAliListPlayer;
-    private int mCurrentPlayerState = 0; //当前播放状态
+    public int mCurrentPlayerState = 0; //当前播放状态
     private PlayVideoListener mPlayVideoListener;
 
 
@@ -39,12 +39,14 @@ public class PlayVideoListController {
     }
 
     private void initHeaderPlayer(){
+        String token = UserDataStore.get().getAccessToken();
         PlayerConfig config = mAliListPlayer.getConfig();
         String[] headers = new String[3];
-        headers[0] =("X-ACCESS-TOKEN:");
-        headers[1] =("channel:inShort");
-        headers[2] =("version:");
+        headers[0] =("X-ACCESS-TOKEN:"+token);
+        headers[1] =("channel:inShort_Android");
+        headers[2] =("version:"+PackageInfoCompat.getVersionName(mContext));
         config.setCustomHeaders(headers);
+        mAliListPlayer.setConfig(config);
     }
 
 
@@ -66,7 +68,7 @@ public class PlayVideoListController {
 
         mAliListPlayer.setOnStateChangedListener(i -> {
             this.mCurrentPlayerState = i;
-            if(mPlayVideoListener!=null)mPlayVideoListener.onPlayStateChanged(IPlayer.paused);
+            if(mPlayVideoListener!=null)mPlayVideoListener.onPlayStateChanged(i);
         });
 
         mAliListPlayer.setOnErrorListener(errorInfo -> {
@@ -128,8 +130,12 @@ public class PlayVideoListController {
     /**
      * 设置当前播放页面数据
      */
-    public void onPageSelected(int position){
 
+    public void onPageSelected(int position, List<VideoUrlEntity.PlayData> mData,VideoUrlEntity.DramaSeries mDramaData){
+        if(mData!=null && mData.size() > position){
+            startPlay(mData.get(position).getM3u8());
+            PlayPlayerPreload.getInstance().startLoadData(position,mData,mDramaData);
+        }
     }
 
     /**
@@ -142,7 +148,7 @@ public class PlayVideoListController {
             mAliListPlayer.setDataSource(source);
             mAliListPlayer.stop();
             mAliListPlayer.prepare();
-            mAliListPlayer.stop();
+            mAliListPlayer.start();
         }
     }
 
@@ -198,6 +204,7 @@ public class PlayVideoListController {
             mPlayVideoListener = null;
             AliPlayerGlobalSettings.setCacheUrlHashCallback(null);
         }
+        PlayPlayerPreload.getInstance().onDestroy();
     }
 
 

@@ -19,6 +19,9 @@ public class StoreEntity {
     public int bonusExpired;
     @SerializedName("product_list")
     public List<Info> productList;
+
+    @SerializedName("drama_series_product")
+    public dramaSeriesProductInfo dramaSeriesProductInfo;
     @SerializedName("coins_subscription")
     public List<Info> coinsSubscriptions;
 
@@ -65,6 +68,11 @@ public class StoreEntity {
         public int transactionType;
         public boolean isSelector;
 
+    }
+
+    public static class dramaSeriesProductInfo {
+        @SerializedName("episode_coins")
+        public int episodeInfoCoins;
     }
 
 }

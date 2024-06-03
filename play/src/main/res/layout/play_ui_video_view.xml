@@ -4,9 +4,22 @@
     android:layout_height="match_parent">
 
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.inshort.play.custom.CustomRecyclerView
         android:id="@+id/video_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <com.inshort.play.aliyun.ui.VideoEpisodeView
+        android:id="@+id/episode_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        />
+    <com.inshort.play.aliyun.ui.PlayVideoRechargeView
+        android:id="@+id/recharge_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        />
 
 </FrameLayout>

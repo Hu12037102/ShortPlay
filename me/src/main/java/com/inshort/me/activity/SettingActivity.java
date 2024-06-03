@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.DataCompat;
-import com.inshort.base.compat.DateCompat;
 import com.inshort.base.compat.DialogCompat;
 import com.inshort.base.compat.FileCompat;
 import com.inshort.base.compat.NumberCompat;
@@ -25,6 +24,7 @@ import com.inshort.base.core.dialog.BaseCompatDialog;
 import com.inshort.base.core.dialog.comm.PrivacyAgreementDialog;
 import com.inshort.base.core.dialog.comm.TitleDialog;
 import com.inshort.base.entity.InitEntity;
+
 import com.inshort.base.entity.UserEntity;
 import com.inshort.base.http.IApiService;
 import com.inshort.base.manger.ActivityStateManger;
@@ -36,6 +36,7 @@ import com.inshort.base.other.mmkv.MMKVCompat;
 import com.inshort.base.other.mmkv.SearchHistoryDataStore;
 import com.inshort.base.other.mmkv.UserDataStore;
 import com.inshort.base.utils.LogUtils;
+
 import com.inshort.base.weight.click.DelayedClick;
 import com.inshort.base.weight.imp.OnItemClickListener;
 import com.inshort.me.databinding.ActivitySettingBinding;
@@ -76,7 +77,6 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
 
 
     }
-
 
     private void updateDisplayWitchingView() {
         if (MMKVCompat.isOpenWatching()) {
@@ -120,6 +120,8 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
                     }
                 }
 
+                ARouterActivity.startToWebContentActivity(IApiService.Url.TERMS_SERVICE,
+                        DataCompat.getResString(SettingActivity.this, com.inshort.base.R.string.terms_of_service_content));
             }
         });
         mViewBinding.clItemPrivacyPolicy.setOnClickListener(new DelayedClick() {
@@ -153,6 +155,7 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
                 showClearCacheDialog();
             }
         });
+
         mViewBinding.clItemVersion.setOnClickListener(new DelayedClick() {
             @Override
             public void onDelayedClick(View view) {
@@ -171,7 +174,8 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
 
     }
 
-    private void showClearCacheDialog() {
+
+    private void showClearCacheDialog(){
         Object obj = ARouters.getFragment(ARouterConfig.Path.Comm.DIALOG_TITLE);
         if (obj instanceof TitleDialog titleDialog) {
             Bundle bundle = new Bundle();
@@ -189,6 +193,7 @@ public class SettingActivity extends BaseCompatActivity<ActivitySettingBinding, 
                 @Override
                 public void onClickRightView(View view) {
                     mViewModel.clearCache();
+                    FileCompat.clearCacheFile();
                     titleDialog.dismiss();
                 }
             });

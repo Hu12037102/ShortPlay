@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.inshort.base.compat.AdapterCompat;
+
 import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.MyListEntity;
 import com.inshort.base.entity.TemporaryEntity;
@@ -81,6 +82,7 @@ public class HisFragment extends BaseCompatFragment<FragmentHisBinding,HisViewMo
     protected boolean isLoadEmptyView() {
         return true;
     }
+
 
     @Override
     public void onResume() {

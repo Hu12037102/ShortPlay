@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.inshort.base.compat.AdapterCompat;
+
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.entity.MyListEntity;
@@ -204,4 +205,5 @@ public class PlayHisActivity  extends BaseCompatActivity<ActivityPlayHisBinding,
     protected boolean isLoadEmptyView() {
         return true;
     }
+
 }

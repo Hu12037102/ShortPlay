@@ -13,4 +13,11 @@
         <item>#00BA1F</item>
     </array>
 
+
+    <!--左到右-->
+    <array name="left_right" tools:ignore="MissingDefaultResource,ResourceName">
+        <item>#FF0056</item>
+        <item>#FF00B3</item>
+    </array>
+
 </resources>

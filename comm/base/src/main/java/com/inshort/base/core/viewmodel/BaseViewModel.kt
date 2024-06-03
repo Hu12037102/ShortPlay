@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.inshort.base.Contracts
+import com.inshort.base.entity.LikeHistoryEntity
 import com.inshort.base.entity.ResponseEntity
 import com.inshort.base.entity.ResponseErrorEntity
 import com.inshort.base.http.IApiService
@@ -19,6 +20,7 @@ open class BaseViewModel : ViewModel() {
     val emptyViewLiveData = MutableLiveData<Boolean>()
     val refreshLiveData = MutableLiveData<Boolean>()
      var isManualRefresh = false
+
 
     protected open fun getInitPage(): Int = Contracts.DEFAULT_PAGE
 
@@ -86,10 +88,8 @@ open class BaseViewModel : ViewModel() {
                 if (isShowEmptyView) {
                     emptyViewLiveData.value = false
                 }
-
                 val data = response.data
                 liveData.value = data
-
             } else {
                 if (isShowEmptyView) {
                     emptyViewLiveData.value = true

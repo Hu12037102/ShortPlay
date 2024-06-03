@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -23,6 +24,7 @@ public final class ARouters {
     public static Postcard build(@Nullable String path) {
         int flag = Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP;
         return ARouter.getInstance().build(path).withFlags(flag).greenChannel();
+
     }
 
     public static void startActivity(@Nullable String path) {
@@ -76,6 +78,7 @@ public final class ARouters {
 
     public static Intent getIntent(@Nullable Context context, @NonNull Postcard postcard) {
         context = DataCompat.checkContext(context);
+
         LogisticsCenter.completion(postcard);
         Intent intent = new Intent(context, postcard.getDestination());
         intent.putExtras(postcard.getExtras());

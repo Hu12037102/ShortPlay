@@ -22,6 +22,7 @@ import com.inshort.base.compat.PhoneCompat;
 import com.inshort.base.compat.ViewsCompat;
 import com.inshort.base.core.activity.BaseCompatActivity;
 import com.inshort.base.core.dialog.comm.VersionUpdatingDialog;
+
 import com.inshort.base.entity.InitEntity;
 import com.inshort.base.entity.ResponseErrorEntity;
 import com.inshort.base.entity.UserEntity;
@@ -59,6 +60,7 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
     }
 
     private void initialize() {
+
         mViewBinding.aivService.setVisibility(View.GONE);
         mViewModel.initialize();
     }
@@ -72,6 +74,7 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
                 Intent intent = ARouterActivity.getWebContentIntent(SplashActivity.this, IApiService.Url.FAQ, DataCompat.getResString(SplashActivity.this,
                         com.inshort.base.R.string.feedback_content));
                 mServiceLauncher.launch(intent);
+
                /* ARouterActivity.startToWebContentActivity(IApiService.Url.FAQ, DataCompat.getResString(SplashActivity.this,
                         com.inshort.base.R.string.feedback_content));*/
             }
@@ -116,7 +119,6 @@ public class SplashActivity extends BaseCompatActivity<ActivitySplashBinding, Sp
                     mViewBinding.aivService.setVisibility(View.GONE);
                     mViewModel.initUserLogin();
                 }
-
 
             }
         });

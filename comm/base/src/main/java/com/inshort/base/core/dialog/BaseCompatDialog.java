@@ -97,7 +97,6 @@ public abstract class BaseCompatDialog<VB extends ViewBinding, VM extends BaseCo
 
     }
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

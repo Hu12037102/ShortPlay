@@ -7,7 +7,7 @@ ext.config = [
         namespace_search             : "com.inshort.search",
         namespace_mylist             : "com.inshort.mylist",
         namespace_play               : "com.inshort.play",
-        namespace_login              : "com.inshort.login",
+        namespace_login               : "com.inshort.login",
         namespace_me                 : "com.inshort.me",
         compileSdk                   : 34,
         applicationId                : "com.inshort.media",
@@ -17,7 +17,6 @@ ext.config = [
         versionName                  : "1.0",
         testInstrumentationRunner    : "androidx.test.runner.AndroidJUnitRunner",
         consumerProguardFiles        : "consumer-rules.pro",
-
         core_version                 : "1.12.0",
         appcompat_version            : "1.6.1",
         material_version             : "1.11.0",
@@ -48,7 +47,7 @@ ext.config = [
         mmkv_version                 : "1.3.5",
         banner_version               : "2.2.3",
         BaseRecyclerViewAdapterHelper: "3.0.6",
-        play_services                : "20.6.0",
-        AliyunPlayer                 : "6.5.0-full",
-
+        play_services               :"20.6.0",
+        AliyunPlayer                :"6.5.0-full",
+        billing                     :"billing-ktx:6.0.0",
 ]

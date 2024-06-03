@@ -211,6 +211,7 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
                 mViewModel.setRefresh(false);
                 mViewModel.setManualRefresh(false);
                 loadSmartData();
+
             }
 
             @Override
@@ -284,7 +285,6 @@ public abstract class BaseCompatFragment<VB extends ViewBinding, VM extends Base
             mEmptyLayout.hide();
         }
     }
-
     protected void loadSmartData() {
 
     }
