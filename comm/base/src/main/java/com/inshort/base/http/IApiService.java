@@ -64,6 +64,9 @@ public interface IApiService {
         //下一集是否勾选
         String PLAY_AUTO_LOCK_DRAMA="/app/user/auto_lock_drama";
 
+        //google商品获取
+        String GOOGLE_PRODUCT_ID_LIST="/app/product_id_list";
+
     }
 
     interface HttpCode {

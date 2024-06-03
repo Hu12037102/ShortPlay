@@ -85,5 +85,7 @@ dependencies {
     api "com.google.android.gms:play-services-auth:$config.play_services"
     /*aliyun*/
     api "com.aliyun.sdk.android:AliyunPlayer:$config.AliyunPlayer"
+    /*google pay*/
+    api "com.android.billingclient:$config.billing"
 
 }

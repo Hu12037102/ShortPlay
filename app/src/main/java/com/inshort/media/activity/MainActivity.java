@@ -19,6 +19,7 @@ import com.inshort.base.core.fragment.BaseCompatFragment;
 import com.inshort.base.entity.MainBottomTabEntity;
 import com.inshort.base.other.arouter.ARouterConfig;
 import com.inshort.base.other.arouter.ARouters;
+import com.inshort.base.pay.GooglePayManager;
 import com.inshort.base.utils.LogUtils;
 import com.inshort.home.fragment.HomeFragment;
 import com.inshort.me.fragment.MeFragment;
@@ -44,6 +45,7 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
     protected void initView() {
         ViewsCompat.hideStatusBar(getWindow());
         mViewBinding.rvBottom.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        GooglePayManager.getInstance().connectGooglePay();
     }
 
     @Override
@@ -131,6 +133,18 @@ public class MainActivity extends BaseCompatActivity<ActivityMainBinding, MainVi
                 }
             });
         }
+    }
+
+    @Override
+    protected void initObserve() {
+        super.initObserve();
+        GooglePayManager.getInstance().getIsConnection().observe(this, aBoolean -> {
+            int size = GooglePayManager.getInstance().getProductDetailsMap().size();
+            if(size == 0 && aBoolean){
+                mViewModel.productIdAllList();
+            }
+        });
+
     }
 
     private final OnBackPressedCallback mOnBackPressedCallback = new OnBackPressedCallback(true) {
